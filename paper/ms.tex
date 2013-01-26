@@ -1,0 +1,196 @@
+\documentclass{emulateapj}
+\submitted{{\it Submitted for publication in ApJ Letters}}
+\usepackage{multirow,color,wrapfig,ulem}
+\usepackage {graphicx}
+%\bibliographystyle{apj}
+\usepackage{graphics}
+\usepackage[dvips]{epsfig}
+
+\newcommand{\kms}{\,km~s$^{-1}$}
+\def\squig{\sim\!\!}
+\newcommand{\LCDM}{$\Lambda$CDM~}
+\newcommand{\beq}{\begin{eqnarray}}  
+\newcommand{\eeq}{\end{eqnarray}}  
+\newcommand{\zz}{$z\sim 3$} 
+\newcommand{\avg}[1]{\langle{#1}\rangle}  
+\newcommand{\ly}{{\ifmmode{{\rm Ly}\alpha}\else{Ly$\alpha$}\fi}}
+\newcommand{\hMpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}  
+\newcommand{\hGpc}{{\ifmmode{h^{-1}{\rm Gpc}}\else{$h^{-1}$Gpc }\fi}}  
+\newcommand{\hmpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}  
+\newcommand{\hkpc}{{\ifmmode{h^{-1}{\rm kpc}}\else{$h^{-1}$kpc }\fi}}  
+\newcommand{\hMsun}{{\ifmmode{h^{-1}{\rm {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}  
+\newcommand{\hmsun}{{\ifmmode{h^{-1}{\rm {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}  
+\newcommand{\Msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}  
+\newcommand{\msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}  
+\newcommand{\lya}{{Lyman$\alpha$~}}
+\newcommand{\clara}{{\texttt{CLARA}}~}
+\newcommand{\rand}{{\ifmmode{{\mathcal{R}}}\else{${\mathcal{R}}$ }\fi}}  
+\newcommand{\Lsun}{\mbox{\,$L_{\odot}$}}
+\newcommand{\like}{\mathscr{L}}
+\newcommand{\bftheta}{\mathbf{\Theta}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\def\spose#1{\hbox to 0pt{#1\hss}}
+\def\simlt{\mathrel{\spose{\lower 3pt\hbox{$\mathchar"218$}}
+     \raise 2.0pt\hbox{$\mathchar"13C$}}}
+\def\simgt{\mathrel{\spose{\lower 3pt\hbox{$\mathchar"218$}}
+     \raise 2.0pt\hbox{$\mathchar"13E$}}}
+\font\smcap=cmcsc10
+
+
+\shorttitle{LAE halo host mass at z=3.1}
+\shortauthors{Mej\'ia et al.}
+
+\begin{document}
+\title{Constraints on the dark matter halo mass of Lyman-alpha emitting galaxies at $z$=3.1 from cosmic variance}
+
+\author{
+J. Mej\'ia \altaffilmark{2}, 
+J. E.\ Forero-Romero\altaffilmark{1}, 
+}
+
+\altaffiltext{1}{XXX}
+\altaffiltext{2}{Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1 No. 18A-10, Edificio Ip, Bogot\'a, Colombia, \email{je.forero@uniandes.edu.co}}
+
+\date{\today}
+
+\begin{abstract}
+-
+\end{abstract}
+
+\begin{keywords}
+{galaxies: kinematics and dynamics, Local Group, methods:numerical}
+\end{keywords}
+
+
+\section{Introduction}
+Lyman-$\alpha$ emitting galaxies (LAEs) have become in the last decade a central topic in studies of structure formation in the Universe. The reason is the diverse range of fields where they are helpful, LAEs can be used as probes of reionization, tracers of large scale structure, signposts for low metallicity stellar populations and markers of the the galaxy formation process through cosmic history.
+
+At the same time, theoretical and observational developments have contributed to the emergence of a paradigm to describe structure formation in a cosmological context. In this context it is considered that dominant matter content of the Universe is to be found in dark matter, whereby each galaxy is hosted by larger dark matter structure known as a halo.
+
+Most models of galaxy formation find that the mass of the halo largely determines key properties of the galaxy such as its stellar mass and star formation rate. Processes that regulate the star formation cycle are also though to be strongly dependent on its mass. Furthermore, the spatial clustering of galaxies on large scales is entirely dictated by the halo distribution.  For the reasons mentioned above, finding the typical dark matter halo mass hosting LAEs represents a significant step forward to understand the nature of this population in the context of LCDM. 
+
+Some theoretical approaches to this problem have been based on a forward modelling. Starting from the DM halo population, the corresponding intrinsic star formation properties are infered and statistics such as the luminosity function, the correlation function and the equivalent width distributions. Such modelling has been implemented from analytic considerations, semi-analytic models and full N-body hidrodynamical simulations.
+
+Added to the uncertainties in the astrophysical processeses describing star formation in galactic populations, a highly debated steps in this approach is the calculation of the fraction of Lyman-$\alpha$ photons that escape the galaxy to the observer. Given the resonance nature of the line, the radiative transfer of Lyman-$\alpha$ is sensitive to the density, temperature, topology and kinematics of the neutral Hydrogen in the interstellar medium (ISM). 
+
+This complexity makes the use of monte-carlo simulations for the radiative transfer a required tool to obtain physically sound results, although the degeneracy in the physical parameters involved in the problem makes it difficult to achieve a robust consensus on what is the theoretical expected value for the Lyman-$alpha$ escape fraction in high redshift.
+
+
+Throughout this Letter we assume a $\Lambda$CDM cosmology with the following values for the cosmological parameters, $\Omega_{m}=0.27$, $\Omega_{\Lambda}=0.73$ and $h=0.70$, corresponding to the matter density, vacuum density and the Hubble constant in units of 100 km s$^{-1}$ Mpc$^{-1}$.
+
+\section{Methodology}
+In this paper we constrain the typical mass of dark matter halos hosting LAES at $z=3.1$. Our model is based on the number density information obtained in the recent large scale survey presented by XXX where XXX LAEs are detected over 7 fields of $\sim 46 \times 35$Mpc$^{2}h^{-2}$ in area comoving in area corresponding to observed fields of $XXX$ deg$^{2}$. 
+
+The diverse physical and astrophysical uncertainties in obtaining statistical prediction for the Lyman-alpha line are the largest impediment to consruct an ab-iitio model for LAEs. In this Letter we want to by-pass this approach by constructing models with the sole objective of reproducing the cosmic variance in the number density of LAEs. Afterwards we will interpret the implications of this result for physical models for Lyman-alpha emitting galaxies.
+
+The model is based on the predictions of a large volume high resolution N-body simulation describing the gravitational dynamics of dark matter. We do not have an strong bias towards the theoretical expectation of what the mass of the dark matter halo hosting the galaxy should be.  Instead, we fully explore the parameter space of our simplified model. The only cut we impose is that observed LAEs do not reside in dark matter halos with masses less than 10$^{10}$hMsun [citation]. 
+
+In the following subsections we describe the most relevant features of the observational data, the N-body simulation we use, our model and its parameters together with the method to compare its predictions against observations.
+
+\subsection{The Observational Constraints}
+We take as a reference the recently published results of a panoramic survey of LAES at z=3.1 by Yamada et al. 2012. This survey was conducted with the Subaru 8.2m telescope and the Subaru Prime Focus Camera, which has a field of view covering $34\times 27$ arcmin, corresponding to a comoving scale of $46\times35$ Mpc $h^{-1}$ at $z=3.09$. The narrow band filter is centered at $4977$ \AA with a $77$\AA width, corresponding to the redshift range $z=3.062-3.125$ and $41$ Mpc $h^{-1}$ comoving scale for the detection of the Lyman-$\alpha$ line centered at $z=3.09$.
+
+In this paper we only use the results of Yamada et al due to the homogenous conditions  to define their samples. We do this for homogeinity in the observation and data reduction techniques. There are other surveys by XXX an XXX that cover similar regions, but they use different criteria on the equivalent width (EW) cuts to construct the LAE samples. Different cuts in the EW can change the number of LAEs to be included in the catalog. This cuts have an impact on the fainter LAEs which are more abundante than brighter ones. Different definitions of the EW cuts can yield number densities different by a factor of two [REF, I think Yamada has some numbers].
+
+
+The survey covered four independent fields. The first is the SSA22 field of $1.38$ deg$^2$ with $1394$ detected LAEs, this field has been known to harbor a region with a large density excess of galaxies. The second observed region is composed by the fields Subaru/{\it XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a total of $0.58$ deg$^2$ and $386$ LAEs. The third and fourth fields are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and $196$ LAEs, and the fild arotund the Great Observatory Optical Deep Survey North (GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs. In Table 1 we summarize the values we use in throughout this paper for the each field, covered area, measured surface LAE number density and inferred number volume density.
+
+
+
+\subsection{The Simulation and Halo Catalogs}
+We use the Bolshoi simulation data available from their public database accessible via SQL query interface. The simulation was performed in a cubic volume of 250 $h^{-1}$ Mpc on a side. It includes dark matter distribution is sampled using $2048^{3}$ particles, which translates into a particle mass of $m_{\rm p}=1.35\times 10^{8}$ $h^{-1}$ M$_{\odot}$. 
+
+The cosmological parameters are consistent with a WMAP5 and WMAP7 data with a matter density $\Omega_{\rm m} = 0.27$, cosmological constant $\Omega_{\Lambda}=0.73$, dimensionless Hubble constant $h=0.70$, slope of the power spectrum $n=0.95$ and normalization of the power spectrum $\sigma_{8}=0.82$
+
+We have used halo catalogs constructed with a Friend-of-Friends (FOF) algorithm with a linking lenght of 0.17 times the interparticle distance. We have veryfied that the main results we present in this paper also hold if instead we use halo catalogs constructed from a the Bound Density Maxima (BDM) algorithm \citep{KlypinBDM} that are defined to have an density of 200 times the critical density.
+
+The catalogs we have used here are obtained from a publicly available Multidark database \footnote{{\tt http://www.multidark.org/MultiDark/}} \citep{2011arXiv1109.0003R}. 
+
+
+\subsection{Mock Catalogs: Populating Halos with LAEs}
+\label{subsec:mocks}
+We start from the Friends-of-Friends (FOF) catalog at $z=3.1$. The catalog is split into disjoint sub-volumes with the same geometry probed by Suprime-CAM and the narrow band filter of $46\times 35\times 41$ $h^{-3}Mpc^{3}$ . There are in total $5\times 7 \times 6=210$ of such sub-volumes in a snapshot of the Bolshoi simulation. We take the $z$ direction to correspond to the redshift direction in the survey. This corresponds to a total area of $880$ arcmin$^{2}$ for each projected sub-volume.
+
+The model that creates a mock is based in a one-to-one correspondence of LAEs to DM halos: each halo can only host a single LAE. There are three physical parameters in the model: the halo mass range $M_{\rm min}< M_{\rm halo} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm occ}$ of such halos that effectively host a LAE. In what follows we will describe by the letter ${\mathcal M}$ a model spanning a set of mock catalogs calculated by fixed values of these three parameters.
+
+
+\subsection{Model Sampling and Selection}
+We generate a series of models ${\mathcal M}_{I}$, where $I$ corresponds to set of input values $I=\{M_{\rm min}, M_{\rm max}, f_{\rm occ}\}$. We explore a wide range of values in the $I$ parameter space as follows. $M_{\rm min}$ and $M_{\rm max}$ are allowed to take 15 different values evenly spaced by $0.2$ dex, $M_{\rm min}$ ranges from $\log_{10}M_{\rm min}=10.0$ up to $\log_{10}M_{\rm min}=12.8$, while $M_{\rm max}$ range  from $\log_{10}M_{\rm min}=10.2$ up to $\log_{10}M_{\rm min}=13.0$ shifted by $0.2$ dex. The occupation fraction $f_{\rm occ}$ takes 100 different values from $0.01$ to $1.00$ regularly spaced by $0.01$. In total the number of different sets of input parameters to be explored is $15\times 15\times 100 = 22500$.
+
+
+For each model we generate 210 mock catalogs corresponding to each of the sub-volumes extracted in the box. For each volume we project along the $z$ direction and calculate its surface number density in units of sources per arcmin$^{2}$. Using the $210$ values for the surface density we perform a Kolmogorov-Smirnov test to compare it against the $12$ observational values and obtain the probability to reject the null hypothesis that the two data sets come from the same distribution. 
+
+
+We also boot-strap these 210 mocks for each model to construct sub-samples of 12 catalogs corresponding to the 12 observed fields. We do this boot-strapping in two different ways. First, by selecting the 12 catalogs in a random fashion without taking into account any spatial information. Second, by selecting sets of catalogs taking into account the spatial correlations present in observations. For instance, 7 out of the 12 catalogs are selected to be spatially contiguous as the SSA22 field, 3 fields correspond to the SXDS fields and 2 remaining catalogs are spatially uncorrelated to resemble the SDF and GOODS-North fields. We do this boot-straping 15 times and keep the median value for the KS test.
+
+Summarizing, for each model $M_{\rm min}, M_{\rm max}, f_{\rm occ}$, there are three different ways to calculate a KS test, which is in turn used to select the models that best reproduce the observations: from the full 210 mock sample, from 20 boot-strapped sets of 12 catalogs and finally from the same kind of boot-strapped catalogs that take into account the correlation in neighboughring observed fields.
+
+
+
+\section{Results}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=1.00\linewidth,angle=0]{./plots/cum_halos_tex.png}
+\caption{ \label{figure:laes_dist} Cumulative mass function of dark matter haloes in the $210$ sub-volumes of $46\times 35\times 41$ $h^{-3}Mpc^{3}$. The variation in the total number of dark matter halos per sub-volume  evidences the effect of cosmic variance at such sub-volume scale. It is also appreciable the low population $\lesssim10^{-3}h^{2}Mpc^{-2}$ of halos with $log(M/M_{\odot})>12.0$}.
+\end{center} 
+\end{figure}
+
+
+
+
+\subsection{General Constraints on the Occupation Fraction}
+The number density of dark matter halos per unit comoving volume is a well defined quantity for a given cosmological model, modulo the effects introduced by cosmic variance. The occupation fraction $f_{\rm occ}$ acts a renormalization factor of the halo number density to match the observational constrain of the surface density of LAEs.
+
+In Fig. 1 we show the cumulative mass function of dark matter haloes in the $210$ sub-volumes extracted from the Bolshoi simulation. This mass function is expressed as a surface density by projecting the positions of all haloes along the $z$ direction and taking the surface of the rectangle in the $x$-$y$ plane as the nominal $880$ arcmin$^{2}$ we calculated in \S\ref{subsec:mocks}. The same figure shows as a vertical band the range of observed surface density of LAEs. 
+
+
+There is a characteristic halo mass $M_{\rm c}$ above which the halo mass functions are below the observational constraint, meaning that models with model parameters $I=\{M_{\rm min}, M_{\rm max}, f_{\rm occ}\}$ with $M_{\rm min}> M_{\rm c}$ have a number densiy that is already lower than the observational one, regardless of the value of $f_{\rm occ}$. Conversely, below for models with $M_{\rm min}<M_{\rm c}$ have a possibility of success if the occupation fraction $f_{\rm occ}$ is tuned as to lower the halo number density down to the observed value. 
+
+For the reasons explained above, the occupation fraction $f_{\rm occ}$ has a strong dependence on the mass parameters of the model $M_{\rm min}$ and $M_{\rm max}$. This allows us to focus in presenting the results of the best models in terms of these two parameters, knowing that the occupation fraction is already tightly constrained.
+
+
+\subsection{Likelihood landscapes}
+
+
+Figure \label{figure:landscape} presents the probability from the KS-tests that the observed and simulated surface densities can be considered as comming from similar distributions. For the reasons explained in the last section, we only show the results in the $M_{\rm min}-M_{\rm max}$ plane. The first panel show the results comming from using all the $210$ mocks for each model, the second and third panel from the boot-strapping of spatially uncorrelated and correlated fields, respectively.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=1.00\linewidth,angle=0]{./plots/probabillity_contour06-10bar.png}
+\end{center} 
+\caption{ \label{figure:landscape} 
+}
+\end{figure}
+
+\subsection{Selection of the preferred halo mass}
+
+
+
+
+\subsection{Estimating the Galaxy Bias from the Halo Masses}
+Using the results from the previous sections it is possible to infre the bias of $z\sim 3$ LAEs. Considering a number of $N_{\rm fields}$ the expected number density of galaxies around the region located at $x_{i}$ is $n_{i}=\bar{n}[1+ b\delta_{\rm DM}(x_{i})]$, where $\bar{n}$ is the average galaxy number density and $\delta_{\rm DM}\equiv (\rho - \bar{\rho})/\bar{\rho}$ is the matter overdensity in the field [REF robertson].
+
+We calculate the bias for each mock catalog in the best models using the corresponding dark matter overdensity in the simulation. This results in a distribution of bias values for each model. The results for this calculation are presented in Figure XX.  We compare this resul agains the following estimation $b^{2}\sim {\sigma_{N}^{2} - \bar{N}}/\bar{N}^{2}\sigma_{\rm DM}^{2}$, where $\bar{N}$ is the average number counts in the $N_{fields}$, $\sigma_{N}$ is their dispersion and $\sigma_{DM}$ is the matter variance over many survey volumes.
+
+\subsection{Prediction for the angular correlation function}
+
+We calculate the angular correlation function (ACF) for the best models for a mock survey with a total surface area equal to the full survey by Yamada et al 2012. We compare these results with the observed ACF reported by Gawiser et al. XXX. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=1.00\linewidth,angle=0]{./plots/correlation_best_models_with_obs_comp.png}
+\end{center} 
+\caption{ \label{figure:landscape} 
+}
+\end{figure}
+
+%\begin{figure}
+% \input{plots/TCF}
+%\end{figure}
+
+\section{Conclusions}
+
+\end{document}
+
