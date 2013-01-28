@@ -44,13 +44,13 @@
 \title{Constraints on the dark matter halo mass of Lyman-alpha emitting galaxies at $z$=3.1 from cosmic variance}
 
 \author{
-J. Mej\'ia \altaffilmark{2}, 
 J. E.\ Forero-Romero\altaffilmark{1}, 
+J. Mej\'ia \altaffilmark{2}, 
 }
 
-\altaffiltext{1}{XXX}
-\altaffiltext{2}{Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1 No. 18A-10, Edificio Ip, Bogot\'a, Colombia, \email{je.forero@uniandes.edu.co}}
 
+\altaffiltext{1}{Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1 No. 18A-10, Edificio Ip, Bogot\'a, Colombia, \email{je.forero@uniandes.edu.co}}
+\altaffiltext{2}{XXX}
 \date{\today}
 
 \begin{abstract}
@@ -79,18 +79,21 @@ This complexity makes the use of monte-carlo simulations for the radiative trans
 Throughout this Letter we assume a $\Lambda$CDM cosmology with the following values for the cosmological parameters, $\Omega_{m}=0.27$, $\Omega_{\Lambda}=0.73$ and $h=0.70$, corresponding to the matter density, vacuum density and the Hubble constant in units of 100 km s$^{-1}$ Mpc$^{-1}$.
 
 \section{Methodology}
-In this paper we constrain the typical mass of dark matter halos hosting LAES at $z=3.1$. Our model is based on the number density information obtained in the recent large scale survey presented by XXX where XXX LAEs are detected over 7 fields of $\sim 46 \times 35$Mpc$^{2}h^{-2}$ in area comoving in area corresponding to observed fields of $XXX$ deg$^{2}$. 
+In this Letter we constrain the typical mass of dark matter halos hosting LAES at $z=3.1$. Our model is based on the number density information obtained in the recent large scale survey presented by XXX where XXX LAEs are detected over 7 fields of $\sim 46 \times 35$Mpc$^{2}h^{-2}$ in area comoving in area corresponding to observed fields of $XXX$ deg$^{2}$. 
 
-The diverse physical and astrophysical uncertainties in obtaining statistical prediction for the Lyman-alpha line are the largest impediment to consruct an ab-iitio model for LAEs. In this Letter we want to by-pass this approach by constructing models with the sole objective of reproducing the cosmic variance in the number density of LAEs. Afterwards we will interpret the implications of this result for physical models for Lyman-alpha emitting galaxies.
+Both the spatial distribution and luminosities of the galaxies have, at least in a statistical sense, informatio to constrain theoretical model of LAEs. The most detailed theoretical models are also faced to diverse physical and astrophysical uncertainties in obtaining statistical prediction for the Lyman-alpha line. This uncertainties are largest impediment to consruct an ab-iitio model for LAEs. 
 
-The model is based on the predictions of a large volume high resolution N-body simulation describing the gravitational dynamics of dark matter. We do not have an strong bias towards the theoretical expectation of what the mass of the dark matter halo hosting the galaxy should be.  Instead, we fully explore the parameter space of our simplified model. The only cut we impose is that observed LAEs do not reside in dark matter halos with masses less than 10$^{10}$hMsun [citation]. 
+In this Letter we want to step back and reduce the complexity of our model, with the sole objective of reproducing the cosmic variance in the number density of LAEs. Afterwards we will interpret the implications of this result for physical models for Lyman-alpha emitting galaxies.
+
+Our model is based on the predictions of a large volume high resolution N-body simulation describing the gravitational dynamics of dark matter. We do not have an strong bias towards the theoretical expectation of what the mass of the dark matter halo hosting the galaxy should be.  Instead, we fully explore the parameter space of our simplified model. The only cut we impose is that observed LAEs do not reside in dark matter halos with masses less than 10$^{10}$hMsun [citation]. 
+
 
 In the following subsections we describe the most relevant features of the observational data, the N-body simulation we use, our model and its parameters together with the method to compare its predictions against observations.
 
 \subsection{The Observational Constraints}
 We take as a reference the recently published results of a panoramic survey of LAES at z=3.1 by Yamada et al. 2012. This survey was conducted with the Subaru 8.2m telescope and the Subaru Prime Focus Camera, which has a field of view covering $34\times 27$ arcmin, corresponding to a comoving scale of $46\times35$ Mpc $h^{-1}$ at $z=3.09$. The narrow band filter is centered at $4977$ \AA with a $77$\AA width, corresponding to the redshift range $z=3.062-3.125$ and $41$ Mpc $h^{-1}$ comoving scale for the detection of the Lyman-$\alpha$ line centered at $z=3.09$.
 
-In this paper we only use the results of Yamada et al due to the homogenous conditions  to define their samples. We do this for homogeinity in the observation and data reduction techniques. There are other surveys by XXX an XXX that cover similar regions, but they use different criteria on the equivalent width (EW) cuts to construct the LAE samples. Different cuts in the EW can change the number of LAEs to be included in the catalog. This cuts have an impact on the fainter LAEs which are more abundante than brighter ones. Different definitions of the EW cuts can yield number densities different by a factor of two [REF, I think Yamada has some numbers].
+In this paper we only use the results of Yamada et al to constraint our model. This choice is made because their surveys is the largest in area with a set of homogenous conditions that define the LAE sample. Other surveys by XXX an XXX that cover similar regions, but they use different criteria on the equivalent width (EW) cuts to construct the LAE samples. Different cuts in the EW can change the number of LAEs to be included in the catalog. This cuts have an impact on the fainter LAEs which are more abundante than brighter ones. Different definitions of the EW cuts can yield number densities different by a factor of two [REF, I think Yamada has some numbers].
 
 
 The survey covered four independent fields. The first is the SSA22 field of $1.38$ deg$^2$ with $1394$ detected LAEs, this field has been known to harbor a region with a large density excess of galaxies. The second observed region is composed by the fields Subaru/{\it XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a total of $0.58$ deg$^2$ and $386$ LAEs. The third and fourth fields are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and $196$ LAEs, and the fild arotund the Great Observatory Optical Deep Survey North (GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs. In Table 1 we summarize the values we use in throughout this paper for the each field, covered area, measured surface LAE number density and inferred number volume density.
@@ -98,20 +101,37 @@ The survey covered four independent fields. The first is the SSA22 field of $1.3
 
 
 \subsection{The Simulation and Halo Catalogs}
-We use the Bolshoi simulation data available from their public database accessible via SQL query interface. The simulation was performed in a cubic volume of 250 $h^{-1}$ Mpc on a side. It includes dark matter distribution is sampled using $2048^{3}$ particles, which translates into a particle mass of $m_{\rm p}=1.35\times 10^{8}$ $h^{-1}$ M$_{\odot}$. 
 
-The cosmological parameters are consistent with a WMAP5 and WMAP7 data with a matter density $\Omega_{\rm m} = 0.27$, cosmological constant $\Omega_{\Lambda}=0.73$, dimensionless Hubble constant $h=0.70$, slope of the power spectrum $n=0.95$ and normalization of the power spectrum $\sigma_{8}=0.82$
+The Bolshoi simulation was performed in a cubic volume of 250 $h^{-1}$ Mpc on a side. It includes dark matter distribution is sampled using $2048^{3}$ particles, which translates into a particle mass of $m_{\rm p}=1.35\times 10^{8}$ $h^{-1}$ M$_{\odot}$. 
 
-We have used halo catalogs constructed with a Friend-of-Friends (FOF) algorithm with a linking lenght of 0.17 times the interparticle distance. We have veryfied that the main results we present in this paper also hold if instead we use halo catalogs constructed from a the Bound Density Maxima (BDM) algorithm \citep{KlypinBDM} that are defined to have an density of 200 times the critical density.
+
+The cosmological parameters are consistent with a WMAP5 and WMAP7 data with a matter density $\Omega_{\rm m} = 0.27$, cosmological constant $\Omega_{\Lambda}=0.73$, dimensionless Hubble constant $h=0.70$, slope of the power spectrum $n=0.95$ and normalization of the power spectrum $\sigma_{8}=0.82$ [REF].
+
+We have used halo catalogs constructed with a Friend-of-Friends (FOF) algorithm with a linking lenght of 0.17 times the interparticle distance. We have veryfied that the main results we present in this paper also hold if instead we use halo catalogs constructed from a the Bound Density Maxima (BDM) algorithm \citep{KlypinBDM} that are defined to have an density of 200 times the critical density. The minimum halo mass in the models we construct in this Letter correspond to groups of $\sim 75$ particles.
 
 The catalogs we have used here are obtained from a publicly available Multidark database \footnote{{\tt http://www.multidark.org/MultiDark/}} \citep{2011arXiv1109.0003R}. 
 
 
-\subsection{Mock Catalogs: Populating Halos with LAEs}
+\subsection{Populating Halos with LAEs}
 \label{subsec:mocks}
-We start from the Friends-of-Friends (FOF) catalog at $z=3.1$. The catalog is split into disjoint sub-volumes with the same geometry probed by Suprime-CAM and the narrow band filter of $46\times 35\times 41$ $h^{-3}Mpc^{3}$ . There are in total $5\times 7 \times 6=210$ of such sub-volumes in a snapshot of the Bolshoi simulation. We take the $z$ direction to correspond to the redshift direction in the survey. This corresponds to a total area of $880$ arcmin$^{2}$ for each projected sub-volume.
 
-The model that creates a mock is based in a one-to-one correspondence of LAEs to DM halos: each halo can only host a single LAE. There are three physical parameters in the model: the halo mass range $M_{\rm min}< M_{\rm halo} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm occ}$ of such halos that effectively host a LAE. In what follows we will describe by the letter ${\mathcal M}$ a model spanning a set of mock catalogs calculated by fixed values of these three parameters.
+
+The model that populates halos with LAEs is based one-to-one correspondence: each halo can only host a single LAE. There are three physical parameters in the model: the halo mass range $M_{\rm min}< M_{\rm halo} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm occ}$ of such halos that effectively host a LAE. In what follows we will describe by the letter ${\mathcal M}$ a model spanning a set of mock catalogs calculated by fixed values of these three parameters.
+
+We highlight that we do not intent to guess the luminosity of each LAE. We only care about its existence. Physically speaking we are interested in constraining the halo mass above which a LAE can be observed under the conditions defined by Yamada et al. 
+
+\subsection{Making Mock Fields}
+
+
+We create LAEs mock fields from disjoing volumes in the simulation with the same geometry probed by Suprime-CAM and the narrow band filter of $46\times 35\times 41$ $h^{-3}Mpc^{3}$ . There are in total $5\times 7 \times 6=210$ of such sub-volumes in a snapshot of the Bolshoi simulation. We take the $z$ direction to correspond to the redshift direction in the survey. This corresponds to a total area of $880$ arcmin$^{2}$ for each mock field.
+
+
+Next we group the mock fields in three different ways to construct the LAEs number density distribution The first way we fully take into account the observational constraints and constructs $30$ different mock surveys, each one composed of $12$ mock fields, out of which $7$ correspond to contiguous sub-boxes in the simulation to mimick XXX, $3$ are also contiguous between them but not to the first $7$ fields to mimick XXX and finally $2$ non-contiguous fields that correspond to the XXX data.
+
+
+From this set of sub-volumes we create groups of we create two different kinds of mock surveys. The first one is constructed to match the observatinal geometry of the observational fields included in this 
+
+
 
 
 \subsection{Model Sampling and Selection}
