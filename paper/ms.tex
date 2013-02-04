@@ -63,7 +63,10 @@ J. Mej\'ia \altaffilmark{2},
 
 
 \section{Introduction}
-Lyman-$\alpha$ emitting galaxies (LAEs) have become in the last decade a central topic in studies of structure formation in the Universe. The reason is the diverse range of fields where they are helpful, LAEs can be used as probes of reionization, tracers of large scale structure, signposts for low metallicity stellar populations and markers of the the galaxy formation process through cosmic history.
+
+Lyman-$\alpha$ emitting galaxies (LAEs) have become in the last decade a 
+central topic in studies of structure formation in the Universe. The reason is the diverse range of fields where they are helpful, LAEs can be used as probes of reionization, tracers of large scale structure, signposts for low metallicity stellar populations and markers of the the galaxy formation process through cosmic history. 
+
 
 At the same time, theoretical and observational developments have contributed to the emergence of a paradigm to describe structure formation in a cosmological context. In this context it is considered that dominant matter content of the Universe is to be found in dark matter, whereby each galaxy is hosted by larger dark matter structure known as a halo.
 
@@ -112,7 +115,7 @@ We use halo catalogs constructed with a Friend-of-Friends (FOF) algorithm with a
 \subsection{Populating Halos with LAEs}
 \label{subsec:mocks}
 
-The model that populates halos with LAEs is based one-to-one correspondence: each halo can only host a single LAE. There are three physical parameters in the model: the halo mass range $M_{\rm min}< M_{\rm halo} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm occ}$ of such halos that effectively host a LAE. In what follows we will describe by the letter ${\mathcal M}$ a model defined by these three parameters $M_{\rm min}$, $M_{\rm max}$ y $f_{\rm occ}$.
+The model that populates halos with LAEs is based on a one-to-one correspondence: each halo can only host a single LAE. There are three physical parameters in the model: the halo mass range $M_{\rm min}< M_{\rm halo} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm occ}$ of such halos that effectively host a LAE. In what follows we will describe by the letter ${\mathcal M}$ a model defined by these three parameters $M_{\rm min}$, $M_{\rm max}$ y $f_{\rm occ}$.
 
 We stress that we do not intent to build a model for the luminosity of each LAE. Physically speaking we are primarely interested in constraining the halo mass above which there are detectable LAEs. under the conditions defined by Yamada et al. 
 
@@ -120,12 +123,12 @@ For each mode ${\mathcal M}$ we create mock field from disjoint volumes in the s
 
 Next we group these $210$ mock fields in three different ways to construct the LAEs number density distribution. The first way we follow the observational setup and constructs $15$ different mock surveys, each one composed of $12$ mock fields, out of which $7$ correspond to contiguous sub-boxes in the simulation to mimick the whole SSA22, $3$ are also contiguous between them but not to the first $7$ fields to mimick the SXDS fields and finally $2$ non-contiguous fields that correspond to the SDF and GOODS-North fields. This will produce $15$ different distributions for the number density for a given model ${\mathrm M}$. The second is similar to the first one. There aare $15$ different mock surveys with $12$ mock fields each, but this time each field corresponds to uncorrelated sub-boxes in the simulation. The third way in only has $1$ mock survey containing all the $210$ mock fields, in this setup there is only one predicted number density distribution for each model ${\mathrm M}$
 
-The advantage of these three ways of sampling is that it allows us to explore the effects of both cosmic variance and the correlation between fields. Comparing the results of the first and second method will help us to quantify the effect of field correlation, while compating the first and the third method will serve us to gauge the impace of cosmic variance.
+The advantage of these three sampling ways is that they allow us to explore the effects of both cosmic variance and the correlation between fields. Comparing the results of the first and second method will help us to quantify the effect of field correlation, while compating the first and the third method will serve us to gauge the impace of cosmic variance.
 
 
 \subsection{Model Sampling and Selection}
 
-We generate a series of models ${\mathcal M}$ with different input parameters$\{M_{\rm min}, M_{\rm max}, f_{\rm occ}\}$ as follows. $M_{\rm min}$ and $M_{\rm max}$ are allowed to take 30 different values evenly spaced by $0.1$ dex, $M_{\rm min}$ ranges from $\log_{10}M_{\rm min}=10.0$ up to $\log_{10}M_{\rm min}=12.9$, while $M_{\rm max}$ range  from $\log_{10}M_{\rm min}=10.1$ up to $\log_{10}M_{\rm min}=13.0$. The occupation fraction $f_{\rm occ}$ takes 100 different values from $0.01$ to $1.00$ regularly spaced by $0.01$. In total the number of different sets of input parameters to be explored is $30 \times 30\times 100 = 290000$.
+We generate a series of models ${\mathcal M}$ with different input parameters$\{M_{\rm min}, M_{\rm max}, f_{\rm occ}\}$ as follows. $M_{\rm min}$ and $M_{\rm max}$ are allowed to take 30 different values evenly spaced by $0.1$ dex, $M_{\rm min}$ ranges from $\log_{10}M_{\rm min}=10.0$ up to $\log_{10}M_{\rm min}=12.9$, while $M_{\rm max}$ range  from $\log_{10}M_{\rm min}=10.1$ up to $\log_{10}M_{\rm min}=13.0$. The occupation fraction $f_{\rm occ}$ takes 100 different values from $0.01$ to $1.00$ regularly spaced by $0.01$. In total the number of different sets of input parameters to be explored is $30 \times 30\times 100 = 9\times 10^{4}$.
 
 For each model ${\mathcal M}$ we compute the LAE surface density distributions for the three different ways of grouping the mock fields, as described in the previous section. For each sub-volume we project the positions of the LAE hosting halos along the $z$ direction and calculate its surface number density in units of sources per arcmin$^{2}$. For each number density distribution we perform a Kolmogorov-Smirnov againsg the $12$ surface density observational values. From this test we obtain the value $0<P<1$ to reject the null hypothesis, namely that the two data sets come from the same distribution. In this paper we use values of $P>0.1$ to consider that the simulated and observed number densities come from the same distribution.
 
@@ -147,18 +150,22 @@ The shadowed region in Figure \ref{fig:laes_dist} shows the surface density valu
 
 Conversely the regions where the halo surface density is higher than the observational constraints correspond to models ${\mathcal M}$ with a minimum mass below this threshold. Models with this minimum mass hava a chance for successfuly reproducing observations if the occupation fraction $f_{\rm occ}<1$ is tuned as to lower the halo number density down to the observed value. 
 
-
 \subsection{Selection of the preferred halo mass}
-
-Figure \label{figure:landscape} presents the regions in the parameter space $M_{\rm min}-M_{\rm max}$ where the KS test yields values of $P>0.1$. Each panel corresponds to the three different ways of grouping the mock fields. In the case of the methods {\tt{MatchObs}} and {\tt{RandomObs}} the color code indicates the fraction of these 15 mock surveys with with $P>0.1$. The third panel shows the result for the method {\tt{FullVolume}}, in this case the color code correspond to the value of $P$ for a given model.
 
 \begin{figure}
 \begin{center}
 %\includegraphics[width=1.00\linewidth,angle=0]{./plots/probabillity_contour06-10bar.png}
 \end{center} 
-\caption{ \label{figure:landscape} 
-}
+\caption{$M_{\rm min}$-$M_{\rm max}$ plane for all models with $P>0.1$\label{figure:landscape}.}
 \end{figure}
+
+Figure \label{figure:landscape} presents the regions in the parameter space $M_{\rm min}-M_{\rm max}$ where the KS test yields values of $P>0.1$. Each panel corresponds to the three different ways of grouping the mock fields. In the case of the methods {\tt{MatchObs}} and {\tt{RandomObs}} the color code indicates the fraction of these 15 mock surveys with with $P>0.1$. The third panel shows the result for the method {\tt{FullVolume}}, in this case the color code correspond to the value of $P$ for a given model.
+
+These results distinguish three mass regimes. In the first regime, at high mass values, we find that LAE models with minimum mass of $M_{\rm min}>XXX$ are not compatible with observations as expected from the analysis in the previous subsection. Below this mass down to $M_{\rm min}=XXX$ any minium and maximum mass models are compatible with LAEs observations. In a thirds mass regime, for low mass values $M_{\rm min}<$ only a limited range of models with $M_{\rm max}$ is able to reproduce observations.
+
+In these three different mass regimes the occupation monotonically decreases as a function of the minimum halo mass $M_{\rm min}$. In Figure XXX we show this treend in three panels following the same correspondence as Figure XXX. From these results we interpret that the different mass regimes that were identified correspond to best fit models with $f_{\rm occ}\sim 1$, $0<f_{\rm occ}<1$ and $f_{\rm occ}\sim 0$, respectively.
+
+There are some models where the KS test yield values of $P\sim 1$. To illustrate the kind of success represented by these models, we have selected these best ones in the case of the method {\tt{MatchObs}}. Figure XXX shows in the main panel the spatial distribution of the mock surveys, the smaller panel shows the corresponding surface density distribution and the observational constraint.
 
 
 
