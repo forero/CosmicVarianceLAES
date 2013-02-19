@@ -1,0 +1,216 @@
+#include<mass_min_max.h>
+
+int main(int argc, char *argv[])
+{
+  int a;
+  if(argc!=3)
+    {
+      fprintf(stdout,"./a.out catalogo_redshift observation_correlation_file \n"); 
+      //fprintf(stdout,"Chose model=0 if only m_min is fixed and  and model=1 if m_min and m_max are fixed");
+      exit(1);
+    }
+  fprintf(stdout,"ingrese 0 si z=5.7 ó 1 para otro redshift \n Si escoge 5.7 recuerde haber cambiado previamente en el archivo correlation.c  \n de escala lineal a escala logaritmica en theta \n");
+  
+  fscanf(stdin,"%d",&a);
+
+  printf("si aun no exite cree un directorio llamado \"correlation_files\" \n");
+  int p=0,q=0,r=0,i,j,N,s,T,k,h;
+  
+
+
+  int x_div,y_div,z_div,x_pos,y_pos,z_pos;
+  x_div=floor(BOXSIZE/SUB_BOX_SIZE_X);
+  y_div=floor(BOXSIZE/SUB_BOX_SIZE_Y);
+  z_div=floor(BOXSIZE/SUB_BOX_SIZE_Z);
+ 
+  
+  int catalog[N_STEPS*(N_STEPS+1)*x_div*y_div*z_div];
+  int cat;
+  double xmin,xmax,ymin,ymax,zmin,zmax;
+  double *x,*y,*z,*mass;
+  double correlation[THETA_PARTITIONS];
+  //double ns=( (HIGHEST_MASS-LOWEST_MASS)/(0.01) );
+  char filename[100];
+  /*El numero de modelos posibles con m_min y m_max fijos es: sum{i=0,i=N_STEPS}(N_STEPS-i)=N_STEPS(N_STEPS-1)/2 */
+  double mass_min[N_STEPS*(N_STEPS+1)*x_div*y_div*z_div/2],mass_max[N_STEPS*(N_STEPS+1)*x_div*y_div*z_div];
+  double duty_cycle[N_STEPS*(N_STEPS+1)*x_div*y_div*z_div],duty_cycle_mean[N_STEPS*(N_STEPS+1)],duty_cycle_dev[N_STEPS*(N_STEPS+1)];
+  double m_min,m_max,d_cycle;
+
+  double *x_cat,*y_cat,*z_cat;
+  //double x_cat[(int)N_LAES_EXPECTED],y_cat[(int)N_LAES_EXPECTED],z_cat[(int)N_LAES_EXPECTED];
+  double histogram_cat[THETA_PARTITIONS],histogram_rand[THETA_PARTITIONS],histogram_dr[THETA_PARTITIONS];
+  double std_rand[THETA_PARTITIONS];
+  double correlation_function[N_STEPS*(N_STEPS+1)*x_div*y_div*z_div*THETA_PARTITIONS];
+  FILE *file;
+
+  int N_LAES_EXPECTED;
+  N_LAES_EXPECTED=floor(N_LAES_OBS*SUB_BOX_SIZE_X*SUB_BOX_SIZE_Y*SUB_BOX_SIZE_Z/(SUB_BOX_SIZE_X_OBS*SUB_BOX_SIZE_Y_OBS*SUB_BOX_SIZE_Z_OBS));
+  int N_POINTS_RANDOM=N_LAES_EXPECTED;
+  printf("N_EXPECTED=%d \n",N_LAES_EXPECTED);
+  x_cat=malloc(N_LAES_EXPECTED*sizeof(double));
+  y_cat=malloc(N_LAES_EXPECTED*sizeof(double));
+  z_cat=malloc(N_LAES_EXPECTED*sizeof(double));
+  printf("hola RR hist inicio \n");
+  RR_histogram(histogram_rand,N_POINTS_RANDOM,std_rand);
+  printf("hola RR hist fin \n");
+  for(i=0;i<THETA_PARTITIONS;i++)
+    {
+      printf("hist[%d]=%lf std[%d]=%lf  \n",i,histogram_rand[i],i,std_rand[i]);
+    }
+ 
+  for(i=0;i<N_STEPS;i++)
+    {
+      for(j=1;j<N_STEPS+1-i;j++)
+	{
+	  duty_cycle_mean[i+N_STEPS*j]=0;
+	  duty_cycle_dev[i+N_STEPS*j]=0;     
+	}
+    }
+  h=0;
+  
+
+
+  for(x_pos=0; x_pos<x_div; x_pos++)
+    {
+      for(y_pos=0; y_pos<y_div; y_pos++)
+	{
+	  for(z_pos=0; z_pos<z_div; z_pos++)
+	    {
+	      
+	      xmin=SUB_BOX_SIZE_X*(x_pos);
+	      xmax=SUB_BOX_SIZE_X*(x_pos+1);
+	      ymin=SUB_BOX_SIZE_Y*(y_pos);
+	      ymax=SUB_BOX_SIZE_Y*(y_pos+1);
+	      zmin=SUB_BOX_SIZE_Z*(z_pos);
+	      zmax=SUB_BOX_SIZE_Z*(z_pos+1);
+	      
+	      sprintf(filename,"/home/jemejia/CosmicVarianceLAES/data/dark_matter/FOF/halos_bolshoi_%d-%d-%d.cvs",x_pos,y_pos,z_pos);
+	      //file=fopen(filename,"w");
+	      N=distance_mass_halos_counter(filename,xmin,xmax,ymin,ymax,zmin,zmax);
+	      h++;
+	      
+	      x=malloc(N*sizeof(double));
+	      y=malloc(N*sizeof(double));
+	      z=malloc(N*sizeof(double));
+	      mass=malloc(N*sizeof(double));
+	      s=x_pos+x_div*(y_pos+y_div*z_pos);
+	      x_pos=1;
+	      y_pos=1;
+	      z_pos=1;
+	      
+	      
+	      
+	      distance_mass_halos_selector(filename,N,xmin,  xmax,  ymin,  ymax,  zmin,  zmax,  mass,  x,  y,  z);
+	      printf("Subcatalogo %d \n",h); 
+	      for(i=0;i<N_STEPS;i++)
+		{
+		  m_min=LOWEST_MASS+MASS_STEP*i;
+		  for(j=1;j<N_STEPS+1-i;j++)
+		    {
+		      T=N;		  
+		      //sprintf(filename,"./correlation_files/correlation_%d_%d_%d.data",i,j,s);
+		      m_max=m_min+MASS_STEP*j;
+		      //printf("se inicia generador  catalogo \n");
+		      LAE_catalog_generator(1,(int)N_LAES_EXPECTED,mass,x,y,z,&m_min,(double)HALO_MASS_DEV,&N,&T,&m_max,&d_cycle,x_cat,y_cat,z_cat,&cat); 
+		      //printf("se finalliza generador  catalogo \n"); 
+		      catalog[i+N_STEPS*(s+x_div*y_div*z_div*j)]=cat;
+		      mass_min[i+N_STEPS*(s+x_div*y_div*z_div*j)]=m_min;
+		      mass_max[i+N_STEPS*(s+x_div*y_div*z_div*j)]=m_max;
+		      duty_cycle[i+N_STEPS*(s+x_div*y_div*z_div*j)]=d_cycle;
+		      //printf("se asignan m_min=%g max=%g duty=%g \n",m_min,m_max,d_cycle); 
+		      if(cat)
+			{
+			  DD_histogram((int)N_LAES_EXPECTED,x_cat,y_cat,z_cat,histogram_cat);
+			  //DR_histogram((int)N_LAES_EXPECTED,x_pos,y_pos,z_pos,(int)N_CATS_DR, x_cat, y_cat, z_cat,histogram_dr);
+			  //correlation_landy(histogram_cat,histogram_rand,histogram_dr,correlation);
+			  correlation_standard(histogram_cat,histogram_rand,correlation);
+			  //printf("se calcula correlacion \n");
+			 // fprintf(file,"%8.4lf %8.4lf %8.4lf \n",mass_min[i+N_STEPS*(s+x_div*y_div*z_div*j)],mass_max[i+N_STEPS*(s+x_div*y_div*z_div*j)],duty_cycle[i+N_STEPS*(s+x_div*y_div*z_div*j)]);
+			 
+			  for(k=0;k<THETA_PARTITIONS;k++)
+			    {
+			      correlation_function[i+N_STEPS*(s+(x_div*y_div*z_div)*(k+THETA_PARTITIONS*j))]=correlation[k];
+			      //        printf("correlation[%d]=%lf \n",k,correlation[k]);
+			    }
+			  //			  printf("se termina  bucle %d_%d \n",i,j);
+		 	}else{continue;}
+		    }
+		}
+	      fclose(file);
+	      
+	    }
+	}
+    }
+	      
+
+
+  correlation_statistic_m_min_max(correlation_function,argv[2],a,catalog);
+  correlation_statistic_models(correlation_function,catalog);
+
+
+
+  FILE *f1;
+  int w[N_STEPS*(N_STEPS+1)];
+  for(i=0;i<N_STEPS;i++)
+    {
+      for(j=1;j<N_STEPS+1-i;j++)
+	{
+	  w[i+N_STEPS*j]=0;
+	  
+	  
+	  for(p=0;p<x_div;p++)
+	    {
+	      for(y_pos=0;y_pos<y_div;y_pos++)
+		{
+		  for(z_pos=0;z_pos<z_div;z_pos++)
+		    {
+		      if(catalog[i+N_STEPS*(s+x_div*y_div*z_div*j)])
+			{
+			  w[i+N_STEPS*j]++;
+			  s=x_pos+x_div*(y_pos+y_div*z_pos);
+			  
+			  duty_cycle_mean[i+N_STEPS*j]=duty_cycle_mean[i+N_STEPS*j]+duty_cycle[i+N_STEPS*(s+x_div*y_div*z_div*j)];
+			  //	  printf("duty_cycle[%d_%d]=%lf  \n",i,j,duty_cycle[i+N_STEPS*(s+x_div*y_div*z_div*j)]); 
+			}
+		    }
+		}
+	    }
+	  
+	  duty_cycle_mean[i+N_STEPS*j]/=(w[i+N_STEPS*j]);
+	  // printf("duty_cycle_mean[%d_%d]=%lf  \n",i,j,duty_cycle_mean[i+N_STEPS*j]); 
+	}
+    }
+  FILE *f2;
+  sprintf(filename,"correlation_files/mass_min_max_max_duty_cycle_dev.data");
+  f2=fopen(filename,"w");
+  for(i=0;i<N_STEPS;i++)
+    {
+      for(j=1;j<N_STEPS+1-i;j++)
+	{
+	  for(x_pos=0;x_pos<x_div;x_pos++)
+	    {
+	      for(y_pos=0;y_pos<y_div;y_pos++)
+		{
+		  for(z_pos=0;z_pos<z_div;z_pos++)
+		    {	
+		      s=x_pos+x_div*(y_pos+y_div*z_pos);
+		      duty_cycle_dev[i+N_STEPS*j]+=( duty_cycle[i+N_STEPS*(s+x_div*y_div*z_div*j)]-duty_cycle_mean[i+N_STEPS*j] )*( duty_cycle[i+N_STEPS*(s+x_div*y_div*z_div*j)]-duty_cycle_mean[i+N_STEPS*j] );
+		      //		      printf("duty_cycle_mean[%d_%d]=%lf duty_cycle_dev=%lf \n",i,j,duty_cycle_mean[i+N_STEPS*j],duty_cycle_dev[i+N_STEPS*j]); 
+		    }
+		}
+	    }
+	  fprintf(f2,"%lf %lf  %lf %lf \n",LOWEST_MASS+MASS_STEP*i,LOWEST_MASS+MASS_STEP*(i+j),duty_cycle_mean[i+N_STEPS*j],sqrt(duty_cycle_dev[i+N_STEPS*j]/w[i+N_STEPS*j]));
+	}
+    }
+
+
+
+  free(x);
+  free(y);
+  free(z);
+  free(mass);
+  
+  
+  return 0;
+}
+

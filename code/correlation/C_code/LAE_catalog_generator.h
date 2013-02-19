@@ -1,0 +1,1 @@
+int LAE_catalog_generator(int model,int N_laes,double mass[],double x[],double y[],double z[],double *mass_min,double halo_m_dev,int *N,int *T,double *mass_max,double *duty_cycle,double x_cat[],double y_cat[],double z_cat[],int *catalog);
