@@ -183,7 +183,7 @@ The survey covered four independent fields. The first is the SSA22
 field of $1.38$ deg$^2$ with $1394$ detected LAEs, this field has been
 known to harbor a region with a large density excess of galaxies. The
 second observed region is composed by the fields Subaru/{\it
-  XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a
+  XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a 
 total of $0.58$ deg$^2$ and $386$ LAEs. The third and fourth fields
 are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and $196$ LAEs,
 and the fild arotund the Great Observatory Optical Deep Survey North
@@ -311,27 +311,27 @@ distribution.
 
 
 \subsection{Dark Matter Halo Number Density}
-... We comment first on the intergrated dark matter halo surface
-density as a function of mass for each one o the 210 sub-volumes in
-the Bolshoi simulation. This will allows us to better understand the
-expected trends for the LAEs preferred mass and the occupation
-fraction. Figure \ref{fig:laes_dist} show these distributions. 
+We present first the results for  the intergrated dark matter halo surface
+density as a function of halos mass for each one o the 210 sub-volumes in
+the Bolshoi simulation. This result allowsus to better understand the
+expected trends for the LAEs' preferred mass and the occupation
+fraction. Figure \ref{fig:laes_dist} show these results. The continous lines
+correspond to the subvolumes. The shadowed area indicates the surface
+density values for LAEs allowed by the observations. 
 
-The shadowed region in Figure \ref{fig:laes_dist} shows the surface
-density values allowed by the observations. This figure tells us by
-inspection which model parameters cannot reproduce the
-observations. The regions where the DM surface density values are
-below the observational constraint correspond to high masses. For a
-model ${\mathcal M}$ with a minimum mass in this high mass range, the
-observations present a surface density to high to be possible
-achieved.  
+From this Figure we can read which models cannot reproduce the
+observations. Regions in the plot where the halo surface density
+values are below the observational constraint correspond to high
+masses halo masses. For a LAE model ${\mathcal M}$ with a minimum mass
+$M_{\rm   min}$ located in that mass range, the surface density is too
+low compared with observations. 
 
-Conversely the regions where the halo surface density is higher than
-the observational constraints correspond to models ${\mathcal M}$ with
-a minimum mass below this threshold. Models with this minimum mass
-hava a chance for successfuly reproducing observations if the
-occupation fraction $f_{\rm occ}<1$ is tuned as to lower the halo
-number density down to the observed value.  
+Conversely, there are regions in the plot where the halo surface
+density can be higher than the observational constraints correspond to
+models ${\mathcal M}$ with a minimum mass below this threshold. Models
+with this minimum mass hava a chance for successfuly reproducing
+observations if the occupation fraction $f_{\rm occ}<1$ is tuned as to
+lower the halo number density down to the observed value.   
 
 \subsection{Selection of the preferred halo mass}
 
@@ -350,7 +350,7 @@ grouping the mock fields. In the case of the methods {\tt{Match}}
 and {\tt{Random}} the color code indicates the fraction of these 15
 mock surveys with with $P>0.1$. The third panel shows the result for
 the method {\tt{Full}}, in this case the color code correspond
-to the value of $P$ for a given model. 
+to the value of $P$ for a given model.  
 
 These results distinguish three mass regimes. In the first regime, at
 high mass values, we find that LAE models with minimum mass of $M_{\rm
@@ -378,11 +378,12 @@ modest seems to be consistent with observations. This shows that the
 cosmic variance is still present on the physical scales probed by
 observations. 
 
-... Figure presents the results for two mock fields for the same
-model, the two have extreme values for the KS test.
+To illustrate this point, in Figure \ref{fig:mocks} we present the
+results for two mock fields for the {\tt{Match}} method for a model
+with the same parameters, but two extreme values for the KS test. 
 
 
-Conversely here are different models where the KS test yield values of
+Conversely there are different models where the KS test yield values of
 $P\sim 1$. To illustrate the kind of success represented by these
 models, we have selected these best ones in the case of the method
 {\tt{MatchObs}}. Figure XXX shows in the main panel the spatial
@@ -428,9 +429,21 @@ observed ACF reported by Gawiser et al. XXX.
 
 
 \section{Conclusions}
-In this letter we have presented new method to estimate preferred
-mass for dark matter halos hosting Lyman Alpha Emitters at
-$z=3.1$. The method is based on making an estimate of the cosmic
+In this Letter we have constrained the preferred mass for dark matter
+halos hosting Lyman Alpha Emitters at a redshift $z=3.1$. We use a
+method that matches the cosmic variance in the surface
+density number of LAEs from differente observed fields. From this we
+are able to constrain the mass range of dark matter halos hosting LAEs
+to be in the range $<M_{\rm h}<$ and a corresponding occupation fraction
+that escales as $f_{\rm occ} = M_{\rm min}$ with the minium halo mass
+defining the halo mass range.
+
+In this letter, this estimate is based on a large Nbody simulation
+where we select a range a fraction of halos in a given mass range to
+host LAEs. We explicitly construct mock observations to derive
+statistics that can be compared against observations. 
+
+ The method is based on making an estimate of the cosmic
 variance from different observed fields. Based on a Nbody simulation,
 we select the range of halo masses, $M_{\rm min}<M_{\rm h}<M_{\rm
   max}$, and the fraction of these halos, $f_{\rm occ}$, that could
