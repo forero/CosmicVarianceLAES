@@ -1,10 +1,29 @@
-\documentclass{emulateapj}
-\submitted{{\it Submitted for publication in ApJ Letters}}
-\usepackage{multirow,color,wrapfig,ulem}
-\usepackage {graphicx}
-%\bibliographystyle{apj}
+\documentclass[usenatbib]{mn2e} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
 \usepackage{graphics}
-\usepackage[dvips]{epsfig}
+\usepackage{graphicx}
+\usepackage{epsfig}  
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\ba{\begin{eqnarray}}
+\def\ea{\end{eqnarray}}
+
+
+
+\newcommand{\apj}{ApJ}  
+\newcommand{\apjs}{ApJS}  
+\newcommand{\apjl}{ApJL}  
+\newcommand{\aj}{AJ}  
+\newcommand{\mnras}{MNRAS}  
+\newcommand{\mnrassub}{MNRAS accepted}  
+\newcommand{\aap}{A\&A}  
+\newcommand{\aaps}{A\&AS}  
+\newcommand{\araa}{ARA\&A}  
+\newcommand{\nat}{Nature}  
+\newcommand{\physrep}{PhR}
+\newcommand{\pasp}{PASP}    
+\newcommand{\pasj}{PASJ}    
 
 \newcommand{\kms}{\,km~s$^{-1}$}
 \def\squig{\sim\!\!}
@@ -36,22 +55,17 @@
      \raise 2.0pt\hbox{$\mathchar"13E$}}}
 \font\smcap=cmcsc10
 
-
-\shorttitle{LAE halo host mass at z=3.1}
-\shortauthors{Mej\'ia et al.}
-
 \begin{document}
-\title{Constraints on the dark matter halo mass of Lyman-alpha emitting galaxies at $z$=3.1 from cosmic variance}
 
-\author{
-J. E.\ Forero-Romero\altaffilmark{1}, 
-J. Mej\'ia \altaffilmark{2}, 
+\title[Dark Matter Halo Mass for LAEs  at $z=3.1$]{Constraints on the dark matter halo mass of Lyman-alpha emitting galaxies at $z$=3.1 from cosmic variance}
+\author[J.E. Forero-Romero and J. Mejia]{
+\parbox[t]{\textwidth}{\raggedright Jaime E. Forero-Romero$^{1}$ and Julian Mejia$^{2}$}
+\vspace*{6pt}\\
+$^{1}$\\
+$^{2}$
 }
 
-
-\altaffiltext{1}{Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1 No. 18A-10, Edificio Ip, Bogot\'a, Colombia, \email{je.forero@uniandes.edu.co}}
-\altaffiltext{2}{XXX}
-\date{\today}
+\maketitle
 
 \begin{abstract}
 -
@@ -298,7 +312,7 @@ distribution.
 
 \begin{figure}
 \begin{center}
-%\includegraphics[width=1.00\linewidth,angle=0]{./plots/cum_halos_tex.png}
+\includegraphics[width=1.00\linewidth,angle=0]{./plots/Fig1.pdf}
 \caption{ \label{figure:laes_dist} Cumulative mass function of dark
   matter haloes in the $210$ sub-volumes of $46\times 35\times 41$
   $h^{-3}Mpc^{3}$. The variation in the total number of dark matter
