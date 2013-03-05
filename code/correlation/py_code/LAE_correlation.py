@@ -3,7 +3,7 @@ import correlation_lib as corr
 
 D_z=6558.3
 
-def DD_histogram(X,Y,distance,th_min,th_max,theta_bins=10,cat_number=1):
+def DD_histogram(X,Y,distance,th_min,th_max,theta_bins):
 
     n_points=len(X)
     d_arr=[]
@@ -12,14 +12,15 @@ def DD_histogram(X,Y,distance,th_min,th_max,theta_bins=10,cat_number=1):
             d=(X[i] - X[j])*(X[i] - X[j]) + (Y[i] - Y[j])*(Y[i] - Y[j])
             d=np.sqrt(d)/distance
             d_arr=np.append(d_arr,d)
-    
-           
-    DD=np.histogram(d_arr,bins=theta_bins, range=(th_min,th_max))
+            
+
+    theta=d_arr/distance           
+    DD=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
     N=1.0*n_points*(1.0*n_points-1.0)/2.0
     DD=DD/N
     return DD
 
-def RR_histogram(X,Y,distance,cat_number=1000):
+def RR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=1000):
     
     n_points=len(X)
     Xmin=1.0*np.floor( np.amin(X) )
@@ -37,13 +38,14 @@ def RR_histogram(X,Y,distance,cat_number=1000):
                 d=(Xr[i + n_points*m ] - Xr[j + n_points*m ])*(Xr[i + n_points*m ] - Xr[j + n_points*m ]) + (Yr[i + n_points*m ] - Yr[j + n_points*m ])*(Yr[i + n_points*m ] - Yr[j + n_points*m ])
                 d=np.sqrt(d)/distance
                 d_arr=np.append(d_arr,d)
+    theta=d_arr/distance
     RR=np.histogram(d_arr,bins=theta_bins, range=(th_min,th_max))
     N=1.0*n_points*(1.0*n_points-1.0)/2.0
     RR=RR/(N*cat_number)            
     return RR
 
-def DR_histogram(X,Y,distance,cat_number=1000):
-        n_points=len(X)
+def DR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=1000):
+    n_points=len(X)
     Xmin=1.0*np.floor( np.amin(X) )
     Xmax=1.0*np.ceil( np.amin(X) )
     Ymin=1.0*np.floor( np.amin(Y) )
@@ -59,8 +61,9 @@ def DR_histogram(X,Y,distance,cat_number=1000):
                     d=( X[i] - Xr[j + n_points*m] )*( X[i] - Xr[j + n_points*m] ) + ( Y[i] - Yr[j + n_points*m] )*( Y[i] - Yr[j + n_points*m] )
                     d=np.sqrt(d)/distance
                     d_arr=np.append(d_arr,d)
-    DR=np.histogram(d_arr,bins=theta_bins, range=(th_min,th_max))
-    N=1.0*n_points*(1.0*n_points-1.0)/2.0
+    theta=d_arr/distance  
+    DR=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
+    N=1.0*n_points*(n_points)
     DR=DR/(N*cat_number)            
     return DR
 
@@ -143,7 +146,7 @@ def best_model_sel(prob_treshold,survey_type="match", pro_path=project_path):
     
 project_path = "/home/jemejia/CosmicVariance/"
 
-def best_model_correlation(best_model_array, obs_surveys=12, pro_path=project_path, distance):
+def best_model_correlation(best_model_array, distance=6558.3, obs_surveys=12, theta_min,theta_max,theta_bins, pro_path=project_path):
 
     
     
@@ -181,6 +184,8 @@ def best_model_correlation(best_model_array, obs_surveys=12, pro_path=project_pa
     m_max_to_measure=[]
     f_occ_to_measure=[]
     #choosing the subcatalogs of the best fields.
+    best_correlation=np.empty([len(ID_array),theta_bins])
+    std_correlation=np.empty([len(ID_array),theta_bins])
     for w in range( len(ID_arr) ):
         index=where( survey_ID == ID_arr[w] )
         
@@ -195,9 +200,14 @@ def best_model_correlation(best_model_array, obs_surveys=12, pro_path=project_pa
         j_s=j_fields[ID_ini:ID_end]
         k_s=k_fields[ID_ini:ID_end]
         
+        
+        
+        corr=np.zeros(len(i_s)*len(js)*len(k_s),theta_bins)
+        corr_laes=np.zeros(theta_bins)
         for i in i_s:
             for j in j_s:
                 for k in k_s:
+                    s=i + len(j_s)*( j + len(k_s)*k )
                     dmh_filename=dmh_path+"halos_bolshoi_"+str(i)+"-"+str(j)+"-"+str(k)+".csv"
                     halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
                     
@@ -214,7 +224,18 @@ def best_model_correlation(best_model_array, obs_surveys=12, pro_path=project_pa
                     lae_index=halo_cat_index[0:n_laes]
                     x_laes=x_halos[lae_index]
                     y_laes=y_halos[lae_index]
-                    z_laes=z_halos[lae_index]
                     
                     
-                    #DD_histogram(X,Y,distance, th_min, th_
+                    
+                    DD_histogram(x_laes,y_laes,distance,th_min,th_max,theta_bins)
+ 
+                    RR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=1000)
+
+                    DR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=1000)
+                    corr_laes[s,:]=landy_correlation(DD,RR,DR)
+                    
+        corr_laes=np.mean(corr_laes,axis=0)
+        std_corr=np.std(corr_laes,axis=0)
+        best_correlation[w,:]=corr_laes
+        std_correlation[w,:]=std_corr
+    return best_correlation,std_correlation
