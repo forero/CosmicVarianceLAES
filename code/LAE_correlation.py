@@ -270,20 +270,20 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
     for w in range( len(ID_arr) ):
         index=np.where( survey_ID == int(ID_arr[w]) )
         
-        print survey_ID[0], ID_arr[w], index
-        ID_ini=int(survey_ID[index[0]])
+        S_ID=survey_ID[index]
+        ID_ini=S_ID[0]
         ID_end=int(ID_ini+obs_surveys)
         m_min=best_models[w,0]
         m_max=best_models[w,1]
         f_occ=best_models[w,2]
-        
+        print m_min, m_max, f_occ
         i_s=i_field[ID_ini:ID_end]
         j_s=j_field[ID_ini:ID_end]
         k_s=k_field[ID_ini:ID_end]
         
         
         
-        corr=np.zeros(len(i_s)*len(js)*len(k_s),theta_bins)
+        corr=np.zeros( (len(i_s)*len(j_s)*len(k_s),theta_bins) )
         corr_laes=np.zeros(theta_bins)
         for i in i_s:
             for j in j_s:
@@ -292,17 +292,24 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
                     dmh_filename=dmh_path+"halos_bolshoi_"+str(i)+"-"+str(j)+"-"+str(k)+".csv"
                     halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
                     
-                    halos_mass=halos_prop[:,4]
+                    halo_mass=halos_prop[:,4]
+                    print halo_mass
                     x_halos=halos_prop[:,0]
                     y_halos=halos_prop[:,1]
                     z_halos=halos_prop[:,2]
 
-                    halo_index=np.where( m_min <= halos_mass <= m_max )
-                    halo_index=np.random.shuffle(halo_cat_index)
-
-                    n_halos=np.size(halo_index)
-                    n_laes=f_occ*n_halos
-                    lae_index=halo_cat_index[0:n_laes]
+                    halo_index=np.where( (halo_mass< m_max) & (halo_mass> m_min) )
+                    halo_mass_sel=halo_mass[halo_index]
+                    print halo_index
+                    a=np.random.shuffle(halo_index)
+                    print halo_index,a
+                    x_sel=x_halos[halo_index]
+                    y_sel=y_halos[halo_index]
+                    
+                    n_halos=np.size(halo_mass_sel)
+                    n_laes=int(f_occ*n_halos)
+                    #print halo_index, n_laes
+                    lae_index=halo_index[0:n_laes]
                     x_laes=x_halos[lae_index]
                     y_laes=y_halos[lae_index]
                     
