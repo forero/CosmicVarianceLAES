@@ -16,10 +16,8 @@ def generate_all_models():
     n_j = int(box_size/delta_y)
     n_k = int(box_size/delta_z)
     
-    user = "/home/jeforero/"
-    repo_path="Dropbox/CosmicVarianceLAES/"
-    dmh_path=user+repo_path+"data/dark_matter/FOF/"
-    laes_path=user+repo_path+"data/laes/FOF/"
+    dmh_path="../data/dark_matter/FOF/"
+    laes_path="../data/laes/FOF/"
 
     n_models = n_i * n_j * n_k
     n_bins = log_m.size
@@ -52,7 +50,10 @@ def generate_all_models():
                         value = sum(model_numbers[i,j,k,l:m])
                         out.write("%d %d %d %d %d\n"%(id0, i, j, k, value))
             out.close()
-generate_all_models()
+
+generate_data = True
+if generate_data:
+    generate_all_models()
 
 
 
