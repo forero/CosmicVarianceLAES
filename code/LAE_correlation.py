@@ -53,7 +53,7 @@ def RR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=3):
     theta=206265*d_arr 
     
     RR,bins=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
-    print RR
+    
     N=1.0*n_points*(1.0*n_points-1.0)/2.0
     N=N*cat_number
     RR=RR/N            
