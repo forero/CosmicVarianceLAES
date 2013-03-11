@@ -13,43 +13,54 @@ def DD_histogram(X,Y,distance,th_min,th_max,theta_bins):
     n_points=len(X)
     d_arr=[]
     for i in range(n_points):
-        for j in range(i,n_points):
+        for j in range(i+1,n_points):
             d=(X[i] - X[j])*(X[i] - X[j]) + (Y[i] - Y[j])*(Y[i] - Y[j])
             d=np.sqrt(d)/distance
             d_arr=np.append(d_arr,d)
             
-
-    theta=d_arr/distance           
-    DD=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
+            
+    theta=206265.0*d_arr         
+    
+    
+    DD,bins=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
+    
     N=1.0*n_points*(1.0*n_points-1.0)/2.0
     DD=DD/N
-    return DD
+    
+    return DD,bins
 
-def RR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=1000):
+def RR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=3):
     
     n_points=len(X)
     Xmin=1.0*np.floor( np.amin(X) )
-    Xmax=1.0*np.ceil( np.amin(X) )
+    Xmax=1.0*np.ceil( np.amax(X) )
     Ymin=1.0*np.floor( np.amin(Y) )
-    Ymax=1.0*np.ceil( np.amin(Y) )
+    Ymax=1.0*np.ceil( np.amax(Y) )
     
 
     Xr= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_points*cat_number)
     Yr=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_points*cat_number)
     d_arr=[]
+    
+    
     for m in range(cat_number):
         for i in range(n_points):
-            for j in range(i,n_points):
+            for j in range(i+1,n_points):
                 d=(Xr[i + n_points*m ] - Xr[j + n_points*m ])*(Xr[i + n_points*m ] - Xr[j + n_points*m ]) + (Yr[i + n_points*m ] - Yr[j + n_points*m ])*(Yr[i + n_points*m ] - Yr[j + n_points*m ])
                 d=np.sqrt(d)/distance
                 d_arr=np.append(d_arr,d)
-    theta=d_arr/distance
-    RR=np.histogram(d_arr,bins=theta_bins, range=(th_min,th_max))
+                
+    theta=206265*d_arr 
+    
+    RR,bins=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
+    
     N=1.0*n_points*(1.0*n_points-1.0)/2.0
-    RR=RR/(N*cat_number)            
-    return RR
+    N=N*cat_number
+    RR=RR/N            
+    
+    return RR,bins
 
-def DR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=1000):
+def DR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=3):
     n_points=len(X)
     Xmin=1.0*np.floor( np.amin(X) )
     Xmax=1.0*np.ceil( np.amin(X) )
@@ -61,24 +72,31 @@ def DR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=1000):
     Yr=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_points*cat_number)
     d_arr=[]
     for m in range(cat_number): 
-            for j in range(i,n_points):
-                for i in range(n_points):
-                    d=( X[i] - Xr[j + n_points*m] )*( X[i] - Xr[j + n_points*m] ) + ( Y[i] - Yr[j + n_points*m] )*( Y[i] - Yr[j + n_points*m] )
-                    d=np.sqrt(d)/distance
-                    d_arr=np.append(d_arr,d)
-    theta=d_arr/distance  
-    DR=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
+        for i in range(n_points):
+            for j in range(i+1,n_points):
+                d=( X[i] - Xr[j + n_points*m] )*( X[i] - Xr[j + n_points*m] ) + ( Y[i] - Yr[j + n_points*m] )*( Y[i] - Yr[j + n_points*m] )
+                d=np.sqrt(d)/distance
+                d_arr=np.append(d_arr,d)
+    theta=206265*d_arr 
+    
+    DR,bins=np.histogram(theta,bins=theta_bins, range=(th_min,th_max))
+    
     N=1.0*n_points*(n_points)
-    DR=DR/(N*cat_number)            
-    return DR
+    N=(N*cat_number)            
+    DR=DR/N
+    
+    return DR,bins
 
 
 def landy_correlation(DD,RR,DR):
-    return (DD - 2.0*DR + RR)/RR
-def peebles_correlation(DD,DR):    
-    return DD/DR - 1.0
+    CORR= (DD - 2.0*DR + RR)/RR
+    return CORR
+def peebles_correlation(DD,DR):
+    CORR=DD/DR - 1.0
+    return CORR
 def standard_correlation(DD,RR):
-    return DD/RR - 1.0
+    CORR=DD/RR - 1.0
+    return CORR 
 
 
 
@@ -288,46 +306,50 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         for i in i_s:
             for j in j_s:
                 for k in k_s:
-                    s=i + len(j_s)*( j + len(k_s)*k )
+                    s=k + len(k_s)*( j + len(j_s)*i )
                     dmh_filename=dmh_path+"halos_bolshoi_"+str(i)+"-"+str(j)+"-"+str(k)+".csv"
                     halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
                     
                     halo_mass=halos_prop[:,4]
-                    print halo_mass
+                    #print halo_mass
                     x_halos=halos_prop[:,0]
                     y_halos=halos_prop[:,1]
                     z_halos=halos_prop[:,2]
-
+                    numbers=np.arange(len(halo_mass))
                     halo_index=np.where( (halo_mass< m_max) & (halo_mass> m_min) )
                     halo_mass_sel=halo_mass[halo_index]
-                    print halo_index
-                    a=np.random.shuffle(halo_index)
-                    print halo_index,a
+                    halo_index=numbers[halo_index]
+                    
+                    np.random.shuffle(halo_index)
+                    
                     x_sel=x_halos[halo_index]
                     y_sel=y_halos[halo_index]
                     
                     n_halos=np.size(halo_mass_sel)
                     n_laes=int(f_occ*n_halos)
-                    #print halo_index, n_laes
+                    
                     lae_index=halo_index[0:n_laes]
                     x_laes=x_halos[lae_index]
                     y_laes=y_halos[lae_index]
                     
                     
                     
-                    DD_histogram(x_laes,y_laes,distance,th_min,th_max,theta_bins)
- 
-                    RR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=1000)
+                    DD,bins=DD_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins)
+                    #print"DD=", DD
+                    RR,bins=RR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=3)
+                    #print "RR=",RR
+                    DR,bins=DR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=3)
+                    #print "DR=",DR
+                    corr[s,:]=landy_correlation(DD,RR,DR)
+                    #print "CORR=",corr[s,:]
 
-                    DR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=1000)
-                    corr_laes[s,:]=landy_correlation(DD,RR,DR)
-                    
-        corr_laes=np.mean(corr_laes,axis=0)
-        std_corr=np.std(corr_laes,axis=0)
+        corr_laes=np.mean(corr,axis=0)
+        std_corr=np.std(corr,axis=0)
         best_correlation[w,:]=corr_laes
         std_correlation[w,:]=std_corr
         dtheta=(theta_min - theta_max)/theta_bins
         angles=np.linspace(theta_min + dtheta/2.0 ,theta_max - dtheta/2.0,theta_bins -1)  
+        print "corr=",corr_laes, "std=",std_corr
     return best_correlation,std_correlation, angles
 
 
