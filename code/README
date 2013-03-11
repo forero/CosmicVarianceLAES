@@ -1,0 +1,10 @@
+Step by step guide to reproduce the results in the paper
+
+1. Run python generate_mock_LAEs.py with generate_data =True.
+   This will generate all the values of the number of LAEs for given
+   set of M_min and M_max for an occupation fraction f_occ = 1.
+
+2. Run python mock_survey.py with generate_data = True.
+   This will generate mock surveys indexing the sub-boxes that will
+   be included.
+
