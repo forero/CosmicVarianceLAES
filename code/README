@@ -8,3 +8,6 @@ Step by step guide to reproduce the results in the paper
    This will generate mock surveys indexing the sub-boxes that will
    be included.
 
+3. Run python p_value_distributions with generate_data = True.
+   This will compute the p-value distributions for all the models in all
+   the mock surveys.
