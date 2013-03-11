@@ -68,7 +68,24 @@ $^{2}$
 \maketitle
 
 \begin{abstract}
--
+In this Letter we implement a new method to find the characteristic
+mass of dark matter halos hosting Lyman-Alpha Emitting (LAE)
+galaxies. The method is based on matching the statistics for the
+cosmic variance with the observations recently obtained by
+\cite{Yamada2012}. We build a model for LAEs on top of a large N-body
+cosmological simulation (Bolshoi). The basic principle is that a dark
+matter halo can host one LAE with a probability $f_{\rm occ}$ if its
+mass is found withing a certain range mass range delimited by two
+threshold values, $M_{\rm min}$ and $M_{\rm max}$. We generate
+hundreds of mock catalogs in a thourough exploration of the parameter
+space of this model. These catalogs are constructed in such a way as
+to reproduce the spatial correlation between the different observed
+fields. We find that the models that best match the
+observed cosmic variance statistics are those with halo masses in the
+range $M_{\rm min}=$ and $M_{\rm max}=$ with and occupation fraction
+that scales as $f_{\rm occ}=$ with the minimum mass. We find that the
+angular correlation function is in agreement with the observational
+constraints. 
 \end{abstract}
 
 \begin{keywords}
@@ -172,7 +189,7 @@ against observations.
 \subsection{The Observational Constraints}
 
 Our observational reference are the recently published results of a
-panoramic survey of LAES at z=3.1 by Yamada et al. 2012. This survey
+panoramic survey of LAES at z=3.1 by \cite{Yamada2012}. This survey
 was conducted with the Subaru 8.2m telescope and the Subaru Prime
 Focus Camera, which has a field of view covering $34\times 27$ arcmin,
 corresponding to a comoving scale of $46\times35$ Mpc $h^{-1}$ at
@@ -474,6 +491,12 @@ this spatial correlation while keeping the number of fields and the
 third one simply includes all the $210$ sub-boxes.
 
 
+
+\section*{Acknowledgments} 
+
+
+\bibliographystyle{mn2e}
+\bibliography{references} 
 
 \end{document}
 
