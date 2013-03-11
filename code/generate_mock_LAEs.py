@@ -51,7 +51,7 @@ def generate_all_models():
                         out.write("%d %d %d %d %d\n"%(id0, i, j, k, value))
             out.close()
 
-generate_data = True
+generate_data = False
 if generate_data:
     generate_all_models()
 

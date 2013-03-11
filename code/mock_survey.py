@@ -55,7 +55,7 @@ def dump_match(data_path, all_tiles, all_tiles_x, all_tiles_z):
                 field_ID = index_k + n_z*(index_j + (n_y * index_i))
             #print 'uncorr', ID_survey, field_ID, index_i, index_j, index_k
                 out.write("%d %d %d %d %d\n" % (ID_survey, field_ID, index_i, index_j, index_k))
-                ID_survey = ID_survey + 1        
+            ID_survey = ID_survey + 1        
     out.close()
     return 
         
@@ -177,7 +177,7 @@ all_tiles_z = np.arange(n_z)
 
 
 data_path="../data/mock_survey/"
-generate_data = True
+generate_data = False
 
 if generate_data:
     dump_random(data_path)
