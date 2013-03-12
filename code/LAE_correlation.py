@@ -29,20 +29,19 @@ def DD_histogram(X,Y,distance,th_min,th_max,theta_bins):
     
     return DD,bins
 
-def RR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=3):
+def RR_histogram(X,Y,Xr,Yr,distance,th_min,th_max,theta_bins,cat_number=3):
     
     n_points=len(X)
-    Xmin=1.0*np.floor( np.amin(X) )
-    Xmax=1.0*np.ceil( np.amax(X) )
-    Ymin=1.0*np.floor( np.amin(Y) )
-    Ymax=1.0*np.ceil( np.amax(Y) )
+    #Xmin=1.0*np.floor( np.amin(X) )
+    #Xmax=1.0*np.ceil( np.amax(X) )
+    #Ymin=1.0*np.floor( np.amin(Y) )
+    #Ymax=1.0*np.ceil( np.amax(Y) )
     
 
-    Xr= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_points*cat_number)
-    Yr=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_points*cat_number)
+    #Xr= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_points*cat_number)
+    #Yr=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_points*cat_number)
     d_arr=[]
-    
-    
+
     for m in range(cat_number):
         for i in range(n_points):
             for j in range(i+1,n_points):
@@ -60,20 +59,20 @@ def RR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=3):
     
     return RR,bins
 
-def DR_histogram(X,Y,distance,th_min,th_max,theta_bins,cat_number=3):
+def DR_histogram(X,Y,Xr,Yr,distance,th_min,th_max,theta_bins,cat_number=3):
     n_points=len(X)
-    Xmin=1.0*np.floor( np.amin(X) )
-    Xmax=1.0*np.ceil( np.amin(X) )
-    Ymin=1.0*np.floor( np.amin(Y) )
-    Ymax=1.0*np.ceil( np.amin(Y) )
+    #Xmin=1.0*np.floor( np.amin(X) )
+    #Xmax=1.0*np.ceil( np.amax(X) )
+    #Ymin=1.0*np.floor( np.amin(Y) )
+    #Ymax=1.0*np.ceil( np.amax(Y) )
     
 
-    Xr= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_points*cat_number)
-    Yr=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_points*cat_number)
+    #Xr= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_points*cat_number)
+    #Yr=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_points*cat_number)
     d_arr=[]
     for m in range(cat_number): 
         for i in range(n_points):
-            for j in range(i+1,n_points):
+            for j in range(n_points):
                 d=( X[i] - Xr[j + n_points*m] )*( X[i] - Xr[j + n_points*m] ) + ( Y[i] - Yr[j + n_points*m] )*( Y[i] - Yr[j + n_points*m] )
                 d=np.sqrt(d)/distance
                 d_arr=np.append(d_arr,d)
@@ -216,7 +215,7 @@ x_width ==> Transversal observational width of the surveys in Mpc (comoving)
 y_width ==> Transversal observational width of the surveys in Mpc (comoving)
 z_depth ==> redshift depth  of the survey in Mpc (comoving)
 box_length ==> Length of the DM simulation
-
+random_cat_number==> Number of random catalogs used to compute the correlation function (to improve scatter)
 
 pro_path==> Path with the KS test file and ID file
 
@@ -243,7 +242,7 @@ angles           -->  angels where the correlation function has been computed
 '''
 
 
-def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="match", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250, pro_path="/home/jemejia/CosmicVariance/"):
+def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="match", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=4, pro_path="/home/jemejia/CosmicVariance/"):
 
     
     print "computing correlation functions of the selected models"
@@ -302,6 +301,8 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         
         
         corr=np.zeros( (len(i_s),theta_bins) )
+        corr_peebles=np.zeros( (len(i_s),theta_bins) )
+        corr_standard=np.zeros( (len(i_s),theta_bins) )
         corr_laes=np.zeros(theta_bins)
         print "number of catalogs=",len(i_s)
         for i in range( np.size(i_s) ):
@@ -321,8 +322,8 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
                     
             np.random.shuffle(halo_index)
             
-            x_sel=x_halos[halo_index]
-            y_sel=y_halos[halo_index]
+            
+            
             
             n_halos=np.size(halo_mass_sel)
             n_laes=int(f_occ*n_halos)
@@ -330,25 +331,39 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
             lae_index=halo_index[0:n_laes]
             x_laes=x_halos[lae_index]
             y_laes=y_halos[lae_index]
-                    
-                    
+            
+            #random cats generation
+            
+            Xmin=x_width*i_s[i]
+            Xmax=Xmin + x_width
+            Ymin=y_width*j_s[i]
+            Ymax=Ymin + y_width
+                
+                
+            x_random= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_laes*random_cat_number)
+            y_random=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_laes*random_cat_number)
+                 
                     
             DD,bins=DD_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins)
             #print"DD=", DD
-            RR,bins=RR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=3)
+            RR,bins=RR_histogram(x_laes,y_laes,x_random,y_random,distance,theta_min,theta_max,theta_bins,cat_number=random_cat_number)
             #print "RR=",RR
-            DR,bins=DR_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins,cat_number=3)
+            DR,bins=DR_histogram(x_laes,y_laes,x_random,y_random,distance,theta_min,theta_max,theta_bins,cat_number=random_cat_number)
             #print "DR=",DR
             corr[i,:]=landy_correlation(DD,RR,DR)
-            #print "CORR=",corr[s,:]
-
+            print "CORR_landy=",corr[i,:]
+            
         corr_laes=np.mean(corr,axis=0)
         std_corr=np.std(corr,axis=0)
+        print "corr_landy=",corr_laes, "std_landy=",std_corr
+        
         best_correlation[w,:]=corr_laes
         std_correlation[w,:]=std_corr
         dtheta=(theta_min - theta_max)/theta_bins
         angles=np.linspace(theta_min + dtheta/2.0 ,theta_max - dtheta/2.0,theta_bins -1)  
-        print "corr=",corr_laes, "std=",std_corr
+        
+        
+        
     return best_correlation,std_correlation, angles
 
 
