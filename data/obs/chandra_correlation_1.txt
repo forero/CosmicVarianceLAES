@@ -1,3 +1,7 @@
+#Correlation function Gawiser et al 2007
+# Column 1: theta
+# Column 2: Correlation(theta) 
+# Column 3: std(correlation)
 80.00	0.2940	 0.09473
 180.0	0.07212	 0.05263
 280.0	0.01859  0.05263

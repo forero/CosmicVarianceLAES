@@ -1,7 +1,7 @@
-# Column 2: Area(arcmin^2)
-# Column 3: number of LAEs 
-# Column 4: LAEs Surface density (N/arcmin^2)
-# Coolumn 5: Integrated Distribution Function (Nfields with surface density larger than a given value)
+# Column 1: Area(arcmin^2)
+# Column 2: number of LAEs 
+# Column 3: LAEs Surface density (N/arcmin^2)
+# Coolumn 4: Integrated Distribution Function (Nfields with surface density larger than a given value)
 647.46 281	0.434	0.083
 683.70 166	0.243	0.583
 669.29 179	0.267	0.416
