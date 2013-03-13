@@ -43,8 +43,10 @@ def RR_histogram(X,Y,Xr,Yr,distance,th_min,th_max,theta_bins,cat_number=3):
     d_arr=[]
 
     for m in range(cat_number):
+        print "random cat=",m
         for i in range(n_points):
             for j in range(i+1,n_points):
+                
                 d=(Xr[i + n_points*m ] - Xr[j + n_points*m ])*(Xr[i + n_points*m ] - Xr[j + n_points*m ]) + (Yr[i + n_points*m ] - Yr[j + n_points*m ])*(Yr[i + n_points*m ] - Yr[j + n_points*m ])
                 d=np.sqrt(d)/distance
                 d_arr=np.append(d_arr,d)
@@ -142,7 +144,7 @@ where  ks_prob>=p_threshold
 
 
 
-def best_model_sel(prob_treshold,survey_type="match", pro_path="/home/jemejia/CosmicVarianceLAES/"):
+def best_model_sel(prob_treshold,survey_type="full", pro_path="/casiopea/jemejia/CosmicVarianceLAES/"):
    
     ID_file=pro_path + "data/mock_survey/" + "ID_" + survey_type + "_surveys.dat"
     p_values_file= pro_path + "data/mock_survey/" + "p_values_FOF_ID_" + survey_type + "_surveys.dat"
@@ -242,7 +244,7 @@ angles           -->  angels where the correlation function has been computed
 '''
 
 
-def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="match", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=1, pro_path="/home/jemejia/CosmicVariance/"):
+def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="full", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=40, pro_path="/casiopea/jemejia/CosmicVariance/"):
 
     
     print "computing correlation functions of the selected models"
@@ -306,7 +308,7 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         corr_laes=np.zeros(theta_bins)
         print "number of sub-catalogs=",len(i_s)
         for i in range( np.size(i_s) ):
-            print "subcat number:",i,"i_j_k=",i_s[i],j_s[i],k_s[i]
+            
             dmh_filename=dmh_path+"halos_bolshoi_"+str(i_s[i])+"-"+str(j_s[i])+"-"+str(k_s[i])+".csv"
             halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
             
@@ -326,30 +328,46 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
             
             
             n_halos=np.size(halo_mass_sel)
+            del halo_mass_sel
             n_laes=int(f_occ*n_halos)
             
             lae_index=halo_index[0:n_laes]
             x_laes=x_halos[lae_index]
             y_laes=y_halos[lae_index]
             
-            #random cats generation
+            del x_halos
+            del y_halos
+            del z_halos
+            del halo_mass
             
+            #random cat histogram generation
+                    
+            if(w==0):
+                if(i==0):
+                    print w,i
+                    print "computing RR (it takes much time but it is only computed once)"
+                    x_random= x_width*np.random.random_sample(n_laes*random_cat_number)
+                    y_random=y_width*np.random.random_sample(n_laes*random_cat_number)
+                    RR,bins=RR_histogram(x_laes,y_laes,x_random,y_random,distance,theta_min,theta_max,theta_bins,cat_number=random_cat_number)
+                    print RR
+                
+            print "subcat number ",i,"i j k=",i_s[i],j_s[i],k_s[i]
+
+            #random-survey histogram generation
             Xmin=x_width*i_s[i]
             Xmax=Xmin + x_width
             Ymin=y_width*j_s[i]
             Ymax=Ymin + y_width
                 
                 
-            x_random= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_laes*random_cat_number)
-            y_random=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_laes*random_cat_number)
-                 
-                    
+            x_random= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_laes)
+            y_random=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_laes)
+            
+            DR,bins=DR_histogram(x_laes,y_laes,x_random,y_random,distance,theta_min,theta_max,theta_bins,cat_number=1)
+            
+            #survey histogram generation
             DD,bins=DD_histogram(x_laes,y_laes,distance,theta_min,theta_max,theta_bins)
-            #print"DD=", DD
-            RR,bins=RR_histogram(x_laes,y_laes,x_random,y_random,distance,theta_min,theta_max,theta_bins,cat_number=random_cat_number)
-            #print "RR=",RR
-            DR,bins=DR_histogram(x_laes,y_laes,x_random,y_random,distance,theta_min,theta_max,theta_bins,cat_number=random_cat_number)
-            #print "DR=",DR
+            
             corr[i,:]=landy_correlation(DD,RR,DR)
             print "CORR_landy=",corr[i,:]
             
@@ -359,30 +377,39 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         
         best_correlation[w,:]=corr_laes
         std_correlation[w,:]=std_corr
-        dtheta=(theta_min - theta_max)/theta_bins
-        angles=np.linspace(theta_min + dtheta/2.0 ,theta_max - dtheta/2.0,theta_bins -1)  
+        dtheta=(theta_max - theta_min)/theta_bins
+        
+        correlation_data=np.empty(( np.size(corr_laes) , 3 ) )
+        
+        model_name = 'correlation_model_{0}_{1}_{2}.dat'.format(m_min, m_max, f_occ)
+        filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + model_name
+        angles = np.linspace( theta_min + dtheta/2.0 , theta_max - dtheta/2.0, theta_bins )
+        correlation_data[:,0]=angles
+        correlation_data[:,1]=best_correlation[w,:]
+        correlation_data[:,2]=std_correlation[w,:]
+        
+        np.savetxt(filename,correlation_data)
         
         
-        
-    return best_correlation,std_correlation, angles
+    return best_correlation,std_correlation,angles
 
 
-project_path = "/home/jemejia/CosmicVarianceLAES/"
-p_treshold=0.999
+project_path = "/casiopea/jemejia/CosmicVarianceLAES/"
+p_treshold=0.10
 theta_min=40
 theta_max=1320
 theta_bins=13
 
-best_models=best_model_sel(p_treshold, pro_path=project_path)
-best_correlation, std_correlation, angles=best_model_correlation(best_models, theta_min,theta_max,theta_bins,pro_path=project_path)
-correlation_data=np.empty(( np.size(angles) , 3 ) )
-for w in range(np.size(best_models[:,0])):
-    model_name = 'correlation_model_{0}_{1}_{2}.dat'.format(best_models[w,0], best_models[w,1], best_models[w,2])
-
-    filename=project_path + "data/mock_surveys/" + "correlation_best_models/" + model_name
-    correlation_data[:,0]=angles
-    correlation_data[:,1]=best_correlation[w,:]
-    correlation_data[:,2]=std_correlation[w,:]
-    
-    np.savetxt(filename,correlation_data)
+best_models=best_model_sel(p_treshold,pro_path=project_path)
+best_correlation, std_correlation,angles=best_model_correlation(best_models, theta_min,theta_max,theta_bins,pro_path=project_path)
+#correlation_data=np.empty(( np.size(angles) , 3 ) )
+#for w in range(np.size(best_models[:,0])):
+#    model_name = 'correlation_model_{0}_{1}_{2}.dat'.format(best_models[w,0], best_models[w,1], best_models[w,2])
+#
+#    filename=project_path + "data/mock_surveys/" + "correlation_best_models/" + model_name
+#    correlation_data[:,0]=angles
+#    correlation_data[:,1]=best_correlation[w,:]
+#    correlation_data[:,2]=std_correlation[w,:]
+#    
+#    np.savetxt(filename,correlation_data)
 
