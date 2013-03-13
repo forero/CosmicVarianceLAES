@@ -3,6 +3,15 @@
 
 import numpy as np
 
+#The z direction corresponds to the redshift direction
+n_x = 5
+n_y = 7 
+n_z = 6
+
+delta_x = 46.0
+delta_y = 35.0
+
+
 def make_rectangle(width, height):
     vertices = empty((5,2))
     vertices[0,0] = 0.0
@@ -25,7 +34,7 @@ def plot_tile(tiles_x, tiles_y, i_tile, d_x, d_y, color='red'):
 
 
 #finally dump all the IDs for the fields in the different surveys mimicking the observation
-def dump_match(data_path, all_tiles, all_tiles_x, all_tiles_z):
+def dump_match(data_path, all_tiles_x, all_tiles_y, all_tiles_z):
     outputfile = data_path+'ID_match_surveys.dat'
     print 'writing to', outputfile
     out = open(outputfile, "w")
@@ -39,7 +48,7 @@ def dump_match(data_path, all_tiles, all_tiles_x, all_tiles_z):
                 index_j = all_tiles_y[i_z, i_tile, i_field]
                 index_k = i_z
                 field_ID = index_k + n_z*(index_j + (n_y * index_i))
-            #print ID_survey, field_ID, index_i, index_j, index_k
+                # print ID_survey, field_ID, 'i,j,k',index_i, index_j, index_k, 'n', n_z, n_y
                 out.write("%d %d %d %d %d\n" % (ID_survey, field_ID, index_i, index_j, index_k))
             for i_field in range(3): #tthree correlated fields
                 index_i = (all_tiles_x[i_z, i_tile, i_field] + 1)%n_x
@@ -99,13 +108,6 @@ def dump_full(data_path):
     out.close()
     return 
 
-#The z direction corresponds to the redshift direction
-n_x = 5
-n_y = 7 
-n_z = 6
-
-delta_x = 46.0
-delta_y = 35.0
 
 basic_tiles_x = np.array([[0,1,0,1,0,1,0],[2,3,4,2,3,4,4],[1,0,1,0,1,0,1],[2,3,2,3,4,3,4],[2,2,3,4,2,3,4]])
 basic_tiles_y = np.array([[0,0,1,1,2,2,3],[0,0,0,1,1,1,2],[3,4,4,5,5,6,6],[2,2,3,3,3,4,4],[4,5,5,5,6,6,6]])
