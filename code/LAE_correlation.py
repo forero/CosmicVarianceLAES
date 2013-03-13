@@ -242,7 +242,7 @@ angles           -->  angels where the correlation function has been computed
 '''
 
 
-def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="match", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=4, pro_path="/home/jemejia/CosmicVariance/"):
+def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="match", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=1, pro_path="/home/jemejia/CosmicVariance/"):
 
     
     print "computing correlation functions of the selected models"
@@ -304,9 +304,9 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         corr_peebles=np.zeros( (len(i_s),theta_bins) )
         corr_standard=np.zeros( (len(i_s),theta_bins) )
         corr_laes=np.zeros(theta_bins)
-        print "number of catalogs=",len(i_s)
+        print "number of sub-catalogs=",len(i_s)
         for i in range( np.size(i_s) ):
-            print "subcat",i_s[i],j_s[i],k_s[i]
+            print "subcat number:",i,"i_j_k=",i_s[i],j_s[i],k_s[i]
             dmh_filename=dmh_path+"halos_bolshoi_"+str(i_s[i])+"-"+str(j_s[i])+"-"+str(k_s[i])+".csv"
             halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
             
