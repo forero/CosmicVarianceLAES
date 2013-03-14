@@ -12,12 +12,11 @@ def ks_test_survey(ID_survey_filename, lae_obs, model_data, filling_fraction=1.0
     int_j_model = np.int_(model_data[:,2])
     int_k_model = np.int_(model_data[:,3])
     n_halo_model = np.int_(model_data[:,4])
-    #field_ID_model = int_k_model + n_z * (int_j_model + (n_y * int_i_model))
   
     #load all data describing the fields that compose the different surveys 
     survey_data = np.loadtxt(ID_survey_filename)
     survey_ID_list = np.int_(survey_data[:,0])
-    #print survey_ID_list
+#    print survey_ID_list
     
     #count the total number of surveys included here
     index = np.where(survey_ID_list==survey_ID_list[0])
@@ -44,6 +43,7 @@ def ks_test_survey(ID_survey_filename, lae_obs, model_data, filling_fraction=1.0
             
         n_lae_theory = filling_fraction * field_nhalo_list/area
         distance,p_value[survey_ID]=st.ks_2samp(n_lae_theory, lae_obs)
+#        print n_lae_theory, lae_obs
     return p_value
 
 # <codecell>
@@ -93,7 +93,7 @@ a_exp = 1.0/(3.1 +1.0)
 mock_area = (a_exp * x_width/h)*(a_exp * y_width/h) / ((D_angular) * (D_angular))
 mock_area = mock_area * (180.0/np.pi) * (180.0/np.pi) * (60.0 * 60.0) #arcmin^2
 
-generate_data = False
+generate_data = True
 
 if generate_data:
 
@@ -103,10 +103,10 @@ if generate_data:
     n_lae_obs = obs_prop[:,2]
 
     survey_filename= "ID_match_surveys.dat"
-    get_p_values(full_lae_data_path, full_data_path, survey_filename, filling_fraction, log_min_mass, log_max_mass, mock_area=mock_area, halo_finder=halo_finder)
+#    get_p_values(full_lae_data_path, full_data_path, survey_filename, filling_fraction, log_min_mass, log_max_mass, mock_area=mock_area, halo_finder=halo_finder)
 
     survey_filename="ID_random_surveys.dat"
-    get_p_values(full_lae_data_path, full_data_path, survey_filename, filling_fraction, log_min_mass, log_max_mass, mock_area=mock_area, halo_finder=halo_finder)
+#    get_p_values(full_lae_data_path, full_data_path, survey_filename, filling_fraction, log_min_mass, log_max_mass, mock_area=mock_area, halo_finder=halo_finder)
 
     survey_filename="ID_full_surveys.dat"
-    get_p_values(full_lae_data_path, full_data_path, survey_filename, filling_fraction, log_min_mass, log_max_mass, halo_finder=halo_finder)
+    get_p_values(full_lae_data_path, full_data_path, survey_filename, filling_fraction, log_min_mass, log_max_mass, mock_area=mock_area, halo_finder=halo_finder)
