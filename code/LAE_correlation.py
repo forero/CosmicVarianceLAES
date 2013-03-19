@@ -1,4 +1,5 @@
 import numpy as np 
+import matplotlib.pyplot as P
 #import correlation_lib as corr
 
 D_z=6558.3
@@ -144,7 +145,7 @@ where  ks_prob>=p_threshold
 
 
 
-def best_model_sel(prob_treshold,survey_type="full", pro_path="/casiopea/jemejia/CosmicVarianceLAES/"):
+def best_model_sel(prob_treshold,survey_type="random", pro_path="/home/jemejia/CosmicVarianceLAES/"):
    
     ID_file=pro_path + "data/mock_survey/" + "ID_" + survey_type + "_surveys.dat"
     p_values_file= pro_path + "data/mock_survey/" + "p_values_FOF_ID_" + survey_type + "_surveys.dat"
@@ -244,7 +245,7 @@ angles           -->  angels where the correlation function has been computed
 '''
 
 
-def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="full", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=40, pro_path="/casiopea/jemejia/CosmicVariance/"):
+def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="random", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=40, pro_path="/home/jemejia/CosmicVariance/"):
 
     
     print "computing correlation functions of the selected models"
@@ -341,7 +342,8 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
             del halo_mass
             
             #random cat histogram generation
-                    
+            P.xlabel(r'$\theta$', fontsize=16)
+            P.ylabel(r"$\xi(\theta)$",fontsize=16)
             if(w==0):
                 if(i==0):
                     print w,i
@@ -381,8 +383,9 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         
         correlation_data=np.empty(( np.size(corr_laes) , 3 ) )
         
-        model_name = 'correlation_model_{0}_{1}_{2}.dat'.format(m_min, m_max, f_occ)
-        filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + model_name
+        model_name = 'model_{0}_{1}_{2}'.format(m_min, m_max, f_occ)
+        filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_correlation_" + model_name + ".dat"
+        
         angles = np.linspace( theta_min + dtheta/2.0 , theta_max - dtheta/2.0, theta_bins )
         correlation_data[:,0]=angles
         correlation_data[:,1]=best_correlation[w,:]
@@ -390,15 +393,20 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         
         np.savetxt(filename,correlation_data)
         
+        P.errorbar(correlation_data[:,0], correlation_data[:,1], correlation_data[:,2],label=model_name,elinewidth=2.0)
         
+       # P.plot(correlation_data[:,0],correlation_data[:,1],label=model_name, linewidth=1.5)
+    file_plot=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + "correlation_plots" + ".png"
+    P.savefig(file_plot)
+    P.figure()
     return best_correlation,std_correlation,angles
 
 
-project_path = "/casiopea/jemejia/CosmicVarianceLAES/"
-p_treshold=0.10
+project_path = "/home/jemejia/CosmicVarianceLAES/"
+p_treshold=0.999
 theta_min=40
-theta_max=1320
-theta_bins=13
+theta_max=1040
+theta_bins=10
 
 best_models=best_model_sel(p_treshold,pro_path=project_path)
 best_correlation, std_correlation,angles=best_model_correlation(best_models, theta_min,theta_max,theta_bins,pro_path=project_path)
