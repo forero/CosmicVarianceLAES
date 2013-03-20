@@ -10,7 +10,7 @@
 \def\ea{\end{eqnarray}}
 
 
-
+\newcommand{\documentname}{paper~}
 \newcommand{\apj}{ApJ}  
 \newcommand{\apjs}{ApJS}  
 \newcommand{\apjl}{ApJL}  
@@ -57,28 +57,29 @@
 
 \begin{document}
 
-\title[Dark Matter Halo Mass for LAEs  at $z=3.1$]{Constraints on the
-  dark matter halo mass of Lyman-alpha emitting galaxies at $z$=3.1
-  from cosmic variance} 
-\author[J.E. Forero-Romero and J. Mejia]{
+\title[Dark Matter Halo Mass for LAEs  at $z=3.1$]{Using cosmic
+  variance to constrain the
+  dark matter halo mass of Lyman-alpha emitting galaxies at $z$=3.1}
+\author[~J.~E. Forero-Romero and J. Mejia]{
 \parbox[t]{\textwidth}{\raggedright 
-  Julian Mejia$^{2}$ and
+  Julian Mej\'ia$^{2}$ and
 Jaime E. Forero-Romero$^{1}$}
 \vspace*{6pt}\\
 $^{1}$\\
-$^{2}$ Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1 No. 18A-10, Edificio Ip, Bogot\'a, Colombia
+$^{2}$ Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1
+No. 18A-10, Edificio Ip, Bogot\'a, Colombia 
 }
 
 \maketitle
 
 \begin{abstract}
-In this Letter we implement a new method to find the characteristic
-mass of dark matter halos hosting Lyman-Alpha Emitting (LAE)
-galaxies. The method is based on matching the statistics for the
-cosmic variance with the observations recently obtained by
-\cite{Yamada2012}. We build a model for LAEs on top of a large N-body
-cosmological simulation (Bolshoi). The basic principle is that a dark
-matter halo can host one LAE with a probability $f_{\rm occ}$ if its
+We use simulations and recent observations to find the characteristic
+mass of dark matter halos hosting Lyman-Alpha Emitting (LAE) galaxies
+at a redshift of $z=3.1$. The method is based on matching the
+statistics for the number density cosmic variance between different
+observed and mock fields. We build a model for LAEs on top of a large N-body
+cosmological simulation (Bolshoi) where the basic principle is that a dark
+matter halo can only host one LAE with a probability $f_{\rm occ}$ if its
 mass is found withing a certain range mass range delimited by two
 threshold values, $M_{\rm min}$ and $M_{\rm max}$. We generate
 hundreds of mock catalogs in a thourough exploration of the parameter
@@ -152,14 +153,14 @@ the theoretical expected value for the Lyman-$alpha$ escape fraction
 in high redshift. 
 
 
-Throughout this Letter we assume a $\Lambda$CDM cosmology with the
+Throughout this \documentname we assume a $\Lambda$CDM cosmology with the
 following values for the cosmological parameters, $\Omega_{m}=0.27$,
 $\Omega_{\Lambda}=0.73$ and $h=0.70$, corresponding to the matter
 density, vacuum density and the Hubble constant in units of 100 km
 s$^{-1}$ Mpc$^{-1}$. 
 
 \section{Methodology}
-In this Letter we constrain the typical mass of dark matter halos
+In this \documentname we constrain the typical mass of dark matter halos
 hosting LAES at $z=3.1$. Our model is based on the number density
 information obtained in the recent large scale survey presented by XXX
 where XXX LAEs are detected over 7 fields of $\sim 46 \times
@@ -173,7 +174,7 @@ diverse physical and astrophysical uncertainties in obtaining
 statistical prediction for the Lyman-alpha line. This uncertainties
 are largest impediment to consruct an ab-iitio model for LAEs.  
 
-In this Letter we want to step back and reduce the complexity of our
+In this \documentname we want to step back and reduce the complexity of our
 model, with the sole objective of reproducing the cosmic variance in
 the number density of LAEs. Afterwards we will interpret the
 implications of this result for physical models for Lyman-alpha
@@ -197,7 +198,7 @@ against observations.
 \subsection{The Observational Constraints}
 
 Our observational reference are the recently published results of a
-panoramic survey of LAES at z=3.1 by \cite{Yamada2012}. This survey
+panoramic survey of LAES at $z=3.1$ by \cite{Yamada2012}. This survey
 was conducted with the Subaru 8.2m telescope and the Subaru Prime
 Focus Camera, which has a field of view covering $34\times 27$ arcmin,
 corresponding to a comoving scale of $46\times35$ Mpc $h^{-1}$ at
@@ -251,7 +252,7 @@ distance. We have veryfied that the main results we present in this
 paper also hold if instead we use halo catalogs constructed from a the
 Bound Density Maxima (BDM) algorithm \citep{KlypinBDM} that are
 defined to have an density of 200 times the critical density. The
-minimum halo mass in the models we construct in this Letter correspond
+minimum halo mass in the models we construct in this \documentname correspond
 to groups of $\sim 75$ particles. The catalogs were obtained from the
 publicly available Multidark database \footnote{{\tt
     http://www.multidark.org/MultiDark/}} \citep{2011arXiv1109.0003R}.  
@@ -350,12 +351,12 @@ distribution.
 
 
 \subsection{Dark Matter Halo Number Density}
-In Figure \ref{fig:laes_dist} we present the results for  the intergrated dark matter halo surface
-density as a function of halos mass for each one of the 210 sub-volumes in
-the Bolshoi simulation. The continous lines correspond to the
-subvolumes. The shadowed area indicates the surface density values for
-LAEs allowed by the observations.  
-
+In Figure \ref{fig:laes_dist} we present the results for  the
+integrated dark matter halo surface density as a function of halos
+mass. Each line correspond to one of the 210 sub-volumes in the
+Bolshoi simulation. The shadowed area indicates the surface density
+values for LAEs allowed by the observations.  
+ 
 This result allows us to better understand the
 expected trends for the LAEs' preferred mass and the occupation
 fraction.  From this Figure we can read which models do not have a
@@ -376,19 +377,23 @@ the observed value.
 
 \subsection{Selection of the preferred halo mass}
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_match_P5.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_match_P99.pdf}\\
+\includegraphics[width=0.95\linewidth,angle=0]{./plots/Fig2_match_P5.pdf}\\
 \vspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_random_P5.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_full_P5.pdf}
+\includegraphics[width=0.95\linewidth,angle=0]{./plots/Fig2_random_P5.pdf}\\
+\vspace{5mm}
+\includegraphics[width=0.95\linewidth,angle=0]{./plots/Fig2_full_P5.pdf}
 \end{center} 
 \caption{$M_{\rm min}$-$M_{\rm max}$ plane for all models with
-  $P>0.05$\label{figure:landscape}.} 
-\end{figure*}
+  $P>0.05$ in the three different of grouping the mock fields. In the
+  case of the {\tt match} and {\tt random} methods the  color code
+  corresponds to the number of mock surveys that are found to
+  be compatible with observations. For the {\tt full} method the
+  colour code corresponds to the results of $100$ times the maximum $P$ value
+  resulting from the KS test. \label{figure:landscape}.}  
+\end{figure}
+
 
 \begin{figure*}
 \begin{center}
@@ -400,19 +405,23 @@ the observed value.
   $P>0.05$\label{figure:f_escape}.} 
 \end{figure*}
 
+
 Figure \label{figure:landscape} presents the regions in the parameter
-space $M_{\rm min}-M_{\rm max}$ where the KS test yields values of
-$P>0.1$. Each panel corresponds to the three different ways of
+space $M_{\rm min}$-$M_{\rm max}$ where the KS test yields values of
+$P>0.05$. We consider that for those models it is not possible to rule out the null
+hypothesis, namely that the number density in simulated data and the observations come
+from the same parent distribution. Each panel corresponds to the three different ways of
 grouping the mock fields. In the case of the methods {\tt{Match}}
 and {\tt{Random}} the color code indicates the fraction of these 15
 mock surveys with with $P>0.1$. The third panel shows the result for
 the method {\tt{Full}}, in this case the color code correspond
-to the value of $P$ for a given model.  
+to the value maximum value of $100\times P$ for a model with those
+mass ranges.
 
-These results distinguish three mass regimes. In the first regime, at
+These results clearly distinguish three mass regimes. In the first regime, at
 high mass values, we find that LAE models with minimum mass of $M_{\rm
-  min}>3\times 10^{11}$\hMsun are not compatible with observations as
-expected from the analysis in the previous subsection. For masses below $M_{\rm
+  min}>10^{11.5}$\hMsun are not compatible with observations. There is
+a second regime for masses below $M_{\rm
   min}=3\times 10^{10}$ any values for $M_{\rm min}$ and $M_{\rm max}$
 can be made compatible with observations, provided that
 $f_{\rm occ}$ is fine tuned to do it. In an intermediate mass regime,
@@ -451,6 +460,34 @@ corresponding surface density distribution and the observational
 constraint.  
 
 
+\subsection{Additional observational constraints on the occupation fraction}
+
+\cite{Hayes2010} constrained the value of $f_{\rm occ}$ at $z=2.2$ to
+be $f_{\rm occ}=0.10$. This estimation was based on blind surveys of
+the H$\alpha$ and Lyman alpha line with the European Southern
+Observatorio (ESO) Very Large Telescope (VLT). Using corrections by
+extinction to obtain an estimate for the intrinsic H$\alpha$
+luminosity, and using values for the theoretical expectation of the
+ratio Lyman$\alpha$/H$\alpha$ they derive an bulk escape fraction for
+the Lyman$\alpha$ radiation of $f_{\rm esc}=(5.3\pm 3.8)\%$ or $f_{\rm
+esc}=(10.7\pm 2.8)$ if a different dust correction is used. From this
+results they derive that almost $90\%$ of the star forming galaxies
+emit insufficient Lyman-alpha to be detected, effectively setting the
+occupation fraction to be $f_{\rm occ}=0.10$. Obervations are
+consistent with these numbers are
+consistent with being constant for every galaxy regardless of its
+luminosity. 
+
+For the cosmological parameters used in this \documentname the age of
+the universe between $z=3.1$ and $z=2.2$ has changed by $\sim 1$ Gyr,
+it is reasonable to assume that the physical conditions that determine
+the escape fraction $f_{\rm esc}$ and the occupation fraction $f_{\rm
+  occ}$ remain constant. This assumption allows us to further pick
+models that have an occupation fraction of $f_{\rm occ}=0.10$. Under
+this selection only $18$ models can be selected. Considering an
+occupation fraction $f_{\rm occ}=0.20$ another $39$ models can be
+considered. The minimum and maximum mass are found in the appendix in
+Table XX. 
 
 \subsection{Estimating the Galaxy Bias from the Halo Masses}
 Using the results from the previous sections it is possible to infre
@@ -488,7 +525,7 @@ observed ACF reported by Gawiser et al. XXX.
 
 
 \section{Conclusions}
-In this Letter we have constrained the preferred mass for dark matter
+In this \documentname we have constrained the preferred mass for dark matter
 halos hosting Lyman Alpha Emitters at a redshift $z=3.1$. We use a
 method that matches the cosmic variance in the surface
 density number of LAEs from differente observed fields. From this we
@@ -522,6 +559,71 @@ third one simply includes all the $210$ sub-boxes.
 
 \section*{Acknowledgments} 
 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ccc}\hline\hline
+10.1 & 10.2 & 0.1\\
+10.3 & 10.5 & 0.1\\
+10.4 & 10.7 & 0.1\\
+10.5 & 10.9 & 0.1\\
+10.6 & 11.2 & 0.1\\
+10.6 & 11.3 & 0.1\\
+10.6 & 11.4 & 0.1\\
+10.1 & 10.2 & 0.1\\
+10.3 & 10.5 & 0.1\\
+10.4 & 10.7 & 0.1\\
+10.5 & 10.9 & 0.1\\
+10.5 & 11.0 & 0.1\\
+10.6 & 11.2 & 0.1\\
+10.6 & 11.3 & 0.1\\
+10.6 & 11.4 & 0.1\\
+10.6 & 11.5 & 0.1\\
+10.6 & 11.6 & 0.1\\
+10.6 & 11.7 & 0.1\\\hline\hline
+
+10.4 & 10.5 & 0.2\\
+10.6 & 10.8 & 0.2\\
+10.7 & 11.0 & 0.2\\
+10.8 & 11.2 & 0.2\\
+10.8 & 11.3 & 0.2\\
+10.9 & 11.6 & 0.2\\
+10.9 & 11.7 & 0.2\\
+10.9 & 11.8 & 0.2\\
+10.9 & 11.9 & 0.2\\
+10.9 & 12.0 & 0.2\\
+10.9 & 12.1 & 0.2\\
+10.9 & 12.2 & 0.2\\
+10.9 & 12.3 & 0.2\\
+10.9 & 12.4 & 0.2\\
+10.9 & 12.5 & 0.2\\
+10.9 & 12.6 & 0.2\\
+10.9 & 12.7 & 0.2\\
+10.9 & 12.8 & 0.2\\
+10.9 & 12.9 & 0.2\\
+10.9 & 13.0 & 0.2\\
+10.6 & 10.8 & 0.2\\
+10.7 & 11.0 & 0.2\\
+10.8 & 11.2 & 0.2\\
+10.8 & 11.3 & 0.2\\
+10.8 & 11.4 & 0.2\\
+10.9 & 11.7 & 0.2\\
+10.9 & 11.8 & 0.2\\
+10.9 & 11.9 & 0.2\\
+10.9 & 12.0 & 0.2\\
+10.9 & 12.1 & 0.2\\
+10.9 & 12.2 & 0.2\\
+10.9 & 12.3 & 0.2\\
+10.9 & 12.4 & 0.2\\
+10.9 & 12.5 & 0.2\\
+10.9 & 12.6 & 0.2\\
+10.9 & 12.7 & 0.2\\
+10.9 & 12.8 & 0.2\\
+10.9 & 12.9 & 0.2\\
+10.9 & 13.0 & 0.2\\\hline\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 \bibliographystyle{mn2e}
 \bibliography{references} 
