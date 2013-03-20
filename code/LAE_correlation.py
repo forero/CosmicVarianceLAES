@@ -245,7 +245,7 @@ angles           -->  angels where the correlation function has been computed
 '''
 
 
-def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="random", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=40, pro_path="/home/jemejia/CosmicVariance/"):
+def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="random", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=16, pro_path="/home/jemejia/CosmicVariance/"):
 
     
     print "computing correlation functions of the selected models"
@@ -287,7 +287,9 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
     #choosing the subcatalogs of the best fields.
     best_correlation=np.empty([len(ID_arr),theta_bins])
     std_correlation=np.empty([len(ID_arr),theta_bins])
+    
     for w in range( len(ID_arr) ):
+    #for w in range( 3 ): 
         index=np.where( survey_ID == int(ID_arr[w]) )
         
         S_ID=survey_ID[index]
@@ -382,7 +384,7 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         dtheta=(theta_max - theta_min)/theta_bins
         
         correlation_data=np.empty(( np.size(corr_laes) , 3 ) )
-        
+        model='{0}_{1}_{2}'.format(m_min, m_max, f_occ)
         model_name = 'model_{0}_{1}_{2}'.format(m_min, m_max, f_occ)
         filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_correlation_" + model_name + ".dat"
         
@@ -393,10 +395,11 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         
         np.savetxt(filename,correlation_data)
         
-        P.errorbar(correlation_data[:,0], correlation_data[:,1], correlation_data[:,2],label=model_name,elinewidth=2.0)
+        P.errorbar(correlation_data[:,0]+1.5*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=2.0)
         
        # P.plot(correlation_data[:,0],correlation_data[:,1],label=model_name, linewidth=1.5)
     file_plot=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + "correlation_plots" + ".png"
+    P.legend(shadow=False)
     P.savefig(file_plot)
     P.figure()
     return best_correlation,std_correlation,angles
@@ -407,9 +410,10 @@ p_treshold=0.999
 theta_min=40
 theta_max=1040
 theta_bins=10
+s_type="match"
 
-best_models=best_model_sel(p_treshold,pro_path=project_path)
-best_correlation, std_correlation,angles=best_model_correlation(best_models, theta_min,theta_max,theta_bins,pro_path=project_path)
+best_models=best_model_sel(p_treshold, survey_type=s_type, pro_path=project_path)
+best_correlation, std_correlation,angles=best_model_correlation( best_models, theta_min, theta_max, theta_bins, survey_type=s_type, pro_path=project_path)
 #correlation_data=np.empty(( np.size(angles) , 3 ) )
 #for w in range(np.size(best_models[:,0])):
 #    model_name = 'correlation_model_{0}_{1}_{2}.dat'.format(best_models[w,0], best_models[w,1], best_models[w,2])
