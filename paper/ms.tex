@@ -284,7 +284,7 @@ each mock field. There is a total $5\times 7 \times 6=210$ of such
 sub-volumes in a snapshot of the Bolshoi simulation.  
 
 Next we group these $210$ mock fields in three different ways to
-construct the LAEs number density distribution. The first way we
+construct the LAEs number density distribution. The first way (match method) we
 follow the observational setup and constructs $15$ different mock
 surveys, each one composed of $12$ mock fields, out of which $7$
 correspond to contiguous sub-boxes in the simulation to mimick the
@@ -292,10 +292,10 @@ whole SSA22, $3$ are also contiguous between them but not to the first
 $7$ fields to mimick the SXDS fields and finally $2$ non-contiguous
 fields that correspond to the SDF and GOODS-North fields. This will
 produce $15$ different distributions for the number density for a
-given model ${\mathrm M}$. The second is similar to the first
+given model ${\mathrm M}$. The second (random method) is similar to the first
 one. There aare $15$ different mock surveys with $12$ mock fields
 each, but this time each field corresponds to uncorrelated sub-boxes
-in the simulation. The third way in only has $1$ mock survey
+in the simulation. The third (full method) way in only has $1$ mock survey
 containing all the $210$ mock fields, in this setup there is only one
 predicted number density distribution for each model ${\mathrm M}$ 
 
@@ -490,7 +490,7 @@ considered. The minimum and maximum mass are found in the appendix in
 Table XX. 
 
 \subsection{Estimating the Galaxy Bias from the Halo Masses}
-Using the results from the previous sections it is possible to infre
+Using the results from the previous sections it is possible to infer
 the bias of $z\sim 3$ LAEs. Considering a number of $N_{\rm fields}$
 the expected number density of galaxies around the region located at
 $x_{i}$ is $n_{i}=\bar{n}[1+ b\delta_{\rm DM}(x_{i})]$, where
@@ -502,7 +502,7 @@ We calculate the bias for each mock catalog in the best models using
 the corresponding dark matter overdensity in the simulation. This
 results in a distribution of bias values for each model. The results
 for this calculation are presented in Figure XX.  We compare this
-resul agains the following estimation $b^{2}\sim {\sigma_{N}^{2} -
+result against the following estimation $b^{2}\sim {\sigma_{N}^{2} -
   \bar{N}}/\bar{N}^{2}\sigma_{\rm DM}^{2}$, where $\bar{N}$ is the
 average number counts in the $N_{fields}$, $\sigma_{N}$ is their
 dispersion and $\sigma_{DM}$ is the matter variance over many survey
@@ -510,18 +510,40 @@ volumes.
 
 \subsection{Prediction for the angular correlation function}
 
-We calculate the angular correlation function (ACF) for the best
-models for a mock survey with a total surface area equal to the full
-survey by Yamada et al 2012. We compare these results with the
-observed ACF reported by Gawiser et al. XXX.  
+We calculate the mean angular correlation function (ACF) for the best
+models for a mock survey using the match and random methods with 
+two different surface areas: $1)$ the full survey (12 subfields) and
+$2)$  e SSA22 field (7 subfields) reported by Yamada et al 2012 
+(see section XX) . The results for these calculations  are shown 
+in figure \ref{figure:correlation_match} (match) and figure
+\ref{figure:correlation_random} (random).  The error bars in these figure
+represent the standard deviation of the ACF over the subfields.
 
-\begin{figure}
+
+We compare these results with the observed ACF in the SSA22 field reported by Hayashino et al. 2004 .  
+
+\begin{figure*}
 \begin{center}
-\includegraphics[width=1.00\linewidth,angle=0]{./plots/correlation_best_models_with_obs_comp.png} 
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_full_correlation_selected_models.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{./plot/match_large_correlation_selected_models.pdf}\\
 \end{center} 
-\caption{ \label{figure:landscape} 
-}
-\end{figure}
+\caption{ mean ACFs over the 7 subfields of the SSA22 field and their correponding standard deviation (error bars)
+some selected models in different mass ranges. \label{figure:correlation_match} }
+ 
+\end{figure*}
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_full_correlation_selected_models.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{./plot/random_large_correlation_selected_models.pdf}\\
+\end{center} 
+\caption{ mean ACFs over the 7 subfields of the SSA22 field and their correponding standard deviation (error bars)
+some selected models in different mass ranges. \label{figure:correlation_match} }
+ 
+\end{figure*}
+
 
 
 \section{Conclusions}
