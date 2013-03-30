@@ -510,37 +510,56 @@ volumes.
 
 \subsection{Prediction for the angular correlation function}
 
-We calculate the mean angular correlation function (ACF) for the best
+As a prediction, we calculate the mean angular correlation function (ACF) for some of the best
 models for a mock survey using the match and random methods with 
 two different surface areas: $1)$ the full survey (12 subfields) and
 $2)$  e SSA22 field (7 subfields) reported by Yamada et al 2012 
 (see section XX) . The results for these calculations  are shown 
 in figure \ref{figure:correlation_match} (match) and figure
-\ref{figure:correlation_random} (random).  The error bars in these figure
-represent the standard deviation of the ACF over the subfields.
+\ref{figure:correlation_random} (random).  The error bars in these figures
+represent the standard deviation of the ACF over the subfields. 
+We compare these results with the observed ACF in a field of the the SSA22 region
+reported by Hayashino et al in 2004.
+
+We can generally observe that the standard deviation of the computed ACF 
+in the subfields increase when  increasing $M_{min}$ following the same 
+trend as in figure \ref{figure:laes_dist}.Therefore, as the cosmic variance
+increase when increasing the halos mass the increment in the ACF standard 
+deviation when increasing $M_{min}$ is a direct consequence of cosmic variance.
+
+Given that the ACF reported by Hayashino et al en 2004 is taken over the densest 
+field oserved in the SSA22 region by  Yamada et el in 2012 it is expected that
+the predicted ACF in the SSA22 region should reproduce this observation. In the 
+left panel of figure \ref{figure:correlation_match} we can see the predicted ACFs 
+an their corresponding standard deviation over the seven fields that mock the SSA22 
+region. It can be seen that the model with $M_min=10.6$ seems to better reproduce the 
+Hayashino's ACF and that the corresponding field is in fact an overdense field in the
+SSA22 region covered by Yamada et al.
 
 
-We compare these results with the observed ACF in the SSA22 field reported by Hayashino et al. 2004 .  
+
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_full_correlation_selected_models.pdf}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_large_correlation_selected_models.pdf}
 \hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plot/match_large_correlation_selected_models.pdf}\\
-\end{center} 
-\caption{ mean ACFs over the 7 subfields of the SSA22 field and their correponding standard deviation (error bars)
-some selected models in different mass ranges. \label{figure:correlation_match} }
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_full_correlation_selected_models.pdf}
+\end{center} f
+\caption{ mean ACFs   and their correponding standard deviation (error bars)  of some selected models in different mass ranges
+over the 7 subfields of the SSA22 field (left) and the entire 12 field sample (rigth) using the
+match configuration. \label{figure:correlation_match} }
  
 \end{figure*}
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_full_correlation_selected_models.pdf}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_large_correlation_selected_models.pdf}
 \hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plot/random_large_correlation_selected_models.pdf}\\
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_full_correlation_selected_models.pdf}
 \end{center} 
-\caption{ mean ACFs over the 7 subfields of the SSA22 field and their correponding standard deviation (error bars)
-some selected models in different mass ranges. \label{figure:correlation_match} }
+\caption{ mean ACFs   and their correponding standard deviation (error bars)  of some selected models in different mass ranges
+over the 7 subfields of the SSA22 field (left) and the entire 12 field sample (rigth) using the
+random configuration. \label{figure:correlation_random} }
  
 \end{figure*}
 
