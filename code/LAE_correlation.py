@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import numpy as np 
 import matplotlib.pyplot as P
 #import correlation_lib as corr
@@ -13,7 +14,9 @@ def DD_histogram(X,Y,distance,th_min,th_max,theta_bins):
 
     n_points=len(X)
     d_arr=[]
+    print "number of LAEs=" + str(n_points)
     for i in range(n_points):
+        print "LAE_"+str(i)
         for j in range(i+1,n_points):
             d=(X[i] - X[j])*(X[i] - X[j]) + (Y[i] - Y[j])*(Y[i] - Y[j])
             d=np.sqrt(d)/distance
@@ -73,8 +76,10 @@ def DR_histogram(X,Y,Xr,Yr,distance,th_min,th_max,theta_bins,cat_number=3):
     #Xr= Xmin +  ( Xmax - Xmin )*np.random.random_sample(n_points*cat_number)
     #Yr=Ymin +   ( Ymax - Ymin )*np.random.random_sample(n_points*cat_number)
     d_arr=[]
+    print "number of LAEs=" + str(n_points)
     for m in range(cat_number): 
         for i in range(n_points):
+            print "LAE_"+str(i)
             for j in range(n_points):
                 d=( X[i] - Xr[j + n_points*m] )*( X[i] - Xr[j + n_points*m] ) + ( Y[i] - Yr[j + n_points*m] )*( Y[i] - Yr[j + n_points*m] )
                 d=np.sqrt(d)/distance
@@ -199,6 +204,7 @@ theta_max ==> maximal value of the separation of galaxies angle to compute the t
 theta_bins ==> number of bins to divide the interval (theta_min, theta_max)
 
 survey_type => Indicate the kind of mock survey
+
 to consider for the model.
 
   Description:
@@ -211,7 +217,10 @@ to consider for the model.
  
   full: All the mock-fields are taken into account for the computation
 
-
+field==> Where tu compute the correlation function:
+   Description
+   full: Computed in the 12 fields
+   large: Computed in the large field of 7 subfields (SSA22 analog field)
 distance ==> Comoving mean distance to the area of survey. 
 obs_surveys ==> Number of fields where the observational survey is computed
 x_width ==> Transversal observational width of the surveys in Mpc (comoving)
@@ -245,12 +254,12 @@ angles           -->  angels where the correlation function has been computed
 '''
 
 
-def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="random", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=16, pro_path="/home/jemejia/CosmicVariance/"):
+def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, survey_type="random",field="full", distance=6558.3, obs_surveys=12,x_width=46.0,y_width=35.0, z_depth=41.0 ,box_length=250,random_cat_number=16, pro_path="/home/jemejia/CosmicVariance/"):
 
     
     print "computing correlation functions of the selected models"
-    dmh_path=project_path+"data/dark_matter/FOF/"
-    laes_path=project_path+"data/laes/FOF/"
+    dmh_path=pro_path+"data/dark_matter/FOF/"
+    laes_path=pro_path+"data/laes/FOF/"
     n_i= int( box_length/x_width)
     n_j= int( box_length/y_width)
     n_k= int( box_length/z_depth)
@@ -273,7 +282,7 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
 
     moc_surveys=survey_ID[-1]
 
-    ID_arr=best_models[:,3]    
+    ID_arr=best_models_array[:,3]    
     index_eq_ID=np.where(ID_arr== 1)
 
     cat_number= index_eq_ID[0]-1
@@ -288,8 +297,8 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
     best_correlation=np.empty([len(ID_arr),theta_bins])
     std_correlation=np.empty([len(ID_arr),theta_bins])
     
-    for w in range( len(ID_arr) ):
-    #for w in range( 3 ): 
+    #for w in range( len(ID_arr) ):
+    for w in range( 7 ): 
         index=np.where( survey_ID == int(ID_arr[w]) )
         
         S_ID=survey_ID[index]
@@ -309,8 +318,16 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         corr_peebles=np.zeros( (len(i_s),theta_bins) )
         corr_standard=np.zeros( (len(i_s),theta_bins) )
         corr_laes=np.zeros(theta_bins)
-        print "number of sub-catalogs=",len(i_s)
-        for i in range( np.size(i_s) ):
+        
+        if(field=="large"):
+            i_range=7
+            print "large field"
+            
+        else:
+            i_range=np.size(i_s)
+            print "full field"
+        print "number of sub-catalogs=",i_range
+        for i in range( i_range ):
             
             dmh_filename=dmh_path+"halos_bolshoi_"+str(i_s[i])+"-"+str(j_s[i])+"-"+str(k_s[i])+".csv"
             halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
@@ -395,33 +412,32 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         
         np.savetxt(filename,correlation_data)
         
-        P.errorbar(correlation_data[:,0]+1.5*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=2.0)
+        P.errorbar(correlation_data[:,0]+2.0*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=2.0)
         
-       # P.plot(correlation_data[:,0],correlation_data[:,1],label=model_name, linewidth=1.5)
-    file_plot=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + "correlation_plots" + ".png"
+
+    file_plot=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + field  +"_"+ "correlation_plots" + ".png"
     P.legend(shadow=False)
+    obs_correlation_file=pro_path + "data/obs/hayashino_whole_SSA22_field.txt"
+    obs_correlation=np.loadtxt(obs_correlation_file,skiprows=4)
+    P.ylim(ymax=0.6)
+    P.xlim(xmax=1040)
+    
+    P.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
+    P.legend(shadow=False)
+    P.title(survey_type)
     P.savefig(file_plot)
     P.figure()
     return best_correlation,std_correlation,angles
 
 
-project_path = "/home/jemejia/CosmicVarianceLAES/"
-p_treshold=0.999
-theta_min=40
-theta_max=1040
-theta_bins=10
-s_type="match"
+#project_path = "/home/jemejia/CosmicVarianceLAES/"
+#p_treshold=0.999
+#theta_min=0
+#theta_max=1040
+#theta_bins=13
+#s_type="match"
+#corr_field= "large"
+#best_models=best_model_sel(p_treshold, survey_type=s_type, pro_path=project_path)
+#best_correlation, std_correlation,angles=best_model_correlation( best_models, theta_min, theta_max, theta_bins, survey_type=s_type,field=corr_field, pro_path=project_path)
 
-best_models=best_model_sel(p_treshold, survey_type=s_type, pro_path=project_path)
-best_correlation, std_correlation,angles=best_model_correlation( best_models, theta_min, theta_max, theta_bins, survey_type=s_type, pro_path=project_path)
-#correlation_data=np.empty(( np.size(angles) , 3 ) )
-#for w in range(np.size(best_models[:,0])):
-#    model_name = 'correlation_model_{0}_{1}_{2}.dat'.format(best_models[w,0], best_models[w,1], best_models[w,2])
-#
-#    filename=project_path + "data/mock_surveys/" + "correlation_best_models/" + model_name
-#    correlation_data[:,0]=angles
-#    correlation_data[:,1]=best_correlation[w,:]
-#    correlation_data[:,2]=std_correlation[w,:]
-#    
-#    np.savetxt(filename,correlation_data)
 
