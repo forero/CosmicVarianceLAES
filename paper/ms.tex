@@ -375,7 +375,7 @@ for successfuly reproducing observations if the occupation fraction
 $f_{\rm occ}<1$ is tuned as to lower the halo number density down to
 the observed value.    
 
-\subsection{Selection of the preferred halo mass}
+\subsection{Kolmogorov-Smirnov Tests}
 
 \begin{figure}
 \begin{center}
@@ -459,8 +459,51 @@ distribution of the mock surveys, the smaller panel shows the
 corresponding surface density distribution and the observational
 constraint.  
 
+\subsection{Constraints from the Angular Correlation Function}
 
-\subsection{Additional observational constraints on the occupation fraction}
+We calculate the mean angular correlation function (ACF) for all
+models with $P>0.05$ using the match and random methods. These
+correlation functions is calculated over the denseset subfield in all the
+mock surveys corresponding to the SSA22 region. These results are
+compared against the observations reported by Hayashino et al in 2004
+over the same region, which were also performed on the densest field. 
+
+Figure \ref{figure:correlation_match} (match) and Figure
+\ref{figure:correlation_random} (random) present such comparison.  The
+error bars in these figures represent the standard deviation of the
+ACF over all the sub-fields.  In general, we observe that the standard
+deviation of the computed ACF in the subfields increases with
+$M_{min}$ following the same trend as in Figure
+\ref{figure:laes_dist}, as a direct consequence of cosmic variance.  
+
+
+The comparison between the simulated and observed ACFs is also done using a
+$R^2$ statistic which includes the information on measurement uncertainties
+
+\begin{equation}
+R^{2} = \sum_{\theta_i} \frac{(\xi_{\rm obs}(\theta_i) - \xi_{\rm
+    sim}(\theta_i))^2}{\sigma_{\rm obs}^2(\theta_i) + \sigma_{\rm
+    sim}^2({\theta_i})}, 
+\end{equation}
+
+where the sum is done over all the angle values $\theta_i$ where the
+ACF has been computed. In Figure XX we plot the integrated
+distributions for this $R^{2}$ statistics 
+
+
+
+
+Given that the ACF reported by Hayashino et al en 2004 is taken over the densest 
+field oserved in the SSA22 region by  Yamada et el in 2012 it is expected that
+the predicted ACF in the SSA22 region should reproduce this observation. In the 
+left panel of figure \ref{figure:correlation_match} we can see the predicted ACFs 
+an their corresponding standard deviation over the seven fields that mock the SSA22 
+region. It can be seen that the model with $M_min=10.6$ seems to better reproduce the 
+Hayashino's ACF and that the corresponding field is in fact an overdense field in the
+SSA22 region covered by Yamada et al.
+
+
+\subsection{Observational constraints on the occupation fraction}
 
 \cite{Hayes2010} constrained the value of $f_{\rm occ}$ at $z=2.2$ to
 be $f_{\rm occ}=0.10$. This estimation was based on blind surveys of
@@ -491,31 +534,8 @@ Table XX.
 
 \subsection{Prediction for the angular correlation function}
 
-As a prediction, we calculate the mean angular correlation function (ACF) for some of the best
-models for a mock survey using the match and random methods with 
-two different surface areas: $1)$ the full survey (12 subfields) and
-$2)$  e SSA22 field (7 subfields) reported by Yamada et al 2012 
-(see section XX) . The results for these calculations  are shown 
-in figure \ref{figure:correlation_match} (match) and figure
-\ref{figure:correlation_random} (random).  The error bars in these figures
-represent the standard deviation of the ACF over the subfields. 
-We compare these results with the observed ACF in a field of the the SSA22 region
-reported by Hayashino et al in 2004.
+As a prediction, 
 
-We can generally observe that the standard deviation of the computed ACF 
-in the subfields increase when  increasing $M_{min}$ following the same 
-trend as in figure \ref{figure:laes_dist}.Therefore, as the cosmic variance
-increase when increasing the halos mass the increment in the ACF standard 
-deviation when increasing $M_{min}$ is a direct consequence of cosmic variance.
-
-Given that the ACF reported by Hayashino et al en 2004 is taken over the densest 
-field oserved in the SSA22 region by  Yamada et el in 2012 it is expected that
-the predicted ACF in the SSA22 region should reproduce this observation. In the 
-left panel of figure \ref{figure:correlation_match} we can see the predicted ACFs 
-an their corresponding standard deviation over the seven fields that mock the SSA22 
-region. It can be seen that the model with $M_min=10.6$ seems to better reproduce the 
-Hayashino's ACF and that the corresponding field is in fact an overdense field in the
-SSA22 region covered by Yamada et al.
 
 
 
