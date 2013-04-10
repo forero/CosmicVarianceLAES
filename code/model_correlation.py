@@ -191,7 +191,7 @@ for w in range( len(m_min_m) ):
         DR,bins=correlation.DR_histogram(x_laes,y_laes,x_drand,y_drand,distance,theta_min,theta_max,theta_bins,cat_number=1)
         print "DR computed"
         
-        corr[j,:]=correlation.peebles_correlation(DD,RR,DR)
+        corr[j,:]=correlation.peebles_correlation(DD,DR)
 
         max_density_index=np.argmax(n_laes)
         number_laes=n_laes[max_density_index]
@@ -206,7 +206,7 @@ for w in range( len(m_min_m) ):
         #RR,bins=correlation.RR_histogram(x_laes_max,y_laes_max,x_random_max,y_random_max,distance,theta_min,theta_max,theta_bins,cat_number=random_cat_number)    
         DR,bins=correlation.DR_histogram(x_laes_max,y_laes_max,x_drand_max,y_drand_max,distance,theta_min,theta_max,theta_bins,cat_number=1)
         DD,bins=correlation.DD_histogram(x_laes_max,y_laes_max,distance,theta_min,theta_max,theta_bins)
-        corr_max_density[j,:]=correlation.peebles_correlation(DD,RR,DR)
+        corr_max_density[j,:]=correlation.peebles_correlation(DD,DR)
 
 
         print "CORR_landy=",corr[j,:]
@@ -224,18 +224,30 @@ for w in range( len(m_min_m) ):
     correlation_data=np.empty(( np.size(corr_laes) , 3 ) )
     model='(Mmin,Mmax,focc)=({0},{1},{2})'.format(m_min, m_max, f_occ)
     model_name = 'model_{0}_{1}_{2}'.format(m_min, m_max, f_occ)
-    filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_correlation_" + model_name + ".dat"
+    filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_correlation_" + str(w) + ".dat"
         
     angles = np.linspace( theta_min + dtheta/2.0 , theta_max - dtheta/2.0, theta_bins )
+    
+
     correlation_data[:,0]=angles
     correlation_data[:,1]=best_correlation[w,:]
     correlation_data[:,2]=std_correlation[w,:]
-        
+    
     np.savetxt(filename,correlation_data)
+    
     fig=P.figure()
     ax_mean=fig.add_subplot(111)
-    ax_max=fig.add_subplot(111)
     ax_mean.errorbar(correlation_data[:,0]+3.0*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=1.5)
+
+    correlation_data[:,0]=angles
+    correlation_data[:,1]=best_corr_laes_max
+    correlation_data[:,2]=std_corr_max
+    
+    filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_maxcorrelation_" + str(w) + ".dat"
+    np.savetxt(filename,correlation_data)
+
+    
+    ax_max=fig.add_subplot(111)
     ax_max.errorbar(angles + 3.0*w , corr_laes_max , std_corr_max,label=model, elinewidth=1.5)
     
 
