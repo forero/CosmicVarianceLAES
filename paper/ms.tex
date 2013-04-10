@@ -76,10 +76,10 @@ No. 18A-10, Edificio Ip, Bogot\'a, Colombia
 We use simulations and recent observations to find the characteristic
 mass of dark matter halos hosting Lyman-Alpha Emitting (LAE) galaxies
 at a redshift of $z=3.1$. The method is based on matching the
-statistics for the number density cosmic variance between different
-observed and mock fields. We build a model for LAEs on top of a large N-body
-cosmological simulation (Bolshoi) where the basic principle is that a dark
-matter halo can only host one LAE with a probability $f_{\rm occ}$ if its
+statistics for the number density cosmic variance between observed and
+mock fields. We build a model for LAEs on top of a large N-body
+cosmological simulation (Bolshoi) where the basic principle is that a
+dark matter halo can only host one LAE with a probability $f_{\rm occ}$ if its
 mass is found withing a certain range mass range delimited by two
 threshold values, $M_{\rm min}$ and $M_{\rm max}$. We generate
 hundreds of mock catalogs in a thourough exploration of the parameter
@@ -459,6 +459,36 @@ distribution of the mock surveys, the smaller panel shows the
 corresponding surface density distribution and the observational
 constraint.  
 
+
+\subsection{Observational constraints on the occupation fraction}
+
+\cite{Hayes2010} constrained the value of $f_{\rm occ}$ at $z=2.2$ to
+be $f_{\rm occ}=0.10$. This estimation was based on blind surveys of
+the H$\alpha$ and Lyman alpha line with the European Southern
+Observatorio (ESO) Very Large Telescope (VLT). Using corrections by
+extinction to obtain an estimate for the intrinsic H$\alpha$
+luminosity, and using values for the theoretical expectation of the
+ratio Lyman$\alpha$/H$\alpha$ they derive an bulk escape fraction for
+the Lyman$\alpha$ radiation of $f_{\rm esc}=(5.3\pm 3.8)\%$ or $f_{\rm
+esc}=(10.7\pm 2.8)$ if a different dust correction is used. From this
+results they derive that almost $90\%$ of the star forming galaxies
+emit insufficient Lyman-alpha to be detected, effectively setting the
+occupation fraction to be $f_{\rm occ}=0.10$. Obervations are
+consistent with these numbers are
+consistent with being constant for every galaxy regardless of its
+luminosity. 
+
+For the cosmological parameters used in this \documentname the age of
+the universe between $z=3.1$ and $z=2.2$ has changed by $\sim 1$ Gyr,
+it is reasonable to assume that the physical conditions that determine
+the escape fraction $f_{\rm esc}$ and the occupation fraction $f_{\rm
+  occ}$ remain constant. This assumption allows us to further pick
+models that have an occupation fraction of $f_{\rm occ}=0.10$. Under
+this selection only $18$ models can be selected. Considering an
+occupation fraction $f_{\rm occ}=0.20$ another $39$ models can be
+considered. The minimum and maximum mass are found in the appendix in
+Table XX. 
+
 \subsection{Constraints from the Angular Correlation Function}
 
 We calculate the mean angular correlation function (ACF) for all
@@ -493,50 +523,35 @@ distributions for this $R^{2}$ statistics
 
 
 
-Given that the ACF reported by Hayashino et al en 2004 is taken over the densest 
-field oserved in the SSA22 region by  Yamada et el in 2012 it is expected that
-the predicted ACF in the SSA22 region should reproduce this observation. In the 
-left panel of figure \ref{figure:correlation_match} we can see the predicted ACFs 
-an their corresponding standard deviation over the seven fields that mock the SSA22 
-region. It can be seen that the model with $M_min=10.6$ seems to better reproduce the 
-Hayashino's ACF and that the corresponding field is in fact an overdense field in the
-SSA22 region covered by Yamada et al.
+Given that the ACF reported by Hayashino et al en 2004 is taken over
+the densest  field oserved in the SSA22 region by  Yamada et el in
+2012 it is expected that the predicted ACF in the SSA22 region should
+reproduce this observation. In the  left panel of figure
+\ref{figure:correlation_match} we can see the predicted ACFs  an their
+corresponding standard deviation over the seven fields that mock the
+SSA22  region. It can be seen that the model with $M_min=10.6$ seems
+to better reproduce the  Hayashino's ACF and that the corresponding
+field is in fact an overdense field in the SSA22 region covered by
+Yamada et al. 
 
+From these tests we conclude that the ACF on small fields does not
+provide additional constraints to further select models for halos
+hosting LAEs. The reason is that cosmic variance is large and the
+statistical uncertainties on the ACF render almost any model
+compatible with the observational constraints. 
 
-\subsection{Observational constraints on the occupation fraction}
-
-\cite{Hayes2010} constrained the value of $f_{\rm occ}$ at $z=2.2$ to
-be $f_{\rm occ}=0.10$. This estimation was based on blind surveys of
-the H$\alpha$ and Lyman alpha line with the European Southern
-Observatorio (ESO) Very Large Telescope (VLT). Using corrections by
-extinction to obtain an estimate for the intrinsic H$\alpha$
-luminosity, and using values for the theoretical expectation of the
-ratio Lyman$\alpha$/H$\alpha$ they derive an bulk escape fraction for
-the Lyman$\alpha$ radiation of $f_{\rm esc}=(5.3\pm 3.8)\%$ or $f_{\rm
-esc}=(10.7\pm 2.8)$ if a different dust correction is used. From this
-results they derive that almost $90\%$ of the star forming galaxies
-emit insufficient Lyman-alpha to be detected, effectively setting the
-occupation fraction to be $f_{\rm occ}=0.10$. Obervations are
-consistent with these numbers are
-consistent with being constant for every galaxy regardless of its
-luminosity. 
-
-For the cosmological parameters used in this \documentname the age of
-the universe between $z=3.1$ and $z=2.2$ has changed by $\sim 1$ Gyr,
-it is reasonable to assume that the physical conditions that determine
-the escape fraction $f_{\rm esc}$ and the occupation fraction $f_{\rm
-  occ}$ remain constant. This assumption allows us to further pick
-models that have an occupation fraction of $f_{\rm occ}=0.10$. Under
-this selection only $18$ models can be selected. Considering an
-occupation fraction $f_{\rm occ}=0.20$ another $39$ models can be
-considered. The minimum and maximum mass are found in the appendix in
-Table XX. 
 
 \subsection{Prediction for the angular correlation function}
 
-As a prediction, 
+We also present the ACF in the case of the full SSA22
+region which has been homogeneously observed by \citep{Yamada2012}. To
+this date the observational ACF has not been reported in the
+litereature, therefore our calculations can be considered as
+predictions. 
 
-
+In Figure X we present the results for the models. The full list of
+these correlation functions can be found in the the data repository
+for this paper in \verb"github". 
 
 
 
@@ -546,10 +561,12 @@ As a prediction,
 \hspace{5mm}
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/match_full_correlation_selected_models.pdf}
 \end{center} f
-\caption{ mean ACFs   and their correponding standard deviation (error bars)  of some selected models in different mass ranges
-over the 7 subfields of the SSA22 field (left) and the entire 12 field sample (rigth) using the
-match configuration. \label{figure:correlation_match} }
- 
+\caption{ mean ACFs   and their correponding standard deviation (error
+  bars)  of some selected models in different mass ranges over the 7
+  subfields  f the SSA22 field (left) and the entire 12 field sample
+  (rigth) using thematch
+  configuration. \label{figure:correlation_match} }  
+  
 \end{figure*}
 
 \begin{figure*}
@@ -567,35 +584,50 @@ random configuration. \label{figure:correlation_random} }
 
 
 \section{Conclusions}
-In this \documentname we have constrained the preferred mass for dark matter
+In this \documentname we constrain the preferred mass for dark matter
 halos hosting Lyman Alpha Emitters at a redshift $z=3.1$. We use a
 method that matches the cosmic variance in the surface
-density number of LAEs from differente observed fields. From this we
-are able to constrain the mass range of dark matter halos hosting LAEs
-to be in the range $<M_{\rm h}<$ and a corresponding occupation fraction
-that escales as $f_{\rm occ} = M_{\rm min}$ with the minium halo mass
-defining the halo mass range.
+density number of LAEs from differente observed fields to mock fields
+based on a simplified model with three basic parameters. The halo
+masses that define the halos where LAEs can be found, $M_{\rm
+  min}<M_{\rm h}<M_{\rm max}$, and the fraction of the halos in this
+range that are actully occupied, $f_{\rm occ}$. After a thorugh
+exploration of the paremeter space we are able to constrain the mass
+range of dark matter halos hosting LAEs to be in the range $<M_{\rm
+  h}<$ and a corresponding occupation fraction that escales as $f_{\rm
+  occ} = M_{\rm min}$. 
 
-In this letter, this estimate is based on a large Nbody simulation
-where we select a range a fraction of halos in a given mass range to
-host LAEs. We explicitly construct mock observations to derive
-statistics that can be compared against observations. 
 
- The method is based on making an estimate of the cosmic
-variance from different observed fields. Based on a Nbody simulation,
-we select the range of halo masses, $M_{\rm min}<M_{\rm h}<M_{\rm
-  max}$, and the fraction of these halos, $f_{\rm occ}$, that could
-host LAEs being compatible witht the cosmic variance constraints.
+In this letter, our estimates are based on a large volume, high
+resolution, dark matter only Nbody simulation. From the halo catalogs
+in the simulation a fraction of halos in a given mass range to
+host LAEs. We use this information to construct mock observations to
+derive the statistics that can be compared against observations. The
+spatial information in this catalogs is also kept, which allows us to
+compute angular correlation functions and include these results in our
+analysis. 
 
-We have used a large volume cosmological N-body simulation that allows
-us to extract $210$ sub-boxes each of which has a comparable
-volume to the field of view observed by Yamada et al. 2012. The
-comparison of the observed number density distribution against the
-results from our model is based on three different ways of
-constructing mock surveys. The first reproduces the spatial
-correlation between the $12$ observational fields, the second breaks
-this spatial correlation while keeping the number of fields and the
-third one simply includes all the $210$ sub-boxes.
+We simulation allows us to extract $210$ sub-boxes each of which has a
+comparable volume to the individual fields of view observed by
+\cite{Yamada2012}. The comparison of the observed number density
+distribution against the results from our model is based on three
+different ways of constructing mock surveys. The first reproduces the
+spatial correlation between the $12$ observational fields ({\texttt
+  match}), the second breaks this spatial correlation while keeping
+the number of fields ({\texttt random}) and the third one simply
+includes all the $210$ sub-boxes ({\texttt full}). We find that the
+methods {\texttt match} and {\texttt random} allow a larger set of
+models than the {{\texttt random}} method. We do not find a
+significant difference between the two first methods. 
+
+
+Including additional observational constraints on the occupation
+fraction allows us to reduce the range of allowed halo masses to be in
+a narrower range of $<M_{\rm h}<$. Including the information from the
+angular correlation function (ACF) does not allows us to impose
+further constraints. This is due to the scatter in the ACF due to the
+cosmic variance on the field observed by XXX
+
 
 
 
