@@ -1,2 +1,10 @@
 *~
 *.o
+*.png
+*.eps
+code/*.pdf
+paper/ms.aux
+paper/ms.bbl
+paper/ms.blg
+paper/ms.log
+
