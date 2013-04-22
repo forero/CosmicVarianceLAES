@@ -11,6 +11,7 @@
 
 
 \newcommand{\documentname}{paper~}
+\newcommand{\match}{{\tt match}~}
 \newcommand{\apj}{ApJ}  
 \newcommand{\apjs}{ApJS}  
 \newcommand{\apjl}{ApJL}  
@@ -73,14 +74,36 @@ No. 18A-10, Edificio Ip, Bogot\'a, Colombia
 \maketitle
 
 \begin{abstract}
-We use cosmological N-body simulations to find the characteristic
-mass of dark matter halos hosting Lyman-Alpha Emitting (LAE) galaxies at a redshift of $z=3.1$. The method is based on matching the statistics for the number density between mock and observed fields. The mock catalogs are constructed using a simple model where the basic principle is that a dark matter halo can only host one LAE with a probability $f_{\rm occ}$ if its
-mass is found withing a certain range mass range delimited by two
-threshold values, $M_{\rm min}$ and $M_{\rm max}$. We generate
-hundreds of mock catalogs in a thourough exploration of the parameter space of this model. These catalogs are constructed in such a way as o reproduce the observed areas and spatial correlations between the different observed fields. We find that the models that are consistent the observed cosmic variance statistics are those with halo masses in the range $M_{\rm
-  min}=$ and $M_{\rm max}=$ with and occupation fraction that scales as $f_{\rm occ}=$ with the minimum mass. We explore three additional constraints to narrow these range. First we select the models with the highest possible number of mocks consistent with observations. Second we use observational constraints on the occupation fraction. Third, we compute the angular correlation function in the mocks against observational values. The first two conditions narrow down the space parameter to $M_{\rm min}=$ and $M_{\rm max}$, $f_{\rm occ}$. Although we find that the angular correlation function is in agreement with the observational constraints mostly due to the cosmic variance in the small angular fields where this statistics has been computed so far, this statistics does not allows us to put tighter constraints on the model parameters. We also present predictions for future measurements of the correlation function on larger continous fields. We make available the mock data for the best
-models in a public repository.  
-Implications for galaxy formation models?
+We use cosmological N-body simulations to find the characteristic mass
+of dark matter halos hosting Lyman-Alpha Emitting (LAE) galaxies at a
+redshift of $z=3.1$. The method is based on matching the statistics
+for the number density between mock and observed fields. The mock
+catalogs are constructed using a simple model where the basic
+principle is that a dark matter halo can only host one LAE with a
+probability $f_{\rm occ}$ if its mass is found withing a certain range
+mass range delimited by two threshold values, $M_{\rm min}$ and $M_{\rm max}$. We generate
+hundreds of mock catalogs in a thourough exploration of the parameter
+space of this model. These catalogs are constructed in such a way as o
+reproduce the observed areas and spatial correlations between the
+different observed fields. We find that the models that are consistent
+the observed cosmic variance statistics are those with halo masses in
+the range $M_{\rm  min}=$ and $M_{\rm max}=$ with and occupation
+fraction that scales as $f_{\rm occ}=$ with the minimum mass. We
+explore three additional constraints to narrow these range. First we
+select the models with the highest possible number of mocks consistent
+with observations. Second we use observational constraints on the
+occupation fraction. Third, we compute the angular correlation
+function in the mocks against observational values. The first two
+conditions narrow down the space parameter to $M_{\rm min}=$ and
+$M_{\rm max}$, $f_{\rm occ}$. Although we find that the angular
+correlation function is in agreement with the observational
+constraints mostly due to the cosmic variance in the small angular
+fields where this statistics has been computed so far, this statistics
+does not allows us to put tighter constraints on the model
+parameters. We also present predictions for future measurements of the
+correlation function on larger continous fields. We make available the
+mock data for the best models in a public repository. Implications for
+galaxy formation models? 
 \end{abstract}
 
 \begin{keywords}
@@ -92,7 +115,7 @@ Implications for galaxy formation models?
 
 Lyman-$\alpha$ emitting galaxies (LAEs) have become in the last decade a 
 central topic in studies of structure formation in the Universe. The
-reason is the diverse range of fields where they are helpful, LAEs can
+reason is the diverse range of fields where they are helpful. LAEs can
 be used as probes of reionization, tracers of large scale structure,
 signposts for low metallicity stellar populations and markers of the
 the galaxy formation process through cosmic history.  
@@ -312,7 +335,7 @@ fields, as described in the previous section. For each sub-volume we
 project the positions of the LAE hosting halos along the $z$ direction
 and calculate its surface number density in units of sources per
 arcmin$^{2}$. For each number density distribution we perform a
-Kolmogorov-Smirnov againsg the $12$ surface density observational
+Kolmogorov-Smirnov against the $12$ surface density observational
 values. From this test we obtain the value $0<P<1$ to reject the null
 hypothesis, namely that the two data sets come from the same
 distribution. In this paper we use values of $P>0.1$ to consider that
@@ -339,19 +362,18 @@ distribution.
 \subsection{Dark Matter Halo Number Density}
 In Figure \ref{fig:laes_dist} we present the results for  the
 integrated dark matter halo surface density as a function of halos
-mass. Each line correspond to one of the 210 sub-volumes in the
+mass. Each line corresponds to one of the 210 sub-volumes in the
 Bolshoi simulation. The shadowed area indicates the surface density
 values for LAEs allowed by the observations.  
  
-This result allows us to better understand the
-expected trends for the LAEs' preferred mass and the occupation
-fraction.  From this Figure we can read which models do not have a
-chance reproduce the
+This result allows us to better understand the expected trends for the
+LAEs' preferred mass and the occupation fraction.  From this Figure we
+can read which models do not have achance reproduce the
 observations. Regions in the plot where the halo surface density
 values are below the observational constraint correspond to high
 masses halo masses. For a LAE model ${\mathcal M}$ with a minimum mass
-$M_{\rm   min}> 3 \times 10^{11}$\hMsun located in that mass range,
-the surface density is too low compared with observations. 
+$M_{\rm   min}> 3 \times 10^{11}$\hMsun located inthat mass range, the
+surface density is too low compared with observations.   
 
 Conversely, there are regions in the plot where the halo surface
 density is always higher than the observational constraints correspond
@@ -423,14 +445,14 @@ different mass regimes that were identified correspond to best fit
 models with $f_{\rm occ}\sim 1$, $0<f_{\rm occ}<1$ and $f_{\rm
   occ}\sim 0$, respectively. 
 
-
 The two {\tt match} and {\tt random} methods present the highest
 number of matching mock surveys in the medium mass regime. However, it
 is important to keep in mind that not all the mock surveys for a
 sucessful model ${\mathrm M}$ present a high value $P>0.1$, only a
-modest seems to be consistent with observations. This shows that the
+modest fraction seems to be consistent with observations. This shows that the
 cosmic variance is still present on the physical scales probed by
-observations. 
+observations. This will be considered in more detail in the discussion
+seccion. 
 
 To illustrate this point, in Figure \ref{fig:mocks} we present the
 results for two mock fields for the {\tt{Match}} method for a model
@@ -445,21 +467,32 @@ distribution of the mock surveys, the smaller panel shows the
 corresponding surface density distribution and the observational
 constraint.  
 
-In what follows we will focus our discussion on the mocks constructed with the {\tt{Match}} and {\tt{Random}} methods.
+In what follows we will focus our discussion on the mocks constructed
+with the {\tt{Match}} and {\tt{Random}} methods. 
 
-\section{Discussion}
+\subsection{Additional Constraints}
 
 The raw results of our experiments yield a prefered range for
-halo masses hosting LAES is in the range $10^{10}\hMsun<M_{\rm
-  min}<10^{11.5}\hMsun$, without any limitation in the  maximum mass, with an average occupation fraction as a function of the minimum mass with an approximate dependence of the kind $f_{occ}\approx 0.1 (M_{\rm min}/10^{10})^{XX}$. These results discard models that were nevertheless disfavored from the very beginning based on the results of the mass functions (see Figure 1.).
+halo masses hosting LAES bounded by a minimum mass $10^{10}\hMsun<M_{\rm
+  min}<10^{11.5}\hMsun$ and without any limitation on the  maximum
+mass. In this regime the average occupation fraction varies with an
+approximate dependence of the kind $f_{occ}\approx 0.1 (M_{\rm
+  min}/10^{10})^{XX}$. These results discard models that were
+nevertheless disfavored from the very beginning based on the results
+of the mass functions (see Figure 1.).  
+ 
 
-In this discussion section we consider three different ways to impose tighter constraints by making use of the results we have derived so far and using additional statistical and astrophysical constraints. The first is based on
-models with high fractions of mock surveys that are consistent with
-observations. The second uses observational results on the occupation
-fraction. The third exploits the observational information in the Angular
-Correlation Function (ACF).
+In this section we consider three different ways to impose
+tighter constraints on this mass range by making use of the results we
+have derived so far together with additional statistical and
+astrophysical constraints. In the first constraint we select the
+models where all the mock surveys present KS-test values consistent
+with observations. The second constraints uses recent observational
+results on the average occupation fraction for LAEs at high-z. The
+third exploits the information in the Angular Correlation Function
+(ACF).  
 
-\subsection{Models with the highest success rates}
+\subsubsection{Models with the highest success rates}
 \begin{figure*}
 \begin{center}
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_match_P5.pdf}
@@ -472,45 +505,73 @@ Correlation Function (ACF).
 \end{figure*}
 
 
-For each model there are 15 different mock survey realizations of mock. In
-the loose constraints of the previous sections, each model that had at
-least one (1) realization of mock survey with $P>0.05$ was considered as consistent with observations. 
+For each model there are 15 different mock survey realizations. In the
+previous section we presented the models that had at least one (1)
+mock survey realization with $P>0.05$.
 
-In Figure XX we show the number of models that have at least $n$ realizations with $P>0.05$ for the {\texttt match} and {\texttt random} methods.  This shows that there are around $550$ to $600$ different models that have at leaset one mock survey realization consistent with observations. At the other extreme, there are $80$ to $100$ models with all the 15 realizations with $P>0.05$. Here we focuse on the latter models. The best models represent $\sim 15\%$ of the number of initially considered good models.
+In Figure \ref{figure:high_success_rate} we show the number of models
+that have at least $n$ realizations with $P>0.05$ for the {\texttt
+  match} and {\texttt random} methods.  This shows that there are
+around $550$ to $600$ different models that have at leaset one mock
+survey realization consistent with observations. At the other extreme,
+there are $80$ to $100$ models with all the 15 realizations with
+$P>0.05$. Here we focuse on the latter models. The best models
+represent $\sim 15\%$ of the number of initially considered good
+models. 
 
-In Figure XX we present the locii of these models in the parameter space $M_{\rm min}-M_{\rm max}$ and $M_{\rm min}-f_{\rm occ}$. 
+In Figure XX we present the locii of these models in the parameter
+space $M_{\rm min}-M_{\rm max}$ and $M_{\rm min}-f_{\rm occ}$.  
 
 
 
-\subsection{Observational constraints on the occupation fraction}
+\subsubsection{Observational constraints on the occupation fraction}
 
-We now impose a different restriction using the observational results by \cite{Hayes2010}. These authors constrained the value of $f_{\rm occ}$ at $z=2.2$ to be $f_{\rm occ}=0.10$. This estimation was based on blind surveys of
-the H$\alpha$ and Lyman alpha line with the European Southern
+We now impose a different restriction using the observational results
+by \cite{Hayes2010}. These authors constrained the value of $f_{\rm
+  occ}$ at $z=2.2$ to be $f_{\rm occ}=0.10$. This estimation was based
+on blind surveys of the H$\alpha$ and Lyman alpha line with the European Southern
 Observatorio (ESO) Very Large Telescope (VLT). Using corrections by
 extinction to obtain an estimate for the intrinsic H$\alpha$
 luminosity, and using values for the theoretical expectation of the
 ratio Lyman$\alpha$/H$\alpha$ they derive an bulk escape fraction for
 the Lyman$\alpha$ radiation of $f_{\rm esc}=(5.3\pm 3.8)\%$ or $f_{\rm
-esc}=(10.7\pm 2.8)$ if a different dust correction is used. The authors show that the luminosity function for LAEs at $z=2.2$ is consistent with the escape fraction being constant for every galaxy regardless of its luminosity. From this results they derive that almost $90\%$ of the star forming galaxies emit insufficient Lyman-alpha to be detected, effectively setting the occupation fraction to be $f_{\rm occ}=0.10$. 
+esc}=(10.7\pm 2.8)$ if a different dust correction is used. The
+authors show that the luminosity function for LAEs at $z=2.2$ is
+consistent with the escape fraction being constant for every galaxy
+regardless of its luminosity. From this results they derive that
+almost $90\%$ of the star forming galaxies emit insufficient
+Lyman-alpha to be detected, effectively setting the occupation
+fraction to be $f_{\rm occ}=0.10$.  
 
 For the cosmological parameters used in this \documentname the age of
-the universe between $z=3.1$ and $z=2.2$ has changed by $\sim 1$ Gyr. We assume that the physical conditions that determine
-the escape fraction $f_{\rm esc}$ and the occupation fraction $f_{\rm  occ}$ remain constant over that time scale. This assumption allows us to further pick models that have an occupation fraction of $f_{\rm occ}=0.10$. Under
-this selection only $18$ models can be selected. Considering an
-occupation fraction $f_{\rm occ}=0.20$ another $39$ models can be
-considered. This constraint help us to select $\sim 10\%$ of the original models that were considered as consistent with observations in the previous section.
+the universe between $z=3.1$ and $z=2.2$ has changed by $\sim 1$
+Gyr. We assume that the physical conditions that determine the escape
+fraction $f_{\rm esc}$ and the occupation fraction $f_{\rm  occ}$
+remain constant over that time scale. This assumption allows us to
+further pick models that have an occupation fraction of $f_{\rm
+  occ}=0.10$. Under this selection only $18$ models can
+beselected. Considering an occupation fraction $f_{\rm occ}=0.20$
+another $39$ models can beconsidered. This constraint help us to
+select $\sim 10\%$ of theoriginal models that were considered as
+consistent with observations in the previous section. 
 
-Figure XX shows the prefered models in the planes $M_{\rm min}-M_{\rm max}$ and $M_{\rm min}-f_{\rm occ}$ for the {\tt match} and {\tt random} methods. The list for the model parameters is found in the appendix in Table XX. 
+Figure XX shows the prefered models in the planes $M_{\rm min}-M_{\rm
+  max}$ and $M_{\rm min}-f_{\rm occ}$ for the {\tt match} and {\tt
+  random} methods. The list for the model parameters is found in the
+appendix in Table XX.  
 
-In terms of the constraints done in the previous sub-section, we find that the models in this region of parameter space have an average number of XX mock catalogs consistent with observations.
+In terms of the constraints done in the previous sub-section, we find
+that the models in this region of parameter space have an average
+number of XX mock catalogs consistent with observations. 
 
-\subsection{Constraints from the Angular Correlation Function}
+\subsubsection{Constraints from the Angular Correlation Function}
 
 We calculate the mean angular correlation function (ACF) for all
 models with $P>0.05$ using the match and random methods. These
 correlation functions is calculated over the denseset subfield in all the
 mock surveys corresponding to the SSA22 region. These results are
-compared against the observations reported by Hayashino et al in 2004 over the same region, which were also performed on the densest field. 
+compared against the observations reported by Hayashino et al in 2004
+over the same region, which were also performed on the densest field.  
 
 Figure \ref{figure:correlation_match} (match) and Figure
 \ref{figure:correlation_random} (random) present such comparison.  The
@@ -534,9 +595,6 @@ where the sum is done over all the angle values $\theta_i$ where the
 ACF has been computed. In Figure XX we plot the integrated
 distributions for this $R^{2}$ statistics 
 
-
-
-
 Given that the ACF reported by Hayashino et al en 2004 is taken over
 the densest  field oserved in the SSA22 region by  Yamada et el in
 2012 it is expected that the predicted ACF in the SSA22 region should
@@ -553,9 +611,6 @@ provide additional constraints to further select models for halos
 hosting LAEs. The reason is that cosmic variance is large and the
 statistical uncertainties on the ACF render almost any model
 compatible with the observational constraints. 
-
-
-\subsection{Prediction for the angular correlation function}
 
 We also present the ACF in the case of the full SSA22
 region which has been homogeneously observed by \citep{Yamada2012}. To
@@ -595,31 +650,63 @@ random configuration. \label{figure:correlation_random} }
  
 \end{figure*}
 
+\section{Discussion}
 
+\subsection{Implications for galaxy formation models}
+
+... Intrinsic emission and escape fraction.
+
+... Star formation rate efficiency at this redshift.
+
+... Mass dependence of the escape fraction.
+
+
+\subsection{Implications for large LAEs surveys}
+
+... The bias for the preferred halo mass.
+
+... The scale at which cosmic variance drops.
+
+... This can be observationally tested with HETDEX.
+
+\subsection{On the reproducibility of our results}
+
+... All the software to produce the results in this paper is publicly
+available. 
+
+... The raw catalogs can be obtained from the MultiDark database but
+can also be obtained in the repository of this paper on github.
 
 \section{Conclusions}
 In this \documentname we constrain the preferred mass for dark matter
 halos hosting Lyman Alpha Emitters at a redshift $z=3.1$. We use a
 method that matches the cosmic variance in the surface
-density number of LAEs from differente observed fields to mock fields
-based on a simplified model with three basic parameters. The halo
-masses that define the halos where LAEs can be found, $M_{\rm
-  min}<M_{\rm h}<M_{\rm max}$, and the fraction of the halos in this
-range that are actully occupied, $f_{\rm occ}$. After a thorugh
-exploration of the paremeter space we are able to constrain the mass
-range of dark matter halos hosting LAEs to be in the range $<M_{\rm
-  h}<$ and a corresponding occupation fraction that escales as $f_{\rm
-  occ} = M_{\rm min}$. 
+density number of LAEs between mock and real observations. The mock
+catalogs are based on a simplified model with three basic parameters: the halo
+mass range where LAEs can be found, $M_{\rm   min}<M_{\rm h}<M_{\rm
+  max}$, and the fraction of the halos in thisrange that are actully
+occupied, $f_{\rm occ}$. After a thorugh exploration of the parameter
+space we are able to constrain the mass range of dark matter halos
+hosting LAEs to be in the range $<M_{\rm   h}<$ and a corresponding
+occupation fraction that escales as $f_{\rm   occ} = M_{\rm min}$. 
 
+We use three additional constraints to reduce the allowed
+range of models. The first imposes a tighter criterion to consider a
+model succesful, namely that all the mock surveys for a given model
+must be consistent with observations. This restriction narrows down
+the allowed range of models to be. 
 
-In this letter, our estimates are based on a large volume, high
-resolution, dark matter only Nbody simulation. From the halo catalogs
-in the simulation a fraction of halos in a given mass range to
-host LAEs. We use this information to construct mock observations to
-derive the statistics that can be compared against observations. The
-spatial information in this catalogs is also kept, which allows us to
-compute angular correlation functions and include these results in our
-analysis. 
+The second constraint is based on the observational results that high
+redshift LAEs have a bulk Lyman alpha escape fraction of $XX$ which
+can be also interepreted as an average occupation fraction of $XX$.
+
+Including additional observational constraints on the occupation
+fraction allows us to reduce the range of allowed halo masses to be in
+a narrower range of $<M_{\rm h}<$. Including the information from the
+angular correlation function (ACF) does not allows us to impose
+further constraints. This is due to the scatter in the ACF due to the
+cosmic variance on the field observed by XXX
+
 
 We simulation allows us to extract $210$ sub-boxes each of which has a
 comparable volume to the individual fields of view observed by
@@ -635,12 +722,6 @@ models than the {{\texttt random}} method. We do not find a
 significant difference between the two first methods. 
 
 
-Including additional observational constraints on the occupation
-fraction allows us to reduce the range of allowed halo masses to be in
-a narrower range of $<M_{\rm h}<$. Including the information from the
-angular correlation function (ACF) does not allows us to impose
-further constraints. This is due to the scatter in the ACF due to the
-cosmic variance on the field observed by XXX
 
 
 
