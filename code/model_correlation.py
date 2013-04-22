@@ -58,9 +58,18 @@ model_prob_arr = ks_data[:,4]
 
 del ks_data
 best_correlation=np.empty([len(m_min_m),theta_bins])
+best_corr_laes_max=np.empty([len(m_min_m),theta_bins])
 std_correlation=np.empty([len(m_min_m),theta_bins])
+std_correlation_max=np.empty([len(m_min_m),theta_bins])
+n_models=len(m_min_m)
+#n_models=1 #to delete
 
-for w in range( len(m_min_m) ):
+fig1=P.figure()
+fig2=P.figure()
+ax_mean=fig1.add_subplot(111)
+ax_max=fig2.add_subplot(111)
+
+for w in range( n_models ):
 
     model_index=np.where( ( m_min_arr == m_min_m[w] ) & ( m_max_arr == m_max_m[w] ) & ( f_occ_arr == f_occ_m[w] )  )  
     m_min_s=m_min_arr[model_index] #_s reffers to sorted
@@ -79,6 +88,7 @@ for w in range( len(m_min_m) ):
     ID_index=np.where(survey_ID==ID_survey_s[-1])
     S_ID=survey_ID[ID_index]
     n_mocks=np.size(S_ID)
+    print "n_mocks=" + str(n_mocks)
     corr=np.zeros( (n_mocks,theta_bins) )
     
     #corr_peebles=np.zeros( (n_mocks,theta_bins) )
@@ -88,7 +98,7 @@ for w in range( len(m_min_m) ):
     
     corr_max_density=np.zeros( (n_mocks,theta_bins) )
     corr_laes_max=np.zeros(theta_bins)
-
+    #n_mocks=1 #to delete
     for j in range( n_mocks ): 
         ID_ini=S_ID[j]
         ID_end=int(ID_ini+obs_surveys)
@@ -144,7 +154,9 @@ for w in range( len(m_min_m) ):
             del halo_mass_sel
         
             number_laes=int(f_occ*n_halos)
+            #number_laes=100 #to delete
             n_laes=np.append(n_laes, number_laes )    
+            
             lae_index=halo_index[0:number_laes]
             x_laes=np.append( x_laes, x_halos[lae_index] )
             y_laes=np.append( y_laes, y_halos[lae_index] )
@@ -218,10 +230,13 @@ for w in range( len(m_min_m) ):
     print "corr_landy=",corr_laes, "std_landy=",std_corr
     print "corr_max=",  corr_laes_max, "std_max=", std_corr_max
     best_correlation[w,:]=corr_laes
+    best_corr_laes_max[w,:]=corr_laes_max
     std_correlation[w,:]=std_corr
+    std_correlation_max[w,:]=std_corr_max
     dtheta=(theta_max - theta_min)/theta_bins
         
     correlation_data=np.empty(( np.size(corr_laes) , 3 ) )
+    print np.size(corr_laes) 
     model='(Mmin,Mmax,focc)=({0},{1},{2})'.format(m_min, m_max, f_occ)
     model_name = 'model_{0}_{1}_{2}'.format(m_min, m_max, f_occ)
     filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_correlation_" + str(w) + ".dat"
@@ -235,25 +250,28 @@ for w in range( len(m_min_m) ):
     
     np.savetxt(filename,correlation_data)
     
-    fig=P.figure()
-    ax_mean=fig.add_subplot(111)
+    #fig1=P.figure()
+    #fig2=P.figure()
+    #ax_mean=fig1.add_subplot(111)
+    #ax_max=fig2.add_subplot(111)
+
     ax_mean.errorbar(correlation_data[:,0]+3.0*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=1.5)
 
     correlation_data[:,0]=angles
-    correlation_data[:,1]=best_corr_laes_max
+    correlation_data[:,1]=corr_laes_max
     correlation_data[:,2]=std_corr_max
     
     filename=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_maxcorrelation_" + str(w) + ".dat"
     np.savetxt(filename,correlation_data)
 
     
-    ax_max=fig.add_subplot(111)
+    
     ax_max.errorbar(angles + 3.0*w , corr_laes_max , std_corr_max,label=model, elinewidth=1.5)
     
 
 file_plot=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + field  +"_"+ "correlation_selected_models" + ".png"
-ax_mean.set_legend(shadow=False)
-ax_max.set_legend(shadow=False)
+ax_mean.legend(shadow=False)
+ax_max.legend(shadow=False)
 obs_correlation_file=pro_path + "data/obs/hayashino_whole_SSA22_field.txt"
 obs_correlation=np.loadtxt(obs_correlation_file,skiprows=4)
 #P.ylim(ymax=0.6)
@@ -264,11 +282,15 @@ ax_max.set_xlabel(r'$\theta$', fontsize=16)
 ax_mean.set_ylabel(r"$\xi(\theta)$",fontsize=16)    
 ax_max.set_ylabel(r"$\xi(\theta)$",fontsize=16)    
 ax_mean.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
-ax_meax.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
-ax_mean.set_legend(shadow=False)
-ax_max.set_legend(shadow=False)
+ax_max.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
+ax_mean.legend(shadow=False)
+ax_max.legend(shadow=False)
 ax_mean.set_title(survey_type)
 ax_max.set_title("highest density region")
+
+fig1.savefig("mean.png")
+
+fig2.savefig("max.png")
 P.show()
 #P.figure()
 

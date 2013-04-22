@@ -16,7 +16,9 @@ def DD_histogram(X,Y,distance,th_min,th_max,theta_bins):
     d_arr=[]
     print "number of LAEs=" + str(n_points)
     for i in range(n_points):
-        print "LAE_"+str(i)
+        
+        if(i%100==0):
+            print "LAE_"+str(i)
         for j in range(i+1,n_points):
             d=(X[i] - X[j])*(X[i] - X[j]) + (Y[i] - Y[j])*(Y[i] - Y[j])
             d=np.sqrt(d)/distance
@@ -79,7 +81,8 @@ def DR_histogram(X,Y,Xr,Yr,distance,th_min,th_max,theta_bins,cat_number=3):
     print "number of LAEs=" + str(n_points)
     for m in range(cat_number): 
         for i in range(n_points):
-            print "LAE_"+str(i)
+	    if(i%100==0):
+            	print "LAE_"+str(i)
             for j in range(n_points):
                 d=( X[i] - Xr[j + n_points*m] )*( X[i] - Xr[j + n_points*m] ) + ( Y[i] - Yr[j + n_points*m] )*( Y[i] - Yr[j + n_points*m] )
                 d=np.sqrt(d)/distance
