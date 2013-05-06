@@ -78,32 +78,23 @@ We use cosmological N-body simulations to find the characteristic mass
 of dark matter halos hosting Lyman-Alpha Emitting (LAE) galaxies at a
 redshift of $z=3.1$. The method is based on matching the statistics
 for the number density between mock and observed fields. The mock
-catalogs are constructed using a simple model where the basic
-principle is that a dark matter halo can only host one LAE with a
-probability $f_{\rm occ}$ if its mass is found withing a certain range
-mass range delimited by two threshold values, $M_{\rm min}$ and $M_{\rm max}$. We generate
-hundreds of mock catalogs in a thourough exploration of the parameter
-space of this model. These catalogs are constructed in such a way as o
-reproduce the observed areas and spatial correlations between the
-different observed fields. We find that the models that are consistent
-the observed cosmic variance statistics are those with halo masses in
-the range $M_{\rm  min}=$ and $M_{\rm max}=$ with and occupation
-fraction that scales as $f_{\rm occ}=$ with the minimum mass. We
-explore three additional constraints to narrow these range. First we
-select the models with the highest possible number of mocks consistent
-with observations. Second we use observational constraints on the
-occupation fraction. Third, we compute the angular correlation
-function in the mocks against observational values. The first two
-conditions narrow down the space parameter to $M_{\rm min}=$ and
-$M_{\rm max}$, $f_{\rm occ}$. Although we find that the angular
-correlation function is in agreement with the observational
-constraints mostly due to the cosmic variance in the small angular
-fields where this statistics has been computed so far, this statistics
-does not allows us to put tighter constraints on the model
-parameters. We also present predictions for future measurements of the
-correlation function on larger continous fields. We make available the
-mock data for the best models in a public repository. Implications for
-galaxy formation models? 
+catalogs are constructed using a simple model where a dark matter halo
+can only host one LAE with a probability $f_{\rm occ}$ if its mass is
+found withing a certain range mass range delimited by two threshold
+values, $M_{\rm min}$ and $M_{\rm max}$. We find that the most of the models that
+are consistent the observed cosmic variance statistics are those with
+halo masses in the range $10.5 < \log_{10} M_{\rm  min}/hMsun < 11.5$
+and $\log_{10} M_{\rm max}/\hMsun < 13.5$ with and occupation fraction
+that scales as $f_{\rm occ}=$. We explore three additional constraints
+to narrow down these range: the number of mocks consistent with
+observations, observational constraints on the occupation fraction and
+the angular correlation function. The first two conditions narrow down
+the space parameter to $M_{\rm min}=$ and $M_{\rm max}$, $f_{\rm occ}$. The angular
+correlation function does not add a significant constraint due to the
+cosmic variance in the small angular fields where this statistics has
+been computed so far. We make available the mock data for the best
+models in a public repository. Implications for galaxy formation
+models? 
 \end{abstract}
 
 \begin{keywords}
@@ -128,15 +119,16 @@ that dominant matter content of the Universe is to be found in dark
 matter, whereby each galaxy is hosted by larger dark matter structure
 known as a halo. 
 
-Most models of galaxy formation find that the mass of the halo largely
-determines key properties of the galaxy such as its stellar mass and
-star formation rate. Processes that regulate the star formation cycle
-are also though to be strongly dependent on its mass. Furthermore, the
-spatial clustering of galaxies on large scales is entirely dictated by
-the halo distribution.  For the reasons mentioned above, finding the
-typical dark matter halo mass hosting LAEs represents a significant
-step forward to understand the nature of this population in the
-context of LCDM.  
+Most models of galaxy formation find that the mass of the halo can be
+used to predict properties of the galaxy such as its stellar mass and
+star formation rate \citep{Behroozi2012}. Processes that regulate the
+star formation cycle are also though to be strongly dependent on its
+mass. Furthermore, the spatial clustering of galaxies on large scales
+is entirely dictated by the halo distribution.  For the reasons
+mentioned above, finding the typical dark matter halo mass hosting
+LAEs represents a significant step forward to understand the nature of
+this population in the context of Lambda Cold Dark Matter
+($\Lambda$CDM) paradigm.  
 
 Some theoretical approaches to this problem have been based on a
 forward modelling. Starting from the DM halo population, the
