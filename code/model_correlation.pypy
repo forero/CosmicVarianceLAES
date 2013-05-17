@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
 import LAE_correlation as correlation
-import numpy as np
-import pylab as P
+import numpypy as np
+#import pylab as P
+
+
 
 field="large"
 survey_type="match"
@@ -21,14 +23,13 @@ distance=6558.3
 print "computing correlation functions of the selected models"
 dmh_path=pro_path+"data/dark_matter/FOF/"
 laes_path=pro_path+"data/laes/FOF/"
-n_i= int( box_length/x_width )
-n_j= int( box_length/y_width )
-n_k= int( box_length/z_depth ) 
+n_i= int( box_length/x_width)
+n_j= int( box_length/y_width)
+n_k= int( box_length/z_depth)
 n_models = n_i * n_j * n_k
     
 ID_file=pro_path + "data/mock_survey/" + "ID_" + survey_type + "_surveys.dat"
     
-
 file=open("model_data.dat")
 skiprows=2
 for i in range(skiprows):
@@ -43,16 +44,23 @@ f_occ_m=model_info[:,2]
 ID_file=pro_path + "data/mock_survey/" + "ID_" + survey_type + "_surveys.dat"
 p_values_file= pro_path + "data/mock_survey/" + "p_values_FOF_ID_" + survey_type + "_surveys.dat"
 
-
 file=open(ID_file)
+skiprows=1
+for i in range(skiprows):
+    file.next()
 ID_data=np.transpose( [[int(x) for x in ln.split()] for ln in file] )
 file.close
 #ID_data=np.loadtxt(ID_file,dtype='int')
 
 file=open(ID_file)
+skiprows=1
+for i in range(skiprows):
+    file.next()
 ks_data=np.transpose( [[float(x) for x in ln.split()] for ln in file] )
 file.close
 #ks_data=np.loadtxt(p_values_file) 
+
+
 
 survey_ID=ID_data[:,0]
 field_ID=ID_data[:,1]
@@ -77,10 +85,7 @@ std_correlation_max=np.empty([len(m_min_m),theta_bins])
 n_models=len(m_min_m)
 #n_models=1 #to delete
 
-fig1=P.figure()
-fig2=P.figure()
-ax_mean=fig1.add_subplot(111)
-ax_max=fig2.add_subplot(111)
+
 
 for w in range( n_models ):
 
@@ -132,7 +137,7 @@ for w in range( n_models ):
         x_drand=[]
         y_drand=[]
         n_laes=[] 
-        
+    
     
         if(field=="large"):
             i_range=7
@@ -147,7 +152,15 @@ for w in range( n_models ):
         for i in range( i_range ):
             
             dmh_filename=dmh_path+"halos_bolshoi_"+str(i_s[i])+"-"+str(j_s[i])+"-"+str(k_s[i])+".csv"
-            halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
+            
+
+            file=open(dmh_filename)
+            skiprows=12
+            for i in range(skiprows):
+                file.next()
+            model_info=np.transpose( [[float(x) for x in ln.split()] for ln in file] )
+            file.close
+            #halos_prop=np.loadtxt(dmh_filename,delimiter=",",skiprows=12)
         
             halo_mass=halos_prop[:,4]
         
@@ -173,7 +186,7 @@ for w in range( n_models ):
             lae_index=halo_index[0:number_laes]
             x_laes=np.append( x_laes, x_halos[lae_index] )
             y_laes=np.append( y_laes, y_halos[lae_index] )
-            
+        
 
             del x_halos
             del y_halos
@@ -201,10 +214,10 @@ for w in range( n_models ):
             x_drand= np.append( x_drand , Xmin +  ( Xmax - Xmin )*np.random.random_sample(number_laes) )
             y_drand= np.append( y_drand , Ymin +   ( Ymax - Ymin )*np.random.random_sample(number_laes) )
             
-            
         
-        model_catalog_filename=pro_path +  "data/laes/mock_cat/model_"+str(w)+".txt"
-        np.savetxt(model_catalog_filename,(x_laes,y_laes,x_rand,y_rand))
+        
+        
+        
         
         
         
@@ -228,10 +241,6 @@ for w in range( n_models ):
         y_random_max = y_random[lae_pos_ini:lae_pos_end]
         x_drand_max = x_drand[lae_pos_ini:lae_pos_end]
         y_drand_max = y_drand[lae_pos_ini:lae_pos_end]
-        
-
-        model_catalog_filename=pro_path +  "data/laes/mock_cat/maxden_model_"+str(w)+".txt"
-        np.savetxt(model_catalog_filename,(x_laes,y_laes,x_rand,y_rand))
         #RR,bins=correlation.RR_histogram(x_laes_max,y_laes_max,x_random_max,y_random_max,distance,theta_min,theta_max,theta_bins,cat_number=random_cat_number)    
         DR,bins=correlation.DR_histogram(x_laes_max,y_laes_max,x_drand_max,y_drand_max,distance,theta_min,theta_max,theta_bins,cat_number=1)
         DD,bins=correlation.DD_histogram(x_laes_max,y_laes_max,distance,theta_min,theta_max,theta_bins)
@@ -272,7 +281,7 @@ for w in range( n_models ):
     #ax_mean=fig1.add_subplot(111)
     #ax_max=fig2.add_subplot(111)
 
-    ax_mean.errorbar(correlation_data[:,0]+3.0*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=1.5)
+    #ax_mean.errorbar(correlation_data[:,0]+3.0*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=1.5)
 
     correlation_data[:,0]=angles
     correlation_data[:,1]=corr_laes_max
@@ -283,32 +292,38 @@ for w in range( n_models ):
 
     
     
-    ax_max.errorbar(angles + 3.0*w , corr_laes_max , std_corr_max,label=model, elinewidth=1.5)
+    #ax_max.errorbar(angles + 3.0*w , corr_laes_max , std_corr_max,label=model, elinewidth=1.5)
     
 
 file_plot=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + field  +"_"+ "correlation_selected_models" + ".png"
-ax_mean.legend(shadow=False)
-ax_max.legend(shadow=False)
+#ax_mean.legend(shadow=False)
+#ax_max.legend(shadow=False)
 obs_correlation_file=pro_path + "data/obs/hayashino_whole_SSA22_field.txt"
-obs_correlation=np.loadtxt(obs_correlation_file,skiprows=4)
+file=open(obs_correlation_file)
+skiprows=4
+for i in range(skiprows):
+    file.next()
+model_info=np.transpose( [[float(x) for x in ln.split()] for ln in file] )
+file.close
+#obs_correlation=np.loadtxt(obs_correlation_file,skiprows=4)
 #P.ylim(ymax=0.6)
-ax_mean.set_xlim(xmax=1040)
-ax_max.set_xlim(xmax=1040)
-ax_mean.set_xlabel(r'$\theta$', fontsize=16)
-ax_max.set_xlabel(r'$\theta$', fontsize=16)
-ax_mean.set_ylabel(r"$\xi(\theta)$",fontsize=16)    
-ax_max.set_ylabel(r"$\xi(\theta)$",fontsize=16)    
-ax_mean.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
-ax_max.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
-ax_mean.legend(shadow=False)
-ax_max.legend(shadow=False)
-ax_mean.set_title(survey_type)
-ax_max.set_title("highest density region")
+#ax_mean.set_xlim(xmax=1040)
+#ax_max.set_xlim(xmax=1040)
+#ax_mean.set_xlabel(r'$\theta$', fontsize=16)
+#ax_max.set_xlabel(r'$\theta$', fontsize=16)
+#ax_mean.set_ylabel(r"$\xi(\theta)$",fontsize=16)    
+#ax_max.set_ylabel(r"$\xi(\theta)$",fontsize=16)    
+#ax_mean.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
+#ax_max.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
+#ax_mean.legend(shadow=False)
+#ax_max.legend(shadow=False)
+#ax_mean.set_title(survey_type)
+#ax_max.set_title("highest density region")
 
-fig1.savefig("mean.png")
+#fig1.savefig("mean.png")
 
-fig2.savefig("max.png")
-P.show()
+#fig2.savefig("max.png")
+#P.show()
 #P.figure()
 
 

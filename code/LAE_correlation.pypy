@@ -3,8 +3,9 @@ import numpypy as np
 #import matplotlib.pyplot as P
 #import correlation_lib as corr
 
+from embed.emb import import_mod
 
-
+P = import_mod('matplotlib.pylab')
 
 D_z=6558.3
 
@@ -367,8 +368,8 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
             del halo_mass
             
             #random cat histogram generation
-            #P.xlabel(r'$\theta$', fontsize=16)
-            #P.ylabel(r"$\xi(\theta)$",fontsize=16)
+            P.xlabel(r'$\theta$', fontsize=16)
+            P.ylabel(r"$\xi(\theta)$",fontsize=16)
             if(w==0):
                 if(i==0):
                     print w,i
@@ -418,21 +419,21 @@ def best_model_correlation(best_model_array, theta_min,theta_max,theta_bins, sur
         
         np.savetxt(filename,correlation_data)
         
-        #P.errorbar(correlation_data[:,0]+2.0*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=2.0)
+        P.errorbar(correlation_data[:,0]+2.0*w, correlation_data[:,1], correlation_data[:,2],label=model,elinewidth=2.0)
         
 
     file_plot=pro_path + "data/mock_survey/" + "correlation_best_models/" + survey_type + "_" + field  +"_"+ "correlation_plots" + ".png"
-    #P.legend(shadow=False)
+    P.legend(shadow=False)
     obs_correlation_file=pro_path + "data/obs/hayashino_whole_SSA22_field.txt"
     obs_correlation=np.loadtxt(obs_correlation_file,skiprows=4)
-    #P.ylim(ymax=0.6)
-    #P.xlim(xmax=1040)
+    P.ylim(ymax=0.6)
+    P.xlim(xmax=1040)
     
-    #P.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
-    #P.legend(shadow=False)
-    #P.title(survey_type)
-    #P.savefig(file_plot)
-    #P.figure()
+    P.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
+    P.legend(shadow=False)
+    P.title(survey_type)
+    P.savefig(file_plot)
+    P.figure()
     return best_correlation,std_correlation,angles
 
 

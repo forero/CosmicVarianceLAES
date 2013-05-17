@@ -29,8 +29,8 @@ n_models = n_i * n_j * n_k
 ID_file=pro_path + "data/mock_survey/" + "ID_" + survey_type + "_surveys.dat"
     
 
-
-model_info=np.loadtxt("./model_data.dat",skiprows=2)
+models_file=pro_path + "data/mock_survey/" + "BestModels_match_mock.dat" 
+model_info=np.loadtxt(models_file)
 
 m_min_m=model_info[:,0] #_m refers to model
 m_max_m=model_info[:,1]
@@ -189,7 +189,19 @@ for w in range( n_models ):
             
         
         model_catalog_filename=pro_path +  "data/laes/mock_cat/model_"+str(w)+"_mock_"+str(j)+".txt"
-        np.savetxt(model_catalog_filename,(x_laes,y_laes,x_drand,y_drand))
+        
+
+
+
+
+
+
+        lae_cat=np.empty( [ np.size(x_laes) , 4 ] )
+        lae_cat[:,0]=x_laes
+        lae_cat[:,1]=y_laes
+        lae_cat[:,2]=x_drand
+        lae_cat[:,3]=y_drand
+        np.savetxt(model_catalog_filename,lae_cat)
         
         
         
@@ -206,6 +218,14 @@ for w in range( n_models ):
         x_drand_max = x_drand[lae_pos_ini:lae_pos_end]
         y_drand_max = y_drand[lae_pos_ini:lae_pos_end]
         
+        lae_max=np.empty( [ np.size(x_laes_max) , 4 ] )
+        lae_max[:,0]= x_laes_max
+        lae_max[:,1]= y_laes_max
+        lae_max[:,2]= x_drand_max
+        lae_max[:,3]= y_drand_max
+        
 
         model_catalog_filename=pro_path +  "data/laes/mock_cat/maxden_model_" + str(w) + "_mock_" + str(j) + ".txt"
-        np.savetxt(model_catalog_filename,(x_laes_max,y_laes_max,x_drand_max,y_drand_max))
+        
+        
+        np.savetxt(model_catalog_filename,lae_max)
