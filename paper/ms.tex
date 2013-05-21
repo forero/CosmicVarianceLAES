@@ -9,7 +9,6 @@
 \def\ba{\begin{eqnarray}}
 \def\ea{\end{eqnarray}}
 
-
 \newcommand{\documentname}{paper~}
 \newcommand{\match}{{\tt match}~}
 \newcommand{\apj}{ApJ}  
@@ -383,13 +382,14 @@ the observed value.
 
 \subsection{Kolmogorov-Smirnov Tests}
 
-\begin{figure}
+\begin{figure*}
 \begin{center}
-\includegraphics[width=0.95\linewidth,angle=0]{./plots/Fig2_match_P5.pdf}\\
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_match_P5.pdf}
 \vspace{5mm}
-\includegraphics[width=0.95\linewidth,angle=0]{./plots/Fig2_random_P5.pdf}\\
-\vspace{5mm}
-\includegraphics[width=0.95\linewidth,angle=0]{./plots/Fig2_full_P5.pdf}
+\includegraphics[width=0.49\linewidth,angle=0]{./plots/Fig3_match_P5.pdf}\\
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_random_P5.pdf}
+\hspace{5mm}
+\includegraphics[width=0.49\linewidth,angle=0]{./plots/Fig3_random_P5.pdf}\\
 \end{center} 
 \caption{$M_{\rm min}$-$M_{\rm max}$ plane for all models with
   $P>0.05$ in the three different of grouping the mock fields. In the
@@ -398,17 +398,6 @@ the observed value.
   be compatible with observations. For the {\tt full} method the
   colour code corresponds to the results of $100$ times the maximum $P$ value
   resulting from the KS test. \label{figure:landscape}.}  
-\end{figure}
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig3_match_P5.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig3_random_P5.pdf}\\
-\end{center} 
-\caption{$M_{\rm min}$-$M_{\rm max}$ plane for all models with
-  $P>0.05$\label{figure:f_escape}.} 
 \end{figure*}
 
 
@@ -470,6 +459,17 @@ with the {\tt{Match}} and {\tt{Random}} methods.
 
 \subsection{Additional Constraints}
 
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_match_P5.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_random_P5.pdf}
+\end{center} 
+\caption{ Number of models with a mininium number of mock survey
+  realizations that are consistent with observations.
+  \label{figure:high_success_rate}.}  
+\end{figure*}
+
 The raw results of our experiments yield a prefered range for
 halo masses hosting LAES bounded by a minimum mass $10^{10}\hMsun<M_{\rm
   min}<10^{11.5}\hMsun$ and without any limitation on the  maximum
@@ -491,33 +491,6 @@ third exploits the information in the Angular Correlation Function
 (ACF).  
 
 \subsubsection{Models with the highest success rates}
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_match_P5.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_random_P5.pdf}
-\end{center} 
-\caption{ Number of models with a mininium number of mock survey
-  realizations that are consistent with observations.
-  \label{figure:high_success_rate}.}  
-\end{figure*}
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.49\linewidth,angle=0]{./plots/mytest.pdf}
-\includegraphics[width=0.49\linewidth,angle=0]{./plots/mytest.pdf}
-\end{center} 
-\caption{Spatial distribution for two mocks corresponding to the model
-  $M_{\rm min}=$, $M_{\rm max}=$ and $f_{\rm occ}=$. All the 15
-  different mock  surveys for this model in the {\texttt match}
-  configuration are consistent with observations at the $P>0.05$
-  level. The full data for all the mocks can be found in the github
-  repository for this paper.
-  \label{figure:spatial_distro}.}
-\end{figure*}
-
-
 
 For each model there are 15 different mock survey realizations. In the
 previous section we presented the models that had at least one (1)
@@ -580,6 +553,21 @@ appendix in Table XX.
 In terms of the constraints done in the previous sub-section, we find
 that the models in this region of parameter space have an average
 number of XX mock catalogs consistent with observations. 
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig5_match_mass_mock_and_f_occ.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig5_random_mass_mock_and_f_occ.pdf}
+\end{center} 
+\caption{Favored models when the constraints on the maximal number of
+  consistent mocks and the observational constrain on the occupation
+  fraction are included.
+  \label{figure:mock_and_f_occ}}  
+\end{figure*}
+
+
 
 \subsubsection{Constraints from the Angular Correlation Function}
 
@@ -652,8 +640,7 @@ for this paper in \verb"github".
   subfields  f the SSA22 field (left) and the entire 12 field sample
   (rigth) using thematch
   configuration. \label{figure:correlation_match} }  
-  
-\end{figure*}
+  \end{figure*}
 
 \begin{figure*}
 \begin{center}
@@ -661,15 +648,52 @@ for this paper in \verb"github".
 \hspace{5mm}
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/random_full_correlation_selected_models.pdf}
 \end{center} 
-\caption{ mean ACFs   and their correponding standard deviation (error bars)  of some selected models in different mass ranges
-over the 7 subfields of the SSA22 field (left) and the entire 12 field sample (rigth) using the
-random configuration. \label{figure:correlation_random} }
- 
+\caption{ mean ACFs   and their correponding standard deviation (error
+  bars)  of some selected models in different mass ranges over the 7
+  subfields of the SSA22 field (left) and the entire 12 field sample
+  (rigth) using the  random
+  configuration. \label{figure:correlation_random} }  
+  
 \end{figure*}
 
 \section{Discussion}
 
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.49\linewidth,angle=0]{./plots/mytest.pdf}
+\includegraphics[width=0.49\linewidth,angle=0]{./plots/mytest.pdf}
+\end{center} 
+\caption{Spatial distribution for two mocks corresponding to the model
+  $M_{\rm min}=$, $M_{\rm max}=$ and $f_{\rm occ}=$. All the 15
+  different mock  surveys for this model in the {\texttt match}
+  configuration are consistent with observations at the $P>0.05$
+  level. The full data for all the mocks can be found in the github
+  repository for this paper.
+  \label{figure:spatial_distro}.}
+\end{figure*}
+
+
+When we include the tightest constraints on the mock catalogs, we find
+that there are 30 set of parameters of our model, out of the original
+90000 initial models, that are consistent with the observational
+constraints at redshift $3.1$: the distribution of the number density,
+the inferred values for the average occupation fraction and the
+angular correlation function.
+
+The final 30 models can be distributed into two families of the same
+size. The first, where the range $M_{\rm min}-M_{\rm max}$ is narrow,
+typically of less than $<1.0$ dex. While in the second familiy the
+extent $>1.0$ dex. In the first case the minimum halo mass is found to
+be in a wide range $10^{10}\hMsun <M_{\rm min}< 10^{11.5}\hMsun$ while
+in the second case, only models with $M_{\rm min}\sim 10^{10.9}\hMsun$
+are compatible with the observational contraints. In what follows we
+discuss the implications of the existence of these two families of
+models.  
+
 \subsection{Implications for galaxy formation models}
+
 
 ... Intrinsic emission and escape fraction.
 
