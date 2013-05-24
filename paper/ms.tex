@@ -63,13 +63,13 @@
   
 \author[~J.~E. Forero-Romero and J. Mejia]{
 \parbox[t]{\textwidth}{\raggedright 
-  Julian Mej\'ia$^{2}$ and
-Jaime E. Forero-Romero$^{1}$}
-\vspace*{6pt}\\
-$^{1}$\\
-$^{2}$ Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1
-No. 18A-10, Edificio Ip, Bogot\'a, Colombia 
+Jaime E. Forero-Romero$^{1}$ and
+Julian Mej\'ia$^{2}$ 
 }
+\vspace*{6pt}\\
+$^{1}$ Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1
+No. 18A-10, Edificio Ip, Bogot\'a, Colombia \\
+$^{2}$ --}
 
 \maketitle
 
@@ -571,12 +571,13 @@ number of XX mock catalogs consistent with observations.
 
 \subsubsection{Constraints from the Angular Correlation Function}
 
-We calculate the mean angular correlation function (ACF) for all
-models with $P>0.05$ using the match and random methods. These
-correlation functions is calculated over the denseset subfield in all the
-mock surveys corresponding to the SSA22 region. These results are
-compared against the observations reported by Hayashino et al in 2004
-over the same region, which were also performed on the densest field.  
+We calculate the mean angular correlation function (ACF) only for the
+models that showed that all of the 15 mock surveys are consistent
+at the $P>0.05$ level with observations. The ACF is computed only the
+denseset subfield in all the 15 mock surveys corresponding to the
+SSA22 region. These results are compared against the observations
+reported by Hayashino et al in 2004 over the same region, which were
+also performed on the densest field.   
 
 Figure \ref{figure:correlation_match} (match) and Figure
 \ref{figure:correlation_random} (random) present such comparison.  The
@@ -627,6 +628,17 @@ In Figure X we present the results for the models. The full list of
 these correlation functions can be found in the the data repository
 for this paper in \verb"github". 
 
+We also present the results for the angular correlation function in
+therms of the correlation lenght obtained by fitting the following
+function
+
+\begin{equation}
+\xi(r) = \left(\frac{r}{r_{0}}\right)^{-\gamma}
+\end{equation}
+
+The results are shown in Figure in a $r_{0}-\gamma$ plane where the
+average and standard deviation for each mock are shown in comparison
+with the result derived from observations. 
 
 
 \begin{figure*}
@@ -679,8 +691,11 @@ When we include the tightest constraints on the mock catalogs, we find
 that there are 30 set of parameters of our model, out of the original
 90000 initial models, that are consistent with the observational
 constraints at redshift $3.1$: the distribution of the number density,
-the inferred values for the average occupation fraction and the
-angular correlation function.
+the inferred values for the average occupation fraction. The
+consistency with the angular correlation, in terms of the $\chi^2$
+statistics did not help to discard any additional models with a
+significant degree of confidence. 
+
 
 These 30 models can be classified into two families of the same
 size. The first, where the range $M_{\rm min}-M_{\rm max}$ is narrow,
