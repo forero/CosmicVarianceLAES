@@ -213,7 +213,7 @@ compare observational results against our theoretical predictions.
 %its parameters together with the method to compare its predictions
 %against observations. 
 
-\subsection{The Observational Constraints}
+\subsection{Observational Constraints}
 
 The observational benchamark we use in this paper is the LAE number
 density information at $z=3.1$ obtained by the panoramic narrow-band
@@ -279,7 +279,7 @@ criteria to construct the catalogs.
 
 
 
-\subsection{The Simulation and Halo Catalogs}
+\subsection{Simulation and Halo Catalogs}
 
 The Bolshoi simulation \citep{Bolshoi} we use in this paper was
 performed in a cubic volume of 250 $h^{-1}$ Mpc on a side. It includes
@@ -306,52 +306,67 @@ We focus our work on halos more massive than $1\times 10^{10}$\hMsun
 that are resolved with at least $70$ particles.
 
 
-\subsection{Populating Halos with LAEs}
+\subsection{A Model to Populate Halos with LAEs}
 \label{subsec:mocks}
 
-The model that populates halos with LAEs is based on a one-to-one
-correspondence: each halo can only host a single LAE. There are three
-physical parameters in the model: the halo mass range $M_{\rm min}<
+In our model a dark matter halo can only host one or zero LAE. 
+There are three parameters in the model that decide whether a halo can host a
+galaxy or not: the lower and upper bouds for the mass range $M_{\rm min}<
 M_{\rm halo} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm
-  occ}$ of such halos that effectively host a LAE. In what follows we
-will describe by the letter ${\mathcal M}$ a model defined by these
-three parameters $M_{\rm min}$, $M_{\rm max}$ y $f_{\rm occ}$. 
+  occ}$ of such halos that effectively host a LAE. We do not assign a
+luminosity to each each LAE. We are primaraly interested in
+constraining the halo mass range hosting detectable LAEs under the
+conditions defined by \cite{Yamada2012}. In what follows will describe by
+the letter ${\mathcal M}$ a model defined by an specific choice of the
+three scalar parameters $M_{\rm min}$, $M_{\rm  max}$ y $f_{\rm occ}$.  
 
-We stress that we do not intent to build a model for the luminosity of
-each LAE. Physically speaking we are primarely interested in
-constraining the halo mass above which there are detectable
-LAEs. under the conditions defined by Yamada et al.  
 
-For each mode ${\mathcal M}$ we create mock field from disjoint
-volumes in the simulation with the same geometry probed by Suprime-CAM
-and the narrow band filter, namely $46\times 35\times 41$
-$h^{-3}$Mpc$^{3}$ where the last dinemsion goes in the redshift
-direction, corresponding to a total area of $880$ arcmin$^{2}$ for
-each mock field. There is a total $5\times 7 \times 6=210$ of such
-sub-volumes in a snapshot of the Bolshoi simulation.  
+For each model ${\mathcal M}$ we create a set of mock fields from
+disjoint volumes in the simulation. Each volume has the same geometry
+probed by Suprime-CAM and the narrow band filter, namely rectangular
+cuboids of dimensions $46\times 35\times 41$ $h^{-3}$Mpc$^{3}$ where
+the last dinemsion goes in the redshift direction. This corresponds to
+a total area of $880$ arcmin$^{2}$ in each mock field. We construct a total
+$5\times 7 \times 6=210$ of such volumes from a snapshot in the Bolshoi
+simulation.   
 
-Next we group these $210$ mock fields in three different ways to
-construct the LAEs number density distribution. The first way (match method) we
-follow the observational setup and constructs $15$ different mock
-surveys, each one composed of $12$ mock fields, out of which $7$
-correspond to contiguous sub-boxes in the simulation to mimick the
-whole SSA22, $3$ are also contiguous between them but not to the first
-$7$ fields to mimick the SXDS fields and finally $2$ non-contiguous
-fields that correspond to the SDF and GOODS-North fields. This will
-produce $15$ different distributions for the number density for a
-given model ${\mathrm M}$. The second (random method) is similar to the first
-one. There aare $15$ different mock surveys with $12$ mock fields
-each, but this time each field corresponds to uncorrelated sub-boxes
-in the simulation. The third (full method) way in only has $1$ mock survey
-containing all the $210$ mock fields, in this setup there is only one
-predicted number density distribution for each model ${\mathrm M}$ 
-
-The advantage of these three sampling ways is that they allow us to
-explore the effects of both cosmic variance and the correlation
-between fields. Comparing the results of the first and second method
-will help us to quantify the effect of field correlation, while
-compating the first and the third method will serve us to gauge the
-impace of cosmic variance. 
+Next we construct mock surveys by making groups of $11$ mock fields
+out of the $210$ available volumes. In total $15$ mock surveys are
+constructed for each model $\mathcal{M}$.
+%mock fields into
+%sets of $11$ different ways to
+%construct the LAEs. The first way (match method) we
+The grouping is done in two different ways. In the first way, called
+{\texttt match}, we follow
+the clustering of the observed fields. From the $11$ mock fields, $7$
+are constructed from contigous fields in the simulation to mimic the
+SSA22 region, $3$ are also contiguous between them but not to the first
+$7$ fields to mimic the SXDS fields and finally $2$ non-contigous
+fields to imitate the SDF and GOODS-North field. Our main goal with
+this selection is to test the impact on the final statistics of having
+$7$ clustered fields. The second way to group the mock fields is called {\texttt
+  random}, whereby all the $11$ fields are selected in such a way as
+to avoid that any two volumes are contigous.
+%follow the observational setup and constructs $15$ different mock
+%surveys, each one composed of $12$ mock fields, out of which $7$
+%correspond to contiguous sub-boxes in the simulation to mimick the
+%whole SSA22, $3$ are also contiguous between them but not to the first
+%$7$ fields to mimick the SXDS fields and finally $2$ non-contiguous
+%fields that correspond to the SDF and GOODS-North fields. This will
+%produce $15$ different distributions for the number density for a
+%given model ${\mathrm M}$. The second (random method) is similar to the first
+%one. There aare $15$ different mock surveys with $12$ mock fields
+%each, but this time each field corresponds to uncorrelated sub-boxes
+%in the simulation. The third (full method) way in only has $1$ mock survey
+%containing all the $210$ mock fields, in this setup there is only one
+%predicted number density distribution for each model ${\mathrm M}$ 
+%We create the mock surveys in two different ways. First we follow 
+%The advantage of these three sampling ways is that they allow us to
+%explore the effects of both cosmic variance and the correlation
+%between fields. Comparing the results of the first and second method
+%will help us to quantify the effect of field correlation, while
+%compating the first and the third method will serve us to gauge the
+%impace of cosmic variance. 
 
 
 \subsection{Model Sampling and Selection}
