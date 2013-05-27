@@ -165,64 +165,72 @@ density, vacuum density and the Hubble constant in units of 100 km
 s$^{-1}$ Mpc$^{-1}$. 
 
 \section{Methodology}
-In this \documentname we constrain the typical mass of dark matter halos
-hosting LAES at $z=3.1$. Our model is based on the number density
-information obtained in the recent large scale survey presented by XXX
-where XXX LAEs are detected over 7 fields of $\sim 46 \times
-35$Mpc$^{2}h^{-2}$ in area comoving in area corresponding to observed
-fields of $XXX$ deg$^{2}$.  
 
-Both the spatial distribution and luminosities of the galaxies have,
-at least in a statistical sense, informatio to constrain theoretical
-model of LAEs. The most detailed theoretical models are also faced to
-diverse physical and astrophysical uncertainties in obtaining
-statistical prediction for the Lyman-alpha line. This uncertainties
-are largest impediment to consruct an ab-iitio model for LAEs.  
+Our method to constrain the typical mass of a dark matter halos
+hosting LAEs at $z=3.1$ is based on the comparison of observational
+results on the surface number density and the predictions of a simple
+model that uses the outputs from cosmological N-body simulations. 
 
-In this \documentname we want to step back and reduce the complexity of our
-model, with the sole objective of reproducing the cosmic variance in
-the number density of LAEs. Afterwards we will interpret the
-implications of this result for physical models for Lyman-alpha
-emitting galaxies. 
+In the next subsections we describe in detail the four key elements of
+this workflow. First, we present the observations we take as a
+benchmark. Second, the N-body simulation and the halo catalogs we
+use. Third, the simplified model that allows us to translated halo
+catalogs into mock LAE observations. Fourth, the statistics we use to
+compare observational results against our theoretical predictions.
 
-Our model is based on the predictions of a large volume high
-resolution N-body simulation describing the gravitational dynamics of
-dark matter. We do not have an strong bias towards the theoretical
-expectation of what the mass of the dark matter halo hosting the
-galaxy should be.  Instead, we fully explore the parameter space of
-our simplified model. The only cut we impose is that observed LAEs do
-not reside in dark matter halos with masses less than 10$^{10}$
-\hMsun [citation].  
+%In this \documentname we constrain the typical mass of dark matter halos
+%hosting LAES at $z=3.1$. Our model is based on the number density
+%information obtained in the recent large scale survey presented by XXX
+%where XXX LAEs are detected over 7 fields of $\sim 46 \times
+%35$Mpc$^{2}h^{-2}$ in area comoving in area corresponding to observed
+%fields of $XXX$ deg$^{2}$.  
+
+%Both the spatial distribution and luminosities of the galaxies have,
+%at least in a statistical sense, informatio to constrain theoretical
+%model of LAEs. The most detailed theoretical models are also faced to
+%diverse physical and astrophysical uncertainties in obtaining
+%statistical prediction for the Lyman-alpha line. This uncertainties
+%are largest impediment to consruct an ab-iitio model for LAEs.  
+
+%In this \documentname we want to step back and reduce the complexity of our
+%model, with the sole objective of reproducing the cosmic variance in
+%the number density of LAEs. Afterwards we will interpret the
+%implications of this result for physical models for Lyman-alpha
+%emitting galaxies. 
+
+%Our model is based on the predictions of a large volume high
+%resolution N-body simulation describing the gravitational dynamics of
+%dark matter. We do not have an strong bias towards the theoretical
+%expectation of what the mass of the dark matter halo hosting the
+%galaxy should be.  Instead, we fully explore the parameter space of
+%our simplified model. The only cut we impose is that observed LAEs do
+%not reside in dark matter halos with masses less than 10$^{10}$\hMsun
+%[citation].    
 
 
-In the following subsections we describe the most relevant features of
-the observational data, the N-body simulation we use, our model and
-its parameters together with the method to compare its predictions
-against observations. 
+%In the following subsections we describe the most relevant features of
+%the observational data, the N-body simulation we use, our model and
+%its parameters together with the method to compare its predictions
+%against observations. 
 
 \subsection{The Observational Constraints}
 
-Our observational reference are the recently published results of a
-panoramic survey of LAES at $z=3.1$ by \cite{Yamada2012}. This survey
-was conducted with the Subaru 8.2m telescope and the Subaru Prime
+The observational benchamark we use in this paper is the LAE number
+density information at $z=3.1$ obtained by the panoramic narrow-band
+survey presented by \cite{Yamada2012} from a survey 
+%Our observational reference are the recently published results of a
+%panoramic survey of LAES at $z=3.1$ by \cite{Yamada2012}. 
+%This survey
+conducted with the Subaru 8.2m telescope and the Subaru Prime
 Focus Camera, which has a field of view covering $34\times 27$ arcmin,
 corresponding to a comoving scale of $46\times35$ Mpc $h^{-1}$ at
 $z=3.09$. The narrow band filter is centered at $4977$ \AA with a
 $77$\AA width, corresponding to the redshift range $z=3.062-3.125$ and
 $41$ Mpc $h^{-1}$ comoving scale for the detection of the
-Lyman-$\alpha$ line centered at $z=3.09$. 
-
-The choice to have only one the data from Yamada et al 2012 as
-reference was  made because their surveys is the largest in area with
-a set of homogenous conditions that define the LAE sample. Other
-surveys by XXX an XXX that cover similar regions, but they use
-different criteria on the equivalent width (EW) cuts to construct the
-LAE samples. Different cuts in the EW can change the number of LAEs to
-be included in the catalog. This cuts have an impact on the fainter
-LAEs which are more abundante than brighter ones. Different
-definitions of the EW cuts can yield number densities different by a
-factor of two [REF, I think Yamada has some numbers]. 
- 
+Lyman-$\alpha$ line centered at $z=3.09$. The authors report a total of
+$2161$ LAEs with an observed equivalent width larger than $190$\AA
+over a total survey area of $2.42$ deg$^{2}$, this corresponds to an
+averaga surface number density of $0.20\pm 0.01$ arcmin$^{-2}$.  
 
 The survey covered four independent fields. The first is the SSA22
 field of $1.38$ deg$^2$ with $1394$ detected LAEs, this field has been
@@ -232,10 +240,42 @@ second observed region is composed by the fields Subaru/{\it
 total of $0.58$ deg$^2$ and $386$ LAEs. The third and fourth fields
 are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and $196$ LAEs,
 and the fild arotund the Great Observatory Optical Deep Survey North
-(GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs. In Table 1 we summarize
-the values we use in throughout this paper for the each field, covered
-area, measured surface LAE number density and inferred number volume
-density. 
+(GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs. 
+%In Table 1 we summarize
+%the values we use in throughout this paper for the each field, covered
+%area, measured surface LAE number density and inferred number volume
+%density. 
+
+There is abundant observational work done on LAEs at redshift $z=3.1$
+\citep{Kudritzki2000,Matsuda2005,Gawiser2007,Nilsson2007,Ouchi2008}.
+However, we decide to focus on the data from \cite{Yamada2012} because
+it has the largest covered area with homogeneous intrumentational
+conditions (telescope, narrow band filter), data reduction pipeline
+and conditions to construct the LAE catalog. This ensures that the
+number density variations among fields are due only to
+astrophysical reasons and not different observational conditions or
+criteria to construct the catalogs.
+
+%For instance, having
+%different selection criteria on the equivalent width (EW) can change
+%the number of LAEs included in the catalog, yielding number densities
+%different by a factor of two   
+%different criteria on the equivalent width (EW) cuts to construct the
+%LAE samples. Different cuts in the EW can change the number of LAEs to
+%be included in the catalog. This cuts have an impact on the fainter
+%LAEs which are more abundante than brighter ones. Different
+%definitions of the EW cuts can yield number densities different by a
+%factor of two [REF, I think Yamada has some numbers]. 
+
+%Other
+%surveys by XXX an XXX that cover similar regions, but they use
+%different criteria on the equivalent width (EW) cuts to construct the
+%LAE samples. Different cuts in the EW can change the number of LAEs to
+%be included in the catalog. This cuts have an impact on the fainter
+%LAEs which are more abundante than brighter ones. Different
+%definitions of the EW cuts can yield number densities different by a
+%factor of two [REF, I think Yamada has some numbers]. 
+ 
 
 
 
@@ -641,32 +681,31 @@ average and standard deviation for each mock are shown in comparison
 with the result derived from observations. 
 
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_large_correlation_selected_models.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_full_correlation_selected_models.pdf}
-\end{center} f
-\caption{ mean ACFs   and their correponding standard deviation (error
-  bars)  of some selected models in different mass ranges over the 7
-  subfields  f the SSA22 field (left) and the entire 12 field sample
-  (rigth) using thematch
-  configuration. \label{figure:correlation_match} }  
-  \end{figure*}
+%\begin{figure*}
+%\begin{center}
+%\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_large_correlation_%selected_models.pdf}
+%\hspace{5mm}
+%\includegraphics[width=0.46\linewidth,angle=0]{./plots/match_full_correlation_s%elected_models.pdf}
+%\end{center} f
+%\caption{ mean ACFs   and their correponding standard deviation (error
+%  bars)  of some selected models in different mass ranges over the 7
+%  subfields  f the SSA22 field (left) and the entire 12 field sample
+%  (rigth) using thematch
+%  configuration. \label{figure:correlation_match} }  
+%  \end{figure*}
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_large_correlation_selected_models.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_full_correlation_selected_models.pdf}
-\end{center} 
-\caption{ mean ACFs   and their correponding standard deviation (error
-  bars)  of some selected models in different mass ranges over the 7
-  subfields of the SSA22 field (left) and the entire 12 field sample
-  (rigth) using the  random
-  configuration. \label{figure:correlation_random} }  
-  
-\end{figure*}
+%\begin{figure*}
+%\begin{center}
+%\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_large_correlation_selected_models.pdf}
+%\hspace{5mm}
+%\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_full_correlation_selected_models.pdf}
+%\end{center} 
+%\caption{ mean ACFs   and their correponding standard deviation (error
+%  bars)  of some selected models in different mass ranges over the 7
+%  subfields of the SSA22 field (left) and the entire 12 field sample
+%  (rigth) using the  random
+%  configuration. \label{figure:correlation_random} }   
+%\end{figure*}
 
 \section{Discussion}
 
