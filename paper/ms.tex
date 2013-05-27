@@ -422,13 +422,13 @@ viable parameters thatdeserve to be considered for further analysis.
 %$0.01$. In total the number of different sets of input parameters to
 %be explored is $30 \times 30\times 100 = 9\times 10^{4}$. 
 
-\section{Results}
+\section{Basic Results}
 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=1.10\linewidth,angle=0]{./plots/Fig1.pdf}
-\caption{ \label{figure:laes_dist} Surface density of dark
+\caption{ \label{fig:laes_dist} Surface density of dark
   matter halos as a function of a minimum halo mass to count the
   total number of elements in a volume. Each line represents on of the
   $210$ volumes of dimensions $46\times 35\times 41$ h${-3}$Mpc$^{3}$
@@ -440,20 +440,34 @@ viable parameters thatdeserve to be considered for further analysis.
 
 
 \subsection{Dark Matter Halo Number Density}
+
 In Figure \ref{fig:laes_dist} we present the results for  the
-integrated dark matter halo surface density as a function of halos
+integrated dark matter halo surface density as a function of halo
 mass. Each line corresponds to one of the 210 sub-volumes in the
-Bolshoi simulation. The shadowed area indicates the surface density
-values for LAEs allowed by the observations.  
+Bolshoi simulation. The gray band indicates the surface density
+values for LAEs allowed reported in observations \citep{Yamada2012}.
  
-This result allows us to better understand the expected trends for the
-LAEs' preferred mass and the occupation fraction.  From this Figure we
-can read which models do not have achance reproduce the
-observations. Regions in the plot where the halo surface density
-values are below the observational constraint correspond to high
-masses halo masses. For a LAE model ${\mathcal M}$ with a minimum mass
-$M_{\rm   min}> 3 \times 10^{11}$\hMsun located inthat mass range, the
-surface density is too low compared with observations.   
+This result provides the basis to understand why a range of models
+${\mathcal M}$ can be expected to be consistent with
+observations. In Figure \ref{fig:laes_dist} we can read that models
+with a minimum mass $\log_{10} M_{\rm min}>11.5$\hMsun will always have a
+surface number density lower than the observational
+constrain. The oppossite is true in models with $\log_{10} M_{\rm min}<10.5$
+that will show surface number density larger than observations, this
+implies that in such models the occupation fraction has to be tuned
+$f_{\rm occ}<1.0$ as to lower the halo numeber density to match the
+gray band values.
+
+%This basic result provides the basis to understand the range of models
+%${\mathcal M}$ expected trends for the
+%LAEs' preferred mass and the occupation fraction.  
+%From this Figure we
+%can read which models do not have achance reproduce the
+%observations. Regions in the plot where the halo surface density
+%values are below the observational constraint correspond to high
+%masses halo masses. For a LAE model ${\mathcal M}$ with a minimum mass
+%$M_{\rm   min}> 3 \times 10^{11}$\hMsun located inthat mass range, the
+%surface density is too low compared with observations.   
 
 Conversely, there are regions in the plot where the halo surface
 density is always higher than the observational constraints correspond
@@ -463,7 +477,10 @@ for successfuly reproducing observations if the occupation fraction
 $f_{\rm occ}<1$ is tuned as to lower the halo number density down to
 the observed value.    
 
-\subsection{Kolmogorov-Smirnov Tests}
+In the next subsection we quantify this intuition by means of the KS
+tests between mock surveys and observations.
+
+\subsection{Three Regions in Parameter Space}
 
 \begin{figure*}
 \begin{center}
@@ -474,71 +491,106 @@ the observed value.
 \hspace{5mm}
 \includegraphics[width=0.49\linewidth,angle=0]{./plots/Fig3_random_P5.pdf}\\
 \end{center} 
-\caption{$M_{\rm min}$-$M_{\rm max}$ plane for all models with
-  $P>0.05$ in the three different of grouping the mock fields. In the
-  case of the {\tt match} and {\tt random} methods the  color code
-  corresponds to the number of mock surveys that are found to
-  be compatible with observations. For the {\tt full} method the
-  colour code corresponds to the results of $100$ times the maximum $P$ value
-  resulting from the KS test. \label{figure:landscape}.}  
+\caption{$M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
+    min}-f_{\rm occ}$ (right) planes for all models with
+  $P>0.05$ in two different ways used to construct the mock
+  surveys. The color code corresponds to the number of mock surveys
+  that are found to be compatible with observations in terms of the KS
+  test with $P>0.05$. Only regions of parameter space with at least
+  one (1) consistent mock survey are included. \label{fig:landscape}}   
 \end{figure*}
 
 
-Figure \label{figure:landscape} presents the regions in the parameter
-space $M_{\rm min}$-$M_{\rm max}$ where the KS test yields values of
-$P>0.05$. We consider that for those models it is not possible to rule out the null
-hypothesis, namely that the number density in simulated data and the observations come
-from the same parent distribution. Each panel corresponds to the three different ways of
-grouping the mock fields. In the case of the methods {\tt{Match}}
-and {\tt{Random}} the color code indicates the fraction of these 15
-mock surveys with with $P>0.1$. The third panel shows the result for
-the method {\tt{Full}}, in this case the color code correspond
-to the value maximum value of $100\times P$ for a model with those
-mass ranges.
+Figure \ref{fig:landscape} presents regions in parameter space $M_{\rm
+min}-M_{\rm max}$, $M_{\rm min}-f_{\rm occ}$ where the KS test yields
+values of $P>0.05$ at least for one mock survey. For those models it
+is not possible reject the hypothesis that the simulated and observed
+data for the surface number density come from the same parent
+distribution.
 
-These results clearly distinguish three mass regimes. In the first regime, at
-high mass values, we find that LAE models with minimum mass of $M_{\rm
-  min}>10^{11.5}$\hMsun are not compatible with observations. There is
-a second regime for masses below $M_{\rm
-  min}=3\times 10^{10}$ any values for $M_{\rm min}$ and $M_{\rm max}$
-can be made compatible with observations, provided that
-$f_{\rm occ}$ is fine tuned to do it. In an intermediate mass regime,
-for minimum mass values $3\times 10^{10}\hMsun < M_{\rm min}< 3\times 10^{11}\hMsun$ only a
-limited range of models with $M_{\rm max}$ with occupation fraction
-$f_{\rm occ}\sim 1$ is able to reproduce observations. 
+The upper (lower) panels correspond to the {\texttt match} ({\texttt
+  random}) method to build the mock surveys from individual
+fields. The color code shows the number of mock surveys consistent
+with observations. In both cases there are three regions of parameter
+space that can be clearly distinguised.
 
-In these three different mass regimes the occupation monotonically
-decreases as a function of the minimum halo mass $M_{\rm min}$. In
-Figure XXX we show this treend in three panels following the same
-correspondence as Figure XXX. From these results we interpret that the
-different mass regimes that were identified correspond to best fit
-models with $f_{\rm occ}\sim 1$, $0<f_{\rm occ}<1$ and $f_{\rm
-  occ}\sim 0$, respectively. 
+The first region corresponds to models where the minimum mass is high
+$\log_{10}M_{\rm min}> 11.5$. None of this models is compatible with
+observations as expected from the results in the previous section. For
+these models the number density of LAEs is too low.
 
-The two {\tt match} and {\tt random} methods present the highest
-number of matching mock surveys in the medium mass regime. However, it
-is important to keep in mind that not all the mock surveys for a
-sucessful model ${\mathrm M}$ present a high value $P>0.1$, only a
-modest fraction seems to be consistent with observations. This shows that the
-cosmic variance is still present on the physical scales probed by
-observations. This will be considered in more detail in the discussion
-seccion. 
-
-To illustrate this point, in Figure \ref{fig:mocks} we present the
-results for two mock fields for the {\tt{Match}} method for a model
-with the same parameters, but two extreme values for the KS test. 
+The second region corresponds to an intermediate range for the minimum
+mass $10.5<\log_{10}M_{\rm min}<11.5$ where regardless of the value of
+the maximum mass $M_{\rm max}$ it is possible to tune the occupation
+fraction $f_{\rm occ}$ to bring some of the mock observations into
+good agreement with observations. In this region in parameter space
+one can thus find two extreme kinds of models.  One kind where the
+mass interval is very narrow with sizes smaller than $<0.3$ dex (a
+factor of two in mass) and others where the mass interval is very
+extended, larger than $1.0$ dex, going up to the maximum halo mass
+present in the simulation at that redshift. 
 
 
-Conversely there are different models where the KS test yield values of
-$P\sim 1$. To illustrate the kind of success represented by these
-models, we have selected these best ones in the case of the method
-{\tt{MatchObs}}. Figure XXX shows in the main panel the spatial
-distribution of the mock surveys, the smaller panel shows the
-corresponding surface density distribution and the observational
-constraint.  
+The third region in parameter space corresponds to $\log_{10}M_{\rm
+  min}<10.5$. In this case only models with a narrow mass interval of
+at most $0.5$ dex ($\log_{10}M_{\rm max}<11.0$) and low
+occupation fractions $f_{\rm occ}<0.3$ are allowed.
 
-In what follows we will focus our discussion on the mocks constructed
-with the {\tt{Match}} and {\tt{Random}} methods. 
+%Figure \label{figure:landscape} presents the regions in the parameter
+%space $M_{\rm min}$-$M_{\rm max}$ where the KS test yields values of
+%$P>0.05$. We consider that for those models it is not possible to rule out the null
+%hypothesis, namely that the number density in simulated data and the observations come
+%from the same parent distribution. Each panel corresponds to the three different ways of
+%grouping the mock fields. In the case of the methods {\tt{Match}}
+%and {\tt{Random}} the color code indicates the fraction of these 15
+%mock surveys with with $P>0.1$. The third panel shows the result for
+%the method {\tt{Full}}, in this case the color code correspond
+%to the value maximum value of $100\times P$ for a model with those
+%mass ranges.
+
+%These results clearly distinguish three mass regimes. In the first regime, at
+%high mass values, we find that LAE models with minimum mass of $M_{\rm
+%  min}>10^{11.5}$\hMsun are not compatible with observations. There is
+%a second regime for masses below $M_{\rm
+%  min}=3\times 10^{10}$ any values for $M_{\rm min}$ and $M_{\rm max}$
+%can be made compatible with observations, provided that
+%$f_{\rm occ}$ is fine tuned to do it. In an intermediate mass regime,
+%for minimum mass values $3\times 10^{10}\hMsun < M_{\rm min}< 3\times 10^{11}\hMsun$ only a
+%limited range of models with $M_{\rm max}$ with occupation fraction
+%$f_{\rm occ}\sim 1$ is able to reproduce observations. 
+
+%In these three different mass regimes the occupation monotonically
+%decreases as a function of the minimum halo mass $M_{\rm min}$. In
+%Figure XXX we show this treend in three panels following the same
+%correspondence as Figure XXX. From these results we interpret that the
+%different mass regimes that were identified correspond to best fit
+%models with $f_{\rm occ}\sim 1$, $0<f_{\rm occ}<1$ and $f_{\rm
+%  occ}\sim 0$, respectively. 
+
+%The two {\tt match} and {\tt random} methods present the highest
+%number of matching mock surveys in the medium mass regime. However, it
+%is important to keep in mind that not all the mock surveys for a
+%sucessful model ${\mathrm M}$ present a high value $P>0.1$, only a
+%modest fraction seems to be consistent with observations. This shows that the
+%cosmic variance is still present on the physical scales probed by
+%observations. This will be considered in more detail in the discussion
+%seccion. 
+
+%To illustrate this point, in Figure \ref{fig:mocks} we present the
+%results for two mock fields for the {\tt{Match}} method for a model
+%with the same parameters, but two extreme values for the KS test. 
+
+
+%Conversely there are different models where the KS test yield values of
+%$P\sim 1$. To illustrate the kind of success represented by these
+%models, we have selected these best ones in the case of the method
+%{\tt{MatchObs}}. Figure XXX shows in the main panel the spatial
+%distribution of the mock surveys, the smaller panel shows the
+%corresponding surface density distribution and the observational
+%constraint.  
+
+%In what follows we will focus our discussion on the mocks constructed
+%with the {\tt{Match}} and {\tt{Random}} methods. 
 
 \section{Additional Constraints}
 
@@ -814,6 +866,8 @@ required to be observed as a LAE and this minimal halo mass.
 
 ... Mass dependence of the escape fraction.
 
+... Discuss all this in terms of the star formation efficiency in
+Behroozi et al.
 
 \subsection{Implications for large LAEs surveys}
 
