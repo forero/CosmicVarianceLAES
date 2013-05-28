@@ -750,52 +750,45 @@ Appendix in Table \ref{table:models_match}.
 
 \section{Results for the Angular Correlation Function}
 
-We calculate the mean angular correlation function (ACF) only for the
-models that showed that all of the 15 mock surveys are consistent
-at the $P>0.05$ level with observations. The ACF is computed only the
-denseset subfield in all the 15 mock surveys corresponding to the
-SSA22 region. These results are compared against the observations
-reported by Hayashino et al in 2004 over the same region, which were
-also performed on the densest field.   
+we calculate the angular correlation function
+(ACF) for all the models having the $15$ mock surveys consistent with
+observations. We perform this calculation as a sanity check and
+potential additional constraint. The ACF is computed only the densest
+subfield in all the 15 mock surveys corresponding to the SSA22
+region. These results are compared against the observations reported
+by \citep{Hayashino2004} which were also performed on the densest
+field of SSA22. 
 
-Figure \ref{figure:correlation_match} (match) and Figure
-\ref{figure:correlation_random} (random) present such comparison.  The
-error bars in these figures represent the standard deviation of the
-ACF over all the sub-fields.  In general, we observe that the standard
-deviation of the computed ACF in the subfields increases with
-$M_{min}$ following the same trend as in Figure
-\ref{figure:laes_dist}, as a direct consequence of cosmic variance.  
-
+It is important to keep in mind that there are some differences
+between this work and \citep{Yamada2012}. The color selection by
+\cite{Yamada2012} is less stringent compared to the one by
+\cite{Hayashino2004}. Also the EW threshold is different,
+\cite{Hayashino2004} uses a cut around $154$\AA instead of $190$\AA
+used by \citep{Yamada2012}
 
 The comparison between the simulated and observed ACFs is also done using a
-$R^2$ statistic which includes the information on measurement uncertainties
+$\chi^2$ statistic which includes the information on the measurement
+uncertainties and the statistical dispersio from the $15$ mock surveys
+in the simulation
 
 \begin{equation}
-R^{2} = \sum_{\theta_i} \frac{(\xi_{\rm obs}(\theta_i) - \xi_{\rm
+\chi^{2} = \sum_{\theta_i} \frac{(\xi_{\rm obs}(\theta_i) - \xi_{\rm
     sim}(\theta_i))^2}{\sigma_{\rm obs}^2(\theta_i) + \sigma_{\rm
     sim}^2({\theta_i})}, 
 \end{equation}
 
-where the sum is done over all the angle values $\theta_i$ where the
-ACF has been computed. In Figure XX we plot the integrated
-distributions for this $R^{2}$ statistics 
+where the sum is done over all the $13$ angle values $\theta_i$ where the
+ACF has been computed. In Figure XX we plot this statistic for all the
+models considered. In all cases $\chi^{2}<7$ which is not sufficient
+to consider that the correlation functions from the simulations are
+statistically different from the observational one. The constribution
+of cosmic variance in the simulations together with the statistical
+uncertainties make all tested models compatible with the observational
+constraints. 
 
-Given that the ACF reported by Hayashino et al en 2004 is taken over
-the densest  field oserved in the SSA22 region by  Yamada et el in
-2012 it is expected that the predicted ACF in the SSA22 region should
-reproduce this observation. In the  left panel of figure
-\ref{figure:correlation_match} we can see the predicted ACFs  an their
-corresponding standard deviation over the seven fields that mock the
-SSA22  region. It can be seen that the model with $M_min=10.6$ seems
-to better reproduce the  Hayashino's ACF and that the corresponding
-field is in fact an overdense field in the SSA22 region covered by
-Yamada et al. 
-
-From these tests we conclude that the ACF on small fields does not
-provide additional constraints to further select models for halos
-hosting LAEs. The reason is that cosmic variance is large and the
-statistical uncertainties on the ACF render almost any model
-compatible with the observational constraints. 
+%From these tests we conclude that the ACF on small fields does not
+%provide additional constraints to further select models for halos
+%hosting LAEs. The reason is that 
 
 We also present the ACF in the case of the full SSA22
 region which has been homogeneously observed by \citep{Yamada2012}. To
@@ -807,10 +800,23 @@ In Figure X we present the results for the models. The full list of
 these correlation functions can be found in the the data repository
 for this paper in \verb"github". 
 
+
+
+
+%Given that the ACF reported by Hayashino et al en 2004 is taken over
+%the densest  field oserved in the SSA22 region by  Yamada et el in
+%2012 it is expected that the predicted ACF in the SSA22 region should
+%reproduce this observation. In the  left panel of figure
+%\ref{figure:correlation_match} we can see the predicted ACFs  an their
+%corresponding standard deviation over the seven fields that mock the
+%SSA22  region. It can be seen that the model with $M_min=10.6$ seems
+%to better reproduce the  Hayashino's ACF and that the corresponding
+%field is in fact an overdense field in the SSA22 region covered by
+%Yamada et al. 
+
 We also present the results for the angular correlation function in
 therms of the correlation lenght obtained by fitting the following
 function
-
 \begin{equation}
 \xi(r) = \left(\frac{r}{r_{0}}\right)^{-\gamma}
 \end{equation}
@@ -818,6 +824,22 @@ function
 The results are shown in Figure in a $r_{0}-\gamma$ plane where the
 average and standard deviation for each mock are shown in comparison
 with the result derived from observations. 
+
+
+
+%We calculate the mean angular correlation function (ACF) only for the
+%models that showed that all of the 15 mock surveys are consistent
+%at the $P>0.05$ level with observations. 
+
+Figure \ref{figure:correlation_match} (match) and Figure
+\ref{figure:correlation_random} (random) present such comparison.  The
+error bars in these figures represent the standard deviation of the
+ACF over all the sub-fields.  In general, we observe that the standard
+deviation of the computed ACF in the subfields increases with
+$M_{min}$ following the same trend as in Figure
+\ref{figure:laes_dist}, as a direct consequence of cosmic variance.  
+
+
 
 
 %\begin{figure*}
