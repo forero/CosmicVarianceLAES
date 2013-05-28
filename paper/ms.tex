@@ -178,59 +178,21 @@ use. Third, the simplified model that allows us to translated halo
 catalogs into mock LAE observations. Fourth, the statistics we use to
 compare observational results against our theoretical predictions.
 
-%In this \documentname we constrain the typical mass of dark matter halos
-%hosting LAES at $z=3.1$. Our model is based on the number density
-%information obtained in the recent large scale survey presented by XXX
-%where XXX LAEs are detected over 7 fields of $\sim 46 \times
-%35$Mpc$^{2}h^{-2}$ in area comoving in area corresponding to observed
-%fields of $XXX$ deg$^{2}$.  
-
-%Both the spatial distribution and luminosities of the galaxies have,
-%at least in a statistical sense, informatio to constrain theoretical
-%model of LAEs. The most detailed theoretical models are also faced to
-%diverse physical and astrophysical uncertainties in obtaining
-%statistical prediction for the Lyman-alpha line. This uncertainties
-%are largest impediment to consruct an ab-iitio model for LAEs.  
-
-%In this \documentname we want to step back and reduce the complexity of our
-%model, with the sole objective of reproducing the cosmic variance in
-%the number density of LAEs. Afterwards we will interpret the
-%implications of this result for physical models for Lyman-alpha
-%emitting galaxies. 
-
-%Our model is based on the predictions of a large volume high
-%resolution N-body simulation describing the gravitational dynamics of
-%dark matter. We do not have an strong bias towards the theoretical
-%expectation of what the mass of the dark matter halo hosting the
-%galaxy should be.  Instead, we fully explore the parameter space of
-%our simplified model. The only cut we impose is that observed LAEs do
-%not reside in dark matter halos with masses less than 10$^{10}$\hMsun
-%[citation].    
-
-
-%In the following subsections we describe the most relevant features of
-%the observational data, the N-body simulation we use, our model and
-%its parameters together with the method to compare its predictions
-%against observations. 
-
 \subsection{Observational Constraints}
 
 The observational benchamark we use in this paper is the LAE number
 density information at $z=3.1$ obtained by the panoramic narrow-band
-survey presented by \cite{Yamada2012} from a survey 
-%Our observational reference are the recently published results of a
-%panoramic survey of LAES at $z=3.1$ by \cite{Yamada2012}. 
-%This survey
-conducted with the Subaru 8.2m telescope and the Subaru Prime
-Focus Camera, which has a field of view covering $34\times 27$ arcmin,
-corresponding to a comoving scale of $46\times35$ Mpc $h^{-1}$ at
-$z=3.09$. The narrow band filter is centered at $4977$ \AA with a
-$77$\AA width, corresponding to the redshift range $z=3.062-3.125$ and
-$41$ Mpc $h^{-1}$ comoving scale for the detection of the
-Lyman-$\alpha$ line centered at $z=3.09$. The authors report a total of
-$2161$ LAEs with an observed equivalent width larger than $190$\AA
-over a total survey area of $2.42$ deg$^{2}$, this corresponds to an
-averaga surface number density of $0.20\pm 0.01$ arcmin$^{-2}$.  
+survey presented by \cite{Yamada2012} from a survey  conducted with
+the Subaru 8.2m telescope and the Subaru Prime Focus Camera, which has
+a field of view covering $34\times 27$ arcmin, corresponding to a
+comoving scale of $46\times35$ Mpc $h^{-1}$ at $z=3.09$. The narrow
+band filter is centered at $4977$ \AA with  $77$\AA width,
+corresponding to the redshift range $z=3.062-3.125$ and $41$ Mpc
+$h^{-1}$ comoving scale for the detection of the Lyman-$\alpha$ line
+centered at $z=3.09$. The authors report a total  $2161$ LAEs with an
+observed equivalent width larger than $190$\ over a total survey area
+of $2.42$ deg$^{2}$, this corresponds to  averaga surface number
+density of $0.20\pm 0.01$ arcmin$^{-2}$.   
 
 The survey covered four independent fields. The first is the SSA22
 field of $1.38$ deg$^2$ with $1394$ detected LAEs, this field has been
@@ -241,10 +203,6 @@ total of $0.58$ deg$^2$ and $386$ LAEs. The third and fourth fields
 are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and $196$ LAEs,
 and the fild arotund the Great Observatory Optical Deep Survey North
 (GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs. 
-%In Table 1 we summarize
-%the values we use in throughout this paper for the each field, covered
-%area, measured surface LAE number density and inferred number volume
-%density. 
 
 There is abundant observational work done on LAEs at redshift $z=3.1$
 \citep{Kudritzki2000,Matsuda2005,Gawiser2007,Nilsson2007,Ouchi2008}.
@@ -255,29 +213,6 @@ and conditions to construct the LAE catalog. This ensures that the
 number density variations among fields are due only to
 astrophysical reasons and not different observational conditions or
 criteria to construct the catalogs.
-
-%For instance, having
-%different selection criteria on the equivalent width (EW) can change
-%the number of LAEs included in the catalog, yielding number densities
-%different by a factor of two   
-%different criteria on the equivalent width (EW) cuts to construct the
-%LAE samples. Different cuts in the EW can change the number of LAEs to
-%be included in the catalog. This cuts have an impact on the fainter
-%LAEs which are more abundante than brighter ones. Different
-%definitions of the EW cuts can yield number densities different by a
-%factor of two [REF, I think Yamada has some numbers]. 
-
-%Other
-%surveys by XXX an XXX that cover similar regions, but they use
-%different criteria on the equivalent width (EW) cuts to construct the
-%LAE samples. Different cuts in the EW can change the number of LAEs to
-%be included in the catalog. This cuts have an impact on the fainter
-%LAEs which are more abundante than brighter ones. Different
-%definitions of the EW cuts can yield number densities different by a
-%factor of two [REF, I think Yamada has some numbers]. 
- 
-
-
 
 \subsection{Simulation and Halo Catalogs}
 
@@ -293,12 +228,7 @@ power spectrum$\sigma_{8}=0.82$ \citep{Komatsu2009,Jarosik2011}.
 
 We use halo catalogs constructed with a Friend-of-Friends (FOF)
 algorithm with a linking lenght of 0.17 times the interparticle
-distance. 
-%We have veryfied that the main results we present in this
-%paper also hold if instead we use halo catalogs constructed from a the
-%Bound Density Maxima (BDM) algorithm \citep{KlypinBDM} that are
-%defined to have an density of 200 times the critical density. 
-The minimum halo mass in the models we construct in this \documentname
+distance. The minimum halo mass in the models we construct in this \documentname
 correspond to groups of $\sim 75$ particles. The catalogs were
 obtained from the publicly available Multidark database \footnote{{\tt
     http://www.multidark.org/MultiDark/}} \citep{2011arXiv1109.0003R}.
@@ -336,12 +266,8 @@ fraction $\xi<f_{\rm occ}$.
 
 Next we construct mock surveys by making groups of $11$ mock fields
 out of the $210$ available volumes. In total $15$ mock surveys are
-constructed for each model $\mathcal{M}$. 
-%mock fields into
-%sets of $11$ different ways to
-%construct the LAEs. The first way (match method) we
-The grouping is done in two different ways. In the first way, called
-{\texttt match}, we follow
+constructed for each model $\mathcal{M}$. The grouping is done in two
+different ways. In the first way, called {\texttt match}, we follow
 the clustering of the observed fields. From the $11$ mock fields, $7$
 are constructed from contigous fields in the simulation to mimic the
 SSA22 region, $3$ are also contiguous between them but not to the first
@@ -351,26 +277,6 @@ this selection is to test the impact on the final statistics of having
 $7$ clustered fields. The second way to group the mock fields is called {\texttt
   random}, whereby all the $11$ fields are selected in such a way as
 to avoid that any two volumes are contigous.
-%follow the observational setup and constructs $15$ different mock
-%surveys, each one composed of $12$ mock fields, out of which $7$
-%correspond to contiguous sub-boxes in the simulation to mimick the
-%whole SSA22, $3$ are also contiguous between them but not to the first
-%$7$ fields to mimick the SXDS fields and finally $2$ non-contiguous
-%fields that correspond to the SDF and GOODS-North fields. This will
-%produce $15$ different distributions for the number density for a
-%given model ${\mathrm M}$. The second (random method) is similar to the first
-%one. There aare $15$ different mock surveys with $12$ mock fields
-%each, but this time each field corresponds to uncorrelated sub-boxes
-%in the simulation. The third (full method) way in only has $1$ mock survey
-%containing all the $210$ mock fields, in this setup there is only one
-%predicted number density distribution for each model ${\mathrm M}$ 
-%We create the mock surveys in two different ways. First we follow 
-%The advantage of these three sampling ways is that they allow us to
-%explore the effects of both cosmic variance and the correlation
-%between fields. Comparing the results of the first and second method
-%will help us to quantify the effect of field correlation, while
-%compating the first and the third method will serve us to gauge the
-%impace of cosmic variance. 
 
 
 \subsection{Sampling and Selecting Models}
@@ -397,30 +303,6 @@ In this paper we consider that a model
 ${\mathcal M}$ that has at least one (1) mock survey (out of 15)
 consistent with the observed distribution of LAE number densities has
 viable parameters thatdeserve to be considered for further analysis.  
-
-%For each mock survey generated in a given model ${\mathcal M}$ we compute the LAE surface density
-%distributions for the three different ways of grouping the mock
-%fields, as described in the previous section. For each sub-volume we
-%project the positions of the LAE hosting halos along the $z$ direction
-%and calculate its surface number density in units of sources per
-%arcmin$^{2}$. For each number density distribution we perform a
-%Kolmogorov-Smirnov against the $12$ surface density observational
-%values. From this test we obtain the value $0<P<1$ to reject the null
-%hypothesis, namely that the two data sets come from the same
-%distribution. In this paper we use values of $P>0.1$ to consider that
-%the simulated and observed number densities come from the same
-%distribution. 
-
-%We generate a series of models ${\mathcal M}$ with different input
-%parameters$\{M_{\rm min}, M_{\rm max}, f_{\rm occ}\}$ as
-%follows. $M_{\rm min}$ and $M_{\rm max}$ are allowed to take 30
-%different values evenly spaced by $0.1$ dex, $M_{\rm min}$ ranges from
-%$\log_{10}M_{\rm min}=10.0$ up to $\log_{10}M_{\rm min}=12.9$, while
-%$M_{\rm max}$ range  from $\log_{10}M_{\rm min}=10.1$ up to
-%$\log_{10}M_{\rm min}=13.0$. The occupation fraction $f_{\rm occ}$
-%takes 100 different values from $0.01$ to $1.00$ regularly spaced by
-%$0.01$. In total the number of different sets of input parameters to
-%be explored is $30 \times 30\times 100 = 9\times 10^{4}$. 
 
 \section{Basic Results}
 
@@ -457,17 +339,6 @@ that will show surface number density larger than observations, this
 implies that in such models the occupation fraction has to be tuned
 $f_{\rm occ}<1.0$ as to lower the halo numeber density to match the
 gray band values.
-
-%This basic result provides the basis to understand the range of models
-%${\mathcal M}$ expected trends for the
-%LAEs' preferred mass and the occupation fraction.  
-%From this Figure we
-%can read which models do not have achance reproduce the
-%observations. Regions in the plot where the halo surface density
-%values are below the observational constraint correspond to high
-%masses halo masses. For a LAE model ${\mathcal M}$ with a minimum mass
-%$M_{\rm   min}> 3 \times 10^{11}$\hMsun located inthat mass range, the
-%surface density is too low compared with observations.   
 
 Conversely, there are regions in the plot where the halo surface
 density is always higher than the observational constraints correspond
@@ -549,72 +420,6 @@ constraints to define the agreement with observations and including
 additional observational information onpossible values for the
 occupation fraction at $z\sim 3$. 
 
-
-%The raw results of our experiments yield a prefered range for
-%halo masses hosting LAES bounded by a minimum mass $10.5<\log_{10}M_{\rm
-%  min}<11.5$ and without any limitation on the  maximum
-%mass. In this regime the average occupation fraction tends to increase
-%with $M_{\rm min}$. These results discard models that were
-%nevertheless disfavored from the very beginning based on the results
-%of the mass functions (see Figure 1.).  
-
-
-%Figure \label{figure:landscape} presents the regions in the parameter
-%space $M_{\rm min}$-$M_{\rm max}$ where the KS test yields values of
-%$P>0.05$. We consider that for those models it is not possible to rule out the null
-%hypothesis, namely that the number density in simulated data and the observations come
-%from the same parent distribution. Each panel corresponds to the three different ways of
-%grouping the mock fields. In the case of the methods {\tt{Match}}
-%and {\tt{Random}} the color code indicates the fraction of these 15
-%mock surveys with with $P>0.1$. The third panel shows the result for
-%the method {\tt{Full}}, in this case the color code correspond
-%to the value maximum value of $100\times P$ for a model with those
-%mass ranges.
-
-%These results clearly distinguish three mass regimes. In the first regime, at
-%high mass values, we find that LAE models with minimum mass of $M_{\rm
-%  min}>10^{11.5}$\hMsun are not compatible with observations. There is
-%a second regime for masses below $M_{\rm
-%  min}=3\times 10^{10}$ any values for $M_{\rm min}$ and $M_{\rm max}$
-%can be made compatible with observations, provided that
-%$f_{\rm occ}$ is fine tuned to do it. In an intermediate mass regime,
-%for minimum mass values $3\times 10^{10}\hMsun < M_{\rm min}< 3\times 10^{11}\hMsun$ only a
-%limited range of models with $M_{\rm max}$ with occupation fraction
-%$f_{\rm occ}\sim 1$ is able to reproduce observations. 
-
-%In these three different mass regimes the occupation monotonically
-%decreases as a function of the minimum halo mass $M_{\rm min}$. In
-%Figure XXX we show this treend in three panels following the same
-%correspondence as Figure XXX. From these results we interpret that the
-%different mass regimes that were identified correspond to best fit
-%models with $f_{\rm occ}\sim 1$, $0<f_{\rm occ}<1$ and $f_{\rm
-%  occ}\sim 0$, respectively. 
-
-%The two {\tt match} and {\tt random} methods present the highest
-%number of matching mock surveys in the medium mass regime. However, it
-%is important to keep in mind that not all the mock surveys for a
-%sucessful model ${\mathrm M}$ present a high value $P>0.1$, only a
-%modest fraction seems to be consistent with observations. This shows that the
-%cosmic variance is still present on the physical scales probed by
-%observations. This will be considered in more detail in the discussion
-%seccion. 
-
-%To illustrate this point, in Figure \ref{fig:mocks} we present the
-%results for two mock fields for the {\tt{Match}} method for a model
-%with the same parameters, but two extreme values for the KS test. 
-
-
-%Conversely there are different models where the KS test yield values of
-%$P\sim 1$. To illustrate the kind of success represented by these
-%models, we have selected these best ones in the case of the method
-%{\tt{MatchObs}}. Figure XXX shows in the main panel the spatial
-%distribution of the mock surveys, the smaller panel shows the
-%corresponding surface density distribution and the observational
-%constraint.  
-
-%In what follows we will focus our discussion on the mocks constructed
-%with the {\tt{Match}} and {\tt{Random}} methods. 
-
 \section{Additional Constraints}
 
 \begin{figure*}
@@ -634,16 +439,6 @@ highest possible number of mock surveys consistent with
 observations. Second by including additional observational constraints
 on the occupation fraction for high redshift LAEs.
 
-%In this section we consider three different ways to impose
-%tighter constraints on this mass range by making use of the results we
-%have derived so far together with additional statistical and
-%astrophysical constraints. In the first constraint we select the
-%models where all the mock surveys present KS-test values consistent
-%with observations. The second constraints uses recent observational
-%results on the average occupation fraction for LAEs at high-z. The
-%third exploits the information in the Angular Correlation Function
-%(ACF).  
-
 \subsection{Models with the highest success rates}
 
 For each model ${\mathcal M}$there are 15 different mock surveys. In the
@@ -656,10 +451,6 @@ that have at least $N_{\rm high-P}$ mocks with $P>0.05$ for the {\texttt
 here are between $80$ to $100$ models with all the 15 realizations with
 $P>0.05$. This a reduction of a factor of $\sim 6$ with repect to the
 total number of mocks with at least one consistent mock. 
-%Here we focuse on the latter models. 
-%The best models
-%represent $\sim 15\%$ of the number of initially considered good
-%models. 
 
 Figure \ref{fig:restriction_mock} presents the locii of these models
 in the parameter space $M_{\rm min}-M_{\rm max}$ and $M_{\rm
@@ -697,15 +488,8 @@ occupation fraction $f_{\rm  occ}$ remain similar over that time
 scale.
 
 We limit the occupation fraction to
-be in the range 
-%further pick models that have an occupation fract
-$f_{\rm
-  occ}\leq 0.2$ to allow for some flexibility on the time evolution
+be in the range $f_{\rm  occ}\leq 0.2$ to allow for some flexibility on the time evolution
 and the uncertainty in the dust correction used to infer the escape fraction. 
-%Considering an occupation fraction $f_{\rm occ}=0.20$
-%another $39$This constraint help us to
-%select $\sim 10\%$ of theoriginal models that were considered as
-%consistent with observations in the previous section. 
 Figure  \ref{fig:restriction_mock_and_f_occ}  shows the prefered
 models in the planes $M_{\rm min}-M_{\rm  max}$ and $M_{\rm
   min}-f_{\rm occ}$ for the {\tt match} and {\tt   random} methods.
@@ -715,11 +499,6 @@ reduction. All the models with $\log_{10}M_{\rm min}\geq 11.0$ are now
 excluded and the best models are now clustered around a narrow region
 in parameter space. The list for the model parameters is in the
 Appendix in Table \ref{table:models_match}. 
-
-
-%In terms of the constraints done in the previous sub-section, we find
-%that the models in this region of parameter space have an average
-%number of XX mock catalogs consistent with observations. 
 
 \begin{figure*}
 \begin{center}
@@ -1045,5 +824,3 @@ $\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$\\\hline
 \bibliography{references} 
 
 \end{document}
-
-lun abr 29 07:38:58 COT 2013
