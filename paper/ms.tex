@@ -74,25 +74,24 @@ $^{2}$ Departamento de Astronom\'{i}a, Universidad de Chile, Camino el Observato
 \maketitle
 
 \begin{abstract}
-We use cosmological N-body simulations to find the characteristic mass
-of dark matter halos hosting Lyman-Alpha Emitting (LAE) galaxies at a
-redshift of $z=3.1$. The method is based on matching the statistics
-for the number density between mock and observed fields. The mock
-catalogs are constructed using a simple model where a dark matter halo
-can only host one LAE with a probability $f_{\rm occ}$ if its mass is
-found withing a certain range mass range delimited by two threshold
-values, $M_{\rm min}$ and $M_{\rm max}$. We find that the most of the models that
-are consistent the observed cosmic variance statistics are those with
-halo masses in the range $10.5 < \log_{10} M_{\rm  min}/hMsun < 11.5$
-and $\log_{10} M_{\rm max}/\hMsun < 13.5$ with and occupation fraction
-that scales as $f_{\rm occ}=$. We explore three additional constraints
-to narrow down these range: the number of mocks consistent with 
-observations, observational constraints on the occupation fraction and
-the angular correlation function. These three conditions narrow down
-the space parameter to $10.1\leq M_{\rm min}\leq11.0$ and
-$10.2\leq M_{\rm max}\leq12.0$, $0.1\leq_{\rm occ}\leq 0.2 $. 
- We make available the mock data for the best models in a public repository. 
- Implications for galaxy formation models? 
+We use cosmological N-body dark matter only simulations to constrain the
+characteristic mass of dark matter halos hosting Lyman-Alpha Emitting
+(LAE) galaxies at a redshift of $z=3.1$. The method is based on
+matching the statistics for the number density between mock and
+observed fields. The mock fields are constructed using a simple model
+where a dark matter halo can only host one LAE with a probability
+$f_{\rm occ}$ if its mass is found withing a certain range mass range
+delimited by two threshold values, $M_{\rm min}$ and $M_{\rm max}$. 
+We also maximize the number of mocks surveys consistent with
+observations and impose consistency with the angular correlation
+function. Under these conditions we find that LAEs are preferentially
+hosted by halos in very narrow mass ranges less than 0.5 dex in width,
+with the minimum mass $10\leq \log_{10}M_{\rm min}\leq 10.9$ and the
+occupation fraction $f_{\rm   occ}\leq 0.2$.  Our finding suggest that
+the most massive dark matter halos at that epoch do not host the
+brightest LAEs. This also gives support to observational evidence that
+says that only a small fraction of star forming galaxies can be
+actually detected as LAEs.
 \end{abstract}
 
 \begin{keywords}
@@ -646,13 +645,14 @@ for this paper in \verb"github".
 \caption{Left: The fitted parameters  ($\theta_{0}$ vs $\gamma$) of the 
 mean ACF  assuming a powerlaw behavior. Each blue dot corresponds to a
 match-model while the green dot represent the powerlaw fit of the observational
-ACF reported by \cite{Hayashino2004}.  The error bars represents the dispersion
+ACF reported by \citet{Hayashino2004}.  The error bars represents the dispersion
 in each parameter over all the mock surveys for a given model and dispersion due
-to the observational error for the measured ACF by \cite{Hayashino2004}. Rigth: 
+to the observational error for the measured ACF by \citet{Hayashino2004}. Rigth: 
 $\theta_{0}$ vs $M_{min}$. The date is subdivided into two blocks $M_{max}<12.0$ 
 (blue) and $M_{max}>12.0$ (green). The red rectangle includes the region within
 models are consisted with the observational angular-correlation lenght
-($15<\theta_{0}<23$) as it can be deduced from the left panel. \label{figure:correlation_parameters} }  
+($15<\theta_{0}<23$) as it can be deduced from the left
+panel. \label{figure:correlation_parameters}} 
 \end{figure*} 
 
 %\begin{figure*}
