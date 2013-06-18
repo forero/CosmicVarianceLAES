@@ -164,17 +164,17 @@ fig4=P.figure()
 mass_plot=fig4.add_subplot(111)
 mass_index=np.where(f_occ<=0.2)
 
-mass_plot.plot(m_min[mass_index],m_max[mass_index],'bs',label=r"$\log f_{occ}<=0.2$")
+mass_plot.plot(m_min[mass_index],m_max[mass_index] - m_min[mass_index],'bs',label=r"$\log f_{occ}<=0.2$")
 mass_index=np.where(f_occ>0.2)
-mass_plot.plot(m_min[mass_index],m_max[mass_index],'kp',label=r"$\log f_{occ}>0.2$")
+mass_plot.plot(m_min[mass_index],m_max[mass_index] - m_min[mass_index],'kp',label=r"$\log f_{occ}>0.2$")
 #mass_plot.plot(m_min[best_index], m_max[best_index],'ks')
 mass_plot.set_xlabel(r'$M_{min}$', fontsize=20)
 mass_plot.set_ylabel(r"$M_{max}$",fontsize=20)
 mass_plot.set_title(r"Observationally consistent models. Full Field",fontsize=20)
-mass_plot.set_title(r"$M_{min}$ vs $M_{max}$. Observationally consistent models",fontsize=20)
+mass_plot.set_title(r"$\log M_{min}$ vs $\Delta log M$. Observationally consistent models",fontsize=20)
 P.xlim(10.2,11.3)
-P.ylim(10.4,12.0)
-plot_name="mmin_vs_mmax.png"
+#P.ylim(10.4,12.0)
+plot_name="mmin_vs_dm.png"
 mass_plot.legend(shadow=False,loc=2)
 fig4.savefig(plot_name)
 

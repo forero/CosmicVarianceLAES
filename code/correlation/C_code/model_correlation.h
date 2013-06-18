@@ -46,8 +46,8 @@
 #define LOWEST_MASS 10.0
 #define HIGHEST_MASS 13.0
 #define MASS_STEP 0.10
-#define MOCK_SURVEYS 12
-#define N_MODELS 3
+#define MOCK_SURVEYS 15
+#define N_MODELS 101
 #define HALO_MASS_DEV 0.127725e10
 
 

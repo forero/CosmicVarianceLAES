@@ -303,7 +303,7 @@ ax_max.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bin
 ax_mean.legend(shadow=False)
 ax_max.legend(shadow=False)
 ax_mean.set_title(survey_type)
-ax_max.set_title("highest density region")
+ax_mean.set_title("highest density region")
 
 fig1.savefig("mean.png")
 

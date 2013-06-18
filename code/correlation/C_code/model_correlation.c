@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
       for(survey=0;survey<MOCK_SURVEYS;survey++)
 	{
 	  
-	  sprintf(filename,"/home/jemejia/CosmicVarianceLAES/data/laes/mock_cat/maxden_model_%d_mock_%d.txt",model,survey);
+	  sprintf(filename,"/home/jemejia/CosmicVarianceLAES/data/laes/mock_cat/model_%d_mock_%d.txt",model,survey);
 	  file=fopen(filename,"r");
 	  
 	  n_laes=0;
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 	  //correlation_peebles(histogram_cat,histogram_dr,correlation_p);
 	  //correlation_standard(histogram_cat,histogram_rand,correlation_s);
 	  printf("Correlation funtion computed \n");
-	  sprintf(filename,"/home/jemejia/CosmicVarianceLAES/data/laes/correlation/maxden_model_%d_mock_%d.txt",model,survey);
+	  sprintf(filename,"/home/jemejia/CosmicVarianceLAES/data/laes/correlation/model_%d_mock_%d.txt",model,survey);
 	  file=fopen(filename,"w");
 	  for(i=0;i<THETA_PARTITIONS;i++)
 	    {

@@ -1,4 +1,4 @@
-#include<mass_min_max.h>
+#include<model_correlation.h>
 /*
 Ingresar a=0 si z=5.7 ó a=1 para otro redshift
 observational_filename es la ruta del archivo con la funcion de correlacion para cada uno de los redshift
