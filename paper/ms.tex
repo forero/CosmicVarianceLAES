@@ -29,7 +29,7 @@
 \def\squig{\sim\!\!}
 \newcommand{\LCDM}{$\Lambda$CDM~}
 \newcommand{\beq}{\begin{eqnarray}}  
-\newcommand{\eeq}{\end{eqnarray}}  
+\newcommand{\eeq}{\end{eqnarray}}   
 \newcommand{\zz}{$z\sim 3$} 
 \newcommand{\avg}[1]{\langle{#1}\rangle}  
 \newcommand{\ly}{{\ifmmode{{\rm Ly}\alpha}\else{Ly$\alpha$}\fi}}
@@ -37,8 +37,10 @@
 \newcommand{\hGpc}{{\ifmmode{h^{-1}{\rm Gpc}}\else{$h^{-1}$Gpc }\fi}}  
 \newcommand{\hmpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}  
 \newcommand{\hkpc}{{\ifmmode{h^{-1}{\rm kpc}}\else{$h^{-1}$kpc }\fi}}  
-\newcommand{\hMsun}{{\ifmmode{h^{-1}{\rm {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}  
-\newcommand{\hmsun}{{\ifmmode{h^{-1}{\rm {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}  
+\newcommand{\hMsun}{{\ifmmode{h^{-1}{\rm
+        {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}   
+\newcommand{\hmsun}{{\ifmmode{h^{-1}{\rm
+        {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}   
 \newcommand{\Msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}  
 \newcommand{\msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}  
 \newcommand{\lya}{{Lyman$\alpha$~}}
@@ -430,45 +432,44 @@ occupation fraction at $z\sim 3$.
   \label{fig:high_success_rate}.}  
 \end{figure*}
  
-In this section we consider three additional constraints on the models
-we accept as succesul. First by taking models with the
+In this section we consider two additional constraints on the models
+we accept as succesul. First we take models with the
 highest possible number of mock surveys consistent with
-observations. Second by including additional observational constraints
-on the occupation fraction for high redshift LAEs. Third by comparing
-the angular correlation function against observational constraints by
-\cite{Hayashino2004}. 
+observations. Second by comparing the angular correlation function
+against observational constraints by \cite{Hayashino2004}. 
 
 \subsection{Models with the highest success rates}
 
-For each model ${\mathcal M}$there are 15 different mock surveys. In the
+For each model ${\mathcal M}$ there are 15 different mock surveys. In the
 previous section we presented the models that had at least one (1)
 mock survey with $P>0.05$.
 
 Figure \ref{fig:high_success_rate} shows the number of models
-that have at least $N_{\rm high-P}$ mocks with $P>0.05$ for the {\texttt
-  match} and {\texttt random} methods.  This shows that there are
-here are between $80$ to $100$ models with all the 15 realizations with
-$P>0.05$. This a reduction of a factor of $\sim 6$ with repect to the
-total number of mocks with at least one consistent mock. 
+that have at least $N_{\rm high-P}$ mocks with $P>0.05$ for both the
+{\texttt  match} and {\texttt random} methods.  This shows that there
+are between $80$ to $100$ models with all the 15 realizations with
+$P>0.05$. Selction of these models as successful represents a
+reduction of a factor of $\sim 6$ with repect to the total number of
+mocks with at least one consistent mock.  
 
 Figure \ref{fig:restriction_mock} presents the locii of these models
 in the parameter space $M_{\rm min}-M_{\rm max}$ and $M_{\rm
-  min}-f_{\rm occ}$ for the {\texttt match} method, the results for
-the {\texttt random} method are similar. In this case the models with
-$\log_{10}M_{\rm min}< 11.7$ are greatly reduced. This corresponds to
-the regions in the parameter space in Figure \ref{fig:landscape} that
-already had a low number of consistent mock surveys. From the right
-panel in Figure \ref{fig:restriction_mock} one can see that there is
-not a strong selection effect on the occupation fraction $f_{\rm
-  occ}$. 
+  min}-f_{\rm occ}$. The results are very similar between the {\texttt
+  match} and {\texttt random} methods. With this constraints the
+number of consistent models with  $\log_{10}M_{\rm min}< 11.7$ are
+greatly reduced. This corresponds to the regions in the parameter
+space in Figure \ref{fig:landscape} that already had a low number of
+consistent mock surveys. On the other hand, from the right panel in
+Figure \ref{fig:restriction_mock} one can see that there is not a
+strong selection effect on the occupation fraction $f_{\rm occ}$.  
 
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig5_match_mass_mock.pdf}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig5_match_mass_mock.pdf} 
 \hspace{5mm}
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig5_match_f_occ_mock.pdf}
-\end{center} 
+\end{center}  
 \caption{Favored regions in parameter space when the constraints on
   the maximal number of consistent mocks is imposed. The results for
   the {\texttt random} methodology (not shown here) are very similar to the ones
@@ -481,16 +482,50 @@ not a strong selection effect on the occupation fraction $f_{\rm
 \subsection{Consitency with the Angular Correlation Function}
 
 
-We impose an additional constraint by requiring that the models
-selected in the previous section to be also compatible with the
-observational ACF. The measurementens presented in \citep{Yamada2012}
-do not present a new measurement of the angular correlation function
-(ACF). Instead we use the measurements performed by
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/power_law_correlation.pdf} 
+\hspace{5mm}  
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_correlation.pdf} 
+\end{center}
+\caption{Left: Values for the free parameters ($\theta_{0}$ vs $\gamma$) of the 
+mean angular correlation function of the 15 mock surveys for each
+model. Blue dots corresponds to simulations and the green cross to
+observations by \citet{Hayashino2004}. The error bars in the
+theoretical data correspond to the starndard deviation from the
+different mocks. Right: Same results as before in the
+$\theta_{0}$-$M_{\rm min}$ plane. This time the observational
+constraints are represented by the red rectangle. Blue squares
+represent models with $\log_{10} M_{\rm  max}<12.0$, green circles are
+models with $\log_{10} M_{\rm max}>12.0$.
+\label{figure:correlation_parameters}}
+\end{figure*} 
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_mmax.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_focc.pdf}
+\end{center}
+\caption{Best models paramter space when both the constraints on the
+  maximal number of  consistent mocks and the occupation  fraction
+  $f_{\rm occ}\leq  0.2$ are included. $M_{\rm min}$ vs $M_{\rm max}$
+  (left), $M_{\rm min}$ vs $f_{\rm occ}$ (rigth).
+  \label{fig:restriction_mock_and_f_occ_corr}} 
+\end{figure*} 
+
+As an additional observational constraint we requiring that the models
+selected in the previous section must be compatible with the
+observational angular correlation function (ACF). The measurementens
+presented in \citep{Yamada2012} do not report an ACF
+measurement. Instead we use the results reported by
 \citep{Hayashino2004} on the LAEs observed in the densest field of
-SSA22.   
- 
+SSA22.    
+  
 It is important to keep in mind that there are some differences
-between this work and \citep{Yamada2012}. The color selection by
+between this work and \citep{Yamada2012}. First, the color selection by
 \cite{Yamada2012} is less stringent compared to the one by
 \cite{Hayashino2004}. Also the EW threshold is different,
 \cite{Hayashino2004} uses a cut around $154$\AA instead of $190$\AA
@@ -504,171 +539,64 @@ function:
 \xi(\theta) = \left(\frac{r}{\theta_{0}}\right)^{-\gamma}
 \end{equation}
 
-The procedure is a done through a least square minimizatio is done to
-both the mean ACF and the observational ACF reported by
-\cite{Hayashino2004} .  The results are shown  in Figure
+Both the theoretical and observational ACF are derived by a least
+square minimization procedure. The results are shown  in Figure
 \ref{figure:correlation_parameters}  in a $\theta_{0}-\gamma$  plane
-where the average and standard deviation for each mock  are shown in
-comparison with the resut derived from observations.  Error bars in
+where the average and standard deviation for each mock is shown in
+comparison with the resut derived from observations.  The Error bars in
 these figures represents the standard deviation of the ACF over all
-the sub-fields. These error bars are larger than the statistical
-uncertainty from the fitting procedure on a single field.
+the sub-fields in the 15 mock observations. These error bars are
+larger than the statistical uncertainty from the fitting procedure on
+a single field..
 
 We see in the left panel Figure \ref{figure:correlation_parameters} that
-the observational ACF measured by \cite{Hayashino2004} (green dot) set aditional 
-constrains on the parameters models. Only models with angular-correlation lenght within  
-$\theta_{0}\sim[15,23]arcsec$ reproduces observations and this rule out several models. 
+the observational ACF measured by \cite{Hayashino2004} (green dot) is
+succesul in reducing the total number of possible models. Only those
+with angular-correlation length within
+$15^{\prime\prime}<\theta_{0}<23^{\prime\prime}$ are consideret to
+reproduce observations.  
 
-In order to identify the models that are consistent with observation we
-plot if the right panel of figure \ref{figure:correlation_parameters} 
-$\theta_{0}$ vs $M_{\rm min}$ and divide the plots into two sets: Those models
-with $\log \frac{M_{\rm max}}{M_{\odot}}<12$ (blue dots) and those with 
-$\log \frac{M_{\rm max}}{M_{\odot}}>12$ (green dots). The red rectangle includes
-the parameter region wich is consistent with the observational constraint in $\theta_{0}$.
-With this restriction we find that models with $\log \frac{M_{\rm max}}{M_{\odot}}>12$ and
-$\log \frac{M_{\rm min}}{M_{\odot}}>11.1$can be ruled out.
 
-%In general, we observe that the standard
-%deviation of the computed ACF in the subfields increases with
-%$M_{min}$ following the same trend as in Figure
-%\ref{figure:laes_dist}, as a direct consequence of cosmic variance.  
+In order to interpret the results from this test we
+show in the right panel of Figure \ref{figure:correlation_parameters} 
+the plane $\theta_{0}$-$M_{\rm min}$ for all models. There we divide
+the models into two disjoint sents: those with $\log \frac{M_{\rm
+    max}}{M_{\odot}}<12$ (blue dots) and $\log \frac{M_{\rm
+    max}}{M_{\odot}}>12$ (green dots). The colored rectangle includes
+the parameter region wich is consistent with the observational
+constraint in $\theta_{0}$. With this restriction we find that most
+models with $\log \frac{M_{\rm max}}{M_{\odot}}>12$ and  $\log
+\frac{M_{\rm     min}}{M_{\odot}}>11.1$can be safely ruled out.  
 
-In figure \ref{fig:restriction_mock_and_f_occ_corr} we present the prefered
+
+
+In Figure \ref{fig:restriction_mock_and_f_occ_corr} we present the prefered
 models in the planes $M_{\rm min}-M_{\rm  max}$ and $M_{\rm min}-f_{\rm occ}$
 for the {\tt match} method after applying the observational constraints 
-in the occupation fraction and the ACF.
+in the occupation fraction and the ACF. Here we consider a model
+consistent if there is an overlap of $1-sigma$ in its values for the
+correlation length $\theta_0$ and the power $\gamma$ in the
+correlation function.  
 
-
-
-Finally, we also present the ACF in the case of the full SSA22
-region which has been homogeneously observed by \citep{Yamada2012}. To
-this date the observational ACF has not been reported in the
-litereature, therefore our calculations can be considered as
-predictions. 
-
-In Figure X we present the results for the models. The full list of
-these correlation functions can be found in the the data repository
-for this paper in \verb"github". 
-
-%The comparison between the simulated and observed ACFs is also done using
-%$\chi^2$ statistic which includes the information on the measurement
-%uncertainties and the statistical dispersio from the $15$ mock surveys
-%in the simulation
-
-%\begin{equation}
-%\chi^{2} = \sum_{\theta_i} \frac{(\xi_{\rm obs}(\theta_i) - \xi_{\rm
-%    sim}(\theta_i))^2}{\sigma_{\rm obs}^2(\theta_i) + \sigma_{\rm
-%    sim}^2({\theta_i})}, 
-%\end{equation}
-
-%where the sum is done over all the $13$ angle values $\theta_i$ where the
-%ACF has been computed. In Figure XX we plot this statistic for all the
-%models considered. In all cases $\chi^{2}<7$ which is not sufficient
-%to consider that the correlation functions from the simulations are
-%statistically different from the observational one. The constribution
-%of cosmic variance in the simulations together with the statistical
-%uncertainties make all tested models compatible with the observational
-%constraints. 
-
-%From these tests we conclude that the ACF on small fields does not
-%provide additional constraints to further select models for halos
-%hosting LAEs. The reason is that 
-
-
-
-
-
-
-%Given that the ACF reported by Hayashino et al en 2004 is taken over
-%the densest  field oserved in the SSA22 region by  Yamada et el in
-%2012 it is expected that the predicted ACF in the SSA22 region should
-%reproduce this observation. In the  left panel of figure
-%\ref{figure:correlation_match} we can see the predicted ACFs  an their
-%corresponding standard deviation over the seven fields that mock the
-%SSA22  region. It can be seen that the model with $M_min=10.6$ seems
-%to better reproduce the  Hayashino's ACF and that the corresponding
-%field is in fact an overdense field in the SSA22 region covered by
-%Yamada et al. 
-
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/power_law_correlation.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_correlation.pdf}
-\end{center}
-\caption{Left: The fitted parameters  ($\theta_{0}$ vs $\gamma$) of the 
-mean ACF  assuming a powerlaw behavior. Each blue dot corresponds to a
-match-model while the green dot represent the powerlaw fit of the observational
-ACF reported by \citet{Hayashino2004}.  The error bars represents the dispersion
-in each parameter over all the mock surveys for a given model and dispersion due
-to the observational error for the measured ACF by \citet{Hayashino2004}. Rigth: 
-$\theta_{0}$ vs $M_{min}$. The date is subdivided into two blocks $M_{max}<12.0$ 
-(blue) and $M_{max}>12.0$ (green). The red rectangle includes the region within
-models are consisted with the observational angular-correlation lenght
-($15<\theta_{0}<23$) as it can be deduced from the left panel. \label{figure:correlation_parameters}} 
-\end{figure*} 
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_mmax.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_focc.pdf}
-\end{center}
-\caption{Best models paramter space when both the constraints on the maximal number
-  of  consistent mocks and the occupation  fraction $f_{\rm occ}\leq
-  0.2$ are included. $M_{\rm min}$ vs $M_{\rm max}$ (left), $M_{\rm min}$ vs $f_{\rm occ}$ (rigth)
-  \label{fig:restriction_mock_and_f_occ_corr}} 
-\end{figure*} 
-%\begin{figure*}
-%\begin{center}
-%\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_large_correlation_selected_models.pdf}
-%\hspace{5mm}
-%\includegraphics[width=0.46\linewidth,angle=0]{./plots/random_full_correlation_selected_models.pdf}
-%\end{center} 
-%\caption{ mean ACFs   and their correponding standard deviation (error
-%  bars)  of some selected models in different mass ranges over the 7
-%  subfields of the SSA22 field (left) and the entire 12 field sample
-%  (rigth) using the  random
-%  configuration. \label{figure:correlation_random} }   
-%\end{figure*}
 
 \section{Discussion}
 
 
+Imposing additional constraints with the maximal number of consistent
+mock surveys and the angular correlation function we end up with 50
+models out of the original 90000 models. In what follows we discuss
+the implications of the selection of these models on the escape
+fraction of Lyman $\alpha$ radiation, the stellar abundance and the
+star formation efficiency in LAEs at $z=3.1$. 
 
-%\begin{figure*}
-%\begin{center}
-%\includegraphics[width=0.49\linewidth,angle=0]{./plots/mytest.pdf}
-%\includegraphics[width=0.49\linewidth,angle=0]{./plots/mytest.pdf}
-%\end{center} 
-%\caption{Spatial distribution for two mocks corresponding to the model
-%  $M_{\rm min}=$, $M_{\rm max}=$ and $f_{\rm occ}=$. All the 15
-%  different mock  surveys for this model in the {\texttt match}
-%  configuration are consistent with observations at the $P>0.05$
-%  level. The full data for all the mocks can be found in the github
-%  repository for this paper.
-%  \label{figure:spatial_distro}.}
-%\end{figure*}
+\subsection{Escape fraction}
 
+We find that the majority ($80\%$) of the best models have a low
+ocacupation fraction $f_{\rm occ}\leq 0.4$. This preference goes in
+the same direction as the observational constraint on $f_{\rm occ}\sim
+0.1-0.2$ derived at $z=2.2$ by \cite{Hayes2010}.
 
-Considering the tightest constraints on the mock catalogs 
-with the angular correlation function and the maximal
-number of consistent mock surveys we end up with 50 models out of the
-original 90000 models. 
-
-We find that most of the models with an occupation fraction $f_{\rm
-  occ}\leq 0.2$ are those with mean correlation lenghts within the
-observational uncertainty. Most of the models with $f_{\rm occ}$ are
-those that are consistent only when the statistical uncertainty from
-the mock cosmic variance is taken into account. 
-
-This slight preference towards low occupations fractions is remarkably
-close to  the observational constraint $f_{\rm occ}$ derived at
-$z=2.2$ by \cite{Hayes2010}.  This estimation was based
-on blind surveys of the H$\alpha$ and Lyman $\alpha$ line with the
+Their estimation was based on blind surveys of the H$\alpha$ and Lyman $\alpha$ line with the
 European Southern  Observatorio (ESO) Very Large Telescope
 (VLT). Using corrections by extinction to obtain an estimate for the
 intrinsic H$\alpha$ luminosity, and using values for the theoretical
@@ -687,17 +615,13 @@ conditions that determine the escape fraction $f_{\rm esc}$ and the
 occupation fraction $f_{\rm  occ}$ remain similar over that time
 scale.
 
-%that there are 60 set of parameters of our model, out of the original
-%90000 initial models, that are consistent with the observational
-%constraints at redshift $3.1$: the distribution of the number density,
-%the inferred values for the average occupation fraction. The
-%consistency with the angular correlation, in terms of the $\chi^2$
-%statistics did not help to discard any additional models with a
-%significant degree of confidence. 
+Including the information of the halo mass range size allows us 
 
 
 These 50 models can be classified into two families of the same
-size. The first, where the range $M_{\rm min}-M_{\rm max}$ is narrow,
+size. 
+
+The first, where the range $M_{\rm min}-M_{\rm max}$ is narrow,
 typically of less than $<1.0$ dex. While in the second familiy the
 extent $>1.0$ dex. In the first case the minimum halo mass is found to
 be in a wide range $10^{10}\hMsun <M_{\rm min}< 10^{11.5}\hMsun$ while
@@ -715,22 +639,6 @@ models reproduces observations. The list for the model parameters is in the
 Appendix in Table \ref{table:models_match}.
 
 
-\subsection{Observational estimates for the occupation fraction}
-
-
-
-We limit the occupation fraction to
-be in the range $f_{\rm  occ}\leq 0.2$ to allow for some flexibility on the time evolution
-and the uncertainty in the dust correction used to infer the escape fraction. 
-Figure  \ref{fig:restriction_mock_and_f_occ}  shows the prefered
-models in the planes $M_{\rm min}-M_{\rm  max}$ and $M_{\rm
-  min}-f_{\rm occ}$ for the {\tt match} and {\tt   random} methods.
-With this additional constraint between $35$ to $40$ models are
-consistent with observations, this represents a factor of $\sim 2$
-reduction. All the models with $\log_{10}M_{\rm min}\geq 11.0$ are now
-excluded and the best models are now clustered around a narrow region
-in parameter space. %The list for the model parameters is in the
-%Appendix in Table \ref{table:models_match}. 
 
 \subsection{Implications for galaxy formation models}
 
