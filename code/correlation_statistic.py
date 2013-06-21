@@ -3,6 +3,7 @@ import pylab as P
 import matplotlib.collections as collections
 from scipy import stats
 from scipy import optimize as op
+plot_dir="../paper/plots/"
 
 #defining the power-law function to fit the correlation function
 powerlaw = lambda x, amp, index: (x/amp)**(index)
@@ -112,11 +113,11 @@ ro_plot.set_xlabel(r'$\theta_{0}$', fontsize=20)
 ro_plot.set_ylabel(r"$\gamma$",fontsize=20)
 ro_plot.set_title("Angular Correlation parameters. Full SSA22 field",fontsize=20)
 ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
-plot_name="power_law_correlation.png"
+plot_name=plot_dir +"power_law_correlation.pdf"
 ro_plot.legend(shadow=False,loc=2)
 
 
-fig2.savefig(plot_name)
+fig2.savefig(plot_name,format="pdf")
 
 
 fig3=P.figure()
@@ -130,11 +131,11 @@ mmin_plot.set_xlabel(r"$M_{min}$",fontsize=20)
 mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Full SSA22 Field",fontsize=20)
 mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Match Survey",fontsize=20)
 
-plot_name="mmin_vs_correlation.png"
+plot_name=plot_dir +"mmin_vs_correlation.pdf"
 mmin_plot.legend(shadow=False,loc=2)
 collection = collections.BrokenBarHCollection.span_where(m_min_m, ymin=15, ymax=23, where=ro>0,  facecolor='red', alpha=0.5)
 mmin_plot.add_collection(collection)
-fig3.savefig(plot_name)
+fig3.savefig(plot_name,format="pdf")
 
 
 corr_index=np.where(( (ro_max>(ro-ro_err)) & ((ro+ro_err)>ro_min) ) & ( ((slope+slope_err)>slope_min) & ((slope-slope_err)<slope_max) )== True) #and ro<ro_max) #and slope_min<slope<slope_max)
@@ -174,9 +175,9 @@ mass_plot.set_title(r"Observationally consistent models. Full Field",fontsize=20
 mass_plot.set_title(r"$\log M_{min}$ vs $\Delta log M$. Observationally consistent models",fontsize=20)
 P.xlim(10.2,11.3)
 #P.ylim(10.4,12.0)
-plot_name="mmin_vs_dm.png"
+plot_name=plot_dir +"mmin_vs_dm.pdf"
 mass_plot.legend(shadow=False,loc=2)
-fig4.savefig(plot_name)
+fig4.savefig(plot_name,format="pdf")
 
 
 fig5=P.figure()
@@ -191,9 +192,9 @@ f_occ_plot.set_title(r"$M_{min}$ vs $f_{occ}$. Observationally consistent models
 collection = collections.BrokenBarHCollection.span_where(m_min_m, ymin=0.1, ymax=0.2, where=f_occ>0,  facecolor='blue', alpha=0.5)
 f_occ_plot.add_collection(collection)
 #P.ylim(0.,12.0)
-plot_name="mmin_vs_focc.png"
+plot_name=plot_dir +"mmin_vs_focc.pdf"
 f_occ_plot.legend(shadow=False,loc=2)
-fig5.savefig(plot_name)
+fig5.savefig(plot_name,format="pdf")
 
 #---------prediction on the ACF for the best models-------------------------------------------
 
@@ -260,9 +261,9 @@ ro_plot.set_xlabel(r'$\theta_{0}$', fontsize=20)
 ro_plot.set_ylabel(r"$\gamma$",fontsize=20)
 ro_plot.set_title("Predicted ACF parameters. Full SSA22 field",fontsize=20)
 #ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
-plot_name="power_law_correlation_full_field.png"
+plot_name=plot_dir +"power_law_correlation_full_field.pdf"
 ro_plot.legend(shadow=False)
-fig6.savefig(plot_name)
+fig6.savefig(plot_name,format="pdf")
 print model_numbers, n_models
 
 fig1=P.figure()
@@ -282,9 +283,9 @@ ax_mean.set_ylabel(r"$\xi(\theta)$",fontsize=16)
     #ax_mean.plot(obs_correlation[0:theta_bins,0]-3.0, powerlaw(theta,ro[i],slope[i]), label="power law fit" )
 ax_mean.set_title("Predicted ACF. Full SSA22 field",fontsize=20)
 ax_mean.legend(shadow=False, prop={'size':8})
-plot_name="mean_correlation_prediction.png"
+plot_name=plot_dir +"mean_correlation_prediction.pdf"
 P.xlim(0,1010.0)
-fig1.savefig(plot_name)
+fig1.savefig(plot_name,format="pdf")
 
                
         
