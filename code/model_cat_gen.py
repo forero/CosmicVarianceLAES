@@ -84,6 +84,7 @@ for w in range( n_models ):
     print m_min_s[0], m_max_s[0], f_occ_s[0]
     ID_survey_s=ID_survey_arr[model_index]
     model_prob_s=model_prob_arr[model_index]
+    print "number of mocks=",np.size(model_prob_s)
     index_prob=np.argsort(model_prob_s)
     m_min_s=m_min_s[index_prob]
     m_max_s=m_max_s[index_prob]
@@ -93,12 +94,15 @@ for w in range( n_models ):
     
     ID_index=np.where(survey_ID==ID_survey_s[-1])
     S_ID=survey_ID[ID_index]
-    n_mocks=np.size(S_ID)
+    #n_mocks=np.size(S_ID)
+    n_mocks=np.size(model_prob_s)
+    print n_mocks
     print "n_mocks=" + str(n_mocks)
     
     #n_mocks=1 #to delete
     for j in range( n_mocks ): 
-        ID_ini=S_ID[j]
+        
+        ID_ini=j*obs_surveys
         ID_end=int(ID_ini+obs_surveys)
         m_min=m_min_s[-1]
         m_max=m_max_s[-1]
