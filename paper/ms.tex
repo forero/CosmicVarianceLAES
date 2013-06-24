@@ -32,7 +32,7 @@
 \newcommand{\eeq}{\end{eqnarray}}   
 \newcommand{\zz}{$z\sim 3$} 
 \newcommand{\avg}[1]{\langle{#1}\rangle}  
-\newcommand{\ly}{{\ifmmode{{\rm Ly}\alpha}\else{Ly$\alpha$}\fi}}
+\newcommand{\ly}{{\ifmmode{{\rm Ly}\alpha}\else{Ly$\alpha$~}\fi}}
 \newcommand{\hMpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}  
 \newcommand{\hGpc}{{\ifmmode{h^{-1}{\rm Gpc}}\else{$h^{-1}$Gpc }\fi}}  
 \newcommand{\hmpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}  
@@ -86,6 +86,14 @@ where a dark matter halo can only host one LAE with a probability
 $f_{\rm occ}$ if its mass is found withing a certain range mass range
 delimited by two threshold values, $M_{\rm min}$ and $M_{\rm max}$. 
 We also maximize the number of mocks surveys consistent with
+Our most important results is that, unlike previous studies, a pure
+clustering analysis cannot fully constraint the halo occupation
+fraction for LAEs.
+
+Most of the models have a narrow mass range $\Delta M \equiv
+\log_{10}M_{\rm max} - \log_{10} M_{\rm min}< 1.0$ dex and a low
+occupation fraction $f_{\rm occ}\leq 0.3$. 
+
 observations and impose consistency with the angular correlation
 function. Under these conditions we find that LAEs are preferentially
 hosted by halos in very narrow mass ranges less than 0.5 dex in width,
@@ -592,14 +600,14 @@ star formation efficiency in LAEs at $z=3.1$.
 
 \subsection{Escape fraction and allowed halo mass range}
 
-We find that the majority ($70\%$) of the best models have a low
+We find that $70\%$ of the best models have a low
 ocacupation fraction $f_{\rm occ}\leq 0.3$. This preference goes in
 the same direction as the observational constraint on $f_{\rm occ}\sim
 0.1-0.2$ derived at $z=2.2$ by \cite{Hayes2010} and recent theoretical
-study of observational data in a wide redshift range $0<z<6$ by
-\cite{Dijkstra2013}. 
+study of observational data in a wide redshift range $0<z<6$ 
+\citep{Dijkstra2013}. 
 
-The observational estimation by \cite{Hayes2012} was based on blind
+The observational estimation by \cite{Hayes2010} was based on blind
 surveys of the H$\alpha$ and Lyman $\alpha$ line. Using corrections by
 extinction to obtain an estimate for the intrinsic H$\alpha$
 luminosity, and using values for the theoretical expectation of the
@@ -614,36 +622,39 @@ almost $90\%$ of the star forming galaxies emit insufficient
 Lyman $\alpha$ to be detected, effectively setting the occupation
 fraction to be $f_{\rm occ}=0.10$.  
 
-The results by \cite{Dijkstra2013} use a similar principle. They
-compared observationally dereived star formation functions to LAE
+\cite{Dijkstra2013} use a similar principle to derive their results. They
+compared observationally derived star formation functions to LAE
 luminosity functions. At $z\sim 3.0$ they derive an affective escape
-fraction of $f_{\rm esc}=(17\pm 5)\%$, which in turn using the same
-arguments in \cite{Hayes2010} could be interpreted as an occupation
-fraction $f_{\rm occ}\sim 0.2$.  We consider a sucess of our method
-the fact that we find that most of the consistent models show a low
-occupation fraction.   
+fraction of $f_{\rm esc}=(17\pm 5)\%$ could be interpreted as an
+occupation fraction $f_{\rm occ}\sim 0.2$.  We consider a sucess of
+our method the fact that we find that most of the consistent models
+show a low occupation fraction.    
 
-The study of the escape farction is also complementary to the size of
-the halo mass range $\Delta M=\log_{10}M_{\rm max} - \log M_{\rm
-  min}$for LAEs. All the successful model we have found can be 
-split into three families. 
+A complementary perspective to the range of the allowed values for the
+escape fraction is the quantification of the allowed halo mass range
+$\Delta M=\log_{10}M_{\rm max} - \log M_{\rm  min}$for LAEs. In this
+respect, we find that all the successful models can be  split into
+three families:
+
+
 \begin{itemize}
 \item[(1)] Low $f_{\rm occ}\leq 0.3$ and low $\Delta M\leq 1.0$
   dex: 24 models.
-\item[(2)] High $f_{\rm occ}> 0.3$ and low $\Delta M\leq 1.0$: 14 models
-\item[(3)] Low $f_{\rm occ}\leq 0.3$ and high $\Delta M > 1.0$dex: 11
+\item[(2)] Low $f_{\rm occ}\leq 0.3$ and high $\Delta M > 1.0$dex: 11
   models
+\item[(3)] High $f_{\rm occ}> 0.3$ and low $\Delta M\leq 1.0$: 14 models
 \end{itemize}
 
 There is a clear majority of models with a narrow $\Delta M\leq
-1$, such models imply that there is a cut for lower and higher halo masses
+1$. Such models imply that there is a cut for lower and higher halo masses
 that render inefficient the presence and/or detection of LAEs.  A cut
-a lower masses can be readily interepreted in terms of the minimal halo star
+at the low mass end can be readily interepreted in terms of the minimal halo star
 formation rate needed to produce the necessary \lya luminosity to be
-above a given detection threshold. 
+above a given detection threshold.  However, under the reasonable assumption of star formation rate
+increainsng with halo mass, the cut at higher halo masses requires a
+different explanation. 
 
-The cut at higher halo masses requires a different explanation. A
-possible interpretation can be made in terms of a lower escape
+A possible interpretation can be made in terms of a drecreasing escape
 fraction of \ly radiation in massive systems. There are detailed models for
 radiative transfer that support the idea that massive galaxies with
 higher metallicities have larger dust contents than lower mass
@@ -654,73 +665,72 @@ other non-resonant lines.
 This preference for narrow $\Delta M$ ranges for hosting LAEs together
 with the total absence of reasonable models with $M_{\rm max}>
 10^{12}$\hMsun shows that our models supports theoretical insights
-where the most massive systems are not bright \ly sources.  
+where the most massive systems are not bright \ly sources \citep{ForeroRomero2012}.  
 
 
 
-%The first, where the range $M_{\rm min}-M_{\rm max}$ is narrow,
-%typically of less than $<1.0$ dex. While in the second familiy th
-%extent $>1.0$ dex. In the first case the minimum halo mass is found to
-%be in a wide range $10^{10}\hMsun <M_{\rm min}< 10^{11.5}\hMsun$ while
-%in the second case, only models with $M_{\rm min}\sim 10^{10.9}\hMsun$
-%are compatible with the observational contraints. In what follows we
-%discuss the implications of the existence of these two families of
-%models.  
-%When we additional include the ACF constraint we find that only models with 
-%$\log_{10}M_{\rm min}\leq 11.0$ and $\log_{10}M_{\rm max}\leq 12.0$ 
-%are now consistent with observations.
 
-%Including all the observational constraints we find that only between $15$ to $20$ 
-%models reproduces observations. The list for the model parameters is in the
-%Appendix in Table \ref{table:models_match}.
+\subsection{Comparison to other clustering estimates}
 
+Since the observational estimates based on the ACF infered from photometric
+measurements in the Extended Chandra Deep Field South
+\citep{Gawiser07} it is a well accepted fact that the median dark
+matter masses of halos hosting LAEs is $\log_{10}M_{\rm
+  med}=10.9^{+0.5}_{-0.9}$\Msun, with a corresponding occupation
+fraction of $1-10\%$.  Our results are in a good agrement with those estimates for the
+host mass. This is not unexepected given that we have also
+required consistency with ACF measurements. 
 
+The novelty in our approach is that we have a detailed estimate for 
+host halo mass range. Following the numbers shown for the three
+families in the previous section, we see that two thirds of the best models
+have a narrow mass range, less than $<1.0$ dex, out of the $2.5$ dex
+spanned by dark matter halos at that redshift. Only one fourth of the
+models indicate a wide mass range with $>1.0$dex.   
 
-\subsection{In the context of abundance matching models}
-
-
-Using abundance matching methods throughout cosmic time from redshifts
-$0<z<8$ \cite{Behroozi2013a,Behroozi2013b} report that the instantaneous star
-formation efficiency (star formation rate divided by the stellar mass)
-presents a clear maximum around $10^{11.7}$\Msun at all redshifts
-$z<4$.
-
-This mass scale is strictly superior to the all the $M_{\rm max}$
-values allowed in the consistent models. Using the results published
-in \cite{Behroozi2013a} we find that the typical stellar mass in halos
-of $10^{11.4}$\hMsun is $(1.0\pm0.3)\times 10^{9.0}$ \hMsun, while
-their star formion rate is in the range $0.6\pm 0.2$ Msun
-yr$^{-1}$.  This halo mass range around $10^{11.4}$ \hMsun is the
-lower bound of what is computed in the abundance matching model in
-order to fit the observational data for the stellar mass function
-based on the obervations of Lyman Break Galaxies.
-
-We have the opposite situation in the second familiy of models. If
-we have a wide range in halo masses, where the upper end of the halo
-masses can be considered as observed LAEs, one can expect that bright
-LBGs will have a correspondence as observed LAEs. The most interesting
-aspect is that there is a clear cut in the minimal mass that can be
-attained by observed LAEs $M_{\rm min}> 10^{11}$\hMsun. This puts a tight
-constraint on the relationship between the minimum star formation rate
-required to be observed as a LAE and this minimal halo mass.
+As a byproduct of our results, we are now able to demonstrate that a
+simple clustering analysis is not enough to rule out models with a
+high occupation fraction $f_{\rm occ}>0.3$, they represent almost
+one fourth of our best models, coinciding with a wide range in halo
+masses $\Delta M>1.0$ dex. 
 
 
-%... Intrinsic emission and escape fraction.
+%\subsection{In the context of abundance matching models}
 
-%... Star formation rate efficiency at this redshift.
 
-%... Mass dependence of the escape fraction.
+%Using abundance matching methods throughout cosmic time from redshifts
+%$0<z<8$ \cite{Behroozi2013a,Behroozi2013b} report that the instantaneous star
+%formation efficiency (star formation rate divided by the stellar mass)
+%presents a clear maximum around $10^{11.7}$\Msun at all redshifts
+%$z<4$.
 
-%... Discuss all this in terms of the star formation efficiency in
-Behroozi et al.
+%This mass scale is strictly superior to the all the $M_{\rm max}$
+%values allowed in the consistent models. Using the results published
+%in \cite{Behroozi2013a} we find that the typical stellar mass in halos
+%of $10^{11.4}$\hMsun is $(1.0\pm0.3)\times 10^{9.0}$ \hMsun, while
+%their star formation rate is in the range $0.6\pm 0.2$ Msun
+%yr$^{-1}$.  This halo mass range around $10^{11.4}$ \hMsun is the
+%lower bound of what is computed in the abundance matching model in
+%order to fit the observational data for the stellar mass function
+%based on the obervations of Lyman Break Galaxies.
 
-\subsection{Implications for large LAEs surveys}
 
-... The bias for the preferred halo mass.
+%Most of the prefered models have a halo mass range with $M_{\rm
+%  max}<10^{11.4}$\hMsun. This suggests that a detailed and careful
+%study of the spectral properties of LAEs coupled to the kind of
+%analysis performed in this paper can be a guide in the study of the
+%properties of low mass dark matter halos at $z=3.1$, extending the
+%capabilities of abundance matching methods.
 
-... The scale at which cosmic variance drops.
 
-... This can be observationally tested with HETDEX.
+%we have a wide range in halo masses, where the upper end of the halo
+%masses can be considered as observed LAEs, one can expect that bright
+%LBGs will have a correspondence as observed LAEs. The most interesting
+%aspect is that there is a clear cut in the minimal mass that can be
+%attained by observed LAEs $M_{\rm min}> 10^{11}$\hMsun. This puts a tight
+%constraint on the relationship between the minimum star formation rate
+%required to be observed as a LAE and this minimal halo mass.
+
 
 \subsection{On the reproducibility of our results}
 
@@ -731,51 +741,43 @@ available.
 can also be obtained in the repository of this paper on github.
 
 \section{Conclusions}
-In this \documentname we constrain the preferred mass for dark matter
-halos hosting Lyman Alpha Emitters at a redshift $z=3.1$. We use a
-method that matches the cosmic variance in the surface
-density number of LAEs between mock and real observations. The mock
-catalogs are based on a simplified model with three basic parameters: the halo
-mass range where LAEs can be found, $M_{\rm   min}<M_{\rm h}<M_{\rm
-  max}$, and the fraction of the halos in thisrange that are actully
-occupied, $f_{\rm occ}$. After a thorugh exploration of the parameter
-space we are able to constrain the mass range of dark matter halos
-hosting LAEs to be in the range $<M_{\rm   h}<$ and a corresponding
-occupation fraction that escales as $f_{\rm   occ} = M_{\rm min}$. 
 
-We use three additional constraints to reduce the allowed
-range of models. The first imposes a tighter criterion to consider a
-model succesful, namely that all the mock surveys for a given model
-must be consistent with observations. This restriction narrows down
-the allowed range of models to be. 
+In this \documentname we constrain the preferred dark matter mass
+and occupation fraction for halos hosting Lyman Alpha Emitters at
+redshift $z=3.1$. We use a method that matches the cosmic variance in the surface
+density number of LAEs between mock and real observations and provides
+consistent results with observational estimates for the angular
+correlation function. The mock catalogs are based on a simplified
+model with three basic parameters: the halo mass range where LAEs can
+be found, $M_{\rm   min}<M_{\rm h}<M_{\rm   max}$, and the fraction of
+the halos in this range that are actully occupied, $f_{\rm occ}$. After
+a thorough exploration of the parameter space we find that wide
+variety of models are consistent with the observational constraints,
+where only a minority has been considered so far in the
+literature. Out of $9000$ initial combinations for the model
+parameters we end up with $49$ sucessful arrangement of parameters.
 
-The second constraint is based on the observational results that high
-redshift LAEs have a bulk Lyman alpha escape fraction of $XX$ which
-can be also interepreted as an average occupation fraction of $XX$.
+These parameter sets can be split into three families depending the mass range
+$\Delta M=\log_{10}M_{\rm max} - \log_{10}M_{\rm min}$ and the
+occupation fraction $f_{\rm occ}$. The first family is narrow both in
+$\Delta M$ and $f_{\rm occ}$, a second familiy is only narrow in
+$\Delta M$ and the third is only narrow in $f_{\rm occ}$. 
 
-Including additional observational constraints on the occupation
-fraction allows us to reduce the range of allowed halo masses to be in
-a narrower range of $<M_{\rm h}<$. Including the information from the
-angular correlation function (ACF) does not allows us to impose
-further constraints. This is due to the scatter in the ACF due to the
-cosmic variance on the field observed by XXX
+Analysis based in observations have been only able to describe models
+in the third family, but have so far missed the possibility of the first
+two: a narrow mass range and any value for the escape fraction.
 
+Many different observational estimates on the occupation fraction of
+LAEs at $z=3$ suggest that the occupation fraction must be low $f_{\rm
+  occ}<0.2$. We find that the first and most numerous family of models
+is consistent with this suggestion, where also a narrow range for the
+halo mass $\Delta M<1.0$ is prefered.
 
-We simulation allows us to extract $210$ sub-boxes each of which has a
-comparable volume to the individual fields of view observed by
-\cite{Yamada2012}. The comparison of the observed number density
-distribution against the results from our model is based on three
-different ways of constructing mock surveys. The first reproduces the
-spatial correlation between the $12$ observational fields ({\texttt
-  match}), the second breaks this spatial correlation while keeping
-the number of fields ({\texttt random}) and the third one simply
-includes all the $210$ sub-boxes ({\texttt full}). We find that the
-methods {\texttt match} and {\texttt random} allow a larger set of
-models than the {{\texttt random}} method. We do not find a
-significant difference between the two first methods. 
 
 
 \section*{Acknowledgments} 
+
+
 
 
 \begin{table}
@@ -785,40 +787,85 @@ $\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$\\\hline
 10.1& 10.2& 0.1\\
 10.3& 10.5& 0.1\\
 10.4& 10.7& 0.1\\
+10.5& 10.6& 0.3\\
 10.5& 10.9& 0.1\\
 10.5& 11.0& 0.1\\
+10.6& 10.8& 0.2\\
 10.6& 11.2& 0.1\\
 10.6& 11.3& 0.1\\
 10.6& 11.4& 0.1\\
 10.6& 11.5& 0.1\\
 10.6& 11.6& 0.1\\
-10.6& 11.7& 0.1\\
-10.6& 10.8& 0.2\\
 10.7& 11.0& 0.2\\
 10.8& 11.2& 0.2\\
 10.8& 11.3& 0.2\\
 10.8& 11.4& 0.2\\
+10.9& 11.3& 0.3\\
 10.9& 11.7& 0.2\\
 10.9& 11.8& 0.2\\
 10.9& 11.9& 0.2\\
-%10.9& 12.0& 0.2\\
-%10.9& 12.1& 0.2\\
-%10.9& 12.2& 0.2\\
-%10.9& 12.3& 0.2\\
-%10.9& 12.4& 0.2\\
-%10.9& 12.5& 0.2\\
-%10.9& 12.6& 0.2\\
-%10.9& 12.7& 0.2\\
-%10.9& 12.8& 0.2\\
-%10.9& 12.9& 0.2\\
-%10.9& 13.0& 0.2\\\hline\hline
+11.0& 11.6& 0.3\\
+11.0& 11.7& 0.3\\
+11.0& 11.8& 0.3\\
+11.0& 12.0& 0.3\\\hline\hline
 \end{tabular}
 \end{center}
-\caption{List of model parameters for the best models that have all
-  mock surveys consistent with observations and an occupation
-  fraction $f_{\rm occ}\leq 0.2$. This corresponds to the {\texttt
-    match} method to construct the mock surveys. \label{table:models_match}. }
+\caption{\label{table:thirdfamily}List of parameters for the first family of models. Narrow
+  mass range $\Delta M\leq 1.0$dex and low occupation fraction $f_{\rm occ}\leq 0.3$.}
 \end{table}
+
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ccc}\hline\hline
+$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$\\\hline
+10.6& 10.7& 0.4\\
+10.7& 10.8& 0.5\\
+10.8& 10.9& 0.6\\
+10.8& 11.0& 0.4\\
+10.9& 11.0& 0.8\\
+10.9& 11.0& 0.9\\
+10.9& 11.1& 0.5\\
+11.0& 11.1& 1.0\\
+11.0& 11.4& 0.4\\
+11.1& 11.3& 0.7\\
+11.1& 11.7& 0.4\\
+11.2& 11.5& 0.7\\
+11.2& 11.6& 0.6\\
+11.2& 11.9& 0.5\\\hline\hline
+\end{tabular}
+\end{center}
+\caption{\label{table:secondfamily}List of parameters for the second family of models. Narrow
+  mass range $\Delta M\leq 1.0$dex and high occupation fraction $f_{\rm occ}>0.3$.}
+\end{table}
+
+
+
+
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ccc}\hline\hline
+$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$\\\hline
+10.6& 11.7& 0.1\\
+10.9& 12.1& 0.2\\
+10.9& 12.2& 0.2\\
+10.9& 12.3& 0.2\\
+10.9& 12.4& 0.2\\
+10.9& 12.5& 0.2\\
+10.9& 12.6& 0.2\\
+10.9& 12.7& 0.2\\
+10.9& 12.8& 0.2\\
+10.9& 12.9& 0.2\\
+10.9& 13.&0 0.2\\\hline\hline
+\end{tabular}
+\end{center}
+\caption{\label{table:thirdfamily}List of parameters for the third family of models. Broad
+  mass range $\Delta M >1.0$dex and low occupation fraction $f_{\rm occ}\leq0.3$.}
+\end{table}
+
 
 \bibliographystyle{mn2e}
 \bibliography{references} 
