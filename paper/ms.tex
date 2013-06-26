@@ -144,7 +144,7 @@ together with other statistics such as the luminosity function, the
 correlation function and the equivalent width distributions. Such
 modelling has been implemented from analytic considerations,
 semi-analytic models  and  full N-body hidrodynamical simulations
-\citep{Laursen2007, Dayal2009, ForeroRomero2011, Yajima2012, Orsi2012}. 
+\citep{Laursen2007, Dayal2009, ForeroRomero2011, Yajima2012, Orsi2012, Soler2012}. 
 
 Added to the uncertainties in the astrophysical processes describing
 star formation in galactic populations, a highly debated step in this
@@ -153,7 +153,7 @@ that escape the galaxy to the observer. Given the resonant nature of
 the \lya line, the radiative transfer of \ly is sensitive to the
 density, temperature, topology and kinematics of the neutral Hydrogen
 in the interstellar medium (ISM) \citep{Neufeld1991, ForeroRomero2011, Dijkstra2012,
-Laursen2013}.  
+Laursen2013,Orsi2012}.  
 
 This complexity makes the use of monte-carlo simulations for the
 radiative transfer a required tool to obtain physically sound results,
@@ -273,7 +273,7 @@ M_{\rm h} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm
   occ}$ of such halos that effectively host a LAE. We do not assign a
 luminosity to each LAE. We are primarily interested in
 constraining the halo mass range hosting detectable LAEs under the
-conditions defined by \cite{Yamada2012}. In what follows will describe by
+conditions defined by \cite{Yamada2012}. In what follows we will describe by
 the letter ${\mathcal M}$ a model defined by an specific choice of the
 three scalar parameters $M_{\rm min}$, $M_{\rm  max}$ y $f_{\rm occ}$.  
 
@@ -315,8 +315,8 @@ SSA22. It is important to keep in mind that there are some differences
 between this work and \citep{Yamada2012}. First, the color selection by
 \cite{Yamada2012} is less stringent compared to the one by
 \cite{Hayashino2004}. Also the EW threshold is different,
-\cite{Hayashino2004} uses a cut around $154$\AA instead of $190$\AA
-used by \citep{Yamada2012}
+\cite{Hayashino2004} uses a cut around $154$\AA \ instead of $190$\AA
+\ used by \citep{Yamada2012}
 
 
 \subsection{Sampling and Selecting Models}
@@ -352,7 +352,7 @@ in therms of the angular correlation length obtained  by fitting to a power-law
 function:  
 
 \begin{equation}
-\xi(\theta) = \left(\frac{r}{\theta_{0}}\right)^{-\gamma}
+\xi(\theta) = \left(\frac{\theta}{\theta_{0}}\right)^{-\gamma}
 \label{eq:fitting}
 \end{equation}
 
@@ -392,7 +392,7 @@ values for LAEs allowed reported in observations \citep{Yamada2012}.
 This result provides the basis to understand why only a specific range of models
 ${\mathcal M}$ can be expected to be consistent with
 observations. From Figure \ref{fig:halos} we can read that models
-with a minimum mass $\log_{10} M_{\rm min}>11.5$\hMsun will always have a
+with a minimum mass $\log_{10} M_{\rm min}>11.5$\hMsun \ will always have a
 surface number density lower than the observational
 constrain. This makes impossible that models with that minimum mass
 can be compatible with observations.
@@ -503,7 +503,7 @@ Figure \ref{fig:restriction_mock} presents the locii of these models
 in the parameter space $M_{\rm min}-M_{\rm max}$ and $M_{\rm
   min}-f_{\rm occ}$. The results are very similar between the {\texttt
   match} and {\texttt random} methods. With this constraints the
-number of consistent models with  $\log_{10}M_{\rm min}< 11.7$ are
+number of consistent models with  $\log_{10}M_{\rm min}< 11.5$ are
 greatly reduced. This corresponds to the regions in the parameter
 space in Figure \ref{fig:landscape} that already had a low number of
 consistent mock surveys. On the other hand, from the right panel in
@@ -583,13 +583,13 @@ reproduce observations.
 In order to better illustrate the results from this test we
 show in the right panel of Figure \ref{figure:correlation_parameters} 
 the plane $\theta_{0}$-$M_{\rm min}$ for all models. There we divide
-the models into two disjoint sets: those with $\log \frac{M_{\rm
-    max}}{M_{\odot}}<12$ (blue dots) and $\log \frac{M_{\rm
-    max}}{M_{\odot}}>12$ (green dots). The colored rectangle includes
+the models into two disjoint sets: those with $\log_{10} M_{\rm
+    max}<12$ (blue dots) and $\log_{10} M_{\rm
+    max}>12$ (green dots). The colored rectangle includes
 the parameter region which is consistent with the observational
 constraint in $\theta_{0}$. With this restriction we find that most
-models with $\log \frac{M_{\rm max}}{M_{\odot}}>12$ and  $\log
-\frac{M_{\rm     min}}{M_{\odot}}>11.1$ can be safely ruled out.  
+models with $\log_{10} M_{\rm max}>12$ and  $\log_{10} M_{\rm min}>11.1$ 
+%can be safely ruled out.  
 
 
 
@@ -614,7 +614,7 @@ initial 90000 possible combination of parameters.
 
 We find that to make a physical interpretation of these models it is
 useful to do it in terms of the size of halo mass range. We now use the
-variable $\Delta M=\log_{10}M_{\rm max} - \log M_{\rm  min}$, together
+variable $\Delta M=\log_{10}M_{\rm max} - \log_{10}M_{\rm  min}$, together
 with the escape fraction $f_{\rm occ}$ to help us build a classification
 of all the successful models into three families: 
 
@@ -648,7 +648,7 @@ other non-resonant lines.
 
 The preference for narrow $\Delta M$ ranges to hosting LAEs together
 with the total absence of reasonable models with $M_{\rm max}>
-10^{12}$\hMsun shows that our models support theoretical insights
+10^{12}$\hMsun \  shows that our models support theoretical insights
 where the most massive systems are not bright \ly sources
 \citep{ForeroRomero2012}.   
 
@@ -722,15 +722,15 @@ fraction.
 Using abundance matching methods throughout cosmic time from redshifts
 $0<z<8$ \cite{Behroozi2013a,Behroozi2013b} report that the instantaneous star
 formation efficiency (star formation rate divided by the stellar mass)
-presents a clear maximum around $10^{11.7}$\Msun at all redshifts
+presents a clear maximum around $10^{11.7}$\Msun \ at all redshifts
 $z<4$.
 
 This mass scale is strictly superior to the great majority of  $M_{\rm max}$
 values allowed in the models with low escape fraction. Using the results published
 in \cite{Behroozi2013a} we find that the typical stellar mass in halos
-of $10^{11.4}$\hMsun is $(1.0\pm0.3)\times 10^{9.0}$ \hMsun, while
+of $10^{11.4}$\hMsun \ is $(1.0\pm0.3)\times 10^{9.0}$ \hMsun, while
 their star formation rate is in the range $0.6\pm 0.2$ Msun yr$^{-1}$.
-This halo mass range around $10^{11.4}$ \hMsun is the lower bound of
+This halo mass range around $10^{11.4}$ \hMsun \ is the lower bound of
 what is computed in the abundance matching model in order to fit the
 observational data for the stellar mass function based on the
 observations of Lyman Break Galaxies. 
@@ -801,7 +801,7 @@ galaxies. One way to achieve this is having LAEs with a decreasing \ly
 escape fraction with increasing mass. 
 
 All the models also present a range of masses where the halos are
-below the mass scale of $10^{11.4}$\hMsun inferred as a lower
+below the mass scale of $10^{11.4}$\hMsun \  inferred as a lower
 threshold for the LBGs used in halo abundance matching
 studies. Detailed study of high-z LAES will have a positive impact on
 our understanding of the connection of low mass halos to star forming
