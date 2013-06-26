@@ -59,10 +59,10 @@
 
 \begin{document}
 
-\title[Halo mass and occupation fraction for LAEs at $z=3.1$]{Using cosmic
-  variance to constrain the dark matter halo mass and occupation
-  fraction of Lyman-alpha emitting galaxies at $z$=3.1} 
-  
+\title[Halo mass and occupation fraction for LAEs at
+  $z=3.1$]{Constraints on the mass and occupation
+  fraction of dark matter halos hosting Lyman-alpha emitters
+  at $z$=3.1}    
 \author[~J.~E. Forero-Romero and J. Mejia]{
 \parbox[t]{\textwidth}{\raggedright 
 Jaime E. Forero-Romero$^{1}$ and
@@ -77,32 +77,29 @@ Observatorio 1515, Santiago, Chile}
 \maketitle
 
 \begin{abstract}
-We use cosmological N-body dark matter only simulations to constrain the
-characteristic mass of dark matter halos hosting Lyman-Alpha Emitting
-(LAE) galaxies at a redshift of $z=3.1$. The method is based on
-matching the statistics for the number density between mock and
-observed fields. The mock fields are constructed using a simple model
-where a dark matter halo can only host one LAE with a probability
-$f_{\rm occ}$ if its mass is found withing a certain range mass range
-delimited by two threshold values, $M_{\rm min}$ and $M_{\rm max}$. 
-We also maximize the number of mocks surveys consistent with
-Our most important results is that, unlike previous studies, a pure
-clustering analysis cannot fully constraint the halo occupation
-fraction for LAEs.
+%
+We derive constraints on the mass and occupation fraction of dark
+matter halos hosting \ly Emitting galaxies (LAEs) at a redshift of
+$z=3.1$, by comparing the  number density and the angular
+correlation function between mock and observed fields. The mock fields
+are constructed in a large cosmological N-body simulation using a
+model where a dark matter halo can only host one LAE with a
+probability $f_{\rm occ}$ if its mass is found within the mass range
+delimited by two threshold values  $M_{\rm min}$ and $M_{\rm max}$. We
+conclude that the number density and spatial clustering information
+available are not sufficient to derive a unique and narrow set of
+values for the parameter in the model. We find three different
+families of models based on their mass range $\Delta M \equiv
+\log_{10}M_{\rm max} - \log_{10} M_{\rm min}< 1.0$ dex and occupation
+fraction $f_{\rm occ}$.  The dominant familiy is composed by models with a narrow
+mass range $\Delta M<1.0$ dex, a low occupation fraction $f_{\rm occ}\leq 0.3$
+and a maximum mass $M_{\rm max}< 10^{12}$\hMsun.  This finding
+suggests that the most massive dark matter halos at that epoch do not
+host the brightest LAEs. This also gives support to observational evidence
+concluding that only a small fraction of star forming galaxies can be
+actually detected as LAEs. We provide tables and mock catalogs for the
+succesful models. 
 
-Most of the models have a narrow mass range $\Delta M \equiv
-\log_{10}M_{\rm max} - \log_{10} M_{\rm min}< 1.0$ dex and a low
-occupation fraction $f_{\rm occ}\leq 0.3$. 
-
-observations and impose consistency with the angular correlation
-function. Under these conditions we find that LAEs are preferentially
-hosted by halos in very narrow mass ranges less than 0.5 dex in width,
-with the minimum mass $10\leq \log_{10}M_{\rm min}\leq 10.9$ and the
-occupation fraction $f_{\rm   occ}\leq 0.2$.  Our finding suggest that
-the most massive dark matter halos at that epoch do not host the
-brightest LAEs. This also gives support to observational evidence that
-says that only a small fraction of star forming galaxies can be
-actually detected as LAEs.
 \end{abstract}
 
 \begin{keywords}
@@ -359,7 +356,7 @@ the observed value.
 In the next subsection we quantify this intuition by means of the KS
 tests between mock surveys and observations.
 
-\subsection{Three Regions in Parameter Space}
+\subsection{Three halo mass ranges}
 
 \begin{figure*}
 \begin{center}
@@ -413,7 +410,6 @@ factor of two in mass) and others where the mass interval is very
 extended, larger than $1.0$ dex, going up to the maximum halo mass
 present in the simulation at that redshift. 
 
-
 The third region in parameter space corresponds to $\log_{10}M_{\rm
   min}<10.5$. In this case only models with a narrow mass interval of
 at most $0.5$ dex ($\log_{10}M_{\rm max}<11.0$) and low
@@ -424,9 +420,9 @@ most of the succesful models are found in the second and third region of
 parameter space where. This result was already expected from halo
 abundance calculations shown in Figure \ref{fig:halos}. In the next
 section we reduce the size of this region by using more stringent
-constraints to define the agreement with observations and including
-additional observational information onpossible values for the
-occupation fraction at $z\sim 3$. 
+constraints to define the agreement with observations and the
+inclusion of the angular correlation function information by
+\cite{Hayashino2004}.  
 
 \begin{figure*}
 \begin{center}
@@ -439,12 +435,6 @@ occupation fraction at $z\sim 3$.
   \label{fig:high_success_rate}.}  
 \end{figure*}
  
-In this next subsections we consider two additional constraints on the models
-we accept as succesul. First we take models with the highest possible
-number of mock surveys consistent with observations. Second by
-comparing the angular correlation function against observational
-results by \cite{Hayashino2004}.   
-
 \subsection{Models with the highest success rates}
 
 For each model ${\mathcal M}$ there are 15 different mock surveys. In the
@@ -719,9 +709,9 @@ what is computed in the abundance matching model in order to fit the
 observational data for the stellar mass function based on the
 obervations of Lyman Break Galaxies. 
 
-All of the prefered models have a halo mass range with $M_{\rm
+All the prefered models have a halo mass range with $M_{\rm
   min}<10^{11.4}$\hMsun. This suggests that a detailed and careful
-study of the spectral properties of LAEs coupled to the kind of
+study of the spectral and photometric properties of LAEs coupled to the kind of
 analysis performed in this paper can be a guide in the study of the
 properties of low mass dark matter halos at $z=3.1$, extending the
 capabilities of abundance matching methods.
@@ -739,10 +729,11 @@ can also be obtained in the repository of this paper on github.
 
 In this \documentname we constrain the preferred dark matter mass
 and occupation fraction for halos hosting Lyman Alpha Emitters at
-redshift $z=3.1$. We use a method that matches the cosmic variance in the surface
-density number of LAEs between mock and real observations and provides
-consistent results with observational estimates for the angular
-correlation function. The mock catalogs are based on a simplified
+redshift $z=3.1$ in a $\Lambda$CDM cosmology. We use a method that
+matches the cosmic variance of the surface 
+density number of LAEs between mock and real observations and is also
+consistent with observational estimates for the angular
+correlation function. The mock catalogs are constructed using a 
 model with three basic parameters: the halo mass range where LAEs can
 be found, $M_{\rm   min}<M_{\rm h}<M_{\rm   max}$, and the fraction of
 the halos in this range that are actully occupied, $f_{\rm occ}$. After
@@ -752,28 +743,53 @@ where only a minority has been considered so far in the
 literature. Out of $9000$ initial combinations for the model
 parameters we end up with $49$ sucessful arrangement of parameters.
 
-These parameter sets can be split into three families depending the mass range
+
+The most important conclusion of this work is that available
+observational information for the clustering properties of LAEs at
+$z=3.1$ does not provide enough constraints to uniquely narrow the range of masses
+and occupation fraction of dark matter halos hosting those galaxies. In our
+model, the hosting halos can be split into three families depending the mass range
 $\Delta M=\log_{10}M_{\rm max} - \log_{10}M_{\rm min}$ and the
 occupation fraction $f_{\rm occ}$. The first family is narrow both in
 $\Delta M$ and $f_{\rm occ}$, a second familiy is only narrow in
 $\Delta M$ and the third is narrow in $f_{\rm occ}$ and broad in
 $\Delta M$. 
 
+
 All the halo mass ranges in the best models fall into the broad
-results based in observations, which have been able to describe models
-in the third family, but have so far missed all the possible
-models. In particular, previous analysis did not consider the first
-two families: a narrow mass range and any value for the escape fraction.
+range obtained in previous analysis \citep{Gawiser2007}. The
+improvement of our method is being able to describe in high detail
+all the possible models consistent with observations, including the
+discovery of models previously overlooked like those with a high
+occupation fraction $f_{\rm occ}>0.3$.
+ 
 
-In the case of narrow mass models there are various cases with $\Delta
-M=0.1$dex. Taken at face value, a possible confirmation of these kind of models
-can be considered a challenge to explain relatively high star
-formation ratesm
+A central result in this exploration of paremter espace is the
+existence of a large number of models with a very
+narrow mass range $\Delta M< 0.1$ dex that are consistent in every
+aspect with the spatial distribution of observed LAEs. In order to
+have these characteristics it is required that halos around the mass
+$M_{\rm max}$ for each model become ineffecient in hosting detectable
+galaxies. One way to achieve this is having LAEs with a decreasing \ly
+escape fraction with increasing mass. 
 
+All the models also present a range of masses where the halos are
+below the imass scale of $10^{11.4}$\hMsun infered as a lower
+threshold for the LBGs used in halo abundace matching
+studies. Detailed study of high-z LAES will have a possitive impact on
+our undertading of the connection of low mass halos to star forming
+galaxies.
+
+We forsee that the new observations with new instruments (such as MUSE,
+Hyper SuprimeCam and HETDEX) covering larger fields and a wider range
+of luminosities will be key in imposing tighter constraints on the
+properties of dark matter halos hosting LAEs.  
 
 
 \section*{Acknowledgments} 
-
+J.E.F-R thanks the hospitality of Changbom Park and the Korea
+Institute for Advance Studies where the first full draft of this paper
+was completed.
 
 
 
@@ -807,8 +823,9 @@ $\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$\\\hline
 11.0& 12.0& 0.3\\\hline\hline
 \end{tabular}
 \end{center}
-\caption{\label{table:thirdfamily}List of parameters for the first family of models. Narrow
-  mass range $\Delta M\leq 1.0$dex and low occupation fraction $f_{\rm occ}\leq 0.3$.}
+\caption{\label{table:thirdfamily}List of parameters for the first
+  family of models. Narrow   mass range $\Delta M\leq 1.0$dex and low
+  occupation fraction $f_{\rm occ}\leq 0.3$.} 
 \end{table}
 
 
