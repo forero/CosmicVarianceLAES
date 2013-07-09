@@ -84,21 +84,24 @@ $z=3.1$, by comparing the number density and the angular
 correlation function between mock and observed fields. The mock fields
 are constructed in a large cosmological N-body simulation using a
 model where a dark matter halo can only host one LAE with a
-probability $f_{\rm occ}$ if its mass is within the mass range
+probability $f_{\rm occ}$  if its mass is within the mass range
 delimited by two threshold values  $M_{\rm min}$ and $M_{\rm max}$. We
-find three different families of parameters based on their mass range
+define three different families of parameters consistent with
+observations based on their mass range
 $\Delta M \equiv \log_{10}M_{\rm max} - \log_{10} M_{\rm min}$ dex and occupation
-fraction $f_{\rm occ}$.  From this we  conclude that the number
+fraction $f_{\rm occ}$.  From this we conclude that the number
 density and spatial clustering information available from observations
 is not sufficient to derive a unique and narrow set of values for the
-parameters in the model.  However, there is a dominant familiy composed
-by models with a narrow mass range $\Delta M<1.0$ dex, a low
-occupation fraction $f_{\rm occ}\leq 0.3$ and a maximum mass $M_{\rm
-  max}< 10^{12}$\hMsun.  This suggests that the most massive
-dark matter halos at that epoch do not host the brightest LAEs, also
-giving support to some observational evidence indicating that only a small
-fraction of star forming galaxies can be actually detected as LAEs. We
-provide tables and mock catalogs for the successful models.  
+parameters in the model. In particular, it is always possible to find a 
+a model with any desired occupation fraction in the range $0.1\leq
+f_{\rm occ}\leq 1.0$.  However, there is a dominant family composed by
+models with a narrow mass range $\Delta M<1.0$ dex, a low occupation fraction
+$f_{\rm occ}\leq 0.3$ and a maximum mass $M_{\rm   max}<
+10^{12}$\hMsun.  This suggests that the most massive dark matter halos
+at that epoch do not host the brightest LAEs, also giving support to
+some observational evidence indicating that only a small fraction of
+star forming galaxies can be actually detected as LAEs. We provide
+tables and mock catalogs for the successful models.   
 \end{abstract}
 
 \begin{keywords}
@@ -110,13 +113,13 @@ provide tables and mock catalogs for the successful models.
 
 \section{Introduction}
 
-Lyman-$\alpha$ emitting galaxies (LAEs) have become in the last decade a 
-central topic in studies of structure formation in the Universe. They 
-are helpful in a diverse range of fields. LAEs can
-be used as probes of reionization \citep{Dijkstra11}, tracers of
-large scale structure \citep{Koehler2007}, 
-signposts for low metallicity stellar populations and markers of the
-the galaxy formation process through cosmic history \citep{ForeroRomero2012}.  
+Lyman-$\alpha$ emitting galaxies (LAEs) have become in the last decade
+a  central topic in studies of structure formation in the Universe. They 
+are helpful in a diverse range of fields. LAEs can be used as probes
+of reionization \citep{Dijkstra11}, tracers of large scale structure
+\citep{Koehler2007},  signposts for low metallicity stellar
+populations and markers of thethe galaxy formation process through
+cosmic history \citep{ForeroRomero2012}.   
 
 
 At the same time, theoretical and observational developments have
@@ -270,7 +273,10 @@ In our model a dark matter halo can only host one or zero LAE.
 There are three parameters in the model that decide whether a halo can host a
 galaxy or not: the lower and upper bounds for the mass range $M_{\rm min}<
 M_{\rm h} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm
-  occ}$ of such halos that effectively host a LAE. We do not assign a
+  occ}$ of such halos that host a \emph{detectable LAE}. The reader
+must keep in mind that the physical interpreation of the occupation
+fraction $f_{\rm occ}$ convolves two things: the presence of a star
+forming galaxy in a halos and its detectability as a LAE. We do not assign a
 luminosity to each LAE. We are primarily interested in
 constraining the halo mass range hosting detectable LAEs under the
 conditions defined by \cite{Yamada2012}. In what follows we will describe by
@@ -355,7 +361,7 @@ the two distributions can be thought as coming from the same
 distribution.
 
 We begin by considering that  a model ${\mathcal M}$ that has at least
-one (1) mock survey (out of 15) consistent with the observed
+one mock survey (out of 15) consistent with the observed
 distribution of LAE number densities has viable parameters that
 deserve to be considered for further analysis. Later on we impose
 harder constraints to reduce the number of models by asking that all
@@ -381,6 +387,16 @@ equal within a $1$-$\sigma$ range.
  
 \section{Results}
 \label{sec:results}
+
+The main purpose of this section is to show how different
+observational constraints narrow down the parameters space of allowed
+models. In each one of the four sub-sections we add a new
+constraint. First we consider the average halo number density, then we
+consider the surface density distributions for all the mock fields in
+a given mock survey. From this result we move to narrower constraints
+by requiring a high number of mock surveys with consistent surface
+density distributions to finally consider the impact of the angular
+correlation function. 
 
 \begin{figure}
 \begin{center}
@@ -422,7 +438,7 @@ gray band values.
 In the next subsection we quantify this intuition by means of the
 Kolmogorov-Smirnov tests between mock surveys and observations. 
 
-\subsection{Three halo mass ranges}
+\subsection{Surface density distributions}
 
 \begin{figure*}
 \begin{center}
@@ -439,7 +455,7 @@ Kolmogorov-Smirnov tests between mock surveys and observations.
   surveys. The color code corresponds to the number of mock surveys
   that are found to be compatible with observations in terms of the KS
   test with $P>0.05$. Only regions of parameter space with at least
-  one (1) consistent mock survey are included. \label{fig:landscape}}   
+  one consistent mock survey are included. \label{fig:landscape}}   
 \end{figure*}
 
 
@@ -454,7 +470,7 @@ The upper (lower) panels correspond to the {\texttt match} ({\texttt
   random}) method to build the mock surveys from individual
 fields. The plot shows number of mock surveys consistent
 with observations. There are between $550$ to $600$ models out of the
-original $9000$ models that have at least one (1) mock survey
+original $9000$ models that have at least one mock survey
 consistent with observations. 
 
 
@@ -503,7 +519,7 @@ correlation function.
 \subsection{Models with the highest success rates}
 
 For each model ${\mathcal M}$ there are 15 different mock surveys. In the
-previous section we presented the models that had at least one (1)
+previous section we presented the models that had at least one
 mock survey with $P>0.05$.
 
 Figure \ref{fig:high_success_rate} shows the number of models
@@ -625,12 +641,12 @@ mass of all successful models in the range $(10^{10}-10^{12})$
 that must be consistent with those observations and additional
 information from the angular correlation function greatly reduces the
 number of possible models. We end up with $\sim 50$ models out of the
-initial 90000 possible combination of parameters.  
+initial 9000 possible combination of parameters.  
 
 We find that to make a physical interpretation of these models it is
 useful to do it in terms of the size of halo mass range. We now use the
 variable $\Delta M=\log_{10}M_{\rm max} - \log_{10}M_{\rm  min}$, together
-with the escape fraction $f_{\rm occ}$ to help us build a classification
+with the occupation fraction $f_{\rm occ}$ to help us build a classification
 of all the successful models into three families: 
 
 
@@ -651,15 +667,22 @@ At the low mass end, such cut can be readily interpreted in terms of the
 minimal halo star formation rate needed to produce the necessary \lya
 luminosity to be above a given detection threshold.  However, under
 the reasonable assumption of star formation rate increasing with halo
-mass, the cut at higher halo masses requires a different explanation. 
+mass, the cut at higher halo masses requires a different
+explanation. There are two different physical scenarios to explain
+this. 
 
 One possible interpretation can be made in terms of a decreasing escape
 fraction of \ly radiation in massive systems. There are detailed models for
 radiative transfer that support the idea that massive galaxies with
-higher metallicities have larger dust contents than lower mass
-systems, which due to the resonant nature of the \ly line are enough
-to produce high absorption of \ly photons but not of continuum or
-other non-resonant lines.  
+higher metallicities have larger dust contents and less concentrated
+ISM than lower mass systems, which due to the resonant nature of the
+\ly line are enough to produce high absorption of \ly photons but not of continuum or
+other non-resonant lines \citep{ForeroRomero2011,Laursen2009}.  
+
+A second scenario is that larger systems have more extended gaseous
+envelopes which, due to resonance effects of the \ly line, leading to
+a low surface brightness and a broader line, making these systems less
+observable in narrow band filter surveys \citep{Zheng2010}. 
 
 The preference for narrow $\Delta M$ ranges to hosting LAEs together
 with the minor presence of reasonable models with $M_{\rm max}>
@@ -725,6 +748,8 @@ range in halo masses $\Delta M>1.0$ dex. These models can only be
 considered unfavorable based on a different set of observations as we
 have described in the previous subsection.
 
+
+\citep{Ouchi2010} prefers a very lowe duty cycle $0.008\pm 0.03$.
 
 \subsection{In the context of abundance matching models}
 
@@ -832,7 +857,8 @@ properties of dark matter halos hosting LAEs.
 \section*{Acknowledgments} 
 J.E.F-R thanks the hospitality of Changbom Park and the Korea
 Institute for Advanced Study where the first full draft of this paper
-was completed.
+was completed. J.E.F-R also thanks Peter Laursen for helpful comments
+on the physical interpretation and the presentation of our results.
 
 
 
