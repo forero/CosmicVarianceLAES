@@ -158,7 +158,7 @@ density, temperature, topology and kinematics of the neutral Hydrogen
 in the interstellar medium (ISM) \citep{Neufeld1991, ForeroRomero2011, Dijkstra2012,
 Laursen2013,Orsi2012}.  
 
-This complexity makes the use of monte-carlo simulations for the
+This complexity can be tackeld with monte-carlo simulations for the
 radiative transfer a required tool to obtain physically sound results,
 although the degeneracy in the physical parameters involved in the
 problem makes it difficult to achieve a robust consensus on what is
@@ -199,7 +199,7 @@ s$^{-1}$ Mpc$^{-1}$.
 
 Our method is based on the comparison of observatios and mock
 catalogs on the surface number density and the angular correlation
-function.  In the next subsections we describe in detail the four key
+function of LAEs.  In the next subsections we describe in detail the four key
 elements of this workflow. First, we present the observations we take
 as a benchmark. Second, the N-body simulation and the halo catalogs we
 use. Third, the simplified model that allows us to translated halo
@@ -210,27 +210,27 @@ compare observational results against our theoretical predictions.
 
 One of the main observational benchmarks we use in this paper is the LAE number
 density information at $z=3.1$ obtained by the panoramic narrow-band
-survey presented by \cite{Yamada2012} from a survey  conducted with
-the Subaru 8.2m telescope and the Subaru Prime Focus Camera, which has
-a field of view covering $34\times 27$ arcmin, corresponding to a
-comoving scale of $46\times35$ Mpc $h^{-1}$ at $z=3.09$. The narrow
+survey presented by \cite{Yamada2012} from a survey
+conducted with the Subaru 8.2m telescope and the Subaru Prime Focus Camera,
+which has a field of view covering $34\times 27$ arcmin, corresponding to a
+comoving scale of $46\times35$ Mpc $h^{-1}$ at $z=3.09$.  The narrow
 band filter is centered at $4977$ \AA with  $77$\AA width,
 corresponding to the redshift range $z=3.062-3.125$ and $41$ Mpc
 $h^{-1}$ comoving scale for the detection of the Lyman-$\alpha$ line
-centered at $z=3.09$. The authors report a total  $2161$ LAEs with an
-observed equivalent width larger than $190$\ over a total survey area
-of $2.42$ deg$^{2}$, this corresponds to  average surface number
-density of $0.20\pm 0.01$ arcmin$^{-2}$.   
+centered at $z=3.09$. The authors reported a
+total  $2161$  LAEs with an observed equivalent width larger than $190$\AA 
+over a total survey area of $2.42$ deg$^{2}$ that includes 12 subfields, 
+this corresponds to average surface number density of $0.20\pm 0.01$ arcmin$^{-2}$.   
 
 The survey covered four independent fields. The first is the SSA22
-field of $1.38$ deg$^2$ with $1394$ detected LAEs, this field has been
+field of $1.38$ deg$^2$ with $1394$ detected LAEs (7 subfields), this field has been
 known to harbor a region with a large density excess of galaxies. The
 second observed region is composed by the fields Subaru/{\it
   XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a 
-total of $0.58$ deg$^2$ and $386$ LAEs. The third and fourth fields
-are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and $196$ LAEs,
+total of $0.58$ deg$^2$ and $386$ LAEs (3 subfields). The third and fourth fields
+are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and $196$ LAEs (1 subfield),
 and the field around the Great Observatory Optical Deep Survey North
-(GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs. 
+(GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs (1 subfield). 
 
 There is abundant observational work done on LAEs at redshift $z=3.1$
 \citep{Kudritzki2000,Matsuda2005,Gawiser2007,Nilsson2007,Ouchi2008}.
@@ -238,9 +238,19 @@ However, we decide to focus on the data from \cite{Yamada2012} because
 it has the largest covered area with homogeneous instrumentation
 conditions (telescope, narrow band filter), data reduction pipeline
 and conditions to construct the LAE catalog. This ensures that the
-number density variations among fields are due only to
-astrophysical reasons and not different observational conditions or
-criteria to construct the catalogs.
+number density variations among fields are \emph{not} due to different observational
+conditions or criteria to construct the catalogs.
+
+The second constraint is the angular correlation function (ACF). The
+measurements presented in \citep{Yamada2012} do not report an ACF
+measurement. Instead we use the results reported by
+\citep{Hayashino2004} on the LAEs observed in the densest field of
+SSA22. It is important to keep in mind that there are some differences
+between this work and \citep{Yamada2012}. First, the color selection by
+\cite{Yamada2012} is less stringent compared to the one by
+\cite{Hayashino2004}. Also the EW threshold is different,
+\cite{Hayashino2004} uses a cut around $154$\AA \ instead of $190$\AA
+\ used by \citep{Yamada2012}
 
 
 
@@ -263,7 +273,7 @@ correspond to groups of $\sim 75$ particles. The catalogs were
 obtained from the publicly available Multidark database \footnote{{\tt
     http://www.multidark.org/MultiDark/}} \citep{2011arXiv1109.0003R}.
 We focus our work on halos more massive than $1\times 10^{10}$\hMsun
-that are resolved with at least $70$ particles.
+that are resolved with at least $70$ particles (REFF????)
 
 
 \subsection{A Model to Populate Halos with LAEs}
@@ -276,12 +286,12 @@ M_{\rm h} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm
   occ}$ of such halos that host a \emph{detectable LAE}. The reader
 must keep in mind that the physical interpreation of the occupation
 fraction $f_{\rm occ}$ convolves two things: the presence of a star
-forming galaxy in a halos and its detectability as a LAE. We do not assign a
+forming galaxy in a halo and its detectability as a LAE. We do not assign a
 luminosity to each LAE. We are primarily interested in
 constraining the halo mass range hosting detectable LAEs under the
 conditions defined by \cite{Yamada2012}. In what follows we will describe by
 the letter ${\mathcal M}$ a model defined by an specific choice of the
-three scalar parameters $M_{\rm min}$, $M_{\rm  max}$ y $f_{\rm occ}$.  
+three scalar parameters $M_{\rm min}$, $M_{\rm  max}$ and $f_{\rm occ}$.  
 
 
 For each model ${\mathcal M}$ we create a set of mock fields from
@@ -313,16 +323,6 @@ to avoid that any two volumes are contiguous.
 
 
 
-The second benchmark is the angular correlation function (ACF). The
-measurements presented in \citep{Yamada2012} do not report an ACF
-measurement. Instead we use the results reported by
-\citep{Hayashino2004} on the LAEs observed in the densest field of
-SSA22. It is important to keep in mind that there are some differences
-between this work and \citep{Yamada2012}. First, the color selection by
-\cite{Yamada2012} is less stringent compared to the one by
-\cite{Hayashino2004}. Also the EW threshold is different,
-\cite{Hayashino2004} uses a cut around $154$\AA \ instead of $190$\AA
-\ used by \citep{Yamada2012}
 
 
 \subsection{Sampling and Selecting Models}
@@ -489,8 +489,8 @@ good agreement with observations. In this region in parameter space
 one can thus find two extreme kinds of models.  One kind where the
 mass interval is very narrow with sizes smaller than $<0.3$ dex (a
 factor of two in mass) and others where the mass interval is 
-extended, larger than $1.0$ dex, going up to the maximum halo mass
-present in the simulation at that redshift. 
+extended (larger than $1.0$ dex) going up to the maximum halo mass
+present in the simulation at that redshift (up to $2.5$ dex). 
 
 The third region in parameter space corresponds to $\log_{10}M_{\rm
   min}<10.5$. In this case only models with a very narrow mass interval of
@@ -499,7 +499,7 @@ occupation fractions $f_{\rm occ}<0.3$ are allowed.
 
 Without any additional information our method allows us to infer that
 most of the successful models are found in the second and third region of
-parameter space where. This result was already expected from halo
+parameter space where this result was already expected from halo
 abundance calculations shown in Figure \ref{fig:halos}. In the next
 section we reduce the size of this region by imposing tighter
 constraints on the KS tests and consistency with the angular
@@ -539,8 +539,7 @@ greatly reduced. This corresponds to the regions in the parameter
 space in Figure \ref{fig:landscape} that already had a low number of
 consistent mock surveys. On the other hand, from the right panel in
 Figure \ref{fig:restriction_mock} one can see that there is not a
-strong selection effect on the occupation fraction $f_{\rm occ}$.  
-
+strong constraint on the occupation fraction $f_{\rm occ}$.
 
 \begin{figure*}
 \begin{center}
@@ -620,7 +619,7 @@ the models into two disjoint sets: those with $\log_{10} M_{\rm
 the parameter region which is consistent with the observational
 constraint in $\theta_{0}$. With this restriction we find that most
 models with $\log_{10} M_{\rm max}>12$ and  $\log_{10} M_{\rm min}>11.1$ 
-%can be safely ruled out.  
+can be safely ruled out.  
 
 
 
@@ -635,7 +634,8 @@ correlation function.
 
 \section{Discussion}
 
-Matching the galaxy surface number density statistics sets the median
+Matching the galaxy surface number density statistics to
+our mock  data sets the median
 mass of all successful models in the range $(10^{10}-10^{12})$
 \hMsun. Including more strict criteria on the number of mock surveys
 that must be consistent with those observations and additional
@@ -675,9 +675,10 @@ One possible interpretation can be made in terms of a decreasing escape
 fraction of \ly radiation in massive systems. There are detailed models for
 radiative transfer that support the idea that massive galaxies with
 higher metallicities have larger dust contents and less concentrated
-ISM than lower mass systems, which due to the resonant nature of the
-\ly line are enough to produce high absorption of \ly photons but not of continuum or
-other non-resonant lines \citep{ForeroRomero2011,Laursen2009}.  
+ISM than lower mass systems which, due to the resonant nature of the
+\ly line that increase the probability of absortion  of\ly photons, produce
+high absorption of \ly photons but not of continuum or
+other n-resonant lines \citep{ForeroRomero2011,Laursen2009}.  
 
 A second scenario is that larger systems have more extended gaseous
 envelopes which, due to resonance effects of the \ly line, leading to
@@ -686,9 +687,9 @@ observable in narrow band filter surveys \citep{Zheng2010}.
 
 The preference for narrow $\Delta M$ ranges to hosting LAEs together
 with the minor presence of reasonable models with $M_{\rm max}>
-10^{12}$\hMsun \  shows that our models support theoretical insights
-where the most massive systems are not bright \ly sources
-\citep{ForeroRomero2012}.   
+10^{12}$\hMsun \  shows that our models support theoretical and observational
+insights where the most massive systems are not bright \ly sources
+\citep{ForeroRomero2012}, \citep{Shapley2003}
 
 \subsection{Comparison against results from blind surveys}
 
