@@ -63,10 +63,10 @@
   $z=3.1$]{Constraints on the mass and occupation
   fraction of dark matter halos hosting Lyman-alpha emitters
   at $z\sim 3$}    
-\author[~J.~E. Forero-Romero and J. Mejia]{
+\author[~J.~E. Forero-Romero and ~J.~E Mejia-Restreo]{
 \parbox[t]{\textwidth}{\raggedright 
 Jaime E. Forero-Romero$^{1}$ and
-Julian Mej\'ia-Restrepo$^{2}$ 
+Julian E. Mej\'ia-Restrepo$^{2}$ 
 }
 \vspace*{6pt}\\
 $^{1}$ Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1
@@ -118,16 +118,16 @@ a  central topic in studies of structure formation in the Universe. They
 are helpful in a diverse range of fields. LAEs can be used as probes
 of reionization \citep{Dijkstra11}, tracers of large scale structure
 \citep{Koehler2007},  signposts for low metallicity stellar
-populations and markers of thethe galaxy formation process through
-cosmic history \citep{ForeroRomero2012}.   
-
+populations, markers of the galaxy formation process through
+cosmic history \citep{ForeroRomero2012}. and tracers of active star formation 
+\citep{Guaita2013}
 
 At the same time, theoretical and observational developments have
 contributed to the emergence of a paradigm to describe structure
 formation in a cosmological context. In this context it is considered
 that dominant matter content of the Universe is to be found in dark
 matter, whereby each galaxy is hosted by larger dark matter structure
-known as a halo. 
+known as a halo. \citep{Peebles1980}
 
 Most models of galaxy formation find that the mass of the halo can be
 used to predict properties of the galaxy such as its stellar mass and
@@ -250,7 +250,9 @@ between this work and \citep{Yamada2012}. First, the color selection by
 \cite{Yamada2012} is less stringent compared to the one by
 \cite{Hayashino2004}. Also the EW threshold is different,
 \cite{Hayashino2004} uses a cut around $154$\AA \ instead of $190$\AA
-\ used by \citep{Yamada2012}
+\ used by \citep{Yamada2012}. These differences  translates
+in only two more detected objects in the Hayashino survey (283 LAEs) than in 
+Yamada et al (281 LAEs).
 
 
 
@@ -273,7 +275,7 @@ correspond to groups of $\sim 75$ particles. The catalogs were
 obtained from the publicly available Multidark database \footnote{{\tt
     http://www.multidark.org/MultiDark/}} \citep{2011arXiv1109.0003R}.
 We focus our work on halos more massive than $1\times 10^{10}$\hMsun
-that are resolved with at least $70$ particles (REFF????)
+that are resolved with at least $70$ particles ({\bf REFF???? or support???})
 
 
 \subsection{A Model to Populate Halos with LAEs}
@@ -363,18 +365,32 @@ harder constraints to reduce the number of models by asking that all
 the 15 mocks to be consistent with observations.
 
 
-The comparison between the theoretical and observational ACF is done
-in therms of the angular correlation length obtained  by fitting to a power-law
-function:  
+
+
+We then calculate the  angular correlation function (ACF)
+for all the models having the $15$ mock surveys consistent with
+observations . The ACF is computed  ( using 
+the Davis \& Peebles  estimator \citep{Davis1983} ) only on the densest
+subfield in all the 15 mock surveys corresponding to the SSA22
+region. We then take the mean ACF over the 15  mock surveys  for
+each model as well as its the standard deviation to include
+the effect of cosmic variance. 
+
+We finally compare the observational ACF and the mean mock  ACF of the models   
+in therms of the angular correlation lenght ($\theta_{0}$) by fitting 
+them to a power-law function:  
 
 \begin{equation}
 \xi(\theta) = \left(\frac{\theta}{\theta_{0}}\right)^{\gamma}
 \label{eq:fitting}
 \end{equation}
 
-Both the theoretical and observational ACF are derived by a least
-square minimization procedure. We consider that a model is consistent
-with observations if the two parameters $\gamma$ and $\theta_0$ are
+Both mock and observational ACF are derived by a least
+square minimization procedure. The observational errors of 
+the ACF as well as the standard deviation of the mean modelled ACFs  are
+considered to compute the error in the fitted parameters to ensure ourselves
+to include poissionian and cosmic-variance errors. 
+We consider that a model is consistent with observations if the two parameters $\gamma$ and $\theta_0$ are
 equal within a $1$-$\sigma$ range.
 
 
@@ -398,7 +414,7 @@ correlation function.
 \includegraphics[width=1.10\linewidth,angle=0]{./plots/Fig1.pdf}
 \caption{ \label{fig:halos} Surface density of dark
   matter halos as a function of a minimum halo mass to count the
-  total number of elements in a volume. Each line represents on of the
+  total number of elements in a volume. Each line represents one of the
   $210$ volumes of dimensions $46\times 35\times 41$ h${-3}$Mpc$^{3}$
   in the Bolshoi simulation. The horizontal gray band represents the
   range of surface densities observed for LAEs at $z=3.1$ as reported
@@ -624,7 +640,7 @@ for the {\tt match} method after applying the observational constraints
 in the occupation fraction and the ACF. Here we consider a model
 consistent if there is an overlap of $1-\sigma$ in its values for the
 correlation length $\theta_0$ and the power $\gamma$ in the
-correlation function.  
+correlation function.  As before, we found similar results using the {\tt random} method
 
 
 \section{Discussion}
@@ -691,9 +707,9 @@ insights where the most massive systems are not bright \ly sources
 We also find that $70\%$ of the best models are found in families (1)
 and (2), with a low occupation fraction $f_{\rm occ}\leq 0.3$. This
 preference goes in the same direction as the observational constraint
-on $f_{\rm occ}\sim 0.1-0.2$ derived at $z=2.2$ by \cite{Hayes2010}
+on the escape fraction $f_{\rm esc}\sim 0.1-0.2$ derived at $z=2.2$ by \cite{Hayes2010}
 and recent theoretical study of observational data in a wide redshift
-range $0<z<6$  \citep{Dijkstra2013}. 
+range $0<z<6$  \citep{Dijkstra2013}.  
 
 The observational estimation by \cite{Hayes2010} was based on blind
 surveys of the H$\alpha$ and Lyman $\alpha$ line. Using corrections by
@@ -741,8 +757,8 @@ We also find interesting that our ACF analysis is also not enough to rule
 out models with a high occupation fraction $f_{\rm occ}>0.3$, which
 represent almost one fourth of our best models, coinciding with a wide
 range in halo masses $\Delta M>1.0$ dex. These models can only be
-considered unfavorable based on a different set of observations as we
-have described in the previous subsection.
+considered unfavorable based on the density and abundance observations
+as we have described in the previous subsection.
 
 
 ... \cite{Ouchi2010} prefers a very lowe duty cycle $0.008\pm 0.03$.
@@ -750,7 +766,8 @@ have described in the previous subsection.
 \subsection{In the context of abundance matching models}
 
 
-Considering the additional evidence for a low escape fraction we can
+Considering the additional evidence for a low escape fraction and 
+assuming a direct relation between $f_{esc}$ and $f_{occ}$ we can
 say that the preferred models are in families (1) and (2) with a
 clear majority composed by those with narrow mass range.
 
@@ -831,7 +848,7 @@ discovery of models previously overlooked like those with a high
 occupation fraction $f_{\rm occ}>0.3$.
  
 
-A central result in this exploration of parameter esp ace is the
+A central result in this exploration of parameter espace is the
 existence of a large number of models with a very
 narrow mass range $\Delta M< 0.1$ dex that are consistent in every
 aspect with the spatial distribution of observed LAEs. In order to
