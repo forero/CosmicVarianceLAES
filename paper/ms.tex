@@ -238,50 +238,55 @@ However, we decide to focus on the data from \cite{Yamada2012} because
 it has the largest covered area with homogeneous instrumentation
 conditions (telescope, narrow band filter), data reduction pipeline
 and conditions to construct the LAE catalog. This ensures that the
-number density variations among fields are \emph{not} due to different observational
-conditions or criteria to construct the catalogs.
+number density variations among fields are \emph{not} due to different
+observational conditions or criteria to construct the catalogs.
 
-The second constraint is the angular correlation function (ACF). The
-measurements presented in \citep{Yamada2012} do not report an ACF
-measurement. Instead we use the results reported by
-\citep{Hayashino2004} on the LAEs observed in the densest field of
-SSA22. It is important to keep in mind that there are some differences
-between this work and \citep{Yamada2012}. First, the color selection by
-\cite{Yamada2012} is less stringent compared to the one by
-\cite{Hayashino2004}. Also the EW threshold is different,
-\cite{Hayashino2004} uses a cut around $154$\AA \ instead of $190$\AA
-\ used by \citep{Yamada2012}. These differences  translates
-in only two more detected objects in the Hayashino survey (283 LAEs) than in 
-Yamada et al (281 LAEs).
+The second constraint is the angular correlation function
+(ACF). \cite{Yamada2012} does not report an ACF measurement. Instead
+we use the results by \cite{Hayashino2004} and
+\cite{Ouchi2008,Ouchi2010}.  
+
+\cite{Hayashino2004} observed in the densest field of
+SSA22 while \cite{Ouchi2008} observed on a 1 deg$^2$ sky of the
+Subaru/XMM-Newton Deep Survey (SXDS) Field.  There are some
+differences between these observations and those iby
+\cite{Yamada2012}. The details in the color selection, corresponding
+limiting luminosities and EW thresholds are different in these
+references. Nevertheless we use these observations as additional
+constraints in spite of the fact that the first selected models are
+based only on the surface density statistics by \citep{Yamada2012}.
+
+
 
 
 
 \subsection{Simulation and Halo Catalogs}
 
 The Bolshoi simulation \citep{Bolshoi} we use in this paper was
-performed in a cubic volume of 250 $h^{-1}$ Mpc on a side. It includes
+performed in a cubic volume of 250 $h^{-1}$ Mpc on a side. The
 dark matter distribution is sampled using $2048^{3}$ particles, which
 translates into a particle mass of $m_{\rm   p}=1.35\times 10^{8}$
 $h^{-1}$ M$_{\odot}$.  The cosmological parameters are consistent with
-a WMAP5 and WMAP7 data with a  density $\Omega_{\rm m} = 0.27$,
-cosmological  $\Omega_{\Lambda}=0.73$, dimensionless Hubble constant
+a WMAP5 and WMAP7 data with a matter density $\Omega_{\rm m} = 0.27$,
+cosmological constant $\Omega_{\Lambda}=0.73$, dimensionless Hubble constant
 $h=0.70$, slope of the power spectrum $n=0.95$ and normalization of the
 power spectrum$\sigma_{8}=0.82$ \citep{Komatsu2009,Jarosik2011}.  
 
 We use halo catalogs constructed with a Friend-of-Friends (FOF)
 algorithm with a linking length of 0.17 times the inter-particle
-distance. The minimum halo mass in the models we construct in this \documentname
-correspond to groups of $\sim 75$ particles. The catalogs were
-obtained from the publicly available Multidark database \footnote{{\tt
-    http://www.multidark.org/MultiDark/}} \citep{2011arXiv1109.0003R}.
-We focus our work on halos more massive than $1\times 10^{10}$\hMsun
-that are resolved with at least $70$ particles ({\bf REFF???? or support???})
+distance. The catalogs were obtained from the publicly available
+Multidark database \footnote{{\tt
+    http://www.multidark.org/MultiDark/}}
+\citep{2011arXiv1109.0003R}. We focus our work on halos more massive
+than $1\times 10^{10}$\hMsun that are resolved with at least $70$
+particles, the reasons for this choice are explained in the next
+section. 
 
 
 \subsection{A Model to Populate Halos with LAEs}
 \label{subsec:mocks}
 
-In our model a dark matter halo can only host one or zero LAE. 
+In our model a dark matter halo can only host one LAE at most. 
 There are three parameters in the model that decide whether a halo can host a
 galaxy or not: the lower and upper bounds for the mass range $M_{\rm min}<
 M_{\rm h} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm
@@ -321,7 +326,9 @@ fields to imitate the SDF and GOODS-North field. Our main goal with
 this selection is to test the impact on the final statistics of having
 $7$ clustered fields. The second way to group the mock fields is called {\texttt
   random}, whereby all the $11$ fields are selected in such a way as
-to avoid that any two volumes are contiguous.
+to avoid that any two volumes are contiguous. In this \documentname we
+only report the results obtained by the {\texttt match} method that
+are also obtained in the {\texttt random} selection.
 
 
 
@@ -381,7 +388,7 @@ in therms of the angular correlation lenght ($\theta_{0}$) by fitting
 them to a power-law function:  
 
 \begin{equation}
-\xi(\theta) = \left(\frac{\theta}{\theta_{0}}\right)^{\gamma}
+\omega(\theta) = \left(\frac{\theta}{\theta_{0}}\right)^{-\beta}
 \label{eq:fitting}
 \end{equation}
 
@@ -390,7 +397,7 @@ square minimization procedure. The observational errors of
 the ACF as well as the standard deviation of the mean modelled ACFs  are
 considered to compute the error in the fitted parameters to ensure ourselves
 to include poissionian and cosmic-variance errors. 
-We consider that a model is consistent with observations if the two parameters $\gamma$ and $\theta_0$ are
+We consider that a model is consistent with observations if the two parameters $\beta$ and $\theta_0$ are
 equal within a $1$-$\sigma$ range.
 
 
@@ -449,7 +456,7 @@ gray band values.
 In the next subsection we quantify this intuition by means of the
 Kolmogorov-Smirnov tests between mock surveys and observations. 
 
-\subsection{Surface density distributions}
+\subsection{Models consistent with the surface density distributions}
 
 \begin{figure*}
 \begin{center}
@@ -577,7 +584,7 @@ strong constraint on the occupation fraction $f_{\rm occ}$.
 \hspace{5mm}  
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_correlation.pdf} 
 \end{center}
-\caption{Left: Values for the free parameters ($\theta_{0}$ vs $\gamma$) 
+\caption{Left: Values for the free parameters ($\theta_{0}$ vs $\beta$) 
 in the fitting formula (Eq. \ref{eq:fitting}) for the mean angular
 correlation function. Blue dots correspond to simulations and the green cross to
 observations by \citet{Hayashino2004}. The error bars in the 
@@ -593,9 +600,9 @@ correspond to models with $\log_{10} M_{\rm max}>12.0$.
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_mmax.pdf}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig6_mass.pdf}
 \hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_focc.pdf}
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig6_f_occ.pdf}
 \end{center}
 \caption{Best models parameter space when both the constraints on the
   maximal number of  consistent mocks and the occupation  fraction
@@ -606,7 +613,7 @@ correspond to models with $\log_{10} M_{\rm max}>12.0$.
 
 
 Figure \ref{figure:correlation_parameters} shows the main results in a
-$\theta_{0}-\gamma$  plane where the average and standard deviation
+$\theta_{0}-\beta$  plane where the average and standard deviation
 for each mock is shown in comparison with the result derived from
 observations.  The error bars in this Figure represents the standard
 deviation of the ACF over all the sub-fields in the 15 mock
@@ -639,7 +646,7 @@ models in the planes $M_{\rm min}-M_{\rm  max}$ and $M_{\rm min}-f_{\rm occ}$
 for the {\tt match} method after applying the observational constraints 
 in the occupation fraction and the ACF. Here we consider a model
 consistent if there is an overlap of $1-\sigma$ in its values for the
-correlation length $\theta_0$ and the power $\gamma$ in the
+correlation length $\theta_0$ and the power $\beta$ in the
 correlation function.  As before, we found similar results using the {\tt random} method
 
 
@@ -761,7 +768,16 @@ considered unfavorable based on the density and abundance observations
 as we have described in the previous subsection.
 
 
-... \cite{Ouchi2010} prefers a very lowe duty cycle $0.008\pm 0.03$.
+\cite{Ouchi2010} presents an analysis of LAE observations in the
+redshift interval $3.1<z<7.0$. At $z=3.1$ They get to an average
+mass for the host dark matter halos of $M_{h}=2.9^{+24.0}_{-2.9}\times
+10^{10}$ \hMsun with a corresponding duty cycle of $0.008\pm
+0.03$. This broadly matches the expectations from the first family of
+models, also summarized in Table \ref{table:firstfamily}. In
+particular it seems to favor only the very low occupations fractions.  
+
+
+
 
 \subsection{In the context of abundance matching models}
 
@@ -908,7 +924,7 @@ $\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$\\\hline
 11.0& 12.0& 0.3\\\hline\hline
 \end{tabular}
 \end{center}
-\caption{\label{table:thirdfamily}List of parameters for the first
+\caption{\label{table:firstfamily}List of parameters for the first
   family of models. Narrow   mass range $\Delta M\leq 1.0$dex and low
   occupation fraction $f_{\rm occ}\leq 0.3$.} 
 \end{table}
