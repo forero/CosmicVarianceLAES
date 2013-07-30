@@ -60,9 +60,9 @@
 \begin{document}
 
 \title[Halo mass and occupation fraction for LAEs at
-  $z=3.1$]{Constraints on the mass and occupation
-  fraction of dark matter halos hosting Lyman-alpha emitters
-  at $z\sim 3$}    
+  $z=3.1$]{Mass and occupation
+  fraction of dark matter halos hosting Lyman-$\alpha$ emitters
+  at $z\sim 3$: limitations imposed by cosmic variance}    
 \author[~J.~E. Forero-Romero and ~J.~E Mejia-Restreo]{
 \parbox[t]{\textwidth}{\raggedright 
 Jaime E. Forero-Romero$^{1}$ and
@@ -80,26 +80,29 @@ Observatorio 1515, Santiago, Chile}
 %
 We derive constraints on the mass and occupation fraction of dark
 matter halos hosting \ly Emitting galaxies (LAEs) at a redshift of
-$z=3.1$, by comparing the number density and the angular
-correlation function between mock and observed fields. The mock fields
-are constructed in a large cosmological N-body simulation using a
-model where a dark matter halo with mass in the range $M_{\rm
-  min}<M_{\rm h}<M_{\rm max}$ can only host one LAE with a
-probability $f_{\rm occ}$. We define three different families of
-parameters consistent with observations based on their mass range
-$\Delta M \equiv \log_{10}M_{\rm max} - \log_{10} M_{\rm min}$ dex and occupation
-fraction $f_{\rm occ}$.  From this we conclude that the number
-density and spatial clustering information available from observations
-is not sufficient to derive a unique and narrow set of values for the
-parameters in the model. In particular, it is always possible to find a 
-a model with any desired occupation fraction in the range $0.1\leq
-f_{\rm occ}\leq 1.0$.  However, there is a dominant family composed by
-models with a narrow mass range $\Delta M<1.0$ dex, a low occupation fraction
-$f_{\rm occ}\leq 0.3$ and a maximum mass $M_{\rm   max}<
+$z=3.1$ by matching the number density and the angular
+correlation function between mock and observed fields. We explicitly
+take into account the cosmic variance on the typical observed field size by
+constructing mock fields from a large cosmological N-body
+simulation matching observational geometries. To populate the
+halos in the simulation we use a model where a dark matter halo with
+mass in the range $M_{\rm   min}<M_{\rm h}<M_{\rm max}$ can only host one LAE with a
+probability $f_{\rm occ}$. We find that the large scatter in the mocks, induced by
+cosmic variance, makes the number density and spatial clustering
+information insufficient to derive a
+unique and narrow set of values for the parameters in the model. In
+particular, it is always possible to find a consistent model with any
+desired occupation fraction in the range $0.1\leq f_{\rm occ}\leq
+1.0$.  Nevertheless, in the models we can define three
+different families of parameters based on their mass range $\Delta M
+\equiv \log_{10}M_{\rm max} - \log_{10} M_{\rm min}$ and occupation
+fraction $f_{\rm occ}$. The dominant family is composed by models with
+a narrow mass range $\Delta M<1.0$ dex, a low occupation fraction
+$f_{\rm occ}\leq 0.3$ and a maximum mass $M_{\rm  max}<
 10^{12}$\hMsun.  The existence of this dominant family gives support
 to the idea that the most massive dark matter halos at that epoch do
 not host the brightest LAEs and that only a small fraction of star
-forming galaxies can be actually detected as LAEs. 
+forming galaxies can be actually detected as LAEs.   
  
 \end{abstract}
 
@@ -118,26 +121,24 @@ are helpful in a diverse range of fields. LAEs can be used as probes
 of reionization \citep{Dijkstra11}, tracers of large scale structure
 \citep{Koehler2007},  signposts for low metallicity stellar
 populations, markers of the galaxy formation process through
-cosmic history \citep{ForeroRomero2012}. and tracers of active star formation 
-\citep{Guaita2013}
+cosmic history \citep{ForeroRomero2012} and tracers of active star
+formation  \citep{Guaita2013}
 
 At the same time, theoretical and observational developments have
 contributed to the emergence of a paradigm to describe structure
 formation in a cosmological context. In this context it is considered
 that dominant matter content of the Universe is to be found in dark
-matter, whereby each galaxy is hosted by larger dark matter structure
+matter (DM), whereby each galaxy is hosted by larger dark matter structure
 known as a halo. \citep{Peebles1980}
 
 Most models of galaxy formation find that the mass of the halo can be
 used to predict properties of the galaxy such as its stellar mass and
 star formation rate \citep{Behroozi2012}. Processes that regulate the
 star formation cycle are also though to be strongly dependent on its
-mass. Furthermore, the spatial clustering of galaxies on large scales
-is entirely dictated by the halo distribution.  For the reasons
-mentioned above, finding the typical dark matter halo mass hosting
-LAEs represents a significant step forward to understand the nature of
-this population in the context of Lambda Cold Dark Matter
-($\Lambda$CDM) paradigm.  
+mass.  For the reasons mentioned above finding the typical dark matter
+halo mass hosting LAEs represents a significant step forward to
+understand the nature of this population in the context of Lambda Cold
+Dark Matter ($\Lambda$CDM) paradigm.   
 
 Some theoretical approaches to this problem have been based on
 ab-initio approach modeling. Starting from the DM halo population, the
@@ -154,8 +155,8 @@ approach is the calculation of the fraction of \ly photons
 that escape the galaxy to the observer. Given the resonant nature of
 the \lya line, the radiative transfer of \ly is sensitive to the
 density, temperature, topology and kinematics of the neutral Hydrogen
-in the interstellar medium (ISM) \citep{Neufeld1991, ForeroRomero2011, Dijkstra2012,
-Laursen2013,Orsi2012}.  
+in the interstellar medium (ISM) \citep{Neufeld1991,ForeroRomero2011,
+  Dijkstra2012,Laursen2013,Orsi2012}.  
 
 This complexity can be tackeld with monte-carlo simulations for the
 radiative transfer a required tool to obtain physically sound results,
@@ -164,22 +165,45 @@ problem makes it difficult to achieve a robust consensus on what is
 the theoretical expected value for the \ly escape fraction
 at high redshift. 
 
-Our objective in the present \documentname is to use a method to
-bypass all the complexity involved in the estimation of the \ly escape
-fraction to infer information relevant to the understanding of LAEs in
-a cosmological context. The analysis we present is thus based on one
-of the most robust prediction of $\Lambda$CDM, namely the clustering
-and abudance of dark matter halos. We construct a simple model that
-allow us to construct mock catalogs and explore a wide range of
-parameters to narrow the mass interval of halos hosting LAEs together
-with its occupation fraction. 
+Another approach uses the spatial information to infer the typical
+mass of the hosting dark matter halo. This uses the fact that in cold
+dark matter cosmologies the spatial clustering of galaxies on large
+scales is entirely dictated by the halo distribution
+\citep{Colberg00}, which in turn has a strong dependence on halo
+mass. Using measurements of the angular correlation function of LAEs,
+observers have put constraints on the typical mass and occupation
+fraction of the putative halos hosting these galaxies
+\citep{Hayashino2004,Gawiser07,Nilsson2007,Ouchi2010}. In this
+studies the observations were done on single fields of $\sim 1$
+deg$^{2}$ and the conclusions derived on the halo host mass from
+clustering information do not delve to deeply into the impact of
+cosmic variance.
 
-Another central point in our study is the explicit inclusion of cosmic
-variance effects by using large volume cosmological simulations. This
-allows us to go closer to the space of observables and directly
-explore the compatibility of a model with observations.
+Recently \cite{Yamada2012} observed a wide area a bit more than ten
+times the sky area covered so far, all of it with the same instrument
+and the same criteria to reduce the observational data and produce LAE
+catalogs. This large data-set allows a first observational study on the
+expected cosmic variance effects in LAEs at $z=3.1$. This motivate us
+to perform such a study from a theoretical persepective and study the
+effects of the explicit inclusion of cosmica variance effects by using
+a large N-body cosmological simulation. This
+allows us to build mock fields resembling the observational geometry
+and and directly expore the compatibility of a model with
+observations.
 
-This paper is structured as follows. In the next section we present
+In this \documentname, besides studying the impact of cosmic variance,
+we implement a method to populate the DM halos with LAEs that bypasses
+all the uncertainty involved in the estimation of star formation rates
+and \ly escape fraction. Our model only defines whether a DM hosts a
+detectable LAE or not. It does not predict a \lya luminosity. By using
+this model we want to define the preferred mass range of DM halos
+hosting these galaxies and the fraction of such halos that actually
+can host a LAE.  Once the mock catalogs are constructed in this model
+we proceed with a direct comparison against the statistics derived
+from observations. 
+
+
+This \documentname is structured as follows. In the next section we present
 the simulation and model used to produce the mock catalogs and the criteria
 used to compare them against observations. In \SS \ref{sec:results} we
 present the main results in terms of the parameters of our model. We
