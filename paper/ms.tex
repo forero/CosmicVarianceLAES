@@ -147,13 +147,14 @@ modelling has been implemented from analytic considerations,
 semi-analytic models  and  full N-body hidrodynamical simulations
 \citep{Laursen2007, Dayal2009, ForeroRomero2011, Yajima2012, Orsi2012, Soler2012}. 
 
-In addition to the uncertainties in the astrophysical processes describing
-star formation in galactic populations, is the calculation of the fraction of \ly photons
-that escape the galaxy to the observer is another debated step. Given the resonant nature of
-the \ly line, the radiative transfer of \ly is sensitive to the
-density, temperature, topology and kinematics of the neutral Hydrogen
-in the interstellar medium (ISM). \citep{Neufeld1991,ForeroRomero2011,
-  Dijkstra2012,Laursen2013,Orsi2012}.  
+In addition to the uncertainties in the astrophysical processes
+describing star formation in galactic populations, is the calculation
+of the fraction of \ly photons that escape the galaxy to the observer
+is another debated step. Given the resonant nature of the \ly line,
+the radiative transfer of \ly is sensitive to the density,
+temperature, topology and kinematics of the neutral Hydrogen in the
+interstellar medium
+(ISM). \citep{Neufeld1991,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.   
 
 This problem can be tackeld with Monte Carlo simulations for the
 radiative transfer, however the complexity of the relevant physical
@@ -430,13 +431,8 @@ parameters $\beta$ and $\theta_0$ are equal within a $1$-$\sigma$ range.
 
 The main purpose of this section is to show how different
 observational constraints narrow down the parameters space of allowed
-models. In each one of the four sub-sections we add a new
-constraint. First we consider the average halo number density, then we
-consider the surface density distributions for all the mock fields in
-a given mock survey. From this result we move to narrower constraints
-by requiring a high number of mock surveys with consistent surface
-density distributions to finally consider the impact of the angular
-correlation function. 
+models. Each sub-sections presents the effect of adding new pieces of
+observational or statistical evidence. 
 
 \begin{figure}
 \begin{center}
@@ -462,21 +458,35 @@ values for LAEs allowed reported in observations \citep{Yamada2012}.
  
 This result provides the basis to understand why only a specific range of models
 ${\mathcal M}$ can be expected to be consistent with
-observations. From Figure \ref{fig:halos} we can read that models
-with a minimum mass $\log_{10} M_{\rm min}>11.5$\hMsun \ will always have a
+observations. From Figure \ref{fig:halos} we can read that models with
+a minimum mass $\log_{10} M_{\rm min}>11.5$\hMsun will always have a
 surface number density lower than the observational
-constrain. This makes impossible that models with that minimum mass
-can be compatible with observations.
+constrain. This makes impossible that models in that range can be
+compatible with observations, there are simply to few halos compared
+to observed LAEs.
 
 
-The opposite is true in models with $\log_{10} M_{\rm min}<10.5$
-that will show surface number density larger than observations, this
-implies that in such models the occupation fraction has to be tuned
-$f_{\rm occ}<1.0$ as to lower the halo number density to match the
-gray band values.
+The opposite is true in models with $\log_{10} M_{\rm min}<10.5$ that
+have a surface number density larger than observations. In those cases
+the occupation fraction $f_{\rm occ}<1.0$ can be tuned in order to
+lower the halo number density to match observations.
 
-In the next subsection we quantify this intuition by means of the
-Kolmogorov-Smirnov tests between mock surveys and observations. 
+
+Figure \ref{fig:halos} also illustrates the impact of cosmic
+variance. At fixed mass there is an scatter of $0.3-0.6$ dex in the
+mass range $10^{10}\hMsun < M_{\rm  min}<10^{11}\hMsun$.  A consequence of
+this variation is that models with the same mass range and occupation
+fraction can have mock fields with number densities varying up to a
+factor of $\sim 2-5$. Also, the scatter in mocks across the simulation
+is comparable to the $0.3$ dex scatter in observations.  
+
+
+In the same Figure \ref{fig:halos} we see that at fixed number
+density, around the range allowed by observations, there is an scatter
+in the masses of $0.4-0.5$ dex. This intrinsic scatter in the masses
+with a given number density adds is also included in the mock
+construction process, enlarging the range of possible models
+consistent with observations.  
 
 \subsection{Models consistent with the surface density distributions}
 
