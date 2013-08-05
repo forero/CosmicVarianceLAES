@@ -494,18 +494,16 @@ consistent with observations.
 \begin{center}
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_match_P5.pdf}
 \vspace{5mm}
-\includegraphics[width=0.49\linewidth,angle=0]{./plots/Fig3_match_P5.pdf}\\
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_random_P5.pdf}
-\hspace{5mm}
-\includegraphics[width=0.49\linewidth,angle=0]{./plots/Fig3_random_P5.pdf}\\
+\includegraphics[width=0.49\linewidth,angle=0]{./plots/Fig3_match_P5.pdf}
+%\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig2_random_P5.pdf}
+%\hspace{5mm}
+%\includegraphics[width=0.49\linewidth,angle=0]{./plots/Fig3_random_P5.pdf}\\
 \end{center} 
-\caption{$M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
-    min}-f_{\rm occ}$ (right) planes for all models with
-  $P>0.05$ in two different ways used to construct the mock
-  surveys. The color code corresponds to the number of mock surveys
-  that are found to be compatible with observations in terms of the KS
-  test with $P>0.05$. Only regions of parameter space with at least
-  one consistent mock survey are included. \label{fig:landscape}}   
+\caption{$M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm    min}-f_{\rm
+    occ}$ (right) planes for all models with  KS test values
+  $P>0.05$. The color code corresponds to the number of  mock surveys
+  compatible with observations. Only regions of parameter  space with
+  at least one consistent mock survey are  included. \label{fig:landscape}}     
 \end{figure*}
 
 
@@ -514,82 +512,87 @@ min}-M_{\rm max}$, $M_{\rm min}-f_{\rm occ}$ where the KS test yields
 values of $P>0.05$ at least for one mock survey. For those models it
 is not possible reject the hypothesis that the simulated and observed
 data for the surface number density come from the same parent
-distribution.
-
-The upper (lower) panels correspond to the {\texttt match} ({\texttt
-  random}) method to build the mock surveys from individual
-fields. The plot shows number of mock surveys consistent
-with observations. There are between $550$ to $600$ models out of the
-original $9000$ models that have at least one mock survey
-consistent with observations. 
-
+distribution. In total, there are between $550$ to $600$ models out of
+the original $9000$ models that have at least one mock survey
+consistent with observations.  
 
 In Figure \ref{fig:landscape} there are three regions of parameter
 space that can be clearly distinguished. The first region corresponds
 to models where the minimum mass is high $\log_{10}M_{\rm min}>
-11.5$. None of this models is compatible with observations as expected
-from the results in the previous subsection. For these models the number
-density of LAEs is too low compared to observations.
-
+11.5$. None of these models is compatible with observations as expected
+from the arguments presented in the previous subsection. For these
+models the number density of LAEs is too low compared to observations.
+ 
 The second region corresponds to an intermediate range for the minimum
-mass $10.5<\log_{10}M_{\rm min}<11.5$ where regardless of the value of
-the maximum mass $M_{\rm max}$ it is possible to tune the occupation
+mass $10.5<\log_{10}M_{\rm min}<11.5$ where, regardless of the value of
+the maximum mass $M_{\rm max}$, it is possible to tune the occupation
 fraction $f_{\rm occ}$ to bring some of the mock observations into
-good agreement with observations. In this region in parameter space
-one can thus find two extreme kinds of models.  One kind where the
-mass interval is very narrow with sizes smaller than $<0.3$ dex (a
-factor of two in mass) and others where the mass interval is 
-extended (larger than $1.0$ dex) going up to the maximum halo mass
-present in the simulation at that redshift (up to $2.5$ dex). 
-
+good agreement with observations. In this region of parameter space
+one can tfind two extreme kinds of models.  One kind where the
+mass interval $\Delta M\equiv \log_{10} M_{\rm max} - \log_{10}M_{\rm
+  min}$ is narrow with $\Delta M<1.0$ dex, others where the mass interval is 
+extended $\Delta M>1.0$dex going up to the maximum halo mass
+present in the simulation at that redshift, up to $\Delta M = 2.5$ dex
+in some cases.  
+ 
 The third region in parameter space corresponds to $\log_{10}M_{\rm
   min}<10.5$. In this case only models with a very narrow mass interval of
 at most $0.5$ dex ($\log_{10}M_{\rm max}<11.0$) and low
 occupation fractions $f_{\rm occ}<0.3$ are allowed. 
 
 Without any additional information our method allows us to infer that
-most of the successful models are found in the second and third region of
-parameter space where this result was already expected from halo
-abundance calculations shown in Figure \ref{fig:halos}. In the next
-section we reduce the size of this region by imposing tighter
-constraints on the KS tests and consistency with the angular
-correlation function.
+most of the successful models are found in the second and third regions of
+parameter space. This result was already expected from halo
+abundance calculations shown in Figure \ref{fig:halos} and discussed
+in the previous subsection. 
 
-\begin{figure*}
+However, the additional information we gain with this test is the
+relative abundance of models in the parameter space. Not all the
+models in the second region have an equal abundance. By inspection of
+Figure \ref{fig:landscape} it seems that models with $\log_{10}M_{\rm
+  min}\sim 10^{11.3}$\hMsun and low occupation fraction $f_{\rm}<0.3$
+are preferred.  In the next sub-section we explore in detail the
+models in this region, imposing tighter constraints on the KS test
+results and exploring the mocks' consistency with the angular correlation
+function.  
+
+\begin{figure}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_match_P5.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_random_P5.pdf}
+\includegraphics[width=0.95\linewidth,angle=0]{./plots/Fig4_match_P5.pdf}
+%\hspace{5mm}
+%\includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig4_random_P5.pdf}
 \end{center} 
-\caption{ Number of models with a minimum number of mock survey
-  realizations that are consistent with observations.
+\caption{ Number of models with at least $N_{\rm high-P}$ mock surveys
+  consistent with the observed surface number density
+  distribution in terms of the KS-test values $P>0.05$. Only $\sim
+  100$ models have all their mocks consistent with observations. 
   \label{fig:high_success_rate}.}  
-\end{figure*}
+\end{figure}
  
-\subsection{Models with the highest success rates}
+\subsection{Models with the largest number of consistent mock surveys}
 
 For each model ${\mathcal M}$ there are 15 different mock surveys. In the
 previous section we presented the models that had at least one
-mock survey with $P>0.05$.
-
-Figure \ref{fig:high_success_rate} shows the number of models
+mock survey with $P>0.05$. Figure \ref{fig:high_success_rate} shows the number of models
 that have at least $N_{\rm high-P}$ mocks with $P>0.05$ for both the
 {\texttt  match} and {\texttt random} methods.  This shows that there
-are between $80$ to $100$ models with all the 15 realizations with
-$P>0.05$. Selection of these models as successful represents a
-reduction of a factor of $\sim 6$ with respect to the total number of
-mocks with at least one consistent mock.  
+are $\sim 100$ models with all the 15 mock survey realizations with
+$P>0.05$.  
+
+We discard the models that have 14 mocks or less consistent with observations.
+This cut represents a reduction by a factor of $\sim 6$ with respect
+to the total number of models with at least one (1) consistent mock.
 
 Figure \ref{fig:restriction_mock} presents the locii of these models
 in the parameter space $M_{\rm min}-M_{\rm max}$ and $M_{\rm
-  min}-f_{\rm occ}$. The results are very similar between the {\texttt
-  match} and {\texttt random} methods. With this constraints the
-number of consistent models with  $\log_{10}M_{\rm min}< 11.5$ are
+  min}-f_{\rm occ}$. With this constraints the
+number of consistent models with  $10.5 < \log_{10}M_{\rm min}< 11.0$ are
 greatly reduced. This corresponds to the regions in the parameter
 space in Figure \ref{fig:landscape} that already had a low number of
 consistent mock surveys. On the other hand, from the right panel in
 Figure \ref{fig:restriction_mock} one can see that there is not a
-strong constraint on the occupation fraction $f_{\rm occ}$.
+strong reduction on the favored values for the occupation fraction
+$f_{\rm occ}$. 
 
 \begin{figure*}
 \begin{center}
