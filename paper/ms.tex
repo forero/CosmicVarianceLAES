@@ -601,9 +601,8 @@ $f_{\rm occ}$.
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig5_match_f_occ_mock.pdf}
 \end{center}  
 \caption{Favored regions in parameter space when the constraints on
-  the maximal number of consistent mocks is imposed. The results for
-  the {\texttt random} methodology (not shown here) are very similar to the ones
-  presented here for the {\texttt match} method.
+  the maximal number of consistent mocks is imposed. Only the results
+  for the {\texttt match} method are shown.
   \label{fig:restriction_mock}}  
 \end{figure*}
 
@@ -617,19 +616,22 @@ $f_{\rm occ}$.
 \begin{center}
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/power_law_correlation.pdf} 
 \hspace{5mm}  
-\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_correlation.pdf} 
+\includegraphics[width=0.46\linewidth,angle=0]{./plots/power_law_correlation.pdf} 
+%\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_correlation.pdf}  
 \end{center}
 \caption{Left: Values for the free parameters ($\theta_{0}$ vs $\beta$) 
-in the fitting formula (Eq. \ref{eq:fitting}) for the mean angular
-correlation function. Blue dots correspond to simulations and the green cross to
-observations by \citet{Hayashino2004}. The error bars in the 
-theoretical data correspond to the standard deviation from the
-different mocks surveys. Right: Same results as before in the shown in
-the $\theta_{0}$-$M_{\rm min}$ plane. This time the observational
-constraints are represented by the red rectangle. Blue squares
-represent models with $\log_{10} M_{\rm  max}<12.0$, green circles
-correspond to models with $\log_{10} M_{\rm max}>12.0$. 
-\label{figure:correlation_parameters}}
+in the fitting formula (Eq. \ref{eq:fitting}) for the angular
+correlation function. Blue dots correspond to simulations and the
+green cross to observations by \citet{Hayashino2004} and
+\citet{Ouchi2010}. The error bars in the   theoretical data correspond
+to the standard deviation from the different mocks surveys. 
+%Right:
+%Same results in the $\theta_{0}$-$M_{\rm min}$ plane, with the
+%observational constraint on $\theta_{0}$ epresented by the red
+%rectangle. Blue  squares represent models with $\log_{10} M_{\rm
+%  max}<12.0$, green circles correspond to models with $\log_{10}
+%M_{\rm max}>12.0$. 
+\label{fig:correlation_parameters}}
 \end{figure*} 
 
 
@@ -639,50 +641,57 @@ correspond to models with $\log_{10} M_{\rm max}>12.0$.
 \hspace{5mm}
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig6_f_occ.pdf}
 \end{center}
-\caption{Best models parameter space when both the constraints on the
-  maximal number of  consistent mocks and the occupation  fraction
-  $f_{\rm occ}\leq  0.2$ are included. $M_{\rm min}$ vs $M_{\rm max}$
-  (left), $M_{\rm min}$ vs $f_{\rm occ}$ (rigth).
+\caption{Planes $M_{\rm min}$ vs $M_{\rm max}$ (left), $M_{\rm min}$
+  vs $f_{\rm occ}$ (rigth). The squares represent the models when both
+  th constraints on the maximal number of  consistent mocks and the
+  angular correlation function are included. 
   \label{fig:restriction_mock_and_f_occ_corr}} 
 \end{figure*} 
 
 
-Figure \ref{figure:correlation_parameters} shows the main results in a
+Figure \ref{fig:correlation_parameters} shows the main results in a
 $\theta_{0}-\beta$  plane where the average and standard deviation
-for each mock is shown in comparison with the result derived from
+over the mocks is shown in comparison with the result derived from
 observations.  The error bars in this Figure represents the standard
 deviation of the ACF over all the sub-fields in the 15 mock
 observations. These error bars are larger than the statistical
-uncertainty from the fitting procedure on a single field.
+uncertainty from the fitting procedure on a single field. 
 
-In the left panel Figure \ref{figure:correlation_parameters} we see how
-the observational ACF measured by \cite{Hayashino2004} (green dot) is
-successful in reducing the total number of possible models. Only those
-with angular-correlation length within
+In the left panel Figure \ref{figure:correlation_parameters} we see
+how the observational ACF measured by \cite{Hayashino2004} (green dot)
+is successful in reducing the total number of possible models. Only
+those with angular-correlation length within
 $15^{\prime\prime}<\theta_{0}<23^{\prime\prime}$ are considered to
-reproduce observations.    
-
-
-In order to better illustrate the results from this test we
-show in the right panel of Figure \ref{figure:correlation_parameters} 
-the plane $\theta_{0}$-$M_{\rm min}$ for all models. There we divide
-the models into two disjoint sets: those with $\log_{10} M_{\rm
-    max}<12$ (blue dots) and $\log_{10} M_{\rm
-    max}>12$ (green dots). The colored rectangle includes
-the parameter region which is consistent with the observational
-constraint in $\theta_{0}$. With this restriction we find that most
-models with $\log_{10} M_{\rm max}>12$ and  $\log_{10} M_{\rm min}>11.1$ 
-can be safely ruled out.  
-
-
+reproduce observations.     {\bf Cual es el resultsdo de Hayashino
+  para $\theta_0$?}
 
 In Figure \ref{fig:restriction_mock_and_f_occ_corr} we present the preferred
 models in the planes $M_{\rm min}-M_{\rm  max}$ and $M_{\rm min}-f_{\rm occ}$
-for the {\tt match} method after applying the observational constraints 
-in the occupation fraction and the ACF. Here we consider a model
-consistent if there is an overlap of $1-\sigma$ in its values for the
-correlation length $\theta_0$ and the power $\beta$ in the
-correlation function.  As before, we found similar results using the {\tt random} method
+for the {\tt match} method. To make this selection we consider a that
+a model is consistent with observations if there is a $1-\sigma$
+overlap between both the correlation length $\theta_0$ and the power
+$\beta$ in the correlation function. Comparing this Figure with the
+results shown in Figure \ref{fig:restriction_mock} we see that the
+models that were removed were those with highest minimal masses
+$M_{\rm min}>10^{11.2}$, for all the values of $M_{\rm max}$, which
+had preferentially high occupation fractions of $f_{\rm occ}> 0.5$. 
+
+
+
+%In order to better illustrate the results from this test we
+%show in the right panel of Figure \ref{figure:correlation_parameters} 
+%the plane $\theta_{0}$-$M_{\rm min}$ for all models divided in two
+%disjoint sets. The first are the models $\log_{10} M_{\rm
+%    max}<12$ (blue dots), the second corresponds to $\log_{10} M_{\rm
+%    max}>12$ (green dots). The colored rectangle includes
+%the parameter region which is consistent with the observational
+%constraint in $\theta_{0}$.  With this restriction we find that most
+
+%models with $\log_{10} M_{\rm max}>12$ and  $\log_{10} M_{\rm min}>11.s$ 
+%can be safely ruled out.  
+
+
+
 
 
 \section{Discussion}
