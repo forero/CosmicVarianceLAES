@@ -148,12 +148,12 @@ for w in range( n_models ):
             numbers=np.arange(len(halo_mass))
             halo_index=np.where( (halo_mass< m_max) & (halo_mass> m_min) )
             halo_mass_sel=halo_mass[halo_index]
-            halo_index=numbers[halo_index]
+            n_halos=np.size(halo_mass_sel)
             number_laes=int(f_occ*n_halos)
             n_laes=np.append(n_laes, number_laes )    
+            halo_index=numbers[halo_index]
             for l in range(randcats): 
                 np.random.shuffle(halo_index)
-                n_halos=np.size(halo_mass_sel)
                 lae_index=halo_index[0:number_laes]
                 x_laes=np.append( x_laes, x_halos[lae_index] )
                 y_laes=np.append( y_laes, y_halos[lae_index] )
@@ -221,7 +221,7 @@ for w in range( n_models ):
 
 
         n_mean=np.mean(n_laes)    
-        mean_density_index=np.argmin( np.abs( n_laes-m_mean ) )
+        mean_density_index=np.argmin( np.abs( n_laes-n_mean ) )
         number_laes=n_laes[mean_density_index]
         lae_pos_ini=randcats*np.sum( n_laes[ 0 : mean_density_index ] )
         lae_pos_end=lae_pos_ini + randcats*number_laes
@@ -233,7 +233,7 @@ for w in range( n_models ):
         y_drand_mean = y_drand[lae_pos_ini:lae_pos_end]
 
 
-        lae_mean=np.empty( [ np.size(x_laes_max) , 4 ] )
+        lae_mean=np.empty( [ np.size(x_laes_mean) , 4 ] )
         lae_mean[:,0]= x_laes_mean
         lae_mean[:,1]= y_laes_mean
         lae_mean[:,2]= x_drand_mean
