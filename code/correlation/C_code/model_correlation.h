@@ -1,4 +1,4 @@
-//cabeceras del C
+ //cabeceras del C
 #include <stdlib.h>
 #include<stdio.h>
 #include<math.h>
@@ -48,6 +48,7 @@
 #define MASS_STEP 0.10
 #define MOCK_SURVEYS 15
 #define N_MODELS 101
+#define NRAND 16
 #define HALO_MASS_DEV 0.127725e10
 
 

@@ -17,6 +17,7 @@ z_depth=41.0
 obs_surveys=12
 random_cat_number=1
 distance=6558.3
+randcats=16
 
 
 dmh_path=pro_path+"data/dark_matter/FOF/"
@@ -148,55 +149,37 @@ for w in range( n_models ):
             halo_index=np.where( (halo_mass< m_max) & (halo_mass> m_min) )
             halo_mass_sel=halo_mass[halo_index]
             halo_index=numbers[halo_index]
-                    
-            np.random.shuffle(halo_index)
-            
-            
-            n_halos=np.size(halo_mass_sel)
-            del halo_mass_sel
-        
             number_laes=int(f_occ*n_halos)
-            #number_laes=100 #to delete
             n_laes=np.append(n_laes, number_laes )    
+            for l in range(randcats): 
+                np.random.shuffle(halo_index)
+                n_halos=np.size(halo_mass_sel)
+                lae_index=halo_index[0:number_laes]
+                x_laes=np.append( x_laes, x_halos[lae_index] )
+                y_laes=np.append( y_laes, y_halos[lae_index] )
             
-            lae_index=halo_index[0:number_laes]
-            x_laes=np.append( x_laes, x_halos[lae_index] )
-            y_laes=np.append( y_laes, y_halos[lae_index] )
-            
-
+            del halo_mass_sel
             del x_halos
             del y_halos
             del z_halos
             del halo_mass
             
-            #random cat histogram generation
-
-        
-        
-        
-            #print "random catalog generator
-            #x_random=np.append( x_random, x_width*np.random.random_sample(number_laes*random_cat_number) )
-            #y_random=np.append( y_random, y_width*np.random.random_sample(number_laes*random_cat_number) )
-        
-        
-             
             print "subcat number ",i,"i j k=",i_s[i],j_s[i],k_s[i]
 
             #random-survey catalog generation
             Xmin=x_width*i_s[i]
             Xmax=Xmin + x_width
             Ymin=y_width*j_s[i]
-            Ymax=Ymin + y_width          
-            x_drand= np.append( x_drand , Xmin +  ( Xmax - Xmin )*np.random.random_sample(number_laes) )
-            y_drand= np.append( y_drand , Ymin +   ( Ymax - Ymin )*np.random.random_sample(number_laes) )
+            Ymax=Ymin + y_width
+
+            for l in range(randcats): 
+                x_drand= np.append( x_drand , Xmin +  ( Xmax - Xmin )*np.random.random_sample(number_laes) )
+                y_drand= np.append( y_drand , Ymin +   ( Ymax - Ymin )*np.random.random_sample(number_laes) )
             
             
         
         model_catalog_filename=pro_path +  "data/laes/mock_cat/model_"+str(w)+"_mock_"+str(j)+".txt"
-        
-
-
-
+    
 
 
 
@@ -213,8 +196,8 @@ for w in range( n_models ):
 
         max_density_index=np.argmax(n_laes)
         number_laes=n_laes[max_density_index]
-        lae_pos_ini=np.sum( n_laes[ 0 : max_density_index ] )
-        lae_pos_end=lae_pos_ini + number_laes
+        lae_pos_ini=randcats*np.sum( n_laes[ 0 : max_density_index ] )
+        lae_pos_end=lae_pos_ini + randcats*number_laes
         x_laes_max = x_laes[lae_pos_ini:lae_pos_end]
         y_laes_max = y_laes[lae_pos_ini:lae_pos_end]
         #x_random_max = x_random[lae_pos_ini:lae_pos_end]
@@ -222,6 +205,8 @@ for w in range( n_models ):
         x_drand_max = x_drand[lae_pos_ini:lae_pos_end]
         y_drand_max = y_drand[lae_pos_ini:lae_pos_end]
         
+
+
         lae_max=np.empty( [ np.size(x_laes_max) , 4 ] )
         lae_max[:,0]= x_laes_max
         lae_max[:,1]= y_laes_max
@@ -233,3 +218,29 @@ for w in range( n_models ):
         
         
         np.savetxt(model_catalog_filename,lae_max)
+
+
+        n_mean=np.mean(n_laes)    
+        mean_density_index=np.argmin( np.abs( n_laes-m_mean ) )
+        number_laes=n_laes[mean_density_index]
+        lae_pos_ini=randcats*np.sum( n_laes[ 0 : mean_density_index ] )
+        lae_pos_end=lae_pos_ini + randcats*number_laes
+        x_laes_mean = x_laes[lae_pos_ini:lae_pos_end]
+        y_laes_mean = y_laes[lae_pos_ini:lae_pos_end]
+        #x_random_max = x_random[lae_pos_ini:lae_pos_end]
+        #y_random_max = y_random[lae_pos_ini:lae_pos_end]
+        x_drand_mean = x_drand[lae_pos_ini:lae_pos_end]
+        y_drand_mean = y_drand[lae_pos_ini:lae_pos_end]
+
+
+        lae_mean=np.empty( [ np.size(x_laes_max) , 4 ] )
+        lae_mean[:,0]= x_laes_mean
+        lae_mean[:,1]= y_laes_mean
+        lae_mean[:,2]= x_drand_mean
+        lae_mean[:,3]= y_drand_mean
+        
+
+        model_catalog_filename=pro_path +  "data/laes/mock_cat/meanden_model_" + str(w) + "_mock_" + str(j) + ".txt"
+        
+        
+        np.savetxt(model_catalog_filename,lae_mean)
