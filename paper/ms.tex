@@ -156,7 +156,7 @@ temperature, topology and kinematics of the neutral Hydrogen in the
 interstellar medium
 (ISM). \citep{Neufeld1991,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.   
 
-This problem can be tackeld with Monte Carlo simulations for the
+This problem can be tackled with Monte Carlo simulations for the
 radiative transfer, however the complexity of the relevant physical
 processes makes it difficult to achieve a robust consensus on what is
 the theoretical expected value for the \ly escape fraction
@@ -223,7 +223,7 @@ across fields fields and (ii) the angular correlation function measured in
 some fields.
 
 In the next subsections we describe in detail the four key
-elements of this workflow. First, we present the observations we take
+elements of this work-flow. First, we present the observations we take
 as a benchmark. Second, we describe the main characteristics of the
 N-body simulation and the halo catalogs we use. Third, we recount the
 important parameters of the simplified model that we use to populate
@@ -236,27 +236,27 @@ The first observational constraint we use in this paper is the LAE number
 density information at $z=3.1$ obtained by the panoramic narrow-band
 survey presented by \cite{Yamada2012} from a survey
 conducted with the Subaru 8.2m telescope and the Subaru Prime Focus Camera,
-which has a field of view covering $34\times 27$ arcmin, corresponding to a
+which has a field of view covering $34\times 27$ arc-min, corresponding to a
 comoving scale of $46\times35$ Mpc $h^{-1}$ at $z=3.09$.  The narrow
 band filter used in the survey is centered at $4977$ \AA with  $77$\AA width,
 corresponding to the redshift range $z=3.062-3.125$ and $41$ Mpc
 $h^{-1}$ comoving scale for the detection of the Lyman-$\alpha$ line
 centered at $z=3.09$. The authors reported a
 total  $2161$  LAEs with an observed equivalent width larger than $190$\AA 
-over a total survey area of $2.42$ deg$^{2}$ that includes 12 subfields, 
+over a total survey area of $2.42$ deg$^{2}$ that includes 12 sub-fields, 
 this corresponds to average surface number density of $0.20\pm 0.01$
 arcmin$^{-2}$.    
 
 The survey covered four independent fields. The first is the SSA22
-field of $1.38$ deg$^2$ with $1394$ detected LAEs (7 subfields), this
+field of $1.38$ deg$^2$ with $1394$ detected LAEs (7 sub-fields), this
 field has been known to harbor a region with a large density excess of
 galaxies. The second observed region is composed by the fields Subaru/{\it
   XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a
-total of $0.58$ deg$^2$ and $386$ LAEs (3 subfields). The third and
+total of $0.58$ deg$^2$ and $386$ LAEs (3 sub-fields). The third and
 fourth fields are the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and
-$196$ LAEs (1 subfield), and the field around the Great Observatory
+$196$ LAEs (1 sub-field), and the field around the Great Observatory
 Optical Deep Survey  (GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs (1
-subfield).  
+sub-field).  
 
 There is abundant observational work done on LAEs at redshift $z=3.1$
 \citep{Kudritzki2000,Matsuda2005,Gawiser2007,Nilsson2007,Ouchi2008}.
@@ -279,9 +279,6 @@ different in these references. Nevertheless we use these observations
 as additional constraints in spite of the fact that the first selected
 models are based only on the surface density statistics by
 \citep{Yamada2012}.  
-
-
-
 
 
 \subsection{Simulation and Halo Catalogs}
@@ -315,7 +312,7 @@ We assume that a dark matter halo can only host one
 detectable LAE at most.  There are three parameters that
 decide whether a halo host a LAE: the lower and upper bounds for the
 mass range $M_{\rm min}< M_{\rm h} < M_{\rm max}$ where LAEs reside and the fraction $f_{\rm occ}$ of such halos that host a detectable LAE. The reader
-must keep in mind that the physical interpreation of the occupation
+must keep in mind that the physical interpretation of the occupation
 fraction $f_{\rm occ}$ convolves two phenomena: the presence of a star
 forming galaxy in a halo and its detectability as a LAE.  We do not
 peform a explicit modeling for LAE detectability. Our model does not
@@ -401,13 +398,13 @@ The second constraint  comes from the angular correlation function (ACF)
 for all the models having the $15$ mock surveys consistent with
 observations . The ACF is computed  ( using 
 the Davis \& Peebles  estimator \citep{Davis1983} ) only on the densest
-subfield in all the 15 mock surveys corresponding to the SSA22
+sub-field in all the 15 mock surveys corresponding to the SSA22
 region. We then take the mean ACF over the 15  mock surveys  for
 each model as well as its the standard deviation to include
 the effect of cosmic variance. 
 
 We finally compare the observational ACF and the mean mock  ACF of the models   
-in therms of the angular correlation lenght ($\theta_{0}$) by fitting 
+in therms of the angular correlation length ($\theta_{0}$) by fitting 
 them to a power-law function:  
 
 \begin{equation}
@@ -417,9 +414,9 @@ them to a power-law function:
 
 Both mock and observational ACF are derived by a least
 square minimization procedure. The observational errors of 
-the ACF as well as the standard deviation of the mean modelled ACFs  are
+the ACF as well as the standard deviation of the mean modeled ACFs  are
 considered to compute the error in the fitted parameters to ensure ourselves
-to include poissionian and cosmic-variance errors. 
+to include poissonian and cosmic-variance errors. 
 We consider that a model is consistent with observations if the two
 parameters $\beta$ and $\theta_0$ are equal within a $1$-$\sigma$ range. 
 
@@ -528,7 +525,7 @@ mass $10.5<\log_{10}M_{\rm min}<11.5$ where, regardless of the value of
 the maximum mass $M_{\rm max}$, it is possible to tune the occupation
 fraction $f_{\rm occ}$ to bring some of the mock observations into
 good agreement with observations. In this region of parameter space
-one can tfind two extreme kinds of models.  One kind where the
+one can find two extreme kinds of models.  One kind where the
 mass interval $\Delta M\equiv \log_{10} M_{\rm max} - \log_{10}M_{\rm
   min}$ is narrow with $\Delta M<1.0$ dex, others where the mass interval is 
 extended $\Delta M>1.0$dex going up to the maximum halo mass
@@ -642,8 +639,8 @@ to the standard deviation from the different mocks surveys.
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/Fig6_f_occ.pdf}
 \end{center}
 \caption{Planes $M_{\rm min}$ vs $M_{\rm max}$ (left), $M_{\rm min}$
-  vs $f_{\rm occ}$ (rigth). The squares represent the models when both
-  th constraints on the maximal number of  consistent mocks and the
+  vs $f_{\rm occ}$ (right). The squares represent the models when both
+   constraints on the maximal number of  consistent mocks and the
   angular correlation function are included. 
   \label{fig:restriction_mock_and_f_occ_corr}} 
 \end{figure*} 
@@ -732,12 +729,12 @@ mass, the cut at higher halo masses requires a different
 justification. There are two complementary physical scenarios that can
 provide an explanation.
 
-One sceneario can be presented in terms of a decreasing escape
+One scenario can be presented in terms of a decreasing escape
 fraction of \ly radiation in massive systems. There are detailed models for
 radiative transfer that support the idea that massive galaxies with
 higher metallicities have larger dust contents and less concentrated
 ISM than lower mass systems. Due to the resonant nature of the
-\ly line the probability of absortion  of \ly photons increases in
+\ly line the probability of absorption  of \ly photons increases in
 massive systems, producing high absorption of \ly photons but not of
 continuum or other non-resonant lines
 \citep{Laursen2009,ForeroRomero2011}. 
@@ -749,7 +746,7 @@ making these systems less observable in narrow band filter surveys
 \citep{Laursen2009,Zheng2010}.  
 
 The preference for narrow $\Delta M$ ranges to host LAEs 
-and the minoritary presence of reasonable models with $M_{\rm max}>
+and the small presence of reasonable models with $M_{\rm max}>
 10^{12}$\hMsun follows theoretical and observational
 insights where the most massive systems are not bright \ly sources
 \citep{ForeroRomero2012,Shapley2003}. 
@@ -804,50 +801,69 @@ host halo mass range together with the escape fraction. This allows us
 to demonstrate that the halo mass range could be very narrow $\Delta M <
 0.2$dex, something that cannot be inferred from ACF analysis alone. 
 
-We also find that an ACF analysis on a single dataset is not enough to rule
+We also find that an ACF analysis on a single data-set is not enough to rule
 out models with a high occupation fraction $f_{\rm occ}>0.3$, which
 represent almost one fourth of our best models, coinciding with a wide
 range in halo masses $\Delta M>1.0$ dex. These models cannot be
 considered unfavorable based on a clustering analysis only.
 
 \cite{Ouchi2010} presents an analysis of LAE observations in the
-redshift interval $3.1<z<7.0$. At $z=3.1$ They get to an average
+redshift interval $3.1<z<7.0$. At $z=3.1$ They quote an average
 mass for the host dark matter halos of $M_{h}=2.9^{+24.0}_{-2.9}\times
 10^{10}$ \hMsun with a corresponding duty cycle of $0.008\pm
-0.03$. This broadly matches the expectations from the first family of
+0.03$.  This broadly matches the expectations from the first family of
 models, also summarized in Table \ref{table:firstfamily}. In
-particular it seems to favor only the very low occupations fractions.   
+particular it seems to favor only the very low occupations
+fractions. 
+
+We conclude this section by noting that the uncertainties on
+the preferred masses in \citep{Gawiser07} and \cite{Ouchi2010} are
+found with in the intervals $M_{\rm min}$ and $M_{\rm max}$ of our
+models. Under the light of our model, this implies that detected LAEs
+must be absent from the most massive dark matter halos at that
+redshift.
+
 
 
 \subsection{In the context of abundance matching models}
 
 
-Abundance matching methods throughout cosmic time from redshifts
-$0<z<8$ \cite{Behroozi2013a,Behroozi2013b} work based on observational
-results for Lyman Break Galaxies (LBG). In those studies the minimum halo
-mass considered to be relevant in their analysis is
-$10^{11.4}$\hMsun. For that mass, \cite{Behroozi2013a} report a
-stellar mass mass around $(1.0\pm0.3)\times 10^{9.0}$
-\hMsun, while their star formation rate is in the range $0.6\pm 0.2$
-Msun yr$^{-1}$, which nevertheless are close to the lower bound of
-values inferred for LAEs at high redshift
-\citep{Gawiser2007,Nilsson2009,Pentericci2009}.   
-
+The abundance matching methods are based on observational results for Lyman Break Galaxies
+\citep{Behroozi2013a,Behroozi2013b}  (LBG).  In the case of
+\cite{Behroozi2013a} the minimum halo mass considered to be relevant
+in their analysis is $10^{11.4}$\hMsun. They report  stellar mass mass
+around $(1.0\pm0.3)\times 10^{9.0}$ \hMsun, while their star formation
+rate is in the range $0.6\pm 0.2$ Msun yr$^{-1}$, which nevertheless
+are close to the lower bound of values inferred for LAEs at high
+redshift \citep{Gawiser2007,Nilsson2009,Pentericci2009}.
 
 In our results, all the preferred models have a halo mass range lower
-than the minimum of $M_{\rm min}<10^{11.4}$\hMsun considerend in
-abundance matching at $z=3$. This shows that our results also confirm
-the expectations of LAEs to be hosted by less massive halos than LBGs.
-A detaile analysis of the spectral and photometric properties of LAEs
+than the minimum of $M_{\rm min}<10^{11.4}$\hMsun considered in
+abundance matching at $z=3$. Thus confirming the expectations of LAEs
+to be found in less massive halos than those for LBGs.
+
+A detailed analysis of the spectral and photometric properties of LAEs
 coupled to the kind of analysis performed in this paper can be a guide
 in the study of the properties of low mass dark matter halos at
 $z=3.1$, extending the capabilities of abundance matching methods.
 
-\subsection{Possible caveats to our method}
+\subsection{Caveats of our method}
 
-... Single LAE in a halo.
+There are two important caveats for the work presented here. The first is the
+assumption of a single LAE per dark matter halo. It is expected
+for sub-halos in the simulation to host satellited galaxies. However,
+it has been found in analysis based on the shape of the correlation
+function [citation needed] that satellite galaxies are not a dominant
+population, making our initial approximation a reasonable one.
 
-... Mass definition for different halo finders.
+
+The second caveat are the precise values for the mass intervals. These
+numbers are defined from the halos defined in using the BDM halo
+finder with a density threshold of 200 times the critical
+density. Different halo finders and definitions for the detection
+density threshold can yield different masses up to a factor of 2
+[citation needed].
+
 
 \subsection{On the reproducibility of our results}
 
@@ -870,16 +886,15 @@ geometries. The mocks are constructed from a N-body simulation
 following a simple recipe to assign a single LAE to each halo. Only
 a fraction $f_{\rm occ}$ of halos with a mass range  $M_{\rm
   min}<M_{\rm h}<M_{\rm   max}$ can host a LAE. We proceed with a
-thourough exploration of the space of free parameters $M_{\rm min},
+thorough exploration of the space of free parameters $M_{\rm min},
 M_{\rm max}$ and $f_{\rm occ}$ to find mocks that are consistent with
 two observational constraints: the surface number density and the
-angular correlation function. Out of the initial $9000$ initial
+angular correlation function. Out of the initial $9000$ 
 combinations of parameters in the model we find $49$ arrangements
 consistent with observations.
 
 
-The most relevant result from our study is the following. The 
-successful parameter arrangements present a wide range of possibilities for
+The successful parameter arrangements present a wide range of possibilities for
 DM hosting LAE hosts at $z=3.1$. This means that the available LAEs' spatial
 information is not sufficient to put a tight constraint on the mass
 and occupation fraction of DM halos hosting LAEs. In particular it is
@@ -887,11 +902,11 @@ not possible to put a strong constraint on the occupation
 fraction. Such a wide range in solutions is facilitated by the large
 dispersion in the statistics derived from the mocks. All the halo mass
 ranges and occupation fractions deduced in previous analysis in
-previous analysis \citep[i.e.][]{Gawiser2007} are a subset of the
+previous analysis \citep[i.e.][]{Gawiser2007,Ouchi2010} are a subset of the
 models we find in this \documentname.  
  
 
-Nevertheless, the sucessful models can be split into three families
+Nevertheless, the successful models can be split into three families
 depending the mass range $\Delta M=\log_{10}M_{\rm max} -
 \log_{10}M_{\rm min}$ and the occupation fraction $f_{\rm occ}$. The
 first family is narrow both in $\Delta M$ and $f_{\rm occ}$, a second
@@ -899,27 +914,34 @@ family is only narrow in $\Delta M$ and the third is narrow in $f_{\rm
   occ}$ and broad in $\Delta M$. 
 
  
-A second results from our investigation is the existence
-of a large number of models with a very narrow mass range $\Delta M<
-0.1$ dex that are consistent in every aspect with the spatial
-distribution of observed LAEs. In order to have these characteristics
+We find a large number of models with a narrow mass range
+$\Delta M<1.0$ dex that are consistent in every aspect with the
+spatial distribution of observed LAEs. In order to have this characteristic
 it is required that halos around the mass $M_{\rm   max}$ for each
-model become inefficient in hosting detectable LAEs. Two possible
-ways to achieve this is having LAEs with a decreasing \ly escape
-fraction with increasing mass or increasing screening effects by
-neutral Hydrogen around the most massive systems
-\citep{Laursen2009,ForeroRomero2011}.   
+model become inefficient in hosting detectable LAEs. Two conditions
+can explain this. The first is having LAEs with a decreasing \ly
+escape fraction with increasing mass, the second is having larger screening
+effects by neutral Hydrogen around the most massive systems
+\citep{Laursen2009,ForeroRomero2011}.  
 
 A third aspect that stands out is the existence of a dominant family
-of models with narrow $\Delta M<0.1$, as described before, and also a
+of models with narrow $\Delta M<1.0$, as described before, and also a
 low occupation fraction $f_{\rm occ}<0.3$. This gives support to the
 common wisdom stating that only a small fraction of star forming
 galaxies can be detected as strong LAEs. 
 
-We foresee that the new observations with new instruments (such as MUSE,
-Hyper SuprimeCam and HETDEX) covering larger fields and a wider range
-of luminosities will be key in imposing tighter constraints on the
-properties of dark matter halos hosting LAEs.  
+However, there are extreme cases with a very narrow $\Delta M<0.3$, meaning that
+there is barely a factor of $\sim 2$ between the minimum and halo
+mass. If these models turn out to be confirmed, this would be a great
+challenge for galaxy formation models to explain how is that LAEs can
+be hosted in such a narrow range of halo mass.
+
+In summary, we show how current observations of LAEs cannot
+put a tight constraint on the physical models. We  foresee that the
+new observations with new instruments (such as MUSE, Hyper SuprimeCam
+and HETDEX) covering larger fields and a wider range of luminosities
+will be key in imposing tighter constraints on the properties of dark
+matter halos hosting LAEs.   
 
 
 \section*{Acknowledgments} 
@@ -927,7 +949,7 @@ J.E.F-R thanks the hospitality of Changbom Park and the Korea
 Institute for Advanced Study where the first full draft of this paper
 was completed. The authors also thank Peter Laursen, Paulina Lira and
 Alvaro Orsi for helpful comments on the physical interpretation and
-the presentation of our results. 
+presentation of our results. 
 
 
 
