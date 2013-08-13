@@ -853,7 +853,7 @@ There are two important caveats for the work presented here. The first is the
 assumption of a single LAE per dark matter halo. It is expected
 for sub-halos in the simulation to host satellited galaxies. However,
 it has been found in analysis based on the shape of the correlation
-function [citation needed] that satellite galaxies are not a dominant
+function \citep{Jose2013b} that satellite galaxies are not a dominant
 population, making our initial approximation a reasonable one.
 
 
@@ -861,8 +861,14 @@ The second caveat are the precise values for the mass intervals. These
 numbers are defined from the halos defined in using the BDM halo
 finder with a density threshold of 200 times the critical
 density. Different halo finders and definitions for the detection
-density threshold can yield different masses up to a factor of 2
-[citation needed].
+density threshold can yield different masses up to a factor. For
+instance a Friends-of-Friends algorithm with linking lenght $l=0.20$
+times the average interparticle distance finds halos on average $1.4$
+times more massive than BDM halos \citep{Bolshoi}. Therefore, the mass
+values for $M_{\rm min}$ and $M_{\rm max}$ must be considered exact
+within $\sim 0.2$ dex.
+
+
 
 
 \subsection{On the reproducibility of our results}
