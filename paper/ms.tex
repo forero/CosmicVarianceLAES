@@ -216,6 +216,7 @@ s$^{-1}$ Mpc$^{-1}$.
 
 \section{Methodology}
 
+
 Our method is based on the comparison of observations and mock
 catalogs. We use two different kinds of statistics to perform the
 comparison: (i) the distribution of the surface number density
@@ -242,7 +243,8 @@ band filter used in the survey is centered at $4977$ \AA with  $77$\AA width,
 corresponding to the redshift range $z=3.062-3.125$ and $41$ Mpc
 $h^{-1}$ comoving scale for the detection of the Lyman-$\alpha$ line
 centered at $z=3.09$. The authors reported a
-total  $2161$  LAEs with an observed equivalent width larger than $190$\AA 
+total  $2161$  LAEs with an observed equivalent width, in the observer
+frame, larger than $190$\AA 
 over a total survey area of $2.42$ deg$^{2}$ that includes 12 sub-fields, 
 this corresponds to average surface number density of $0.20\pm 0.01$
 arcmin$^{-2}$.    
@@ -308,6 +310,25 @@ explained in the next sub-section.
 \subsection{A Model to Populate Halos with LAEs}
 \label{subsec:mocks}
 
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.8\linewidth,angle=0]{./plots/Figure0.pdf}
+\caption{ \label{fig:distros} Spatial distribution of a LAEs mock
+  survey for a model with parameters $\log_{10}M_{\rm min}=10.4$, $\log_{10}M_{\rm
+    max}=10.5$ and $f_{\rm occ}=0.1$ for the {\texttt match}
+  method. The larger panel shows $7$ mock
+  fields together mimicking the SSA22 region. The intermediate panel
+  shows $3$ mock fields corresponding to the SXDS region. The lower
+  panels represent the SDF and GOODS-North fields. The same model has
+  another 14 associated mock surveys build from different regions in
+  the simulation, but constructed following the same pattern in the
+  {\texttt match} method.}
+\end{center} 
+\end{figure*}
+
+
 We assume that a dark matter halo can only host one
 detectable LAE at most.  There are three parameters that
 decide whether a halo host a LAE: the lower and upper bounds for the
@@ -339,7 +360,7 @@ fraction $\xi<f_{\rm occ}$.
 
 Next we construct mock surveys by making groups of $12$ mock fields
 out of the $210$ available volumes. In total $15$ mock surveys are
-constructed for each model $\mathcal{M}$. The grouping of the $11$
+constructed for each model $\mathcal{M}$. The grouping of the $12$
 mock fields into a mock catalog is done in two different ways. The
 first is called {\texttt match}, it follows the clustering of the
 observational fields. From the $12$ mock fields, $7$ are constructed
@@ -347,12 +368,19 @@ from contiguous fields in the simulation to mimic the SSA22 region,
 $3$ are also contiguous between them but not to the first $7$ fields
 to mimic the SXDS fields and finally $2$ non-contiguous fields to
 imitate the SDF and GOODS-North field.  The second way to group the
-mock fields is called {\texttt   random}, whereby all the $11$ fields
+mock fields is called {\texttt   random}, whereby all the $12$ fields
 are selected in such a way as to avoid that any two volumes are
 contiguous. In this \documentname we only report the results obtained
 by the {\texttt match} method and mention explicitly differences
 observed with the {\texttt random} selection. 
 
+We note that we use $15\times 12=144$ mock fields out of the total of $210$
+available sub-volumes. The reason is that the {\texttt match}
+method imposes constraints on the way the $7$ fields mimicking the
+SSA22 can be distributed, making unusuable some of the
+sub-volumes in the box. We decide to keep the number of mock surveys
+fixed to $15$ also for the {\texttt random} method in order to allow a
+fair comparison between the two methods.
 
 
 
