@@ -1,23 +1,35 @@
 import numpy as np
 import pylab as P
 import matplotlib.collections as collections
+import matplotlib 
 from scipy import stats
 from scipy import optimize as op
+import sys
+#plot_dir="../paper/plots/"
 plot_dir="../paper/plots/"
 
+matplotlib.use('pdf')
 #defining the power-law function to fit the correlation function
 powerlaw = lambda x, amp, index: (x/amp)**(index)
-fitfunc = lambda p, x: (x/p[0])**p[1]
+fitfunc = lambda p, x: (x/p[0])**(p[1])
 errfunc = lambda p, x, y,err: (y - fitfunc(p, x))/err
 
-pinit = [1.0, -1.0] 
+pinit = [2.0,-1.0] 
 
 n_models=101
-n_mocks=12
+n_mocks=15
 theta_bins=13
-pro_path="/home/jemejia/CosmicVarianceLAES/"
+pro_path="/Users/jemejia/CosmisVarianceLAES/"
 
 obs_correlation_file=pro_path + "data/obs/hayashino_whole_SSA22_field.txt"
+obs=np.loadtxt(obs_correlation_file,skiprows=4)
+theta1=obs[0:theta_bins,0]
+if(sys.argv[1]=="maxden"):
+    obs_correlation_file=pro_path + "data/obs/hayashino_whole_SSA22_field.txt"
+if(sys.argv[1]=="meanden"):
+    obs_correlation_file=pro_path + "data/obs/ouchi2010.txt"
+
+
 obs_correlation=np.loadtxt(obs_correlation_file,skiprows=4)
 theta=obs_correlation[0:theta_bins,0]
 correlation=obs_correlation[0:theta_bins,1]
@@ -33,7 +45,7 @@ print "covariance matriz \n\n", covar, "\n\n"
 
 ro_obs=pfinal[0]
 ro_err_obs=np.sqrt(covar[0][0])
-slope_obs=pfinal[1]
+slope_obs=-pfinal[1]
 slope_err_obs=np.sqrt(covar[1][1])
 ro_min=ro_obs - ro_err_obs
 ro_max=ro_obs + ro_err_obs
@@ -53,6 +65,14 @@ model_numbers=np.arange(len(f_occ_m))
 mean_correlation= np.zeros( [n_models,theta_bins] )
 std_correlation = np.zeros( [n_models,theta_bins] )
 chi_individual  = np.zeros( [n_models,n_mocks] )
+
+ro_ind  = np.zeros( [n_models,n_mocks] )
+ro_err_ind  = np.zeros( [n_models,n_mocks] )
+slope_ind  = np.zeros( [n_models,n_mocks] )
+slope_err_ind  = np.zeros( [n_models,n_mocks] )
+
+
+
 slope = np.zeros( n_models )
 slope_err = np.zeros( n_models )
 ro = np.zeros( n_models )
@@ -60,24 +80,51 @@ ro_err = np.zeros( n_models )
 
 for i in range(n_models):
     corr=np.zeros( (n_mocks,theta_bins) )
+    corr_std=np.zeros( (n_mocks,theta_bins) )
     
     for j in range(n_mocks):
-        model_correlation_filename=pro_path +  "data/laes/correlation/maxden_model_" + str(i) + "_mock_" + str(j) + ".txt"
+        model_correlation_filename=pro_path +  "data/laes/correlation/" + sys.argv[1] + "_model_" + str(i) + "_mock_" + str(j) + ".txt"
         
         lae_correlation  = np.loadtxt(model_correlation_filename)
         corr[j,:] = lae_correlation[:,1]
-
+        corr_std[j,:] = lae_correlation[:,2]
+        #print lae_correlation[:,0],
+        out = op.leastsq(errfunc, pinit,args=(theta1, corr[j,:],corr_std[j,:]), full_output=1)
+        pfinal = out[0]
+        #pinit=pfinal
+        covar = out[1]
         
+        if( covar is None ):
+            ro_ind[i,j]=ro_ind[i,j-1]
+            slope_ind[i,j]=slope_ind[i,j-1]
+            ro_err_ind[i,j]=ro_err_ind[i,j-1]
+            slope_err_ind[i,j]=slope_err_ind[i,j-1]
+
+        else:
+        
+            ro_ind[i,j] = float(pfinal[0])
+            slope_ind[i,j] = -float(pfinal[1])
+        
+            ro_err_ind[i,j]=covar[0][0] # error squared
+            slope_err_ind[i,j]=covar[1][1] # error squared
+            
+    ro[i]=np.mean(ro_ind[i,:]) 
+    ro_err[i]=np.std(ro_ind[i,:]) + np.sqrt(np.sum( ro_err_ind[i,:] ))/n_mocks 
+    slope[i]=np.mean(slope_ind[i,:])
+    slope_err[i]=np.std(slope_ind[i,:]) + np.sqrt(np.sum(slope_err_ind[i,:]))/n_mocks
     std_correlation[i,:]  = np.std(corr,axis=0)
     mean_correlation[i,:] = np.mean(corr,axis=0)
-
+    print "ro=",ro[i],"+-" ,ro_err[i], "\n"
+    print "slope=",slope[i],"+-" ,slope_err[i], "\n"
 chisquare=np.zeros([n_models,theta_bins])
 chi=np.zeros(n_models)
+"""
 for i in range(n_models):
+    
     correlation= mean_correlation[i,:]
     std= std_correlation[i,:]
     
-    out = op.leastsq(errfunc, pinit,args=(theta, correlation,std), full_output=1)
+    out = op.leastsq(errfunc, pinit,args=(lae_correlation[:,0], correlation,std), full_output=1)
     
     pfinal = out[0]
     covar = out[1]
@@ -104,6 +151,7 @@ corr_stat[:,1]=m_max_m[sort_index]
 corr_stat[:,2]=f_occ_m[sort_index]
 corr_stat[:,3]=chi[sort_index]
 np.savetxt(corr_stat_file,corr_stat,fmt='%2.3lf')
+"""
 fig2=P.figure()
 ro_plot=fig2.add_subplot(111)
 ro_index=np.where(slope_err<2.0)
@@ -113,7 +161,7 @@ ro_plot.set_xlabel(r'$\theta_{0}$', fontsize=20)
 ro_plot.set_ylabel(r"$\gamma$",fontsize=20)
 ro_plot.set_title("Angular Correlation parameters. Full SSA22 field",fontsize=20)
 ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
-plot_name=plot_dir +"power_law_correlation.pdf"
+plot_name=plot_dir +"power_law_correlation_" + sys.argv[1] + ".pdf"
 ro_plot.legend(shadow=False,loc=2)
 
 
@@ -130,13 +178,13 @@ mmin_plot.set_ylabel(r'$\theta_{0}$', fontsize=20)
 mmin_plot.set_xlabel(r"$M_{min}$",fontsize=20)
 mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Full SSA22 Field",fontsize=20)
 mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Match Survey",fontsize=20)
-
-plot_name=plot_dir +"mmin_vs_correlation.pdf"
+P.ylim(0,100)
+plot_name=plot_dir +"mmin_vs_correlation_" +sys.argv[1] + ".pdf"
 mmin_plot.legend(shadow=False,loc=2)
-collection = collections.BrokenBarHCollection.span_where(m_min_m, ymin=15, ymax=23, where=ro>0,  facecolor='red', alpha=0.5)
+collection = collections.BrokenBarHCollection.span_where(m_min_m, ymin=ro_min, ymax=ro_max, where=ro>0,  facecolor='red', alpha=0.5)
 mmin_plot.add_collection(collection)
 fig3.savefig(plot_name,format="pdf")
-
+P.ylim()
 
 corr_index=np.where(( (ro_max>(ro-ro_err)) & ((ro+ro_err)>ro_min) ) & ( ((slope+slope_err)>slope_min) & ((slope-slope_err)<slope_max) )== True) #and ro<ro_max) #and slope_min<slope<slope_max)
 #corr_index=np.where(( (ro_max>ro) & (ro>ro_min) ) == True) #and ro<ro_max) #and slope_min<slope<slope_max)
@@ -175,7 +223,7 @@ mass_plot.set_title(r"Observationally consistent models. Full Field",fontsize=20
 mass_plot.set_title(r"$\log M_{min}$ vs $\Delta log M$. Observationally consistent models",fontsize=20)
 P.xlim(10.2,11.3)
 #P.ylim(10.4,12.0)
-plot_name=plot_dir +"mmin_vs_dm.pdf"
+plot_name=plot_dir +"mmin_vs_dm_" + sys.argv[1] + ""
 mass_plot.legend(shadow=False,loc=2)
 fig4.savefig(plot_name,format="pdf")
 
@@ -192,7 +240,7 @@ f_occ_plot.set_title(r"$M_{min}$ vs $f_{occ}$. Observationally consistent models
 collection = collections.BrokenBarHCollection.span_where(m_min_m, ymin=0.1, ymax=0.2, where=f_occ>0,  facecolor='blue', alpha=0.5)
 f_occ_plot.add_collection(collection)
 #P.ylim(0.,12.0)
-plot_name=plot_dir +"mmin_vs_focc.pdf"
+plot_name=plot_dir +"mmin_vs_focc_"  + sys.argv[1] + ".pdf"
 f_occ_plot.legend(shadow=False,loc=2)
 fig5.savefig(plot_name,format="pdf")
 
@@ -202,7 +250,7 @@ fig5.savefig(plot_name,format="pdf")
 focc_index=np.where(((f_occ<=0.2) & (m_max<12.0) ) == True)
 model_numbers=model_numbers[focc_index]
 n_models=np.size(model_numbers)
-
+n_mocks=12
 
 mean_correlation= np.zeros( [n_models,theta_bins] )
 std_correlation = np.zeros( [n_models,theta_bins] )
@@ -233,7 +281,7 @@ for i in range(n_models):
     correlation= mean_correlation[i,:]
     std= std_correlation[i,:]
     
-    salida = op.leastsq(errfunc, pinit,args=(theta, correlation,std), full_output=1)
+    salida = op.leastsq(errfunc, pinit,args=(lae_correlation[:,0], correlation,std), full_output=1)
     
     pfinal = salida[0]
     covar = salida[1]
