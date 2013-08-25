@@ -425,13 +425,12 @@ the 15 mocks to be consistent with observations.
 The second constraint  comes from the angular correlation function (ACF)
 for all the models having the $15$ mock surveys consistent with
 observations . The ACF is computed  ( using 
-the Davis \& Peebles  estimator \citep{Davis1983} ) only on the densest
-sub-field in all the 15 mock surveys corresponding to the SSA22
-region. We then take the mean ACF over the 15  mock surveys  for
-each model as well as its the standard deviation to include
-the effect of cosmic variance. 
+the Landy \&  Szalay  estimator \citep{Landy1993} )  on $1$ the densest
+and $2)$ a mean sub-field of each of the 15 mock surveys. This is done to 
+compare the predicted ACFs with the \cite{Hayashino2004}  and \cite{Ouchi2010}
+ACFs respectively. 
 
-We finally compare the observational ACF and the mean mock  ACF of the models   
+The observational ACF and the  mock  ACF of the models are compared   
 in therms of the angular correlation length ($\theta_{0}$) by fitting 
 them to a power-law function:  
 
@@ -441,10 +440,11 @@ them to a power-law function:
 \end{equation}
 
 Both mock and observational ACF are derived by a least
-square minimization procedure. The observational errors of 
-the ACF as well as the standard deviation of the mean modeled ACFs  are
-considered to compute the error in the fitted parameters to ensure ourselves
-to include poissonian and cosmic-variance errors. 
+square minimization procedure to the previous equation. The  errors of 
+the ACF  are considered to compute the error in the fitted parameters to ensure ourselves
+to include poissonian. At the same time, for each model ${\mathcal M}$ we 
+compute the mean and standard deviation on the fitted parameters over
+each mock survey to account for cosmic-variance errors. 
 We consider that a model is consistent with observations if the two
 parameters $\beta$ and $\theta_0$ are equal within a $1$-$\sigma$ range. 
 

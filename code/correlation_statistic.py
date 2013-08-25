@@ -94,7 +94,7 @@ for i in range(n_models):
         #pinit=pfinal
         covar = out[1]
         
-        if( covar is None ):
+        if( covar is None ): 
             ro_ind[i,j]=ro_ind[i,j-1]
             slope_ind[i,j]=slope_ind[i,j-1]
             ro_err_ind[i,j]=ro_err_ind[i,j-1]
@@ -244,96 +244,8 @@ plot_name=plot_dir +"mmin_vs_focc_"  + sys.argv[1] + ".pdf"
 f_occ_plot.legend(shadow=False,loc=2)
 fig5.savefig(plot_name,format="pdf")
 
-#---------prediction on the ACF for the best models-------------------------------------------
 
 
-focc_index=np.where(((f_occ<=0.2) & (m_max<12.0) ) == True)
-model_numbers=model_numbers[focc_index]
-n_models=np.size(model_numbers)
-n_mocks=12
-
-mean_correlation= np.zeros( [n_models,theta_bins] )
-std_correlation = np.zeros( [n_models,theta_bins] )
-chi_individual  = np.zeros( [n_models,n_mocks] )
-slope = np.zeros( n_models )
-slope_err = np.zeros( n_models )
-ro = np.zeros( n_models )
-ro_err = np.zeros( n_models )
-n=0
-for i in model_numbers:
-    corr=np.zeros( (n_mocks,theta_bins) )
-    
-    for j in range(n_mocks):
-        model_correlation_filename=pro_path +  "data/laes/correlation/model_" + str(i) + "_mock_" + str(j) + ".txt"
-        
-        lae_correlation  = np.loadtxt(model_correlation_filename)
-        corr[j,:] = lae_correlation[:,1]
-
-        
-    std_correlation[n,:]  = np.std(corr,axis=0)
-    mean_correlation[n,:] = np.mean(corr,axis=0)
-    n=n+1
-
-chisquare=np.zeros([n_models,theta_bins])
-chi=np.zeros(n_models)
-
-for i in range(n_models):
-    correlation= mean_correlation[i,:]
-    std= std_correlation[i,:]
-    
-    salida = op.leastsq(errfunc, pinit,args=(lae_correlation[:,0], correlation,std), full_output=1)
-    
-    pfinal = salida[0]
-    covar = salida[1]
-
-        
-    ro[i] = float(pfinal[0])
-    slope[i] = float(pfinal[1])
-    
-    ro_err[i]=np.sqrt(covar[0][0])
-    slope_err[i]=np.sqrt(covar[1][1])
-    
-    print "ro=",ro[i],"+-" ,ro_err[i], "\n"
-    print "slope=",slope[i],"+-" ,slope_err[i], "\n"
-
-fig6=P.figure()
-ro_plot=fig6.add_subplot(111)
-#ro_index=np.where(slope_err<0.5)
-#ro=ro[ro_index]
-#slope=slope[ro_index]
-#ro_err=ro_err[ro_index]
-#slope_err=slope_err[ro_index]
-ro_plot.errorbar(ro,slope, yerr=slope_err, xerr=ro_err, label="Models",elinewidth=1.5,fmt="o")
-ro_plot.errorbar(ro_obs,slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Hayashino et al 2004",elinewidth=4.5)
-ro_plot.set_xlabel(r'$\theta_{0}$', fontsize=20)
-ro_plot.set_ylabel(r"$\gamma$",fontsize=20)
-ro_plot.set_title("Predicted ACF parameters. Full SSA22 field",fontsize=20)
-#ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
-plot_name=plot_dir +"power_law_correlation_full_field.pdf"
-ro_plot.legend(shadow=False)
-fig6.savefig(plot_name,format="pdf")
-print model_numbers, n_models
-
-fig1=P.figure()
-ax_mean=fig1.add_subplot(111)
-
-for i in range(n_models):
-    
-    model='{0},{1},{2}'.format(m_min_m[model_numbers[i]], m_max_m[model_numbers[i]], f_occ_m[model_numbers[i]])
-    ax_mean.errorbar(obs_correlation[0:theta_bins,0]+0.3*i,mean_correlation[i,:], std_correlation[i,:], label=model,elinewidth=1.5)
-
-   
-    
-ax_mean.errorbar(obs_correlation[0:theta_bins,0]-3.0, obs_correlation[0:theta_bins,1], obs_correlation[0:theta_bins,2],label="Hayashino et al 2004",elinewidth=3.0,fmt="o-")
-ax_mean.set_xlabel(r'$\theta$', fontsize=16)
-ax_mean.set_ylabel(r"$\xi(\theta)$",fontsize=16)    
-    
-    #ax_mean.plot(obs_correlation[0:theta_bins,0]-3.0, powerlaw(theta,ro[i],slope[i]), label="power law fit" )
-ax_mean.set_title("Predicted ACF. Full SSA22 field",fontsize=20)
-ax_mean.legend(shadow=False, prop={'size':8})
-plot_name=plot_dir +"mean_correlation_prediction.pdf"
-P.xlim(0,1010.0)
-fig1.savefig(plot_name,format="pdf")
 
                
         
