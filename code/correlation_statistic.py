@@ -156,17 +156,19 @@ fig2=P.figure()
 ro_plot=fig2.add_subplot(111)
 ro_index=np.where(slope_err<2.0)
 ro_plot.errorbar(ro[ro_index],slope[ro_index], yerr=slope_err[ro_index], xerr=ro_err[ro_index], label="Models",elinewidth=1.5,fmt="o")
-ro_plot.errorbar(ro_obs,slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Hayashino et al 2004",elinewidth=4.5)
+
+if sys.argv[1]=="maxden" :
+    ro_plot.errorbar(ro_obs,slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Hayashino et al 2004",elinewidth=4.5)
+if sys.argv[1]=="meanden":
+    ro_plot.errorbar(ro_obs,slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Ouchi et al 2010",elinewidth=4.5)
+
 ro_plot.set_xlabel(r'$\theta_{0}$', fontsize=20)
 ro_plot.set_ylabel(r"$\gamma$",fontsize=20)
-ro_plot.set_title("Angular Correlation parameters. Full SSA22 field",fontsize=20)
 ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
-plot_name=plot_dir +"power_law_correlation_" + sys.argv[1] + ".pdf"
+plot_name=plot_dir + "power_law_correlation_" + sys.argv[1] + ".pdf"
 ro_plot.legend(shadow=False,loc=2)
 
-
 fig2.savefig(plot_name,format="pdf")
-
 
 fig3=P.figure()
 mmin_plot=fig3.add_subplot(111)
@@ -176,8 +178,12 @@ mmax_index=np.where(m_max_m>12.0) #and ro<ro_max) #and slope_min<slope<slope_max
 mmin_plot.errorbar(m_min_m[mmax_index]+0.01,ro[mmax_index], yerr=ro_err[mmax_index],label=r"$\log M_{max}>12.0$",elinewidth=1.5,fmt="o")
 mmin_plot.set_ylabel(r'$\theta_{0}$', fontsize=20)
 mmin_plot.set_xlabel(r"$M_{min}$",fontsize=20)
-mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Full SSA22 Field",fontsize=20)
-mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Match Survey",fontsize=20)
+
+if sys.argv[1]=="maxden" :
+    mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Match Survey. Hayashino 2004",fontsize=20)
+if sys.argv[1]=="meanden":
+    mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Match Survey. Ouchi 2010",fontsize=20)
+
 P.ylim(0,100)
 plot_name=plot_dir +"mmin_vs_correlation_" +sys.argv[1] + ".pdf"
 mmin_plot.legend(shadow=False,loc=2)
@@ -206,7 +212,7 @@ corr_stat[:,1]=m_max[best_index]
 corr_stat[:,2]=f_occ[best_index]
 corr_stat[:,3]=ro[best_index]
 corr_stat[:,4]=slope[best_index]
-corr_stat_file=pro_path + "data/mock_survey/" + "powerlaw_bestmodels.dat"
+corr_stat_file=pro_path + "data/mock_survey/" + "powerlaw_bestmodels_" + sys.argv[1] + ".dat"
 np.savetxt(corr_stat_file,corr_stat,fmt='%2.3lf')
 
 fig4=P.figure()
@@ -217,10 +223,15 @@ mass_plot.plot(m_min[mass_index],m_max[mass_index] - m_min[mass_index],'bs',labe
 mass_index=np.where(f_occ>0.2)
 mass_plot.plot(m_min[mass_index],m_max[mass_index] - m_min[mass_index],'kp',label=r"$\log f_{occ}>0.2$")
 #mass_plot.plot(m_min[best_index], m_max[best_index],'ks')
-mass_plot.set_xlabel(r'$M_{min}$', fontsize=20)
-mass_plot.set_ylabel(r"$M_{max}$",fontsize=20)
+mass_plot.set_xlabel( r'$M_{min}$', fontsize=20 )
+mass_plot.set_ylabel( r"$M_{max}$",fontsize=20 )
 mass_plot.set_title(r"Observationally consistent models. Full Field",fontsize=20)
-mass_plot.set_title(r"$\log M_{min}$ vs $\Delta log M$. Observationally consistent models",fontsize=20)
+if sys.argv[1]=="maxden" :
+    mass_plot.set_title(r"$\log M_{min}$ vs $\Delta log M$. Observationally consistent models. Hayashino 2004",fontsize=20)
+if sys.argv[1]=="meanden":
+    mass_plot.set_title(r"$\log M_{min}$ vs $\Delta log M$. Observationally consistent models. Ouchi 2010",fontsize=20)
+    
+
 P.xlim(10.2,11.3)
 #P.ylim(10.4,12.0)
 plot_name=plot_dir +"mmin_vs_dm_" + sys.argv[1] + ""
@@ -234,8 +245,13 @@ f_occ_plot=fig5.add_subplot(111)
 f_occ_plot.plot(m_min,f_occ, 'kp')
 f_occ_plot.set_xlabel(r'$M_{min}$', fontsize=20)
 f_occ_plot.set_ylabel(r"$f_{occ}$",fontsize=20)
-f_occ_plot.set_title(r"Observationally consistent models. Full Field",fontsize=20)
-f_occ_plot.set_title(r"$M_{min}$ vs $f_{occ}$. Observationally consistent models",fontsize=20)
+if sys.argv[1]=="maxden" :
+    f_occ_plot.set_title(r"$M_{min}$ vs $f_{occ}$. Observationally consistent models. Hayashino 2004",fontsize=20)
+if sys.argv[1]=="meanden":
+    f_occ_plot.set_title(r"$M_{min}$ vs $f_{occ}$. Observationally consistent models. Ouchi 2010",fontsize=20)
+
+
+
 #P.xlim(10.2,13.0)
 collection = collections.BrokenBarHCollection.span_where(m_min_m, ymin=0.1, ymax=0.2, where=f_occ>0,  facecolor='blue', alpha=0.5)
 f_occ_plot.add_collection(collection)
