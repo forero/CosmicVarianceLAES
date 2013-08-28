@@ -85,23 +85,32 @@ take into account the cosmic variance on the typical observed field size by
 constructing mock fields from a large cosmological N-body
 simulation matching the observational geometries. To populate the
 halos in the simulation we use a model where a dark matter halo with
-mass in the range $M_{\rm   min}<M_{\rm h}<M_{\rm max}$ can only host one LAE with a
-probability $f_{\rm occ}$. We find that the large scatter in the mocks, induced by
-cosmic variance, makes the number density and spatial clustering
-information insufficient to derive a unique and narrow set of values
-for the parameters in the model. In particular, it is always possible
-to find a model that is consistent with observations and has any
-desired occupation fraction in the range $0.1\leq f_{\rm occ}\leq 1.0$
-.  Nevertheless, in the models we can define three different families
-of parameters based on their mass range, $\Delta M \equiv
-\log_{10}M_{\rm max} - \log_{10} M_{\rm min}$, and occupation fraction,
-$f_{\rm occ}$. The dominant family is composed by models with a narrow
-mass range $\Delta M<1.0$ dex, a low occupation fraction $f_{\rm
-  occ}\leq 0.3$ and a maximum mass $M_{\rm  max}< 10^{12}$\hMsun.  The
-existence of this dominant family gives support to the idea that the
-most massive dark matter halos at that epoch do not host the brightest
-LAEs and that only a small fraction of star forming galaxies can be
-actually detected as LAEs.
+mass in the range $M_{\rm   min}<M_{\rm h}<M_{\rm max}$ can only host
+one LAE with a probability $f_{\rm occ}$.  We find that the observational information on the number density restricts the minimum mass to a
+range $10^{10}\hMsun < M_{\rm min}< 10^{11.5}\hMsun$ leaving all the
+other parameters unrestricted, while the clustering information puts a
+tight constraint of $M_{\rm   max}<10^{12}\hMsun$. This gives support
+to the idea that the most massive dark matter halos at that epoch do
+not host the brightest LAEs.  However, none of these observations is
+able to constrain the occupation fraction. It is always possible to
+find a model that is consistent with observations and has any desired
+occupation fraction in the range $0.1\leq f_{\rm occ}\leq
+1.0$. Furthermore, all models have a mass range $\Delta M \equiv
+\log_{10}M_{\rm max} - \log_{10} M_{\rm min}$ smaller than 1.0 dex. 
+We divide the best models into families of low and high occupation
+fraction with a transition around $f_{\rm occ}\leq 0.3$. These two
+families are almost disjoint in their values of $M_{\rm min}$. Low
+occupation fraction occurs below a threshold of $M_{\rm th}=
+10^{10.8}\Msun$, while high occupation fractions are present in
+$M_{\rm min}>M_{\rm the}$. These two families of models are
+similar in size, giving an unconclusive response as to which is the
+occupation fraction of LAEs at $z=3.1$. A conclusive answer requires
+a detailed physical model for the  connection between dark matter,
+star formation and the escape of \ly radiation. That kind of modelling
+should also provide a plausible explanation for the narrow range in
+mass $\Delta M<1.0$ dex derived here for the halos hosting LAEs at
+$z=3.1$.
+
 \end{abstract}
 
 \begin{keywords}
@@ -145,7 +154,8 @@ together with other statistics such as the luminosity function, the
 correlation function and the equivalent width distributions. Such
 modelling has been implemented from analytic considerations,
 semi-analytic models  and  full N-body hidrodynamical simulations
-\citep{Laursen2007, Dayal2009, ForeroRomero2011, Yajima2012, Orsi2012, Soler2012}. 
+\citep{Laursen2007, Dayal2009, ForeroRomero2011, Yajima2012, Orsi2012,
+  Soler2012}.  
 
 In addition to the uncertainties in the astrophysical processes
 describing star formation in galactic populations, is the calculation
@@ -154,7 +164,7 @@ is another debated step. Given the resonant nature of the \ly line,
 the radiative transfer of \ly is sensitive to the density,
 temperature, topology and kinematics of the neutral Hydrogen in the
 interstellar medium
-(ISM). \citep{Neufeld1991,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.   
+(ISM). \citep{Neufeld1991,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.     
 
 This problem can be tackled with Monte Carlo simulations for the
 radiative transfer, however the complexity of the relevant physical
@@ -201,12 +211,11 @@ and its occupation fraction.
 
 This \documentname is structured as follows. In the next section we present
 the simulation and model used to produce the mock catalogs and the criteria
-we use to compare them against observations. In \SS \ref{sec:results} we
+we use to compare them against observations. In \S \ref{sec:results} we
 present the main results for the halo mass and occupation fraction. We
 continue with a discussion of these results under the light of other
 observational and theoretical results. Finally, we present our
-conclusions in \SS
-\ref{sec:conclusions}. 
+conclusions in \S \ref{sec:conclusions}. 
 
 Throughout this \documentname we assume a $\Lambda$CDM cosmology with the
 following values for the cosmological parameters, $\Omega_{m}=0.27$,
@@ -658,7 +667,6 @@ information to constrain these paremeters.
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/power_law_correlation_maxden.pdf} 
 \hspace{5mm}  
 \includegraphics[width=0.46\linewidth,angle=0]{./plots/power_law_correlation_meanden.pdf} 
-%\includegraphics[width=0.46\linewidth,angle=0]{./plots/mmin_vs_correlation.pdf}  
 \end{center}
 \caption{Left: Values for the free parameters ($\theta_{0}$ vs $\beta$) 
 in the fitting formula (Eq. \ref{eq:fitting}) for the angular
@@ -666,12 +674,6 @@ correlation function. Blue dots correspond to simulations and the
 green cross to observations by \citet{Hayashino2004} and
 \citet{Ouchi2010}. The error bars in the   theoretical data correspond
 to the standard deviation from the different mocks surveys. 
-%Right:
-%Same results in the $\theta_{0}$-$M_{\rm min}$ plane, with the
-%observational constraint on $\theta_{0}$ epresented by the red
-%rectangle. Blue  squares represent models with $\log_{10} M_{\rm
-%  max}<12.0$, green circles correspond to models with $\log_{10}
-%M_{\rm max}>12.0$. 
 \label{fig:correlation_parameters}}
 \end{figure*} 
 
@@ -701,30 +703,44 @@ over the mocks is shown in comparison with the result derived from
 observations.  The error bars in this Figure represents the standard
 deviation of the ACF over all the 15 mock fields used to make the
 computation.  These error bars are larger than the statistical
-uncertainty from the fitting procedure on a single field.  
+uncertainty from the fitting procedure on a single field. 
 
 In the left panel Figure \ref{figure:correlation_parameters} we see
 how the observational ACF measured by \cite{Hayashino2004} (green dot)
 is successful in reducing the total number of possible models. Only
 those with angular-correlation length within
 $15^{\prime\prime}<\theta_{0}<23^{\prime\prime}$ are considered to
-reproduce observations. {\bf Cual es el resultsdo de Ouchi
-  para $\theta_0$?}
+reproduce observations. The right panel of Figure
+\ref{figure:correlation_parameters} shows the results for fields in
+the mock catalog that have an average number density that are compared
+against the fit of the data reported by \cite{Ouchi2010}. In this case
+we find that there are large uncertainties in the observational data,
+however it is possible to discard a fraction of the models.
+
 
 In Figure \ref{fig:restriction_mock_and_f_occ_corr} we present the preferred
 models in the planes $M_{\rm min}-M_{\rm  max}$ and $M_{\rm min}-f_{\rm occ}$
-for the {\tt match} method. To make this selection we consider that
+both for the comparisong against \cite{Hayashino2004} and
+\cite{Ouchi2010}. To make this selection we consider that
 a model is consistent with observations if there is a $1-\sigma$
 overlap between both the correlation length $\theta_0$ and the power
-$\beta$ . Comparing this Figure with the results shown in Figure
-\ref{fig:restriction_mock} we see that the models that were removed
-were those with highest minimal masses $M_{\rm min}>10^{11.2}$, for
-all the values of $M_{\rm max}$, with preferentially high
-occupation fractions of $f_{\rm occ}> 0.5$.  
+$\beta$. We clearly see from this Figure that the conditions imposed
+by \cite{Hayashino2004} are the tightest. Comparing this Figure with
+the results shown in Figure \ref{fig:restriction_mock} we see that
+practically all models with $M_{\rm max}>10^{12}$ are removed. On the
+other hand the comparison against \cite{Ouchi2010} does not succeed in
+greatly reducing the number of models.
 
-We conclude that the clustering information is able to put meaningful
-constraints on the values of the maxium mass parameters $M_{\rm max}$
-and the occupation fraction $f_{\rm occ}$. 
+At this point we keep the models that are consistent with both
+observational constraints. This basically reduces the selection to the
+models already restricted by the data in \cite{Hayashino2004} as
+presented in the lower panels of Figure
+\ref{fig:restriction_mock_and_f_occ_corr}. Our main conclusions after
+this comparison is that clustering information is able to put
+meaningful constraints on the values of $M_{\rm max}$. However, the
+possible values for the occupation fraction are still in the initial
+range $0.1\leq f_{\rm occ}\leq 1$.
+
 
 
 %In order to better illustrate the results from this test we
