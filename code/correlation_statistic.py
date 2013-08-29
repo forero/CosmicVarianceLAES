@@ -161,15 +161,18 @@ if sys.argv[1]=="maxden" :
     ro_plot.errorbar(ro_obs,slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Hayashino et al 2004",elinewidth=4.5)
 if sys.argv[1]=="meanden":
     ro_plot.errorbar(ro_obs,slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Ouchi et al 2010",elinewidth=4.5)
-
-ro_plot.set_xlabel(r'$\theta_{0}$', fontsize=20)
-ro_plot.set_ylabel(r"$\gamma$",fontsize=20)
-ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
+P.xlim(0,50)
+P.ylim(0.5,3.5)
+ro_plot.set_xlabel(r'$\theta_{0}(arcsec)$', fontsize=20)
+ro_plot.set_ylabel(r"$\beta$",fontsize=20)
+##ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
 plot_name=plot_dir + "power_law_correlation_" + sys.argv[1] + ".pdf"
 ro_plot.legend(shadow=False,loc=2)
 
 fig2.savefig(plot_name,format="pdf")
 
+P.xlim()
+P.ylim()
 fig3=P.figure()
 mmin_plot=fig3.add_subplot(111)
 mmax_index=np.where(m_max_m<12.0) #and ro<ro_max) #and slope_min<slope<slope_max)
