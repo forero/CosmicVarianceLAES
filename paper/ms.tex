@@ -83,34 +83,27 @@ $z=3.1$ by matching the number density and the angular
 correlation function between mock and observed fields. We explicitly
 take into account the cosmic variance on the typical observed field size by
 constructing mock fields from a large cosmological N-body
-simulation matching the observational geometries. To populate the
+simulation matching the geometries of observed fields. To populate the
 halos in the simulation we use a model where a dark matter halo with
 mass in the range $M_{\rm   min}<M_{\rm h}<M_{\rm max}$ can only host
-one LAE with a probability $f_{\rm occ}$.  We find that the observational information on the number density restricts the minimum mass to a
-range $10^{10}\hMsun < M_{\rm min}< 10^{11.5}\hMsun$ leaving all the
-other parameters unrestricted, while the clustering information puts a
-tight constraint of $M_{\rm   max}<10^{12}\hMsun$. This gives support
-to the idea that the most massive dark matter halos at that epoch do
-not host the brightest LAEs.  However, none of these observations is
-able to constrain the occupation fraction. It is always possible to
-find a model that is consistent with observations and has any desired
-occupation fraction in the range $0.1\leq f_{\rm occ}\leq
-1.0$. We also find that all models have a narrow mass range $\Delta M \equiv
+one LAE with a probability $f_{\rm occ}$. This main motivation to
+build such a model is to avoid the large uncertainties in the estimation of
+\ly luminosities. We find that the clustering and number density information are
+insufficient to impose a tight constraint on the escape fraction. On
+the other hand the minium mass and maximum mass are tightly
+constrained to be $M_{\rm max}<10^{12}$\hMsun and
+$10^{10}\hMsun\leq M_{\rm min}\leq 10^{11.5}\hMsun$.  We also find
+that all models have a narrow mass range $\Delta M \equiv
 \log_{10}M_{\rm max} - \log_{10} M_{\rm min}$ smaller than 1.0 dex,
-with the vast majority in the range $\Delta M<0.5$ dex, meaning that
-there is only a factor of $3$ in mass between the minimum and maximum
-halo mass. We divide the best models into families of low and high occupation
-fraction with a transition around $f_{\rm occ}\leq 0.3$. These two
-families are almost disjoint in their values of $M_{\rm min}$. Low
-occupation fraction occurs below a threshold of $M_{\rm th}=
-10^{10.8}\Msun$, while high occupation fractions are present in
-models with $M_{\rm min}>M_{\rm th}$. This represents an unconclusive response as
-to which is the occupation fraction for LAEs at $z=3.1$. A definite
-answer requires a detailed physical model for the  connection between
+with the vast majority in the range $\Delta M<0.5$ dex. All previous
+constraints on the mass range and occupation fraction are a sub-set of
+the models we report in this paper. This represents an unconclusive response as
+to which is the occupation fraction for LAEs at $z=3.1$. A more
+precise answer requires physical models for the connection between
 dark matter, star formation and the escape of \ly radiation. That kind
-of modelling should also provide a plausible explanation for the
-narrow range in mass $\Delta M<1.0$ dex derived here for the halos
-hosting LAEs at $z=3.1$. 
+of modeling should also provide a plausible explanation for the narrow
+ ange in mass $\Delta M<1.0$ dex derived here for the halos hosting
+ LAEs at $z=3.1$.   
 
 \end{abstract}
 
@@ -310,7 +303,7 @@ algorithm with a linking length of 0.17 times the inter-particle
 distance. The catalogs were obtained from the publicly available
 Multidark database \footnote{{\tt
     http://www.multidark.org/MultiDark/}}
-\citep{2011arXiv1109.0003R}. For each halo in the box we store its
+\citep{MultiDark}. For each halo in the box we store its
 position in the box (3-D coordinates) and FOF mass. We focus our work
 on halos more massive than $1\times 10^{10}$\hMsun that are resolved
 with at least $70$ particles, the reasons for this choice are
@@ -744,6 +737,10 @@ range $0.1\leq f_{\rm occ}\leq 1$.
 
 \section{Discussion}
 
+
+
+
+
 In the Results Section we start by matching the rough numbers for the
 galaxy surface number density. This sets the median mass of all
 successful models to the broad range $(10^{10}-10^{12})$ \hMsun for
@@ -869,6 +866,54 @@ found with in the intervals $M_{\rm min}$ and $M_{\rm max}$ of our
 models. 
 
 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{cccc}\hline\hline
+$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
+10.1 &10.2 & 0.1 & 0.1\\
+10.3 &10.5 & 0.1 & 0.2\\
+10.4 &10.7 & 0.1 & 0.3\\
+10.5 &10.6 & 0.3 & 0.1\\
+10.5 &10.9 & 0.1 & 0.4\\
+10.5 &11.0 & 0.1 & 0.5\\
+10.6 &11.2 & 0.1 & 0.6\\
+10.6 &11.4 & 0.1 & 0.8\\
+10.6 &11.7 & 0.1 & 1.1\\
+10.7 &11.0 & 0.2 & 0.3\\
+10.8 &11.2 & 0.2 & 0.4\\
+10.8 &11.3 & 0.2 & 0.5\\\hline
+\end{tabular}
+\end{center}
+\caption{\label{table:firstfamily}List of parameters for the first
+  family of models. Narrow mass range $\Delta M\leq 1.0$dex and low
+  occupation fraction $f_{\rm occ}\leq 0.3$.} 
+\end{table}
+
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{cccc}\hline\hline
+$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
+10.6 &10.7 &0.4 & 0.1\\
+10.8 &10.9 &0.6 & 0.1\\
+10.8 &11.0 &0.4 & 0.2\\
+10.9 &11.0 &0.8 & 0.1\\
+10.9 &11.0 &0.9 & 0.1\\
+10.9 &11.1 &0.5 & 0.2\\
+11.0 &11.1 &1.0 & 0.1\\
+11.1 &11.3 &0.8 & 0.2\\
+11.2 &11.6 &0.6 & 0.4\\
+11.2 &12.2 &0.5 & 1.0\\
+11.3 &11.7 &0.9 & 0.4\\\hline
+\end{tabular}
+\end{center}
+\caption{\label{table:secondfamily}List of parameters for the second
+  family of models. Narrow mass range $\Delta M\leq 1.0$dex and high occupation fraction $f_{\rm occ}>0.3$.}
+\end{table}
+
+
 \subsection{In the context of abundance matching models}
 
 
@@ -925,15 +970,16 @@ of the code to produce the plots can be found as an Ipython notebook
 \citep{IPython} in the same repository.
 
 
+
 \section{Conclusions}
 \label{sec:conclusions}
 
 In this \documentname we look for constraints on the preferred mass
 and occupation fraction of dark matter halos hosting Lyman Alpha Emitters at
 redshift $z=3.1$ in a $\Lambda$CDM cosmology. We perform this study
-paying attention to the impact of cosmic variance in these results. We
-build a large number of mock catalogs matching observational
-geometries. The mocks are constructed from a N-body simulation
+paying special attention to the impact of cosmic variance on these
+results. To this end we build a large number of mock catalogs matching
+observational geometries. The mocks are constructed from a N-body simulation
 following a simple recipe to assign a single LAE to each halo. Only
 a fraction $f_{\rm occ}$ of halos with a mass range  $M_{\rm
   min}<M_{\rm h}<M_{\rm   max}$ can host a LAE. We proceed with a
@@ -941,58 +987,46 @@ thorough exploration of the space of free parameters $M_{\rm min},
 M_{\rm max}$ and $f_{\rm occ}$ to find mocks that are consistent with
 two observational constraints: the surface number density and the
 angular correlation function. Out of the initial $9000$ 
-combinations of parameters in the model we find $49$ arrangements
+combinations of parameters in the model we find $23$ arrangements
 consistent with observations.
 
+We find that the observational information we use is insufficient to
+impose a tight constraint on the escape fraction. On the other hand
+the minium mass and maximum mass are tightly constrained as follows
+$M_{\rm max}<10^{12}$\hMsun and $10^{10}\hMsun\leq M_{\rm min}\leq
+10^{11.5}\hMsun$. Furthermore, we find that the mass range defined as
+$\Delta M=\log_{10}M_{\rm max} - \log_{10}M_{\rm min}$ is always
+$\Delta M\leq 1.0$.
 
-The successful parameter arrangements present a wide range of possibilities for
-DM hosting LAE hosts at $z=3.1$. This means that the available LAEs' spatial
-information is not sufficient to put a tight constraint on the mass
-and occupation fraction of DM halos hosting LAEs. In particular it is
-not possible to put a strong constraint on the occupation
-fraction. Such a wide range in solutions is facilitated by the large
-dispersion in the statistics derived from the mocks. All the halo mass
-ranges and occupation fractions deduced in previous analysis in
-previous analysis \citep[i.e.][]{Gawiser2007,Ouchi2010} are a subset of the
-models we find in this \documentname.  
- 
+The wide range in solutions is facilitated by the large dispersion in
+the statistics derived from the mocks. Nevertheless, all the halo mass
+ranges and occupation fractions deduced previous analysis
+\citep[i.e.][]{Gawiser2007,Ouchi2010} are a subset of the models we
+find in this \documentname. All of our models support the notion that
+the most massive halos at $z=3.1$ do not host the brightest LAEs.
 
-Nevertheless, the successful models can be split into three families
-depending the mass range $\Delta M=\log_{10}M_{\rm max} -
-\log_{10}M_{\rm min}$ and the occupation fraction $f_{\rm occ}$. The
-first family is narrow both in $\Delta M$ and $f_{\rm occ}$, a second
-family is only narrow in $\Delta M$ and the third is narrow in $f_{\rm
-  occ}$ and broad in $\Delta M$. 
-
- 
-We find a large number of models with a narrow mass range
-$\Delta M<1.0$ dex that are consistent in every aspect with the
-spatial distribution of observed LAEs. In order to have this characteristic
-it is required that halos around the mass $M_{\rm   max}$ for each
-model become inefficient in hosting detectable LAEs. Two conditions
-can explain this. The first is having LAEs with a decreasing \ly
-escape fraction with increasing mass, the second is having larger screening
-effects by neutral Hydrogen around the most massive systems
-\citep{Laursen2009,ForeroRomero2011}.  
-
-A third aspect that stands out is the existence of a dominant family
-of models with narrow $\Delta M<1.0$, as described before, and also a
-low occupation fraction $f_{\rm occ}<0.3$. This gives support to the
-common wisdom stating that only a small fraction of star forming
-galaxies can be detected as strong LAEs. 
+The existence of a narrow mass range for halos hosting LAEs, $\Delta
+M\leq 1.0$ dex, has two different explanations at least. The
+first is having LAEs with a decreasing \ly escape fraction with
+increasing mass, the second is having larger screening effects by
+neutral Hydrogen around the most massive systems
+\citep{Laursen2009,ForeroRomero2011}.   
 
 However, there are extreme cases with a very narrow $\Delta M<0.3$, meaning that
 there is barely a factor of $\sim 2$ between the minimum and halo
 mass. If these models turn out to be confirmed, this would be a great
 challenge for galaxy formation models to explain how is that LAEs can
-be hosted in such a narrow range of halo mass.
+be hosted in such a narrow range of halo mass. 
 
-In summary, we show how current observations of LAEs cannot
-put a tight constraint on the physical models. We  foresee that the
-new observations with new instruments (such as MUSE, Hyper SuprimeCam
-and HETDEX) covering larger fields and a wider range of luminosities
-will be key in imposing tighter constraints on the properties of dark
-matter halos hosting LAEs.   
+In summary, we show how spatial information of LAEs cannot
+put a tight constraint on their host halos and occupation fraction. We
+foresee that the new observations with new instruments (such as MUSE,
+Hyper SuprimeCam and HETDEX) covering larger fields and a wider range
+of luminosities will be key in imposing tighter constraints on the
+properties of dark matter halos hosting LAEs. At the same time,
+additional modeling for \ly radiation transfer, is needed to put a
+tighter constrain on the \ly escape fraction in high redshift
+galaxies. 
 
 
 \section*{Acknowledgments} 
@@ -1000,55 +1034,17 @@ J.E.F-R thanks the hospitality of Changbom Park and the Korea
 Institute for Advanced Study where the first full draft of this paper
 was completed. The authors also thank Peter Laursen, Paulina Lira, 
 Alvaro Orsi and Mark Dijkstra for helpful comments on the physical
-interpretation and presentation of our results. 
+interpretation and presentation of our results. J.E.F-R was
+supported by the FAPA grant by Vicerrector\'ia de Investigaciones at
+Universidad de los Andes.
 
-
-
-\begin{table}
-\begin{center}
-\begin{tabular}{cccc}\hline\hline
-$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
-10.1 &10.2 & 0.1 & 0.1\\
-10.3 &10.5 & 0.1 & 0.2\\
-10.4 &10.7 & 0.1 & 0.3\\
-10.5 &10.6 & 0.3 & 0.1\\
-10.5 &10.9 & 0.1 & 0.4\\
-10.5 &11.0 & 0.1 & 0.5\\
-10.6 &11.2 & 0.1 & 0.6\\
-10.6 &11.4 & 0.1 & 0.8\\
-10.6 &11.7 & 0.1 & 1.1\\
-10.7 &11.0 & 0.2 & 0.3\\
-10.8 &11.2 & 0.2 & 0.4\\
-10.8 &11.3 & 0.2 & 0.5\\\hline
-\end{tabular}
-\end{center}
-\caption{\label{table:firstfamily}List of parameters for the first
-  family of models. Narrow mass range $\Delta M\leq 1.0$dex and low
-  occupation fraction $f_{\rm occ}\leq 0.3$.} 
-\end{table}
-
-
-
-\begin{table}
-\begin{center}
-\begin{tabular}{cccc}\hline\hline
-$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
-10.6 &10.7 &0.4 & 0.1\\
-10.8 &10.9 &0.6 & 0.1\\
-10.8 &11.0 &0.4 & 0.2\\
-10.9 &11.0 &0.8 & 0.1\\
-10.9 &11.0 &0.9 & 0.1\\
-10.9 &11.1 &0.5 & 0.2\\
-11.0 &11.1 &1.0 & 0.1\\
-11.1 &11.3 &0.8 & 0.2\\
-11.2 &11.6 &0.6 & 0.4\\
-11.2 &12.2 &0.5 & 1.0\\
-11.3 &11.7 &0.9 & 0.4\\\hline
-\end{tabular}
-\end{center}
-\caption{\label{table:secondfamily}List of parameters for the second
-  family of models. Narrow mass range $\Delta M\leq 1.0$dex and high occupation fraction $f_{\rm occ}>0.3$.}
-\end{table}
+The MultiDark Database used in this paper and the web application
+providing online access to it were constructed as part of the
+activities of the German Astrophysical Virtual Observatory as result
+of a collaboration between the Leibniz-Institute for Astrophysics
+Potsdam (AIP) and the Spanish MultiDark Consolider Project
+CSD2009-00064. The Bolshoi and MultiDark simulations were run on the
+NASA's Pleiades supercomputer at the NASA Ames Research Center.
 
 
 
