@@ -148,56 +148,54 @@ escape each galaxy and compute the observed luminosity for each
 galaxy. These models can predict different observables including: the
 luminosity function, correlation function and the equivalent width
 distributions. Such modelling has been implemented in semi-analytic
-models \citep{Garel2012,Orsi2012, Solre2012} and  full N-body
+models \citep{Garel2012,Orsi2012,Soler2012} and  full N-body
 hydrodynamical simulations \citep{Laursen2007, Dayal2009,
   ForeroRomero2011, Yajima2012}. 
 
-However, there are many uncertain steps in these calculations. The
-usual ones are the astrophysical processes describing star formation in galactic
-populations. But the dominant uncertainty is estimating the
-fraction of \ly photons that escape the galaxy, a number known as the escape
-fraction. Given the resonant nature of the \ly line, the escape
-fraction is sensitive to  the density, temperature, topology and
+These calculations involve many uncertain steps, such as the treatment
+of astrophysical processes describing star formation. However, in the
+context of LAEs, the dominant uncertainty is the estimation of the
+escape fraction, that is the fraction of \ly photons that escape the
+galaxy to the observer. Given the resonant nature of the \ly line, the escape
+fraction is sensitive to  the dust contents, density, temperature, topology and
 kinematics of the neutral Hydrogen in the interstellar medium
-(ISM), besides the amount of dust that absorb the \ly photons. The
-complex radiative transfer of \ly photons in the ISM requires Monte
-Carlo simulations to be solved. Until now it has been dificult to
-achieve a consensus on the expected value for the \ly escape fraction
-in high redshift galaxies
-\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}. 
+(ISM). Solving the radiative transfer of \ly photons in the ISM requires Monte
+Carlo simulations. The process of finding a consensus on the expected
+value for the \ly escape fraction in high redshift galaxies is still
+matter of ongoing research
+\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.  
 
 A different approach to infer the typical mass of halos hosting
-LAEs is based on clustering information. This method uses the fact
+LAEs is based on the spatial clustering information. This approach uses the fact
 that in CDM cosmologies the spatial clustering of galaxies on large
 scales is entirely dictated by the halo distribution
-\citep{Colberg00}, which in turn has a strong dependence on halo 
+\citep{Colberg00}, which in turn has a strong dependence on halo
 mass. Using measurements of the angular correlation function of LAEs,
 observers have put constraints on the typical mass and occupation
 fraction of the putative halos hosting these galaxies
 \citep{Hayashino2004,Gawiser07,Nilsson2007,Ouchi2010}. In these
 studies the observations are done on fields of $\sim 1$ deg$^{2}$ and
 the conclusions derived on the halo host mass do not delve too deeply
-into the possible impact of cosmic variance. 
+into the possible impact of cosmic variance.  
 
 Recently \cite{Yamada2012} observed a wide area of $2.4$ deg$^{2}$
 under homogeneous instrumental and data reduction conditions. This data
-set is constructed from 12 different sub-fields. This large and
-homogeneous data-set allows us to use clustering statistics and cosmic
-variance to constraint the mass and occupation fraction of halos hosting
-LAEs. 
-
+set is constructed from 12 different sub-fields that allows us to use
+clustering statistics and cosmic variance to constraint the mass and
+occupation fraction of halos hosting LAEs. 
 
 Our method first populates DM halos in cosmological simulations with
 LAEs. We only consider whether a DM can host a detectable LAE or not
-without predicting a \ly  luminosity. This is constructed to bypass
-all the physical uncertainties involved in the estimation of observed
-\ly luminosities.  Once we have the mock LAE catalogs, we compare them
-against the statistics on the number density distribution derived from the
-observations over the 12 fields of \cite{Yamada2012}. Additionally, we
-use measurements of the angular correlation function to improve these
-constraints. This method allows us to find the preferred mass range of
-DM halos hosting these galaxies and its occupation fraction. 
-
+without predicting a \ly  luminosity. This bypasses all the physical
+uncertainties involved in the estimation of observed \ly luminosities.
+Once we have the mock LAE catalogs, we compare them against
+observations in terms of the  statistics on the number density
+distribution derived from the observations over the 12 fields of
+\cite{Yamada2012}. We also use measurements of the angular
+correlation function to improve these constraints. This method allows
+us to constraint the preferred mass range and occupation fraction of DM
+halos hosting LAEs.  
+ 
 
 This \documentname is structured as follows. In the next section we present
 the simulation and the model used to produce the mock catalogs. We
@@ -220,20 +218,38 @@ s$^{-1}$ Mpc$^{-1}$.
 Our method is based on the comparison of observations and mock
 catalogs. We use two different kinds of statistics to perform the
 comparison: (i) the distribution of the surface number density
-across fields and (ii) the angular correlation function measured in
-some fields.
+across fields and (ii) the angular correlation function.
 
 In the next subsections we describe in detail the four key
-elements of this work-flow. First, we present the observations we take
-as a benchmark. Second, we describe the main characteristics of the
-N-body simulation and the halo catalogs we use. Third, we recount the
-important parameters of the simplified model that we use to populate
-the halo catalogs with LAEs. Finally we describe some of the
-statistical tests we adopt to compare observations and mocks.
+elements int our work-flow. First we present (in two sub-sections) the
+observations we take as a benchmark. Second, we describe the main
+characteristics of the N-body simulation and the halo catalogs we
+use. Third, we recount the important parameters of the simplified
+model that we use to populate the halo catalogs with LAEs. Finally, we
+describe some of the statistical tests we adopt to compare
+observations and mocks .
 
 \subsection{Observational constraints}
 
-The first observational constraint we use in this paper is the LAE number
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.45\linewidth,angle=0]{Fig1b.pdf}
+\includegraphics[width=0.45\linewidth,angle=0]{Fig1.pdf}
+\caption{ \label{fig:halos} Left panel. Distribution of LAE number
+  densities in all the fields observed by \citet{Yamada2012}. The
+  point with the highest surface density corresponds to the densest
+  sub-field in the SSA22 field. Right panel. Surface density of dark 
+  matter halos as a function of a minimum halo mass to count the
+  total number of elements in a volume. Each line represents one of the
+  $210$ volumes of dimensions $46\times 35\times 41$ $h^{-3}$ Mpc$^{3}$
+  in the Bolshoi simulation. The horizontal gray band represents the
+  range of surface densities observed for LAEs at $z=3.1$ as reported
+  by \citep{Yamada2012}.}
+\end{center} 
+\end{figure*}
+
+The primary observational constraint we use in this paper is the LAE number
 density information at $z=3.1$ obtained by the panoramic narrow-band
 survey presented by \cite{Yamada2012} from a survey
 conducted with the Subaru 8.2m telescope and the Subaru Prime Focus Camera,
@@ -245,7 +261,7 @@ centered at $z=3.09$. The authors reported a total  $2161$  LAEs with
 an observed equivalent width, in the observer frame, larger than $190$
 \AA~over a total survey area of $2.42$ deg$^{2}$ that includes 12
 sub-fields,  this corresponds to average surface number density of
-$0.20\pm 0.01$ arcmin$^{-2}$.  
+$0.24\pm 0.01$ arcmin$^{-2}$. 
 
 The survey covered four independent fields:
 
@@ -254,14 +270,13 @@ The survey covered four independent fields:
 field of $1.38$ deg$^2$ with $1394$ detected LAEs (7 sub-fields), this
 field has been known to harbor a region with a large density excess of
 galaxies. {\bf The first sub-field of is taken around the same region
-  observed in \cite{Hayashino2004} } as it is reported  by as by
-\cite{Yamada2012} in section $2.1$. 
+  observed in \cite{Hayashino2004}.}
 
 \item The second observed region is composed by the fields Subaru/{\it
   XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a
 total of $0.58$ deg$^2$ and $386$ LAEs (3 sub-fields).
 
-\item The third  field si the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and
+\item The third  field is the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and
 $196$ LAEs (1 sub-field), and 
 
 \item The fourth one is the field around the Great Observatory
@@ -281,22 +296,20 @@ observational conditions or criteria to construct the catalogs.
 
 {\bf A secondary benchmark is the angular correlation function
 (ACF). \cite{Yamada2012} does not report an ACF measurement for
-  the entire field. Instead we use the results by
-  \cite{Hayashino2004} who has reported the ACF in the SSA22 region,
-  including its densest subfield. In adition to Hayashino's ACF we use
-  as a matter of comparison the ACF reported by
-  \cite{Ouchi2008}. This ACF is computer over an observed field of 1
-  deg$^2$ over the SXDS field.}
-
+  their fields. Instead we use the results by   \cite{Ouchi2008} who
+  reported the ACF is over a region of $1$ deg$^2$ over the SXDS
+  field.  We also keep track of the results by \cite{Hayashino2004}
+  who reported the ACF in the SSA22 region, including its densest
+  subfield.}
 
 {\bf There are some differences between \cite{Ouchi2008} observations
   and those by \cite{Yamada2012}. The details in the color selection,
   corresponding limiting luminosities and EW thresholds are different
   in these references. The average LAEs number density inferred by
-  \cite{Hayashino2004} is   $0.37$ arcmin$^{-2}$, which is $15\%$
-  lower than the new measurement by \cite{Yamada2012}. In the case of
+  \cite{Hayashino2004} is  $0.37$ arcmin$^{-2}$, which is $30\%$
+  higher than the new measurement by \cite{Yamada2012}. In the case of
   \cite{Ouchi2008} the number density is $0.10$ arcmin$^{-2}$, which
-  is $\sim 50\%$ higher than the value inferred by \cite{Yamada2012}
+  is $\sim 50\%$ lower than the value inferred by \cite{Yamada2012}
   for a portion of the same region.} 
 
 
@@ -305,42 +318,31 @@ observational conditions or criteria to construct the catalogs.
 {\bf The field SSA22 has been known to harbor a significant
   galaxy overdensity. \cite{Yamada2012} estimates that the densest
   subfield is likely to be a rare density peak with $3-4\sigma$
-  significance on the scale of $\sim 60$\hMpc.}
+  significance on the scale of $\sim 60$\hMpc. }
 
-{\bf Excluding that high density sub-field in SSA22, all the fields
-  are average with a similar number density as the blank fields
-  rare. The left panel in Figure \ref{fig:halos} shows the integrated distribution of LAEs number density in all the fields reported in
-  \cite{Yamada2012}. It is evident that there is only one sub-field that
-  stands out as an outlier in the distribution (it corresponds to the
-  densest field in SSA22). All the other fields form a continous
-  distribution in number density.}  
-
+{\bf All the other sub-fields in SSA22 are average. They have a similar
+  number density as other blank fields. The left panel in Figure
+  \ref{fig:halos} shows the integrated distribution of LAEs number
+  density in all the fields reported in  \cite{Yamada2012}. It is
+  evident that there is only one sub-field  that stands out as an
+  outlier in the distribution (it corresponds to  the densest field in
+  SSA22). All the other fields form a continous  distribution in
+  number density.}   
 
 {\bf Therefore, using the whole SSA22 region as a benchmark in the
   number density distribution does not impose any bias. However, on
   has to  keep in mind that is not plausible that the full number
   density distribution from a simulation will include a very dense
-  field. The statistical test we perform to compare mock distributions against
-  observations does not require such a perfect match. 
+  field. We do not require the presence of such field to judge a mock
+  distribution as successful. The statistical test we perform to
+  compare mock distributions   against   observations does not require
+  such a perfect match.  
   
-We will not
-  require the presence of such field to judge a mock distribution as
-  successful. In terms of the ACF the results that include the densest
-  field in SSA22 \citep{Hayashino2004} are consistent, within the
-  uncertainties, with the results of other fields \citep{Ouchi2008}.} 
-
-{\bf Finally, two very different number densities in LBGs versus LAEs evidences
-  that the two populations have different biases. In a $\Lambda$ CDM
-  cosmology this implies that LAEs are, on average, hosted by halos
-  less massive than those hosting LBGs. The interpretation of how rare
-  is this subfield in terms of the number densities of dark matter
-  halos has to assume a defined model for galaxy formation;
-  i.e. defining the link between halo mass, star formation rate, \ly
-  luminosity and \ly escape fraction.} 
-
-{\bf The purpose of our work is to avoid any loose of generality by
-  assuming a defined halo-LAE connection and instead explore all the
-  possible halo populations to host LAEs.}
+  In terms of the ACF the results that include the densest
+  field in SSA22 \citep{Hayashino2004} are consistent, within 
+  uncertainties, with the results of other fields
+  \citep{Ouchi2008}. In spite of this consistency we will focus on the
+  results from \citep{Ouchi2008}.} 
 
 
 \subsection{Simulation and halo catalogs}
@@ -348,7 +350,7 @@ We will not
 The Bolshoi simulation \citep{Bolshoi} we use in this paper was
 performed in a cubic volume of 250 $h^{-1}$ Mpc on a side. The
 dark matter distribution is sampled using $2048^{3}$ particles, which
-translates into a particle mass of $m_{\rm   p}=1.35\times 10^{8}$
+translates into a particle mass of $m_{\rm p}=1.35\times 10^{8}$
 $h^{-1}$ M$_{\odot}$.  The cosmological parameters are consistent with
 a WMAP5 and WMAP7 data with a matter density $\Omega_{\rm m} = 0.27$,
 cosmological constant $\Omega_{\Lambda}=0.73$, dimensionless Hubble constant
@@ -383,11 +385,9 @@ explained in the next sub-section.
   shows $3$ mock fields corresponding to the SXDS region. The lower
   panels represent the SDF and GOODS-North fields. The same model has
   another 14 associated mock surveys build from different regions in
-  the simulation, but constructed following the same pattern in the
-  {\texttt{match}} method.}
+  the simulation, but constructed following the same pattern.}
 \end{center} 
 \end{figure*}
-
 
 
 We assume that a dark matter halo can only host one
@@ -396,11 +396,16 @@ decide whether a halo host a LAE: the lower and upper bounds for the
 mass range, $M_{\rm min}< M_{\rm h} < M_{\rm max}$, where LAEs reside and the fraction $f_{\rm occ}$ of such halos that host a detectable LAE. The reader
 must keep in mind that the physical interpretation of the occupation
 fraction $f_{\rm occ}$ convolves two phenomena: the actual presence of a star
-forming galaxy in a halo and its detectability as a LAE.  We do not
-perform a explicit modeling for LAE detectability. Our model does not
-assign a luminosity or escape fraction to each LAE.  We are only
-interested in constraining the halo mass range hosting detectable LAEs
-under the conditions defined by \cite{Yamada2012}.  
+forming galaxy in a halo and its detectability as a LAE.
+
+{\bf We recall that we do not perform a explicit modeling for LAE
+detectability. Our model does not assign a luminosity or escape
+fraction for each LAE. We are interested in constraining the halo
+mass range hosting detectable LAEs commonly used in photometric
+narrow-band surveys. We also want to explore a wide range of
+possible masses for the host halos without any strong theoretical
+prejudice regarding the details of star formation in high-redshift
+galaxies. }
 
 
 In what follows we note by the letter ${\mathcal M}$ a model
@@ -435,14 +440,13 @@ contiguous. In this \documentname we only report the results obtained
 by the {\texttt{match}} method and mention explicitly differences
 observed with the {\texttt{random}} selection. 
 
-
 Figure \ref{fig:distros} shows the spatial distribution for one mock
 survey constructed using the {\texttt{match}} method. Each field
 corresponds to one of the observational fields. The model parameters
-to build it are $M_{\rm min}=10^{10.4}$\hMsun, $M_{\rm
-  max}=10^{0.5}$\hMsun and $f_{\rm occ}=0.1$. It is only one out of
-the $15$ different mock surveys that are constructed for each
-model. We note that we use $15\times 12=180$ mock fields out of the
+to build the mock are $M_{\rm min}=10^{10.4}$\hMsun, $M_{\rm
+  max}=10^{0.5}$\hMsun and $f_{\rm occ}=0.1$. The figure shows only
+one out of the $15$ different mock surveys that are constructed for
+each model. We note that we only use $15\times 12=180$ mock fields out of the
 total of $210$ available sub-volumes. The reason is that the {\texttt{match}}
 method imposes constraints on the way the $7$ fields mimicking the
 SSA22 can be distributed. This restriction makes unable some of the
@@ -450,29 +454,7 @@ sub-volumes in the box. We decide to keep the number of mock surveys
 fixed to $15$ also for the {\texttt{random}} method in order to allow a
 fair comparison between the two methods.
 
-
-
-
 \subsection{Exploring and selecting good models}
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.45\linewidth,angle=0]{Fig1b.pdf}
-\includegraphics[width=0.45\linewidth,angle=0]{Fig1.pdf}
-\caption{ \label{fig:halos} Left panel. Distribution of LAE number
-  densities in all the fields observed by \citet{Yamada2012}. The
-  point with the highest surface density corresponds to the densest
-  sub-field in the SSA22 field. Right panel. Surface density of dark 
-  matter halos as a function of a minimum halo mass to count the
-  total number of elements in a volume. Each line represents one of the
-  $210$ volumes of dimensions $46\times 35\times 41$ $h^{-3}$ Mpc$^{3}$
-  in the Bolshoi simulation. The horizontal gray band represents the
-  range of surface densities observed for LAEs at $z=3.1$ as reported
-  by \citep{Yamada2012}.}
-\end{center} 
-\end{figure*}
-
 
 We make a thorough exploration of the parameter space for the models
 ${\mathcal M}$ where $\log_{10} M_{\rm min}$ takes $30$ values from $10.0$ up
@@ -481,42 +463,43 @@ takes values in the same range as $\log_{10}M_{\rm min}$ only with a
 displacement of $0.1$ dex in the whole range. The occupation fraction
 $f_{\rm occ}$ takes $10$ different values from $0.1$ to $1$ regularly
 spaced by $0.1$. In total the number of different models ${\mathcal
-  M}$ that are explored is $30 \times 30 \times 10 = 9000$. 
-
+  M}$ that are explored is $30 \times 30 \times 10 = 9000$.  
 
 The lower limit for the parameter $M_{\rm min}$ is set by the minimum
-occupation fraction we are able to consider. At $M_{\rm
-  min}=10^{10}$\hMsun the halo number density is already $\sim 10$
-times higher than the observational constraints for LAEs. This means
-that models in that mass range and an occupation fraction $f_{\rm
-  occ}=0.1$ have the possibility to be compatible with observations. Lower
-values for $M_{\rm min}$ require $f_{\rm occ}<0.1$, which are not
-considered in this \documentname. 
+occupation fraction we decide to consider. At $M_{\rm
+  min}=10^{10}$\hMsun the halo number density around that mass range
+is $\sim 10$ times higher than the observational constraints
+for LAEs. This means that models in that mass range and an occupation fraction $f_{\rm  occ}=0.1$ have the possibility to be compatible with
+observations. Lower values for $M_{\rm min}$ require $f_{\rm
+  occ}<0.1$, which are not considered in this \documentname.  {\bf In
+  turn exploring occupation fractions on the order of $f_{\rm occ}=0.01$ requires
+  only makes sense for halo populations in the mass range of
+  $10^{9}$\hMsun which are abundant enough to fit observations with a
+  low occupation fraction. In our case that mass range is not resolved
+  by the Bolshoi simulation an are not considered here.}
+
 
 For each mock survey generated in a given model ${\mathcal M}$ we
-compute the surface density in the $12$ mock fields. We perform a
-Kolmogorov-Smirnov (KS) to compare this mock data against the $12$
-observational values. From this test we obtain a value $0<P<1$ to
+compute the surface density in its $12$ mock fields. We perform a
+Kolmogorov-Smirnov (KS) to compare these values against the $12$
+observational values. This tests gives us a value $0<P<1$ to
 reject the null hypothesis, namely that two data sets come from the
 same distribution. In this paper we consider that for values $P>0.05$
 the two distributions can be thought as coming from the same
 distribution.
 
-We begin by considering that  a model ${\mathcal M}$ that has at least
-one mock survey (out of 15) consistent with the observed
-distribution of LAE number densities has viable parameters that
-deserve to be considered for further analysis. Later on we impose
-harder constraints to reduce the number of models by asking that all
-the 15 mocks to be consistent with observations.
-
-The second constraint  comes from the angular correlation function (ACF)
-for all the models having the $15$ mock surveys consistent with
-observations . 
+We begin by considering that  a model ${\mathcal M}$ with at least one
+mock survey (out of 15) consistent with observations has viable
+parameters to host LAEs. From that we consider a stronger constraints
+to reduce the number of models by asking that all the 15 mocks to be
+consistent with observations and analyze again the properties of the
+resulting models. Finally we add the ACF as an additional constraint
+and consider all the models having their $15$ mocks consistent with
+observations. 
 
 {\bf The ACF is computed using  the Landy \&  Szalay estimator
-  \citep{Landy1993}  on two different  fields in the mock survey. The
-  first field is the densest to be compared against the results of
-  \cite{Hayashino2004}. The second field has an average number density and is compared against \cite{Ouchi2010}.}
+  \citep{Landy1993}  on fields of size $1$ deg$^2$ to be compared
+  against the results reported by \cite{Ouchi2010}.}
 
 The observed and mock ACF are fit to a power-law function:
 \begin{equation}
@@ -524,17 +507,11 @@ The observed and mock ACF are fit to a power-law function:
 \label{eq:fitting}
 \end{equation}
 where $\theta_0$ and $\beta$ are free parameters. The fit is done
-using a least square minimization procedure. For each mock field we obtain a
-covariance matrix that gives us the uncertainty in the parameters $\beta$ and
-$\theta_0$. Using the $15$ mock fields in a mock survey, we compute a
-mean value for the parameters and its associated uncertainty as the
-quadratic average of the uncertainties in the fitting procedure. We
-consider that a model is consistent with observations if the two
-parameters $\beta$ and $\theta_0$ are equal within a $1$-$\sigma$
-range.   
-
-
-
+using a least square minimization procedure. For each mock field we
+obtain a covariance matrix that gives us the uncertainty in the
+parameters $\beta$ and $\theta_0$. {\bf We consider that a mock field is
+consistent with observations if the two parameters $\beta$ and
+$\theta_0$ are equal within a $1$-$\sigma$ range.}
  
 \section{Results}
 \label{sec:results}
@@ -1081,247 +1058,6 @@ NASA's Pleiades supercomputer at the NASA Ames Research Center.
 
 
 \bibliographystyle{mn2e}
-\begin{thebibliography}{}
-
-\bibitem[\protect\citeauthoryear{{Behroozi}, {Wechsler} \& {Conroy}}{{Behroozi}
-  et~al.}{2013a}]{Behroozi2013b}
-{Behroozi} P.~S.,  {Wechsler} R.~H.,    {Conroy} C.,  2013a, \apjl, 762, L31
-
-\bibitem[\protect\citeauthoryear{{Behroozi}, {Wechsler} \& {Conroy}}{{Behroozi}
-  et~al.}{2013b}]{Behroozi2013a}
-{Behroozi} P.~S.,  {Wechsler} R.~H.,    {Conroy} C.,  2013b, \apj, 770, 57
-
-\bibitem[\protect\citeauthoryear{{Colberg}, {White}, {Yoshida}, {MacFarland},
-  {Jenkins}, {Frenk}, {Pearce}, {Evrard}, {Couchman}, {Efstathiou}, {Peacock},
-  {Thomas} \& {Virgo Consortium}}{{Colberg} et~al.}{2000}]{Colberg00}
-{Colberg} J.~M.,  {White} S.~D.~M.,  {Yoshida} N.,  {MacFarland} T.~J.,
-  {Jenkins} A.,  {Frenk} C.~S.,  {Pearce} F.~R.,  {Evrard} A.~E.,  {Couchman}
-  H.~M.~P.,  {Efstathiou} G.,  {Peacock} J.~A.,  {Thomas} P.~A.,    {Virgo
-  Consortium} 2000, \mnras, 319, 209
-
-\bibitem[\protect\citeauthoryear{{Dayal}, {Ferrara}, {Saro}, {Salvaterra},
-  {Borgani} \& {Tornatore}}{{Dayal} et~al.}{2009}]{Dayal2009}
-{Dayal} P.,  {Ferrara} A.,  {Saro} A.,  {Salvaterra} R.,  {Borgani} S.,
-  {Tornatore} L.,  2009, \mnras, 400, 2000
-
-\bibitem[\protect\citeauthoryear{{Dijkstra} \& {Jeeson-Daniel}}{{Dijkstra} \&
-  {Jeeson-Daniel}}{2013}]{Dijkstra2013}
-{Dijkstra} M.,  {Jeeson-Daniel} A.,  2013, ArXiv e-prints
-
-\bibitem[\protect\citeauthoryear{{Dijkstra} \& {Kramer}}{{Dijkstra} \&
-  {Kramer}}{2012}]{Dijkstra2012}
-{Dijkstra} M.,  {Kramer} R.,  2012, \mnras, 424, 1672
-
-\bibitem[\protect\citeauthoryear{{Dijkstra}, {Mesinger} \& {Wyithe}}{{Dijkstra}
-  et~al.}{2011}]{Dijkstra11}
-{Dijkstra} M.,  {Mesinger} A.,    {Wyithe} J.~S.~B.,  2011, \mnras, 414, 2139
-
-\bibitem[\protect\citeauthoryear{{Forero-Romero} \& {Dijkstra}}{{Forero-Romero}
-  \& {Dijkstra}}{2013}]{ForeroRomero2013}
-{Forero-Romero} J.~E.,  {Dijkstra} M.,  2013, \mnras, 428, 2163
-
-\bibitem[\protect\citeauthoryear{{Forero-Romero}, {Yepes}, {Gottl{\"o}ber},
-  {Knollmann}, {Cuesta} \& {Prada}}{{Forero-Romero}
-  et~al.}{2011}]{ForeroRomero2011}
-{Forero-Romero} J.~E.,  {Yepes} G.,  {Gottl{\"o}ber} S.,  {Knollmann} S.~R.,
-  {Cuesta} A.~J.,    {Prada} F.,  2011, \mnras, 415, 3666
-
-\bibitem[\protect\citeauthoryear{{Forero-Romero}, {Yepes}, {Gottl{\"o}ber} \&
-  {Prada}}{{Forero-Romero} et~al.}{2012}]{ForeroRomero2012}
-{Forero-Romero} J.~E.,  {Yepes} G.,  {Gottl{\"o}ber} S.,    {Prada} F.,  2012,
-  \mnras, 419, 952
-
-\bibitem[\protect\citeauthoryear{{Garel}, {Blaizot}, {Guiderdoni}, {Schaerer},
-  {Verhamme} \& {Hayes}}{{Garel} et~al.}{2012}]{Garel2012}
-{Garel} T.,  {Blaizot} J.,  {Guiderdoni} B.,  {Schaerer} D.,  {Verhamme} A.,
-  {Hayes} M.,  2012, \mnras, 422, 310
-
-\bibitem[\protect\citeauthoryear{{Gawiser}, {Francke}, {Lai}, {Schawinski},
-  {Gronwall}, {Ciardullo}, {Quadri}, {Orsi}, {Barrientos}, {Blanc}, {Fazio} \&
-  {Feldmeier}}{{Gawiser} et~al.}{2007}]{Gawiser2007}
-{Gawiser} E.,  {Francke} H.,  {Lai} K.,  {Schawinski} K.,  {Gronwall} C.,
-  {Ciardullo} R.,  {Quadri} R.,  {Orsi} A.,  {Barrientos} L.~F.,  {Blanc}
-  G.~A.,  {Fazio} G.,    {Feldmeier} J.~J.,  2007, \apj, 671, 278
-
-\bibitem[\protect\citeauthoryear{{Gawiser}, {Francke}, {Lai}, {Schawinski},
-  {Gronwall}, {Ciardullo}, {Quadri}, {Orsi}, {Barrientos}, {Blanc}, {Fazio},
-  {Feldmeier}, {Huang}, {Infante}, {Lira} \& {Padilla}}{{Gawiser}
-  et~al.}{2007}]{Gawiser07}
-{Gawiser} E.,  {Francke} H.,  {Lai} K.,  {Schawinski} K.,  {Gronwall} C.,
-  {Ciardullo} R.,  {Quadri} R.,  {Orsi} A.,  {Barrientos} L.~F.,  {Blanc}
-  G.~A.,  {Fazio} G.,  {Feldmeier} J.~J.,  {Huang} J.-s.,  {Infante} L.,
-  {Lira} P.,    {Padilla} N.,  2007, \apj, 671, 278
-
-\bibitem[\protect\citeauthoryear{{Guaita}, {Francke}, {Gawiser}, {Bauer},
-  {Hayes}, {{\"O}stlin} \& {Padilla}}{{Guaita} et~al.}{2013}]{Guaita2013}
-{Guaita} L.,  {Francke} H.,  {Gawiser} E.,  {Bauer} F.~E.,  {Hayes} M.,
-  {{\"O}stlin} G.,    {Padilla} N.,  2013, \aap, 551, A93
-
-\bibitem[\protect\citeauthoryear{{Hayashino}, {Matsuda}, {Tamura}, {Yamauchi},
-  {Yamada}, {Ajiki}, {Fujita}, {Murayama}, {Nagao}, {Ohta}, {Okamura}, {Ouchi},
-  {Shimasaku}, {Shioya} \& {Taniguchi}}{{Hayashino}
-  et~al.}{2004}]{Hayashino2004}
-{Hayashino} T.,  {Matsuda} Y.,  {Tamura} H.,  {Yamauchi} R.,  {Yamada} T.,
-  {Ajiki} M.,  {Fujita} S.~S.,  {Murayama} T.,  {Nagao} T.,  {Ohta} K.,
-  {Okamura} S.,  {Ouchi} M.,  {Shimasaku} K.,  {Shioya} Y.,    {Taniguchi} Y.,
-  2004, \aj, 128, 2073
-
-\bibitem[\protect\citeauthoryear{{Hayes}, {{\"O}stlin}, {Schaerer},
-  {Mas-Hesse}, {Leitherer}, {Atek}, {Kunth}, {Verhamme}, {de Barros} \&
-  {Melinder}}{{Hayes} et~al.}{2010}]{Hayes2010}
-{Hayes} M.,  {{\"O}stlin} G.,  {Schaerer} D.,  {Mas-Hesse} J.~M.,  {Leitherer}
-  C.,  {Atek} H.,  {Kunth} D.,  {Verhamme} A.,  {de Barros} S.,    {Melinder}
-  J.,  2010, \nat, 464, 562
-
-\bibitem[\protect\citeauthoryear{{Jarosik}, {Bennett}, {Dunkley}, {Gold},
-  {Greason}, {Halpern}, {Hill}, {Hinshaw}, {Kogut}, {Komatsu}, {Larson} \&
-  {Limon}}{{Jarosik} et~al.}{2011}]{Jarosik2011}
-{Jarosik} N.,  {Bennett} C.~L.,  {Dunkley} J.,  {Gold} B.,  {Greason} M.~R.,
-  {Halpern} M.,  {Hill} R.~S.,  {Hinshaw} G.,  {Kogut} A.,  {Komatsu} E.,
-  {Larson} D.,    {Limon} M.,  2011, \apjs, 192, 14
-
-\bibitem[\protect\citeauthoryear{{Jose}, {Srianand} \& {Subramanian}}{{Jose}
-  et~al.}{2013}]{Jose2013b}
-{Jose} C.,  {Srianand} R.,    {Subramanian} K.,  2013, ArXiv e-prints
-
-\bibitem[\protect\citeauthoryear{{Klypin}, {Trujillo-Gomez} \&
-  {Primack}}{{Klypin} et~al.}{2011}]{Bolshoi}
-{Klypin} A.~A.,  {Trujillo-Gomez} S.,    {Primack} J.,  2011, \apj, 740, 102
-
-\bibitem[\protect\citeauthoryear{{Koehler}, {Schuecker} \&
-  {Gebhardt}}{{Koehler} et~al.}{2007}]{Koehler2007}
-{Koehler} R.~S.,  {Schuecker} P.,    {Gebhardt} K.,  2007, \aap, 462, 7
-
-\bibitem[\protect\citeauthoryear{{Komatsu}, {Dunkley}, {Nolta}, {Bennett},
-  {Gold}, {Hinshaw}, {Jarosik}, {Larson}, {Limon}, {Page}, {Spergel} \&
-  {Halpern}}{{Komatsu} et~al.}{2009}]{Komatsu2009}
-{Komatsu} E.,  {Dunkley} J.,  {Nolta} M.~R.,  {Bennett} C.~L.,  {Gold} B.,
-  {Hinshaw} G.,  {Jarosik} N.,  {Larson} D.,  {Limon} M.,  {Page} L.,
-  {Spergel} D.~N.,    {Halpern} M.,  2009, \apjs, 180, 330
-
-\bibitem[\protect\citeauthoryear{{Kudritzki}, {M{\'e}ndez}, {Feldmeier},
-  {Ciardullo}, {Jacoby}, {Freeman}, {Arnaboldi}, {Capaccioli}, {Gerhard} \&
-  {Ford}}{{Kudritzki} et~al.}{2000}]{Kudritzki2000}
-{Kudritzki} R.-P.,  {M{\'e}ndez} R.~H.,  {Feldmeier} J.~J.,  {Ciardullo} R.,
-  {Jacoby} G.~H.,  {Freeman} K.~C.,  {Arnaboldi} M.,  {Capaccioli} M.,
-  {Gerhard} O.,    {Ford} H.~C.,  2000, \apj, 536, 19
-
-\bibitem[\protect\citeauthoryear{{Landy} \& {Szalay}}{{Landy} \&
-  {Szalay}}{1993}]{Landy1993}
-{Landy} S.~D.,  {Szalay} A.~S.,  1993, \apj, 412, 64
-
-\bibitem[\protect\citeauthoryear{{Laursen}, {Duval} \& {{\"O}stlin}}{{Laursen}
-  et~al.}{2013}]{Laursen2013}
-{Laursen} P.,  {Duval} F.,    {{\"O}stlin} G.,  2013, \apj, 766, 124
-
-\bibitem[\protect\citeauthoryear{{Laursen}, {Razoumov} \&
-  {Sommer-Larsen}}{{Laursen} et~al.}{2009}]{Laursen2009}
-{Laursen} P.,  {Razoumov} A.~O.,    {Sommer-Larsen} J.,  2009, \apj, 696, 853
-
-\bibitem[\protect\citeauthoryear{{Laursen} \& {Sommer-Larsen}}{{Laursen} \&
-  {Sommer-Larsen}}{2007}]{Laursen2007}
-{Laursen} P.,  {Sommer-Larsen} J.,  2007, \apjl, 657, L69
-
-\bibitem[\protect\citeauthoryear{{Matsuda}, {Yamada}, {Hayashino}, {Tamura},
-  {Yamauchi}, {Murayama}, {Nagao}, {Ohta}, {Okamura}, {Ouchi}, {Shimasaku},
-  {Shioya} \& {Taniguchi}}{{Matsuda} et~al.}{2005}]{Matsuda2005}
-{Matsuda} Y.,  {Yamada} T.,  {Hayashino} T.,  {Tamura} H.,  {Yamauchi} R.,
-  {Murayama} T.,  {Nagao} T.,  {Ohta} K.,  {Okamura} S.,  {Ouchi} M.,
-  {Shimasaku} K.,  {Shioya} Y.,    {Taniguchi} Y.,  2005, \apjl, 634, L125
-
-\bibitem[\protect\citeauthoryear{{Neufeld}}{{Neufeld}}{1991}]{Neufeld1991}
-{Neufeld} D.~A.,  1991, \apjl, 370, L85
-
-\bibitem[\protect\citeauthoryear{{Nilsson}, {M{\o}ller}, {M{\"o}ller}, {Fynbo},
-  {Micha{\l}owski}, {Watson}, {Ledoux}, {Rosati}, {Pedersen} \&
-  {Grove}}{{Nilsson} et~al.}{2007}]{Nilsson2007}
-{Nilsson} K.~K.,  {M{\o}ller} P.,  {M{\"o}ller} O.,  {Fynbo} J.~P.~U.,
-  {Micha{\l}owski} M.~J.,  {Watson} D.,  {Ledoux} C.,  {Rosati} P.,  {Pedersen}
-  K.,    {Grove} L.~F.,  2007, \aap, 471, 71
-
-\bibitem[\protect\citeauthoryear{{Nilsson}, {Tapken}, {M{\o}ller}, {Freudling},
-  {Fynbo}, {Meisenheimer}, {Laursen} \& {{\"O}stlin}}{{Nilsson}
-  et~al.}{2009}]{Nilsson2009}
-{Nilsson} K.~K.,  {Tapken} C.,  {M{\o}ller} P.,  {Freudling} W.,  {Fynbo}
-  J.~P.~U.,  {Meisenheimer} K.,  {Laursen} P.,    {{\"O}stlin} G.,  2009, \aap,
-  498, 13
-
-\bibitem[\protect\citeauthoryear{{Orsi}, {Lacey} \& {Baugh}}{{Orsi}
-  et~al.}{2012}]{Orsi2012}
-{Orsi} A.,  {Lacey} C.~G.,    {Baugh} C.~M.,  2012, \mnras, 425, 87
-
-\bibitem[\protect\citeauthoryear{{Ouchi}, {Shimasaku}, {Akiyama}, {Simpson},
-  {Saito}, {Ueda}, {Furusawa}, {Sekiguchi}, {Yamada}, {Kodama}, {Kashikawa},
-  {Okamura}, {Iye}, {Takata}, {Yoshida} \& {Yoshida}}{{Ouchi}
-  et~al.}{2008}]{Ouchi2008}
-{Ouchi} M.,  {Shimasaku} K.,  {Akiyama} M.,  {Simpson} C.,  {Saito} T.,  {Ueda}
-  Y.,  {Furusawa} H.,  {Sekiguchi} K.,  {Yamada} T.,  {Kodama} T.,  {Kashikawa}
-  N.,  {Okamura} S.,  {Iye} M.,  {Takata} T.,  {Yoshida} M.,    {Yoshida} M.,
-  2008, \apjs, 176, 301
-
-\bibitem[\protect\citeauthoryear{{Ouchi}, {Shimasaku}, {Furusawa}, {Saito},
-  {Yoshida}, {Akiyama}, {Ono}, {Yamada}, {Ota}, {Kashikawa}, {Iye}, {Kodama},
-  {Okamura}, {Simpson} \& {Yoshida}}{{Ouchi} et~al.}{2010}]{Ouchi2010}
-{Ouchi} M.,  {Shimasaku} K.,  {Furusawa} H.,  {Saito} T.,  {Yoshida} M.,
-  {Akiyama} M.,  {Ono} Y.,  {Yamada} T.,  {Ota} K.,  {Kashikawa} N.,  {Iye} M.,
-   {Kodama} T.,  {Okamura} S.,  {Simpson} C.,    {Yoshida} M.,  2010, \apj,
-  723, 869
-
-\bibitem[\protect\citeauthoryear{{Peebles}}{{Peebles}}{1980}]{Peebles1980}
-{Peebles} P.~J.~E.,  1980, {The large-scale structure of the universe}
-
-\bibitem[\protect\citeauthoryear{{Pentericci}, {Grazian}, {Fontana},
-  {Castellano}, {Giallongo}, {Salimbeni} \& {Santini}}{{Pentericci}
-  et~al.}{2009}]{Pentericci2009}
-{Pentericci} L.,  {Grazian} A.,  {Fontana} A.,  {Castellano} M.,  {Giallongo}
-  E.,  {Salimbeni} S.,    {Santini} P.,  2009, \aap, 494, 553
-
-\bibitem[\protect\citeauthoryear{P\'erez \& Granger}{P\'erez \&
-  Granger}{2007}]{IPython}
-P\'erez F.,  Granger B.~E.,  2007, {C}omput. {S}ci. {E}ng., 9, 21
-
-\bibitem[\protect\citeauthoryear{Riebe, Partl, Enke, Forero-Romero, Gottlöber,
-  Klypin, Lemson, Prada, Primack, Steinmetz \& Turchaninov}{Riebe
-  et~al.}{2013}]{MultiDark}
-Riebe K.,  Partl A.~M.,  Enke H.,  Forero-Romero J.,  Gottlöber S.,  Klypin
-  A.,  Lemson G.,  Prada F.,  Primack J.~R.,  Steinmetz M.,    Turchaninov V.,
-  2013, Astronomische Nachrichten, 334, 691
-
-\bibitem[\protect\citeauthoryear{{Springel}, {White}, {Jenkins}, {Frenk},
-  {Yoshida}, {Gao}, {Navarro}, {Thacker}, {Croton}, {Helly}, {Peacock}, {Cole},
-  {Thomas}, {Couchman}, {Evrard}, {Colberg} \& {Pearce}}{{Springel}
-  et~al.}{2005}]{SpringelNature05}
-{Springel} V.,  {White} S.~D.~M.,  {Jenkins} A.,  {Frenk} C.~S.,  {Yoshida} N.,
-   {Gao} L.,  {Navarro} J.,  {Thacker} R.,  {Croton} D.,  {Helly} J.,
-  {Peacock} J.~A.,  {Cole} S.,  {Thomas} P.,  {Couchman} H.,  {Evrard} A.,
-  {Colberg} J.,    {Pearce} F.,  2005, \nat, 435, 629
-
-\bibitem[\protect\citeauthoryear{{Verhamme}, {Schaerer} \&
-  {Maselli}}{{Verhamme} et~al.}{2006}]{Verhamme2006}
-{Verhamme} A.,  {Schaerer} D.,    {Maselli} A.,  2006, \aap, 460, 397
-
-\bibitem[\protect\citeauthoryear{{Walker-Soler}, {Gawiser}, {Bond}, {Padilla}
-  \& {Francke}}{{Walker-Soler} et~al.}{2012}]{Soler2012}
-{Walker-Soler} J.~P.,  {Gawiser} E.,  {Bond} N.~A.,  {Padilla} N.,    {Francke}
-  H.,  2012, \apj, 752, 160
-
-\bibitem[\protect\citeauthoryear{{Yajima}, {Choi} \& {Nagamine}}{{Yajima}
-  et~al.}{2012}]{Yajima2012}
-{Yajima} H.,  {Choi} J.-H.,    {Nagamine} K.,  2012, \mnras, 427, 2889
-
-\bibitem[\protect\citeauthoryear{{Yamada}, {Nakamura}, {Matsuda}, {Hayashino},
-  {Yamauchi}, {Morimoto}, {Kousai} \& {Umemura}}{{Yamada}
-  et~al.}{2012}]{Yamada2012}
-{Yamada} T.,  {Nakamura} Y.,  {Matsuda} Y.,  {Hayashino} T.,  {Yamauchi} R.,
-  {Morimoto} N.,  {Kousai} K.,    {Umemura} M.,  2012, \aj, 143, 79
-
-\bibitem[\protect\citeauthoryear{{Zheng}, {Cen}, {Trac} \&
-  {Miralda-Escud{\'e}}}{{Zheng} et~al.}{2010}]{Zheng2010}
-{Zheng} Z.,  {Cen} R.,  {Trac} H.,    {Miralda-Escud{\'e}} J.,  2010, \apj,
-  716, 574
-
-\end{thebibliography}
-
-%\bibliography{references} 
+\bibliography{references} 
 
 \end{document}
