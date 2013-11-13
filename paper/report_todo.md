@@ -10,7 +10,7 @@ Major points
   analysis of number density and ACF for smaller surveys e.g.,
   Ouchi's. 
 
-  - [ ] Check where are the number densities for the other surveys
+  - [x] Check where are the number densities for the other surveys
       	with respect to Yamadas's  
   - [x] Mail Yamada to see whether we can have access to their results for
     	the correlation function. 
@@ -31,13 +31,13 @@ Major points
    important to be clear about how similar the papers are and how the
    current one hopes to improve on the previous one. 
 
-   - [ ] Clarify this point.
+   - [X] Clarify this point.
 
 * Comparing the most heavily clustered of 15 mocks against SSA22 is
   unfair. SSA22 is a ~5 sigma overdensity, which is much rarer than
   1/15. 
   
-  - [ ] Clarify this point. It is a ~6 times more dense than the
+  - [x] Clarify this point. It is a ~6 times more dense than the
   average field *as measured for LBG galaxies*. It is only ~4 times
   more dense if we measure it in LAEs. We don't know the
   correspondence for dark matter haloes. That's why we make a blind
