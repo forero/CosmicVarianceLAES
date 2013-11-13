@@ -148,9 +148,9 @@ escape each galaxy and compute the observed luminosity for each
 galaxy. These models can predict different observables including: the
 luminosity function, correlation function and the equivalent width
 distributions. Such modelling has been implemented in semi-analytic
-models \citep{Garel2012,   Orsi2012, Solre2012} and  full N-body
+models \citep{Garel2012,Orsi2012, Solre2012} and  full N-body
 hydrodynamical simulations \citep{Laursen2007, Dayal2009,
-  ForeroRomero2011, Yajima2012}.     
+  ForeroRomero2011, Yajima2012}. 
 
 However, there are many uncertain steps in these calculations. The
 usual ones are the astrophysical processes describing star formation in galactic
@@ -164,57 +164,49 @@ complex radiative transfer of \ly photons in the ISM requires Monte
 Carlo simulations to be solved. Until now it has been dificult to
 achieve a consensus on the expected value for the \ly escape fraction
 in high redshift galaxies
-\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.  
+\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}. 
 
-Another approach to infer the typical DM halo mass of halos hosting
-LAEs is based on the clustering information. This uses the fact that in cold
-dark matter cosmologies the spatial clustering of galaxies on large
+A different approach to infer the typical mass of halos hosting
+LAEs is based on clustering information. This method uses the fact
+that in CDM cosmologies the spatial clustering of galaxies on large
 scales is entirely dictated by the halo distribution
-\citep{Colberg00}, which in turn has a strong dependence on halo
+\citep{Colberg00}, which in turn has a strong dependence on halo 
 mass. Using measurements of the angular correlation function of LAEs,
 observers have put constraints on the typical mass and occupation
 fraction of the putative halos hosting these galaxies
-\citep{Hayashino2004,Gawiser07,Nilsson2007,Ouchi2010}. In this
-studies the observations were done on single fields of $\sim 1$
-deg$^{2}$ and the conclusions derived on the halo host mass from
-clustering information do not delve to deeply into the impact of
-cosmic variance.  
+\citep{Hayashino2004,Gawiser07,Nilsson2007,Ouchi2010}. In these
+studies the observations are done on fields of $\sim 1$ deg$^{2}$ and
+the conclusions derived on the halo host mass do not delve too deeply
+into the possible impact of cosmic variance. 
 
-{\bf \cite{Soler2012} has derived the median mass of $z=0$ the $z=3.1$ LAE 
-descendat.  In order to construct their  LAE mock catalogs 
-they impose their model to reproduced, whitin the observational errors,
- the number density  as well as  the minimal and median mass reported 
- by \cite{Gawiser07} that has been derived from observations
- over one single field. }
-
-Recently \cite{Yamada2012} observed a wide area a bit more than ten
-times the sky area covered so far by individual campaigns. The
-observations were done with the same instrument and same criteria to
-reduce the observational data and produce LAE catalogs. This large
-data-set allows us to make the first study on the expected cosmic
-variance effects in LAEs at $z=3.1$ and its impact on the
-determination of the halo mass and occupation fraction. 
+Recently \cite{Yamada2012} observed a wide area of $2.4$ deg$^{2}$
+under homogeneous instrumental and data reduction conditions. This data
+set is constructed from 12 different sub-fields. This large and
+homogeneous data-set allows us to use clustering statistics and cosmic
+variance to constraint the mass and occupation fraction of halos hosting
+LAEs. 
 
 
-In this \documentname we implement a method to populate the DM halos
-in cosmological simulations with LAEs that bypasses all the
-uncertainty involved in the estimation of star formation rates and \ly escape
-fraction. The model only considers whether a DM can host a
-detectable LAE or not without predicting a \ly  luminosity. Once the
-mock catalogs are constructed  we proceed with a direct comparison
-against the statistics on the number density distribution derived from
- the observations over the 12 fields of \cite{Yamada2012}. This allows us 
-to find the preferred mass range of DM halos hosting these galaxies
-and its occupation fraction.
+Our method first populates DM halos in cosmological simulations with
+LAEs. We only consider whether a DM can host a detectable LAE or not
+without predicting a \ly  luminosity. This is constructed to bypass
+all the physical uncertainties involved in the estimation of observed
+\ly luminosities.  Once we have the mock LAE catalogs, we compare them
+against the statistics on the number density distribution derived from the
+observations over the 12 fields of \cite{Yamada2012}. Additionally, we
+use measurements of the angular correlation function to improve these
+constraints. This method allows us to find the preferred mass range of
+DM halos hosting these galaxies and its occupation fraction. 
 
 
 This \documentname is structured as follows. In the next section we present
-the simulation and model used to produce the mock catalogs and the criteria
-we use to compare them against observations. In \S \ref{sec:results} we
-present the main results for the halo mass and occupation fraction. We
-continue with a discussion of these results under the light of other
-observational and theoretical results. Finally, we present our
-conclusions in \S \ref{sec:conclusions}. 
+the simulation and the model used to produce the mock catalogs. We
+also list the criteria used to compare the mocks against
+observations. In \S \ref{sec:results} we present the main results for
+the halo mass and occupation fraction. We continue with a discussion
+of these results under the light of other observational and
+theoretical results. Finally, we present our conclusions in \S
+\ref{sec:conclusions}.  
 
 Throughout this \documentname we assume a $\Lambda$CDM cosmology with the
 following values for the cosmological parameters, $\Omega_{m}=0.27$,
