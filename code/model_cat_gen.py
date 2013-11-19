@@ -4,12 +4,12 @@
 import numpy as np
 import pylab as P
 
-field="large"
+field="degree"
 survey_type="match"
 theta_max=1040
 theta_min=0
 theta_bins=13
-pro_path="/home/jemejia/CosmicVarianceLAES/"
+pro_path="/casiopea/jemejia/CosmicVarianceLAES/"
 box_length=250.0
 x_width=46.0
 y_width=35.0
@@ -36,7 +36,7 @@ model_info=np.loadtxt(models_file)
 m_min_m=model_info[:,0] #_m refers to model
 m_max_m=model_info[:,1]
 f_occ_m=model_info[:,2]
-ID_file=pro_path + "data/mock_survey/" + "ID_" + survey_type + "_surveys.dat"
+ID_file=pro_path + "data/mock_survey/" + "ID_" + survey_type + "_square_surveys.dat"
 p_values_file= pro_path + "data/mock_survey/" + "p_values_FOF_ID_" + survey_type + "_surveys.dat"
 
 
@@ -103,8 +103,8 @@ for w in range( n_models ):
     #n_mocks=1 #to delete
     for j in range( n_mocks ): 
         
-        ID_ini=j*obs_surveys
-        ID_end=int(ID_ini+obs_surveys)
+        ID_ini=j*4
+        ID_end=int(ID_ini+4)
         m_min=m_min_s[-1]
         m_max=m_max_s[-1]
         f_occ=f_occ_s[-1]
@@ -125,7 +125,7 @@ for w in range( n_models ):
         
     
         if(field=="large"):
-            i_range=7
+            i_range=4
             print "large field"
             
         else:
@@ -178,7 +178,7 @@ for w in range( n_models ):
             
             
         
-        model_catalog_filename=pro_path +  "data/laes/mock_cat/model_"+str(w)+"_mock_"+str(j)+".txt"
+        model_catalog_filename=pro_path +  "data/laes/mock_cat/degree2_"+str(w)+"_mock_"+str(j)+".txt"
     
 
 
@@ -191,7 +191,7 @@ for w in range( n_models ):
         np.savetxt(model_catalog_filename,lae_cat)
         
         
-        
+        """
         
 
         max_density_index=np.argmax(n_laes)
@@ -244,3 +244,4 @@ for w in range( n_models ):
         
         
         np.savetxt(model_catalog_filename,lae_mean)
+        """

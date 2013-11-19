@@ -10,9 +10,10 @@ int DD_histogram(int N_cat,double X_cat[],double Y_cat[],double histogram_cat[])
   int i,j,w;
   double scale_cat=2.0/(1.0*N_cat*(N_cat-1));
   
-  
+  double ranges=[0.0,3.4,5.0,15.0,40.0,70.0,100.0,180.0,300.0,500.0,800.0]
   hist_theta_cat=gsl_histogram_alloc(THETA_PARTITIONS);
-  gsl_histogram_set_ranges_uniform(hist_theta_cat,THETA_MIN,THETA_MAX);
+  //gsl_histogram_set_ranges_uniform(hist_theta_cat,THETA_MIN,THETA_MAX);
+  gsl_histogram_set_ranges(hist_theta_cat,ranges,11);
   
   for(i=0;i<N_cat;i++)
     {
@@ -51,6 +52,7 @@ int RR_histogram(double histogram_rand[],int random_points,double X[],double Y[]
   
   int i,j,k,w,m;
   double scale_rand=2.0/(1.0*random_points*(random_points-1));
+  
   
   
   hist_theta_rand=gsl_histogram_alloc(THETA_PARTITIONS);

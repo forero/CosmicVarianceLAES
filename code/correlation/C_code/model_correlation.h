@@ -29,7 +29,7 @@
 #define N_CATS_DR 1
 #define THETA_MIN 0.0 //arcsec
 #define THETA_MAX 1040.0 //arcsec
-#define THETA_PARTITIONS 13
+#define THETA_PARTITIONS 12
 #define D_z 6558.3
 #define H 0.709
 #define PHO_M 3.7e10
