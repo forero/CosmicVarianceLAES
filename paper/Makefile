@@ -4,8 +4,8 @@ MAIN  = ms
 
 main: 	$(MAIN).tex  
 	$(LATEX) $(MAIN).tex 
-#	bibtex $(MAIN)
-#	$(LATEX) $(MAIN).tex 
+	bibtex $(MAIN)
+	$(LATEX) $(MAIN).tex 
 	$(LATEX) $(MAIN).tex 
 #	dvips $(MAIN).dvi -o $(MAIN).ps
 
