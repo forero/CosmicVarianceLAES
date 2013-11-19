@@ -516,53 +516,6 @@ $\theta_0$ are equal within a $1$-$\sigma$ range.}
 \section{Results}
 \label{sec:results}
 
-The main purpose of this section is to show how different
-observational constraints narrow down the parameters space of allowed
-models. Each sub-section presents the effect of adding new pieces of
-observational or statistical evidence. 
-
-
-\subsection{Dark Matter Halo Number Density}
-
-In Figure \ref{fig:halos} we present the results for  the
-integrated dark matter halo surface density as a function of the
-minimum halo mass $M_{\rm min}$. Each line corresponds to one of the
-210 sub-volumes in the Bolshoi simulation. The gray band indicates the
-surface density values for LAEs allowed by observations
-\citep{Yamada2012}. 
- 
-This result allows us to understand why only a specific range of
-models ${\mathcal M}$ can be expected to be consistent with
-observations. From Figure \ref{fig:halos} we can read that models with
-a minimum mass $M_{\rm min}>10^{11.5}$\hMsun will always have a
-surface number density lower than the observational constrain. This
-makes impossible that models in that range can be compatible with
-observations, there are simply to few halos compared to observed
-LAEs. The opposite is true in models with $M_{\rm
-  min}<10^{10.5}$\hMsun that have a surface number density larger
-observations. In those cases the occupation fraction $f_{\rm occ}<1.0$
-can be tuned in order to lower the halo number density to match
-observations.  
-
-
-Figure \ref{fig:halos} also illustrates the impact of cosmic
-variance. At fixed mass there is an scatter of $0.3-0.6$ dex in the
-number density abundance.  A consequence of this variation is that
-models with the same mass range and occupation fraction can have mock
-fields with number densities varying up to a factor of $\sim
-2-5$. This scatter is comparable to the $0.3$ dex scatter coming from 
-observations. In the same Figure \ref{fig:halos} we see that at fixed
-number density, around the range allowed by observations, there is an
-scatter in the masses of $0.4-0.5$ dex.  
-
-This scatter induced by cosmic variance is naturally included in the
-mock construction process. This will allows us to have a wider range
-of models compatible with observations, as compared with a model that
-neglects cosmic variance.
-
-
-\subsection{Models consistent with the surface density distributions}
-
 \begin{figure*}
 \begin{center}
 \includegraphics[width=0.46\linewidth,angle=0]{Fig2_match_P5.pdf}
@@ -573,44 +526,86 @@ neglects cosmic variance.
     occ}$ (right) planes for all models with  KS test values
   $P>0.05$. The color code corresponds to the number of mock surveys
   compatible with observations. Only regions of parameter  space with
-  at least one consistent mock survey are  included. \label{fig:landscape}}     
-\end{figure*}
+  at least one consistent mock survey are
+  included. \label{fig:landscape}}      
+\end{figure*} 
+
+The main purpose of this section is to show how different
+observational constraints narrow down the parameters space of allowed
+models. Each sub-section presents the effect of adding a new piece of 
+observational or statistical evidence. 
+
+
+\subsection{Dark Matter Halo Number Density}
+
+The right panel in Figure \ref{fig:halos} shows the  integrated dark matter halo surface
+density as a function of  minimum halo mass $M_{\rm min}$. Each line
+corresponds to one of the 210 sub-volumes in the Bolshoi
+simulation. The gray band indicates the surface density values for
+LAEs allowed by observations \citep{Yamada2012}. The dashed lines
+represent the average values in the fields observed by
+\citep{Hayashino2004,Ouchi08}. 
+ 
+This plot allows us to understand why only a specific range of
+models ${\mathcal M}$ can be expected to be consistent with
+observations. From Figure \ref{fig:halos} we can read that models with
+a minimum mass $M_{\rm min}>10^{12}$\hMsun always have a
+surface number density lower than the observational constrain, making
+them incompatible with observations; there are simply to few halos compared to observed
+LAEs. The opposite is true in models with $M_{\rm
+  min}<10^{11.0}$\hMsun that have a surface number density larger
+observations. In those cases the maximum mass $M_{\rm max}$ and the
+occupation fraction $f_{\rm occ}<1.0$  can be tuned in order to lower
+the halo number density to match observations.   
+
+
+Figure \ref{fig:halos} also illustrates the impact of cosmic
+variance. At fixed minimum mass there is an scatter of $0.3-0.6$ dex
+in the number density abundance, which is of the same order of
+magnitude as the scatter in the observational data.  As a consequence, the variation in
+the number density in mocks for models with the same mass range and occupation
+fraction can be by factors of $\sim 2-5$.  This scatter induced by
+cosmic variance is naturally included in the mock construction
+process. This variance will explain that very different models can be
+made compatible with observations. 
+
+
+\subsection{Models consistent with the surface density distributions}
 
 
 Figure \ref{fig:landscape} presents regions in parameter space $M_{\rm
-min}$-$M_{\rm max}$, $M_{\rm min}$-$f_{\rm occ}$ where the KS test yields
-values of $P>0.05$ at least for one mock survey, which is the most
-conservative assumption for agreement between a model and observations. For those models it
+min}$-$M_{\rm max}$, $M_{\rm min}$-$f_{\rm occ}$ where the KS test
+between the mocks and observations yields values of $P>0.05$ for at
+least one mock survey in each model. For those models it
 is not possible reject the hypothesis that the simulated and observed
 data for the surface number density come from the same parent
-distribution. In total, there are between $550$ to $600$ models out of
-the original $9000$ models that have at least one mock survey
-consistent with observations. By inspection of Figure
-\ref{fig:landscape} we see that the halo number abundance is able to
-constraint the minimum mass $M_{\rm min}$ to a narrow range, while
-$M_{\rm max}$ and $f_{\rm occ}$ remain largely unconstrained.
+distribution. 
+
+In total, there are between $550$ to $600$ models out of the original
+$9000$ models that have at least one mock survey consistent with
+observations. By inspection of Figure \ref{fig:landscape} we see that
+the halo number abundance is able to constraint the minimum mass
+$M_{\rm min}$ to a narrow range, while $M_{\rm max}$ and $f_{\rm occ}$
+remain largely unconstrained. 
 
 In Figure \ref{fig:landscape} there are three regions of parameter
 space that can be clearly distinguished. The first corresponds to
 models where the minimum mass is high $M_{\rm min}>
-10^{11.5}\hMsun$. None of these models is compatible with observations
-as expected from the arguments presented in the previous
-subsection. For these models the number density of LAEs is too low
-compared to observations.
+10^{11.5}\hMsun$.  For these models the number density of LAEs is too low
+to be compatible with observations. 
 
- 
 The second region corresponds to an intermediate range for the minimum
 mass $10^{10.5}\hMsun < M_{\rm min}< 10^{11.5}\hMsun$ where,
 regardless of the value of the maximum mass $M_{\rm max}$, it is
 possible to tune the occupation fraction $f_{\rm occ}$ to bring some
 of the mock surveys into good agreement with observations. In this
-region of parameter space one can find two extreme kinds of models.
-One kind where the mass interval $\Delta M\equiv \log_{10} M_{\rm max}
-- \log_{10}M_{\rm  min}$ is narrow with $\Delta M<1.0$ dex, others
-where the mass interval is  extended $\Delta M>1.0$ dex going up to
-the maximum halo mass present in the simulation at that redshift, with
-$\Delta M = 2.5$ dex in those cases.
- 
+region we find two extreme kinds of models. One extreme are models
+with a narrow mass interval $\Delta M\equiv \log_{10} M_{\rm max}
+- \log_{10}M_{\rm  min} <1.0$ dex. The other extreme are models with a
+large mass interval $\Delta M>1.0$ dex going up to the maximum halo
+mass present in the simulation at that redshift, with $\Delta M = 2.5$
+dex in some cases. 
+  
 The third region in parameter space corresponds to $M_{\rm
   min}<10^{10.5}\hMsun$. In this case only models with a very narrow
 mass interval of at most $0.5$ dex ($M_{\rm max}<10^{11.0}\hMsun$) and low
@@ -618,7 +613,7 @@ occupation fractions $f_{\rm occ}\leq 0.3$ are allowed.
 
 Without any additional information our method allows us to infer that
 most of the successful models are found in the second and third regions of
-parameter space. This result was already expected from halo
+parameter space. This result was expected from halo
 abundance calculations shown in Figure \ref{fig:halos} and discussed
 in the previous subsection. 
 
@@ -632,50 +627,19 @@ models in this region, imposing tighter constraints on the KS test
 results and exploring the mocks' consistency with the angular correlation
 function.  
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.95\linewidth,angle=0]{Fig4_match_P5.pdf}
-\end{center} 
-\caption{ Number of models with at least $N_{\rm high-P}$ mock surveys
-  consistent with the observed surface number density
-  distribution in terms of the KS-test values $P>0.05$. Only $\sim
-  100$ models have all their mocks consistent with observations. 
-  \label{fig:high_success_rate}.}  
-\end{figure}
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=0.95\linewidth,angle=0]{Fig4_match_P5.pdf}
+%\end{center} 
+%\caption{ Number of models with at least $N_{\rm high-P}$ mock surveys
+%  consistent with the observed surface number density
+%  distribution in terms of the KS-test values $P>0.05$. Only $\sim
+%  100$ models have all their mocks consistent with observations. 
+%  \label{fig:high_success_rate}.}  
+%\end{figure}
  
 \subsection{Models with the largest number of consistent mock surveys}
 
-In the previous sub-section we presented a conservative criterion of
-agreement by selecting the models that had at least one mock survey
-with $P>0.05$ in the KS test. Now we turn to a more strict selection
-by requiring all constructed mock surveys to be consistent with
-observations. 
-
-
-Figure \ref{fig:high_success_rate} shows the number of models
-that have at least $N_{\rm high-P}$ mocks with $P>0.05$. For each
-model ${\mathcal M}$ there are 15 different mock surveys.  We discard
-the models that have 14 mocks or less consistent with
-observations. With this cut we find $\sim 100$ models with all the 15
-mock survey realizations with $P>0.05$.  This cut represents a
-reduction by a factor of $\sim 6$ with respect to the total number of
-models with at least one consistent mock.   
-
-Figure \ref{fig:restriction_mock} presents the locii of these models
-in the parameter space $M_{\rm min}-M_{\rm max}$ and $M_{\rm
-  min}-f_{\rm occ}$. With this constraints the
-number of consistent models with  $10.5 < \log_{10}M_{\rm min}< 11.0$ are
-greatly reduced. This corresponds to the regions in the parameter
-space in Figure \ref{fig:landscape} that already had a low number of
-consistent mock surveys. On the other hand, from the right panel in
-Figure \ref{fig:restriction_mock} one can see that the reduction of
-favored values for the occupation fraction $f_{\rm occ}$ is not strong. 
-
-We conclude that conditions on the number density statistics, even if they are
-very strict, only put strong constraints on the minimum mass $M_{\rm
-  min}$ but not on the other two parameter of the model $M_{\rm max}$
-and $f_{\rm occ}$. In the next section we use additional observational
-information to constrain these parameters.
 
 \begin{figure*}
 \begin{center}
@@ -690,51 +654,50 @@ information to constrain these parameters.
 \end{figure*}
 
 
+In the previous sub-section we use a conservative criterion of
+agreement by selecting the models that had at least one mock survey
+with $P>0.05$ in the KS test. Now we turn to a more strict selection
+by requiring all the 15 constructed mock surveys to be consistent with
+observations. 
+
+
+%Figure \ref{fig:high_success_rate} shows the number of models that
+%have at least $N_{\rm high-P}$ mocks with $P>0.05$. For each model
+%${\mathcal M}$ there are 15 different mock surveys.  We discard the
+%models that have 14 mocks or less consistent with observations. 
+
+With
+this cut we find $\sim 100$ models with all the 15 mock survey
+realizations with $P>0.05$.  This cut represents a reduction by a
+factor of $\sim 6$ with respect to the total number of models with at
+least one consistent mock.
+
+Figure \ref{fig:restriction_mock} presents the locii of these models
+in the parameter space $M_{\rm min}-M_{\rm max}$ and $M_{\rm
+  min}-f_{\rm occ}$. With this constraints the number of consistent
+models with  $10.5 < \log_{10}M_{\rm min}< 11.0$ are reduced. This 
+corresponds to the regions in the parameter space in
+Figure \ref{fig:landscape} that already had a low number of 
+consistent mock surveys. On the other hand, from the right panel in
+Figure \ref{fig:restriction_mock} one can see that the favored
+occupation fraction  values are still in a range $0\leq f_{\rm
+  occ}\leq 1.0$.
+
+We conclude that conditions on the number density statistics, even if they are
+very strict, only put strong constraints on the minimum mass $M_{\rm
+  min}$ but not on the other two parameter of the model $M_{\rm max}$
+and $f_{\rm occ}$. 
+
+
 
 \subsection{Consistency with the Angular Correlation Function}
 
 
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{power_law_correlation_maxden.pdf} 
-\hspace{5mm}  
-\includegraphics[width=0.46\linewidth,angle=0]{power_law_correlation_meanden.pdf} 
-\end{center}
-\caption{Values for the free parameters $\theta_{0}$ and $\beta$
-in the fitting formula (Eq. \ref{eq:fitting}) for the angular
-correlation function. Blue dots correspond to simulations and the
-green cross to observations by \citet{Hayashino2004} (left) and
-\citet{Ouchi2010} (right). The error bars in the theoretical data correspond
-to the quadratic average of the fitting errors for each mock survey
-\label{fig:correlation_parameters}}
-\end{figure*} 
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_meanden_mass.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_meanden_f_occ.pdf}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_maxden_mass.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_maxden_f_occ.pdf}
-\end{center}
-\caption{Planes $M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
-    min}$-$f_{\rm occ}$ (right). with the models fulfilling both
-   constraints on the maximal number of consistent mocks and the
-  angular correlation function. Upper panels correspond
-  checks the consistency with the observational data of
-  \citet{Ouchi2010}. Lower panels show results after comparison
-  against \citet{Hayashino2004}
-  \label{fig:restriction_mock_and_f_occ_corr}} 
-\end{figure*} 
-
-
-Figure \ref{fig:correlation_parameters} shows the main results in a
-$\theta_{0}-\beta$  plane where the average and standard deviation
-over the mocks is shown in comparison with the result derived from
-observations. In the left panel Figure \ref{fig:correlation_parameters} we see
+Figure \ref{fig:correlation_parameters} shows the main results for the
+best estimates of $\theta_{0}-\beta$ in the parameterization of the
+ACF. Blue circles represent the results from the mocks and the crosses
+from observations. In the left panel Figure \ref{fig:correlation_parameters} we see
 how the observational ACF measured by \cite{Hayashino2004} 
 can be successful in reducing the total number of possible models. The
 right panel shows the results for fields in the mock catalog with an
@@ -768,7 +731,45 @@ possible values for the occupation fraction, despite having a strong correlation
 with $M_{\rm min}$, still are in the initial range $0.1\leq f_{\rm
   occ}\leq 1$. 
 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=1.0\linewidth,angle=0]{power_law_correlation_meanden.pdf} 
+\end{center}
+\caption{Values for the free parameters $\theta_{0}$ and $\beta$
+in the fitting formula (Eq. \ref{eq:fitting}) for the angular
+correlation function. Blue dots correspond to simulations and the
+green cross to observations by \citet{Ouchi2010} (right). The error
+bars in the theoretical data correspond to the quadratic average of
+the fitting errors for each mock survey 
+\label{fig:correlation_parameters}}
+\end{figure} 
+
+
 \section{Discussion}
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.46\linewidth,angle=0]{Fig6_meanden_mass.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{Fig6_meanden_f_occ.pdf}
+\includegraphics[width=0.46\linewidth,angle=0]{Fig6_maxden_mass.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{Fig6_maxden_f_occ.pdf}
+\end{center}
+\caption{Planes $M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
+    min}$-$f_{\rm occ}$ (right). with the models fulfilling both
+   constraints on the maximal number of consistent mocks and the
+  angular correlation function. Upper panels correspond
+  checks the consistency with the observational data of
+  \citet{Ouchi2010}. Lower panels show results after comparison
+  against \citet{Hayashino2004}
+  \label{fig:restriction_mock_and_f_occ_corr}} 
+\end{figure*} 
+
+
 
 We end up with $XX$ models, out of $9000$ initial guesses, consistent
 with observations. In order to discuss these results we now
@@ -852,15 +853,13 @@ be interpreted as an occupation fraction $f_{\rm occ}\sim 0.2$. We
 consider a success that our model indeed includes such low occupation
 fraction models. The observational evidence from galaxy surveys seem
 to disfavor the second family of models with high occupation
-fractions. Nevertheless, it remains an open task to explain the narrow
-mass range $\Delta M<0.5$ in most of the models. 
-
+fractions.
 
 \subsection{Comparison to other clustering estimates}
 
 Observational evidence based on the ACF inferred from photometric
 measurements in the Extended Chandra Deep Field South has shown that
-the median dark matter masses of h los hosting LAEs is
+the median dark matter masses of halos hosting LAEs is
 $\log_{10}M_{\rm  med}=10.9^{+0.5}_{-0.9}$\Msun, with a corresponding
 occupation fraction of $1-10\%$  \citep{Gawiser07}.  \cite{Ouchi2010}
 presents analysis of LAE observations in the redshift interval
@@ -884,6 +883,8 @@ Furthermore, In contrast to \citep{Gawiser07} and \citep{Ouchi2010} we
 find that an ACF analysis on a single data-set is not enough to rule
 out models with a high occupation fraction $f_{\rm occ}>0.3$, which
 represent half of our best models. 
+
+
 
 \begin{table}
 \begin{center}
