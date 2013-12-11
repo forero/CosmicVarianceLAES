@@ -732,7 +732,7 @@ on he occupation fraction.
 \caption{Values for the free parameters $\theta_{0}$ and $\beta$
 in the fitting formula (Eq. \ref{eq:fitting}) for the angular
 correlation function. Blue dots correspond to simulations and the
-green cross to observations by \citet{Ouchi2010} . The error
+green line to observations by \citet{Ouchi2010}. The error
 bars in the theoretical data correspond to the quadratic average of
 the fitting errors for each mock
 survey \label{fig:correlation_parameters}} 
@@ -758,26 +758,39 @@ survey \label{fig:correlation_parameters}}
 
 
 
-We end up with $XX$ models, out of $9000$ initial guesses, consistent
-with observations. In order to discuss these results we now
-define the halo mass range $\Delta M=\log_{10}M_{\rm max} -
-\log_{10}M_{\rm  min}$, to use it together with the occupation
-fraction, $f_{\rm occ}$, and the minimum mass $M_{\rm min}$ to
-classify all the successful models into two families:    
+We end up with $40$ consistent models, out of the initial set of
+$9000$. To facilitate the discussion of these results we define a new
+quantity, the halo mass range $\Delta M=\log_{10}M_{\rm max} -
+\log_{10}M_{\rm  min}$. This quantity together with the occupation
+fraction, $f_{\rm occ}$, and the minimum mass $M_{\rm min}$ allows us
+to clasify all the successful models into three families:    
  
 
 \begin{itemize}
-\item[(1)] Low $f_{\rm occ}\leq 0.3$, $M_{\rm min}\leq 10^{10.8}\hMsun$ and low $\Delta M\leq 1.0$
-  dex: XX models. 
-\item[(2)] High $f_{\rm occ}> 0.3$, $M_{\rm min}\geq 10^{10.8}\hMsun$ and
-  low $\Delta M\leq 1.0$: XX models 
+\item[(1)] Low $f_{\rm occ}\leq 0.2$, $M_{\rm min}\leq 10^{10.8}\hMsun$ and low $\Delta M\leq 1.0$
+  dex: 16 models. 
+\item[(2)] High $f_{\rm occ}> 0.2$, $M_{\rm min}\geq 10^{10.8}\hMsun$ and
+  low $\Delta M\leq 1.0$: 17 models 
+
+\item[(3)] Models with low occupation $f_{\rm occ}\leq 0.2$ fraction
+  and high $\Delta M>1.0$: 7 models
 \end{itemize}
-%
-A complete parameter list is presented in Table
-\ref{table:firstfamily} and Table \ref{table:secondfamily}. There are
-two interesting feature in these families. First, the occupation
-fraction can take any value from $0.1$ to $1.0$. Second, the halos
-hosting LAEs all have a narrow mass range $\Delta M\leq 1.0$.
+
+
+{\bf The models in the third family are barely consistent with the
+  constraints from the ACF. They have mean values of $\theta_0$
+  outside the observational uncertainties in that parameter, but have
+  been included as consistent because their error bars overlap. These
+models they have another particular feature: their minimum mass is
+$M_{\rm min}=10^{10.9}\hMsun$. In what follows we exclude these models
+from the discussion.}
+
+A complete parameter list for the three families is presented in Table
+\ref{table:firstfamily}, Table \ref{table:secondfamily} and Table
+\ref{table:thirdfamily}. There are two interesting feature in these
+families. First, the occupation fraction can take any value from $0.1$
+to $1.0$. Second, the halos hosting LAEs all have a narrow mass range
+$\Delta M\leq 1.0$. 
 
 {\bf The existence of models with high occupation fractions $f_{\rm
     occ}>0.3$ is unexpected from previous clustering analysis that do
@@ -886,27 +899,20 @@ $\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\h
  10.6 &11.4 & 0.1& 0.8 \\
  10.6 &11.5 & 0.1& 0.9 \\
  10.6 &11.6 & 0.1& 1 \\
- 10.6 &11.7 & 0.1& 1.1 \\
  10.7 &11.0 & 0.2& 0.3 \\
  10.8 &11.2 & 0.2& 0.4 \\
  10.8 &11.3 & 0.2& 0.5 \\
  10.8 &11.4 & 0.2& 0.6 \\
+ 10.9 &11.9 & 0.2& 1.0 \\
  10.9 &11.7 & 0.2& 0.8 \\
- 10.9 &11.8 & 0.2& 0.9 \\
- 10.9 &11.9 & 0.2& 1 \\
- 10.9 &12.0 & 0.2& 1.1 \\
- 10.9 &12.1 & 0.2& 1.2 \\
- 10.9 &12.2 & 0.2& 1.3 \\
- 10.9 &12.3 & 0.2& 1.4 \\
- 10.9 &12.6 & 0.2& 1.7 \\
- 10.9 &12.8 & 0.2& 1.9 \\\hline
+ 10.9 &11.8 & 0.2& 0.9 \\\hline
 \end{tabular}
 \end{center}
-\caption{\label{table:firstfamily}List of parameters for the first
+\caption{\label{table:firstfamily}
+List of parameters for the first
   family of models. Narrow mass range $\Delta M\leq 1.0$ dex and low
   occupation fraction $f_{\rm occ}\leq 0.3$.} 
 \end{table}
-
 
 
 \begin{table}
@@ -935,6 +941,26 @@ $\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\h
 \caption{\label{table:secondfamily}List of parameters for the second
   family of models. Narrow mass range $\Delta M\leq 0.4 $ dex and high occupation fraction $f_{\rm occ}>0.2$.}
 \end{table}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{cccc}\hline\hline
+$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
+ 10.6 &11.7 & 0.1& 1.1 \\
+ 10.9 &12.0 & 0.2& 1.1 \\
+ 10.9 &12.1 & 0.2& 1.2 \\
+ 10.9 &12.2 & 0.2& 1.3 \\
+ 10.9 &12.3 & 0.2& 1.4 \\
+ 10.9 &12.6 & 0.2& 1.7 \\
+ 10.9 &12.8 & 0.2& 1.9 \\\hline
+\end{tabular}
+\end{center}
+\caption{\label{table:thirdfamily}List of parameters for the third
+  family of models. Wide mass range $\Delta M> 1.0$ dex and low
+  occupation fraction $f_{\rm occ}\leq 0.2$.} 
+\end{table}
+
 
 \subsection{In the context of abundance matching models}
 
