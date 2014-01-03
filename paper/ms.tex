@@ -949,17 +949,20 @@ $z=3.1$, extending the capabilities of abundance matching methods.
 
 \subsection{Caveats of our method}
 
-There are two important caveats for the work presented here. The first is the
+There are four caveats for the work presented here that are important
+to keep in mind. The first is the  
 assumption of a single LAE per dark matter halo. This contradicts the
 general expectation of dark matter sub-halos in the simulation to host
 satellite galaxies. However, it has been found in analysis based on
 the shape of the correlation function \citep{Jose2013b} that satellite
 galaxies are not a dominant population, making our initial
-approximation a reasonable one. {\bf The lack of close pairs }Therefore we conclude that including
+approximation a reasonable one. {\bf The lack of close pairs in
+  observations is another hint that the observed LAE population matches}
+Therefore we conclude that including
 the effect of satellite galaxies does not change the main results
 reported in this \documentname. 
 
-The second caveat are the precise values for the mass intervals. These
+The second caveat is the precise values for the mass intervals. These
 values are quoted from halos defined using a FOF halo
 finder. Different halo finders and definitions for the detection
 density threshold can yield different masses up to a factor $\sim 2$\citep{More2011}. For 
@@ -970,9 +973,30 @@ algorithm halos \citep{Bolshoi}. Therefore, the mass values for
 $M_{\rm min}$ and $M_{\rm max}$ should not be considered exact within
 less than $\sim 0.2$ dex.   
 
-{\bf Turning filter values into cosmological volumes.}
+{\bf The third caveat is the exact value that was used to turn
+  filter values into cosmological volumes. Strictly speaking the
+  volume probed is a function of the \ly luminosity. Brighter LAEs
+  probe a larger volume than fainter ones \citep{Gronwall07}. A proper
+way to account for this effect would require to assign luminosities to
+each mock LAE and process them in a similar way as mock
+observations. However, we can estimate that under the considerations
+presented in \citep{Gronwall07}, one could expect the survey depth to
+change at most by a factor of $\sim2$. Considering the dependence
+of the number density on halo mass (right panel of Figure 1), such
+change in volume could be compensated by different values for the
+favored model parameters $M_{\rm  min}$ and $M_{\rm max}$ by about the
+same factor of $\sim2$. }
 
-{\bf Comparing results for the clustering and the ACF from surveys with different EW cuts.} 
+{\bf A fourth caveat is the comparing results for the number density
+  statistics and the ACF from surveys with different EW cuts. In this
+  sense we highlight againt that the two filters and selection
+  criteria used by \citep{Ouchi2008} and \citep{Yamada2012} are only
+  slightly different. The number densities in the general fields by
+  \citep{Yamada2012} is $0.083\pm0.004$ arcmin$^{-2}$, while in
+  \citep{Ouchi2008} is $0.099\pm0.005$ arcmin$^{-2}$. This gives us
+  confidence that the two different samples can give a self-consistent
+  picture for our studies.}
+
 
 
 \subsection{On the reproducibility of our results}
@@ -1006,7 +1030,7 @@ angular correlation function. Out of the initial $9000$
 combinations of parameters in the model we find $40$ combination of parameters
 consistent with observations.
 
-We find that {\bf the information for the number density constrains
+{\bf We find that the information for the number density constrains
   the minium mass to the range
   $10^{10}\hMsun < M_{\rm min} < 10^{11.5}\hMsun$ while the clustering
   constrains the upper mass $M_{\rm    max} < 10^{12}\hMsun$. However,
@@ -1015,22 +1039,25 @@ We find that {\bf the information for the number density constrains
 $\Delta M=\log_{10}M_{\rm max} - \log_{10}M_{\rm min}$ is always
 $\Delta M\leq 1.0$. 
 
-The wide range in values for the escape fraction is allowed by the
-large dispersion in the statistics derived from the
-mocks. This uncertainty is unexpected from previous studies that
+{\bf Our approach has allowed the discovery of possible models that have
+been overloooked so far in the literature. A central role in these new
+models is played by the wide range of escape fraction values. A wide
+range in the escape fraction is unexpected from previous studies that
 unanimously favor low values for the occupation
-fractions \citep[i.e.][]{Gawiser2007,Ouchi2010}. Nevertheless, all the
-halo mass ranges and occupation fractions deduced previous analysis
-are a subset of the models we find in this \documentname.  
+fractions \citep[i.e.][]{Gawiser2007,Ouchi2010}. The larges
+innnovation in our analysis is the construction of mock obsevations
+that directly explore the impact of cosmic variance, which seems to be
+at the root of the large uncertainties in the escape fraction.}
 
-
-All of our preferred models support the notion that the most massive
-halos at $z=3.1$ do not host detectable LAEs. The existence of a
-narrow mass range for halos hosting LAEs, $\Delta  M\leq 1.0$ dex, has
-two different explanations at least. The first is having LAEs with a
+Nevertheless, all the halo mass ranges deduced previous analysis are a
+subset of the models we find in this \documentname.  All of our
+preferred models support the notion that the most massive halos at
+$z=3.1$ do not host detectable LAEs. The existence of a narrow mass
+range for halos hosting LAEs, $\Delta  M\leq 1.0$ dex, has two
+different explanations at least. The first is having LAEs with a
 decreasing \ly escape fraction with increasing mass, the second is
 having larger screening effects by neutral Hydrogen around the most
-massive systems \citep{Laursen2009,ForeroRomero2011}.   
+massive systems \citep{Laursen2009,ForeroRomero2011}.    
 
 We also find extreme cases with a very narrow $\Delta M<0.3$, meaning that
 there is barely a factor of $\sim 2$ between the minimum and halo
@@ -1038,14 +1065,17 @@ mass. If these models can be confirmed, it would mean a great
 challenge for galaxy formation models to explain how is that LAEs can
 be hosted in such a narrow range of halo mass.  
 
-In summary, we show that {\bf the currently available spatial information of LAEs cannot
-put a tight constraint on their occupation fraction of dark matter
-halos}. This information can confidently be used to establish that
-these galaxies are hosted in low mass halos with masses within a range
-spanning less than a factor of ten. We foresee that the new
-observations with new instruments (such as MUSE, Hyper SuprimeCam and
-HETDEX) covering larger fields and a wider range of luminosities will
-be key in reducing cosmic variance and imposing tighter constraints on
+In summary, we show that {\bf the currently available spatial
+  information of LAEs cannot put a tight constraint on their
+  occupation fraction of dark matter halos}. This information can
+confidently be used to establish that these galaxies are hosted in low
+mass halos with masses within a range spanning less than a factor of
+ten. {\bf From the point of view of Dark Energy surveys such as
+  HETDEX, the narrow mass range for LAEs can be seen as an advantage,
+  due to its simplicity, for their modeling aiming at recovering
+  cosmological parameters.} We foresee that the new observations with
+new instruments (such as MUSE, Hyper SuprimeCam and HETDEX) covering
+larger fields and a wider range of luminosities will be key in reducing cosmic variance and imposing tighter constraints on
 the properties of dark matter halos hosting LAEs. At the same time,
 additional modeling for \ly radiation transfer is needed to put a
 tighter constrain on the \ly escape fraction in high redshift
