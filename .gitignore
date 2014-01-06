@@ -1,3 +1,4 @@
+*.ipynb_checkpoints
 *~
 *.o
 *.png
@@ -7,4 +8,5 @@ paper/ms.aux
 paper/ms.bbl
 paper/ms.blg
 paper/ms.log
-
+*.aux
+*.log
