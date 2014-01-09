@@ -23,7 +23,7 @@ pinit = [12.0]
 n_models=101
 n_mocks=15
 theta_bins=11
-pro_path="/Users/jemejia/CosmicVarianceLAES/"
+pro_path="/home/margoly/CosmicVarianceLAES/"
 
 obs_correlation_file=pro_path + "data/obs/hayashino_whole_SSA22_field.txt"
 obs=np.loadtxt(obs_correlation_file,skiprows=4)
@@ -158,11 +158,11 @@ fig2=P.figure()
 ro_plot=fig2.add_subplot(111)
 ro_index=np.where(slope_err<2.0)
 ro_plot.errorbar(ro[ro_index],-1*slope[ro_index], yerr=slope_err[ro_index], xerr=ro_err[ro_index], label="Models",elinewidth=1.5,fmt="o")
-ro_plot.errorbar(ro_obs,-1*slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Hayashino et al 2004",elinewidth=4.5)
+ro_plot.errorbar(ro_obs,-1*slope_obs, yerr=slope_err_obs, xerr=ro_err_obs, label="Ouchi et al 2008",elinewidth=4.5)
 ro_plot.set_xlabel(r'$\theta_{0}$', fontsize=20)
 ro_plot.set_ylabel(r"$\beta$",fontsize=20)
-ro_plot.set_title("Angular Correlation parameters. Full SSA22 field",fontsize=20)
-ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
+#ro_plot.set_title("Angular Correlation parameters. Full SSA22 field",fontsize=20)
+#ro_plot.set_title("Angular Correlation parameters. Match survey",fontsize=20)
 plot_name=plot_dir +"power_law_correlation_" + sys.argv[1] + ".pdf"
 ro_plot.legend(shadow=False,loc=2)
 
