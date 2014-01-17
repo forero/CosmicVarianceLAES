@@ -64,13 +64,14 @@
 \author[~J.~E. Forero-Romero and ~J.~E. Mejia-Restrepo]{
 \parbox[t]{\textwidth}{\raggedright 
   Jaime E. Forero-Romero$^{1}$ and
-  Julian E. Mej\'ia-Restrepo$^{2}$ 
+  Julian E. Mej\'ia-Restrepo$^{2,3}$ 
 }
 \vspace*{6pt}\\
 $^{1}$ Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1
 No. 18A-10, Edificio Ip, Bogot\'a, Colombia \\
 $^{2}$ Departamento de Astronom\'{i}a, Universidad de Chile, Camino el
-Observatorio 1515, Santiago, Chile} 
+Observatorio 1515, Santiago, Chile\\
+$^3$FACom-Instituto de Física-FCEN, Universidad de Antioquia, Calle 70 No. 52-21, Medellín, Colombia} 
 
 \maketitle
 
@@ -180,7 +181,7 @@ into the possible impact of cosmic variance.
 Recently \cite{Yamada2012} observed a wide area of $2.4$ deg$^{2}$
 under homogeneous instrumental and data reduction conditions. This data
 set is constructed from 12 different sub-fields that allows us to use
-clustering statistics and cosmic variance to constraint the mass and
+clustering statistics and cosmic variance to constrain the mass and
 occupation fraction of halos hosting LAEs. 
 
 Our method first populates DM halos in cosmological simulations with
@@ -482,7 +483,7 @@ distribution.
 We begin by considering that  a model ${\mathcal M}$ with at least one
 mock survey (out of 15) consistent with observations has viable
 parameters to host LAEs. From that we consider a stronger constraints
-to reduce the number of models by asking that all the 15 mocks to be
+to reduce the number of models by asking that all the 15 mocks  to be
 consistent with observations and analyze again the properties of the
 resulting models. Finally we add the ACF as an additional constraint
 and consider all the models having their $15$ mocks consistent with
@@ -668,7 +669,7 @@ and $f_{\rm occ}$.
 
 
 
-Figure \ref{fig:correlation_parameters} shows the results for the
+The left panel of the figure \ref{fig:correlation_parameters} shows the results for the
 best estimates of $\theta_{0}$-$\beta$  used in the ACF
 parameterization.  Blue circles with error bars represent the results
 from the mocks and the horizontal line the observational results of
@@ -689,46 +690,31 @@ Comparing Figure
 \ref{fig:restriction_mock_and_f_occ_corr} with Figure
 \ref{fig:restriction_mock} we see that the new constraint disfavors
 almost all models with $M_{\rm max}>10^{12}$. The only exception is 
-a narrow range of models with $M_{\rm min}=10^{10.9}$. However, we
-have verified that these models are only marginally consistent with
-the ACF constraints in the $\theta_0$-$\beta$ plane.
+a narrow range of models with $M_{\rm min}=10^{10.9}$. However, in the right panel of figure  \ref{fig:correlation_parameters}   we can observe that these models are only 
+marginally consistent with the ACF constraints in  $\theta_0$.
 
 From this comparison we conclude that clustering information can
-constraint the values of $M_{\rm max}$, but not the occupation
+constrain the values of $M_{\rm max}$, but not the occupation
 fraction. 
 
 
-\begin{figure}
+\begin{figure*}
 \begin{center}
-\includegraphics[width=1.0\linewidth,angle=0]{power_law_correlation_degree2.pdf}  
+\includegraphics[width=0.46\linewidth,angle=0]{Fig7_corr_params.pdf}  
+\includegraphics[width=0.46\linewidth,angle=0]{Fig7_mmin_vs_theta.pdf} 
 \end{center}
-\caption{Values for the free parameters $\theta_{0}$ and $\beta$
+\caption{Left panel. Values for the free parameters $\theta_{0}$ and $\beta$
 in the fitting formula (Eq. \ref{eq:fitting}) for the angular
 correlation function. Blue dots correspond to simulations and the
 green line to observations by \citet{Ouchi2008,Ouchi2010}. The error
 bars in the theoretical data correspond to the quadratic average of
-the fitting uncertainties for each mock
-survey \label{fig:correlation_parameters}}  
-\end{figure} 
+the fitting uncertainties for each mock survey. Right panel. Values of $\theta_{0}$  and $\log_{10}(M_{min}/M_{\odot} h^{-1})$. Blue and green point represents the models where  $\log_{10}(M_{max}/M_{\odot} h^{-1})<12.0$ and  $\log_{10}(M_{min}/M_{\odot} h^{-1})>12.0$ respectively. .  The horizontal gray band represents the observational contraints on $theta_{0}$ stablished by   \citet{Ouchi2008,Ouchi2010}. Green points has been displaced by $0.01dex$ of its original value to avoid overlapping between blue and green points.} \label{fig:correlation_parameters}  
+\end{figure*}
 
 
 \section{Discussion}
 \label{sec:discussion}
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_mass.pdf}
-\hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_f_occ.pdf}
-\end{center}
-\caption{Planes $M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
-    min}$-$f_{\rm occ}$ (right). with the models fulfilling both
-   constraints on the maximal number of consistent mocks and the
-  angular correlation function. The observational data for the ACF
-  corresponds to 
-  \citet{Ouchi2008,Ouchi2010}.   
-  \label{fig:restriction_mock_and_f_occ_corr}} 
-\end{figure*} 
 
 
 
@@ -754,19 +740,34 @@ three families:
 
 A complete parameter list for the three families is presented in Tables
 \ref{table:firstfamily}, \ref{table:secondfamily}  and 
-\ref{table:thirdfamily}. 
+\ref{table:thirdfamily}.  
 
 {\bf The models in the third family are barely consistent with the
-  constraints from the ACF. They have values of $\beta$ close to $1.0$
+  constraints from the ACF. These 
+  models they have another particular feature: their minimum mass is
+  exactly $M_{\rm min}=10^{10.9}\hMsun$ m and $M_{\rm max}>10^{12.0}\hMsun$ . They have values of $\beta$ close to $1.0$
   (instead of the observational value of $0.8$) and $\theta_0$ on the
   range of $13^{\prime}$ (the mean observational value is close to
   $8^{\prime}$) but are considered
   consistent because their large error bars barely overlap with the
-  observational expectation. These 
-  models they have another particular feature: their minimum mass is
-  exactly $M_{\rm min}=10^{10.9}\hMsun$. Because these models are
+  observational expectation (see figure \ref{fig:correlation_parameters})  .  Because these models are
   are barely compatible with observations and are a minority of the
   consistent models, we exclude them from the rest of the discussion.}
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.46\linewidth,angle=0]{Fig6_mass.pdf}
+\hspace{5mm}
+\includegraphics[width=0.46\linewidth,angle=0]{Fig6_f_occ.pdf}
+\end{center}
+\caption{Planes $M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
+    min}$-$f_{\rm occ}$ (right). with the models fulfilling both
+   constraints on the maximal number of consistent mocks and the
+  angular correlation function. The observational data for the ACF
+  corresponds to 
+  \citet{Ouchi2008,Ouchi2010}.   
+  \label{fig:restriction_mock_and_f_occ_corr}} 
+\end{figure*} 
 
 
 \subsection{Two relevant features in the preferred models}
@@ -983,7 +984,7 @@ same factor of $\sim2$. }
 
 {\bf A fourth caveat is the comparing results for the number density
   statistics and the ACF from surveys with different EW cuts. In this
-  sense we highlight againt that the two filters and selection
+  sense we highlight again that the two filters and selection
   criteria used by \citep{Ouchi2008} and \citep{Yamada2012} are only
   slightly different. The median number density in the general fields by
   \citep{Yamada2012} is $0.20$ arcmin$^{-2}$, while in
@@ -1028,19 +1029,19 @@ consistent with observations.
   the minium mass to the range
   $10^{10}\hMsun < M_{\rm min} < 10^{11.5}\hMsun$ while the clustering
   constrains the upper mass $M_{\rm    max} < 10^{12}\hMsun$. However,
-  this information insufficient to impose a tight constraint  on the escape
+  this information is insufficient to impose a tight constraint  on the escape
   fraction. Additionaly, we find that the mass range defined as
 $\Delta M=\log_{10}M_{\rm max} - \log_{10}M_{\rm min}$ is $\Delta
 M\leq 1.0$, with a large fraction of models with $\Delta M\leq 0.5$.} 
 
 {\bf Our approach has allowed the discovery of possible models that have
-been overloooked so far in the literature. A central role in these new
+been overlooked so far in the literature. A central role in these new
 models is played by the wide range of escape fraction values,
 something unexpected from previous studies \citep[i.e.][]{Gawiser2007,Ouchi2010}  that unanimously favor low values on the range of $10^{-2}$. The largest
 innovation in our analysis is the construction of mock obsevations
 that directly explore the impact of cosmic variance.}
 
-Nevertheless, all the halo mass ranges deduced previous analysis are a
+Nevertheless, all the halo mass ranges deduced in previous analysis are a
 subset of the models we find in this paper.  All of our
 preferred models support the notion that the most massive halos at
 $z=3.1$ do not host detectable LAEs. {\bf Furthermore, we claim that the
@@ -1067,7 +1068,7 @@ mass halos with masses spanning less than one order of magnitude. {\bf
   From the point of view of Dark Energy surveys such as the Hobby-Eberly
   Telescope Dark Enery Experiment (HETDEX) the
   narrow mass range for LAEs can be seen as an advantage because its
-  simplicity in their modeling aiming at recoverin cosmological
+  simplicity in their modeling aiming at recovering cosmological
   parameters.} We foresee that the observations with new instruments
 (such as the Multi Unit Spectroscopic Explorer (MUSE), Hyper
 SuprimeCam and HETDEX) covering larger fields and a wider range of

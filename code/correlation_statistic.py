@@ -176,15 +176,16 @@ mmax_index=np.where(m_max_m<12.0) #and ro<ro_max) #and slope_min<slope<slope_max
 mmin_plot.errorbar(m_min_m[mmax_index],ro[mmax_index], yerr=ro_err[mmax_index],label=r"$\log M_{max}<12.0$",elinewidth=1.5,fmt="s")
 mmax_index=np.where(m_max_m>12.0) #and ro<ro_max) #and slope_min<slope<slope_max)
 mmin_plot.errorbar(m_min_m[mmax_index]+0.01,ro[mmax_index], yerr=ro_err[mmax_index],label=r"$\log M_{max}>12.0$",elinewidth=1.5,fmt="o")
-mmin_plot.set_ylabel(r'$\theta_{0}$', fontsize=20)
-mmin_plot.set_xlabel(r"$M_{min}$",fontsize=20)
-mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Full SSA22 Field",fontsize=20)
-mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Match Survey",fontsize=20)
+mmin_plot.set_ylabel(r'$\theta_{0}(arcsec)$', fontsize=20)
+mmin_plot.set_xlabel(r"$\log_{10}(M_{min}/M_{\odot} h^{-1} )$",fontsize=20)
+#mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Full SSA22 Field",fontsize=20)
+#mmin_plot.set_title(r"$M_{min}$ vs $\theta_{0}$. Match Survey",fontsize=20)
 
 plot_name=plot_dir +"mmin_vs_correlation_" +sys.argv[1] + ".pdf"
 mmin_plot.legend(shadow=False,loc=2)
-collection = collections.BrokenBarHCollection.span_where(m_min_m, ymin=5.55, ymax=11.71, where=ro>0,  facecolor='red', alpha=0.5)
+collection = collections.BrokenBarHCollection.span_where(np.append([9.98,11.5,11.6],m_min_m) + 0.02, ymin=ro_obs-ro_err_obs, ymax=ro_obs+ro_err_obs, where=ro>0,  facecolor='gray', alpha=0.5)
 mmin_plot.add_collection(collection)
+P.xlim(xmin=10.0,xmax=11.42)
 fig3.savefig(plot_name,format="pdf")
 
 
