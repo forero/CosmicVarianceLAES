@@ -2,14 +2,11 @@ LATEX = pdflatex
 MAIN  = ms
 
 
-main: 	$(MAIN).tex  
+$(MAIN).pdf: 	$(MAIN).tex  references.bib
+#	$(LATEX) $(MAIN).tex 
+#	bibtex $(MAIN)
 	$(LATEX) $(MAIN).tex 
-	bibtex $(MAIN)
 	$(LATEX) $(MAIN).tex 
-	$(LATEX) $(MAIN).tex 
-#	dvips $(MAIN).dvi -o $(MAIN).ps
-
-
 
 clean:
 	rm -f $(MAIN)~
@@ -22,6 +19,9 @@ clean:
 	rm -f $(MAIN).log
 	rm -f *~
 	rm -f $(MAIN).tex.flc
+
+submit:
+	tar -cvzf draft.tgz Fig* ms.tex references.bib ms.pdf
 
 view: 
 	open $(MAIN).pdf &
