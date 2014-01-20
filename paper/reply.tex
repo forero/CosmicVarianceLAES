@@ -5,23 +5,24 @@ Dear Editor, \\
 We wish to thank the referee for a detailed report on our paper. \\
 
 The referee expressed 5 major points of concern. Some of them were due
-to unclearly written sections, other made reference to issues with the
-observational data and choices to perform the comparison against the
-simulated data.\\ 
+to unclear written sections, other made reference to issues with the
+choice of observational data used to compare against the mocks.\\ 
 
 In this new version we respond to all these concerns. We have
 clarified the text where it was needed and performed new tests on the
-data. We have also corrected an error in the computation of the
-angular correlation function, strenghtening our conclusions. Therefore
-we resubmit this draft to be considered for publication in the MNRAS.\\ 
+data. We have also corrected a small error in the presentation of the
+results for the angular correlation function. All these modifications
+and improvements strengthen the conclusions already
+presented. Therefore we resubmit this draft to be considered for
+publication in the MNRAS.\\   
 
-We wish to emphasize that our paper uses a new method in the context
-of the study of LAE galaxies. Correspondingly, the results are novel
-with respect to the already published literature.\\
+We wish to emphasize that our paper presents a new method in the context
+of the study of LAE at high redshift. Correspondingly, the results are
+novel with respect to the already published literature.\\
 
 In what follows we reply to each one of the major points raised by the
 referee. The comments by the referee are in boldface. Our reply
-follows to each of these comments.\\
+follows to each one of the comments.\\
 
 
 Best regards,\\
@@ -43,22 +44,13 @@ Jaime E. Forero-Romero and Julian Mejia-Restrepo\\
   Ouchi's. }\\
 
 
-  We agree with the referee that the two statistical tests should be
-  performed on the same data set. Unfortunately neither the galaxy catalog
+  We follow the referee's suggestion and perform the ACF analysis
+  using Ouchi's data.
+
+  We made this choice because neither the galaxy catalog
   nor the ACF from Yamada et al. 2012 are available. We contacted
   Dr. Yamada asking for information about the ACF, but we didn't get
   any reply.  
-
-  The currrent version of the draft features a comparison with the ACF
-  from a survey with an average number density from Hayashino et al
-  2004. 
-
-  On the other hand, Using a small field as Ouchi's for our analysis
-  is not feasible, given that our method is based on the analysis of
-  the surface density \emph{distribution among different}
-  fields. Having the distribution data is central to discard a large
-  fraction of models (Section 3.3).
-
 
 \item {\bf 
   The major result claimed that all models have a narrow mass range
@@ -68,45 +60,43 @@ Jaime E. Forero-Romero and Julian Mejia-Restrepo\\
   that you have hidden by forcing $f_{\rm occ}$ to values larger than those
   previously claimed in the literature. }
 
-
   As the referee highlights, we have found a new set of acceptable
-  parameters for the escape fraction than those that have been
-  previously claimed by the literature.
+  parameters for the escape fraction $f_{\rm occ}>0.1$. We stress that
+  an occupation fraction of $0.1$ is on the upper end of the accepted
+  values by Gawiser et al. 2007. At the same time all the mass ranges
+  we find acceptable are within the wide mass range already published
+  by observers. All this seems to be good news rather a caveat.
 
-  However, we do not find a clear evidence for a degeneracy between
-  the occupation fraction $f_{\rm occ}$ and the mass range $\Delta
-  M$. There is, however, a clear degeneracy between the minium halo
-  mass $M_{\rm min}$ and the occupation fraction. 
+  The reason for a narrow mass range $\Delta M$ does not
+  seem to be a consequence from the constraint on the occupation
+  fraction to be larger than $0.1$. We do not find a clear evidence
+  for a degeneracy between the occupation fraction $f_{\rm occ}$ and
+  the mass range $\Delta M$. However we would appreciaty a pointer to
+  any reference presenting evidence for the opossite.
 
-  The reason for that trend is easy to understand. In LCDM the halo
-  number density $n$ is verysensitive to the mass. The dependency is
-  roughly $n\propto  M_{h}^{-1}$. Therefore, at a fixed minimum halo
-  mass, increasing the mass range by 1.0 dex barely raises the number
-  density by  
-  $0.10$. Increasing the mass range by 2.0 dex  raises the number
-  density by $0.11$. This explains that we cannot find any clear
-  dependence between $\Delta M$ and the $f_{\rm occ}$. On the other
-  hand, decreasing the minium mass by 1.0 dex would increas the number
-  density by a factor of {\bf $10$} (!). Requiring that models with
-  small values for the minium mass to have a small occupation
-  fraction.  
-  
-  This trend is clearly seen on the right panel of Figure 3,4 and
-  6. This implies that exploring very low escape fractions values of
-  $0.01$ would require the exploration of halo masses aroud the range
-  of $10^{9}$ Msun or   below, which is lower than the minimum halo
-  masss of $10^{9.5}$ Msun   that is confidently resolved in the
-  simulation.  
+  However, there is a clear degeneracy between the minimum halo mass
+  $M_{\rm min}$ and the occupation fraction.This trend is clearly
+  seen on the right panel of Figure 3,4 and 6. This implies that
+  exploring very low escape fractions values of the range $0.01$ would
+  require building mock catalogs with a minimum mass around the range
+  $10^{9.5}$Msun or below which is precisely the minimum halo mass of
+  that is resolved in the simulation. This intrinsic limitation on the
+  range of values that can be explored is now explicit in the paper. 
 
+  All in all, we consider this result for a narrow
+  mass range $\Delta M<1.0$ (in many cases $\Delta M<0.5$) a novel
+  one, since it has not been mentioned in the literature before. 
+
+ 
   \item {\bf 
-The authors cite similar work by Walker Soler et al. 2012 but fail
-   to mention in the introduction how the current paper has the same
-   goals as that earlier work.  If applied more carefully, their
-   approach should be able to improve on the earlier work, but it is
-   important to be clear about how similar the papers are and how the
-   current one hopes to improve on the previous one. 
-}
-
+    The authors cite similar work by Walker Soler et al. 2012 but fail
+    to mention in the introduction how the current paper has the same
+    goals as that earlier work.  If applied more carefully, their
+    approach should be able to improve on the earlier work, but it is
+    important to be clear about how similar the papers are and how the
+    current one hopes to improve on the previous one. 
+  }
+    
 The work of Walker-Soler 2012 actually does not pursue a similar goal
 as our paper. They take a fixed set of results of a semi-analytical
 model to infer the mass of the \emph{descendants} from LAEs at
@@ -121,13 +111,17 @@ Comparing the most heavily clustered of 15 mocks against SSA22 is
   
 We agree with the referee that a comparison of a $\sim 5 $ overdensity
 with an average field would not be fair. Therefore we have removed
-that constraint from the results in the new version of the paper. Now
-we only include the ACF comparison against the results of an average
-density field from Ouchi 2008. 
+the comparison from the ACF in the SSA22 field in the new version of
+the paper. We only include the ACF comparison against the results of
+an average density field from Ouchi 2008. 
 
 Related to this point we have added the left panel in Figure 1 and
-subsection 2.2 to discuss the adequacy of including SSA22 as an
+subsection 2.2.1 to discuss the adequacy of including SSA22 as an
 observational benchmark in the number density tests.
+
+In that subsection we emphasize that it is only one of the subfields
+in SSA22 that represents at 3-$\sigma$ overdensity. The whole field
+has an average density compared to other blank fields.
 
 
 \item {\bf 
@@ -143,7 +137,7 @@ observational benchmark in the number density tests.
 We agree with the referee in this point.
 
 We have corrected all the mistakes where we meant occupation
-fraction but wrote escape fraction. We have alsoremoved the discussion
+fraction but wrote escape fraction. We have also removed the discussion
 comparing our results to escape fraction estimates, in spite of the
 effort of other authors to link these two different quantities.  
 
@@ -167,17 +161,18 @@ close-proximity LAE pairs.
 such as 0.001 without increasing the run time by indexing it
 logarithmically.}
 
-As we mentioned before in the Reply to Major Point 2, tiny values of
+As we mentioned before in the reply to Major Point 2, tiny values of
 0.001 can only produce reasonable models for very low mass halos. This
-is due to the contraint on the number density. An occupation fraction
-of 0.001 requires models with a minimum mass on the order of $M_{\rm
-  min}=10^{9}$ solar masses, which is well below the mass resolution
-of the simulation we use. This comment has been added to the paper. 
+is due to the constraint on the number density distribution. An
+occupation fraction of 0.001 requires models with a minimum mass on
+the order of $M_{\rm min}=10^{9}$ solar masses, which is well below
+the mass resolution of the simulation we use. This comment has been
+added to the paper.  
 
 
-\item {\bf Be careful when turning filters into cosmological volumes - you should
-not simply use the FWHM.  See Gronwall et al. 2007 for a detailed
-discussion of this.}
+\item {\bf Be careful when turning filters into cosmological volumes -
+  you should not simply use the FWHM.  See Gronwall et al. 2007 for a detailed
+discussion of this.} 
 
 We have included a paragraph about this point in Section 4.4.
 
