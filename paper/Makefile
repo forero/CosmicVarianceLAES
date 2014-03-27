@@ -1,10 +1,9 @@
 LATEX = pdflatex
 MAIN  = ms
 
-
 $(MAIN).pdf: 	$(MAIN).tex  references.bib
-#	$(LATEX) $(MAIN).tex 
-#	bibtex $(MAIN)
+	$(LATEX) $(MAIN).tex 
+	bibtex $(MAIN)
 	$(LATEX) $(MAIN).tex 
 	$(LATEX) $(MAIN).tex 
 
