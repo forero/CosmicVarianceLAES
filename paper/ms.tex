@@ -257,21 +257,19 @@ $0.24\pm 0.01$ arcmin$^{-2}$.
 The survey covered four independent fields:
 
 \begin{enumerate}
-\item The first is the SSA22
-field of $1.38$ deg$^2$ with $1394$ detected LAEs (7 sub-fields), this
-field has been known to harbor a region with a large density excess of
-galaxies. 
+\item The SSA22
+field of $1.38$ deg$^2$ with $1394$ detected LAEs. This large field is
+composed by 7 sub-fields. 
 
-\item The second observed region is composed by the fields Subaru/{\it
-  XMM-Newton} Deep Survey (SXDS)-North, -Center and -South, with a
+\item The Subaru/{\it
+  XMM-Newton} Deep Survey (SXDS)-North, -Center and -South fields , with a
 total of $0.58$ deg$^2$ and $386$ LAEs (3 sub-fields).
 
-\item The third  field is the Subaru Deep Field (SDF) with $0.22$ deg$^2$ and
+\item The Subaru Deep Field (SDF) with $0.22$ deg$^2$ and
 $196$ LAEs (1 sub-field), and 
 
-\item The fourth one is the field around the Great Observatory
-Optical Deep Survey  (GOODS-N) with $0.24$ deg$^2$ and $185$ LAEs (1
-sub-field).  
+\item The Great Observatory Optical Deep Survey  (GOODS-N) field with
+  $0.24$ deg$^2$ and $185$ LAEs (1 sub-field).   
 \end{enumerate}
    
 
@@ -359,23 +357,24 @@ explained in the next sub-section.
 
 
 We assume that a dark matter halo can only host one
-detectable LAE at most.  There are three parameters that
-decide whether a halo host a LAE: the lower and upper bounds for the
-mass range ($M_{\rm min}< M_{\rm h} < M_{\rm max}$) where LAEs reside
-and the fraction ($f_{\rm occ}$) of such halos that host a detectable
-LAE. The reader must keep in mind that the physical interpretation of
-the occupation fraction $f_{\rm occ}$ convolves two phenomena: the
-actual presence of a star forming galaxy in a halo and its
-detectability as a LAE. 
+detectable LAE at most.  This is consistent with theoretical analysis
+of the correlation function \citep{Jose2013b} and obsevations that
+confirm a lack of class pairs in LAEs \cite{Bond2009}.
 
-We recall that we do not perform a explicit modeling for LAE
-detectability. Our model does not assign a luminosity or escape
-fraction for each LAE. We are interested in constraining the halo
-mass range hosting detectable LAEs commonly used in photometric
-narrow-band surveys. We want to explore a wide range of
-possible masses for the host halos without any strong theoretical
-prejudice regarding the details of star formation in high-redshift
-galaxies. 
+There are three parameters that decide whether a halo host a LAE: the
+lower and upper bounds for the mass range ($M_{\rm min}< M_{\rm h} < M_{\rm max}$) 
+and the fraction ($f_{\rm occ}$) of such halos that host a detectable
+LAE. A physical interpretation of the occupation fraction $f_{\rm
+  occ}$ convolves two phenomena: the actual presence of a star forming
+galaxy in a halo and its detectability as a LAE.  
+
+
+Our model does not assign a luminosity or escape fraction for each
+LAE in order to maintain theoretical uncertainties to a minimum. With
+this flexibility we can explore a wide range of possible masses for
+the host halos without any strong theoretical prejudice regarding the
+details of star formation and \ly escape fraction in high-redshift
+galaxies.  
 
 
 In what follows we note by the letter ${\mathcal M}$ a model
@@ -817,21 +816,10 @@ $z=3.1$, extending the capabilities of abundance matching methods.
 
 \subsection{Caveats of our method}
 
-There are four caveats for the work presented here that are important
-to keep in mind. The first is the  
-assumption of a single LAE per dark matter halo. This contradicts the
-general expectation of dark matter sub-halos in the simulation to host
-satellite galaxies. However, it has been found in analysis based on
-the shape of the correlation function \citep{Jose2013b} that satellite
-galaxies are not a dominant population, making our initial
-approximation a reasonable one. The lack of close pairs in
-  observations \citep{Bond2009}is another hint that the observed LAE
-  population agrees with our approximation.
-Therefore we conclude that including the effect of satellite galaxies
-should not significantly change the main results reported in this
-\documentname.  
+There are three minor caveats for the work presented here that are important
+to keep in mind. 
 
-The second caveat is the precise values for the mass intervals. These
+The first caveat is the precise values for the mass intervals. These
 values are quoted from halos defined using a FOF halo
 finder. Different halo finders and definitions for the detection
 density threshold can yield different masses up to a factor $\sim 2$\citep{More2011}. For 
@@ -844,7 +832,7 @@ less than $\sim 0.2$ dex. However, this represents a systematic change
 in the mass values and the mass interval $\Delta M$ quoted here should
 remain unchanged.
 
-The third caveat is the exact value that was used to turn
+The second caveat is the exact value that was used to turn
   filter values into cosmological volumes. Strictly speaking the
   volume probed is a function of the \ly luminosity. Brighter LAEs
   probe a larger volume than fainter ones \citep{Gronwall07}. A proper
@@ -858,7 +846,7 @@ change in volume could be compensated by different values for the
 favored model parameters $M_{\rm  min}$ and $M_{\rm max}$ by about the
 same factor of $\sim2$ or $0.3$ dex. 
 
-A fourth caveat is the comparison of results for the number density
+A third caveat is the comparison of results for the number density
   statistics and the ACF from surveys with different EW cuts. In this
   sense we highlight again that the two filters and selection
   criteria used by \citep{Ouchi2008} and \citep{Yamada2012} are only
@@ -884,46 +872,33 @@ of the code to produce the plots can be found as an Ipython notebook
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this \documentname we look for constraints on the preferred mass
-and occupation fraction of dark matter halos hosting Lyman $\alpha$
-Emitters at redshift $z=3.1$ in a $\Lambda$CDM cosmology. We perform
-this study paying special attention to the impact of cosmic variance
-on these results. To this end we build a large number of mock catalogs
+In this \documentname we quantify the impact of cosmic variance in
+constraining the  mass and occupation fraction of dark matter halos
+hosting Lyman $\alpha$ Emitters at redshift $z=3.1$ in a $\Lambda$CDM
+cosmology.  To this end we build a large number of mock catalogs
 matching observational geometries. The mocks are constructed from a
-N-body simulation following a simple recipe to assign a single LAE to
-each halo whereby only a fraction $f_{\rm occ}$ of halos within a mass
-range  $M_{\rm min}\leq M_{\rm h}\leq M_{\rm   max}$ can host a
-LAE. The main motivation to implement this kind of model is to avoid
-all the uncertainties in the estimation of \ly luminosities. 
+N-body simulation by assigning a single LAE to a DM halo.
  
 We then proceed with a thorough exploration of the space of free
-parameters $M_{\rm min}, M_{\rm max}$ and $f_{\rm occ}$ to find mocks
-that are consistent with two observational constraints: the surface
-number density distribution and the angular correlation function. Out
-of the initial $9000$  combinations of parameters in the model we find
-$40$ combination of parameters consistent with observations.
+parameters $M_{\rm min}, M_{\rm max}$ and $f_{\rm occ}$ describing the
+model. We look for consistency with two observational constraints: the
+surface number density distribution and the angular correlation
+function. Out of the initial $9000$  combinations of parameters in the
+model we find $40$ combination of parameters consistent with
+observations. 
 
-In these models the occupation fraction remains unconstrained, while 
-many modelshave a narrow mass range models with $\Delta M\leq 0.5$. 
-This approach the discovery of consistent models that have
-been overlooked so far in the literature. A central role in these new
-models is played by the wide range of occupation fraction values,
-something unexpected from previous studies
-\citep[i.e.][]{Gawiser2007,Ouchi2010}  that unanimously favor low
-values on the range of $10^{-2}$. The biggest innovation in our
-analysis is the construction of mock observations that directly
-explore the impact of cosmic variance.
+We find two interesting features in these models. First, the
+occupation fraction remains unconstrained; second, many models have a
+narrow mass range models with $\Delta M \leq 0.5$.  
 
-Nevertheless, all the halo mass ranges deduced in previous analysis are a
-subset of the models we find in this paper.  All of our preferred
-models support the notion that the most massive halos at $z=3.1$ do
-not host detectable LAEs. 
+The wide range of occupation fraction values is unexpected from
+previous studies \citep[i.e.][]{Gawiser2007,Ouchi2010}  that
+unanimously favor low values on the range of $10^{-2}$. Nevertheless,
+all the halo mass ranges deduced in previous analysis are a subset of
+the models we find in this paper, all of the best models support the
+notion that the most massive halos at $z=3.1$ do not host detectable
+LAEs.   
 
-In summary, we show that the currently available spatial
-  information of LAEs can put a tight constraint on the halo mass
-  range but not on the occupation fraction. This information can
-confidently be used to establish that these galaxies are hosted in low
-mass halos with masses spanning less than one order of magnitude. 
   From the point of view of Dark Energy surveys such as the Hobby-Eberly
   Telescope Dark Enery Experiment (HETDEX) the
   narrow mass range for LAEs can be seen as an advantage because its
@@ -933,24 +908,29 @@ mass halos with masses spanning less than one order of magnitude.
 SuprimeCam and HETDEX) covering larger fields and a wider range of
 luminosities will be key in reducing cosmic variance and imposing
 tighter constraints on the properties of dark matter halos hosting
-LAEs. At the same time, additional modeling for \ly radiation transfer
-is needed to put tighter constraints on  occupation fraction in high
-redshift halos, also paying attention to other physical phenomena,
-such as the stochasticity \citep{ForeroRomero2013} in the star
-formation process, which might play a role in inducing detection
-biases in high redshift LAEs.  
+LAEs. 
+
+Finally, additional modeling for \ly radiation transfer is needed to
+put tighter constraints on  occupation fraction in high redshift
+halos, also paying attention to other physical phenomena, such as the
+stochasticity \citep{ForeroRomero2013} in the star formation process,
+which might play a role in introducting detection biases in high redshift
+LAEs.
 
 
 \section*{Acknowledgments} 
+
+J.E.F-R was supported by the FAPA grant by Vicerrector\'ia de
+Investigaciones at Universidad de los Andes.  
+
 J.E.F-R thanks the hospitality of Changbom Park and the Korea
 Institute for Advanced Study where the first full draft of this paper
 was completed. The authors also thank Peter Laursen, Paulina Lira, 
 Alvaro Orsi and Mark Dijkstra for helpful comments on the physical
 interpretation and presentation of our results. 
 
-J.E.F-R was
-supported by the FAPA grant by Vicerrector\'ia de Investigaciones at
-Universidad de los Andes. The MultiDark Database used in this paper and the web application providing online access to it were constructed as part of the
+
+The MultiDark Database used in this paper and the web application providing online access to it were constructed as part of the
 activities of the German Astrophysical Virtual Observatory as result
 of a collaboration between the Leibniz-Institute for Astrophysics
 Potsdam (AIP) and the Spanish MultiDark Consolider Project
