@@ -71,13 +71,12 @@ $^{3}$ FACom-Instituto de F\'isica-FCEN, Universidad de Antioquia, Calle 70 No. 
 
 \begin{abstract}
 %
-  We study the impact of cosmic variance in constrainng the mass and
+  We study the impact of cosmic variance in constraining the mass and
   occupation fraction of dark matter halos hosting \ly Emitting
-  Galaxies at high redshift. We use and N-body simulation to construct
+  Galaxies at high redshift. We use an N-body simulation to construct
   mock fields with the same typical size of observed fields at
-  $z=3.1$. As a benchmark we match the observed number density
-  distribution across fields and the angular correlation function. To
-  populate the halos in the simulation we use a model where a dark
+  $z=3.1$ to match the observed number density distribution across
+  fields and the angular correlation function. In our model a dark
   matter halo with mass in the range $M_{\rm min}<M_{\rm h}<M_{\rm
     max}$ can only host one detectable LAE with a probability $0.1
   \leq f_{\rm occ}\leq 1.0$.  Our analysis shows that the clustering
@@ -85,17 +84,14 @@ $^{3}$ FACom-Instituto de F\'isica-FCEN, Universidad de Antioquia, Calle 70 No. 
   constraint on the occupation fraction. On the other hand, the
   minimum mass and maximum mass can be constrained to the range
   $M_{\rm  max}<10^{12}$\hMsun\ and $10^{10.2}\hMsun\leq M_{\rm
-    min}\leq 10^{11.5}\hMsun$. We also find that the consistent models
-  have a narrow mass range, $\Delta M \equiv \log_{10}M_{\rm max} -
-  \log_{10} M_{\rm min}$, smaller than $1.0$ dex, with a majority in the range $\Delta M<0.5$ dex. These results
-  fall into constraints   already presented in the
-  literature. However, the wide range of values for the occupation
-  fraction and the narrow mass range $\Delta M$ are novel results from
-  the approach presented here. We conclude that achieving a constraint on the
-  occupation fraction for LAEs at $z=3.1$ will require observations on
-  larger fields to reduced cosmic variance and robust physical models
-  for the connection between dark matter, star formation and the escape
-  of \ly radiation. 
+    min}\leq 10^{11.5}\hMsun$. Additionally, we find that the
+  consistent models have a narrow mass range, $\Delta M \equiv \log_{10}M_{\rm max} -
+  \log_{10} M_{\rm min}$, smaller than $1.0$ dex, with a majority in
+  the range $\Delta M<0.5$ dex. These results fall into constraints
+  already presented in the literature. However, the wide range of
+  values for the occupation fraction and the narrow mass range $\Delta
+  M$ are novel results allowed by takinf into account the influence of
+  cosmic variance on the statistics derived from observations.  
 \end{abstract}
 
 
@@ -139,22 +135,21 @@ escape each galaxy and compute the observed luminosity for each
 galaxy. These models can predict different observables including: the
 luminosity function, correlation function and the equivalent width
 distributions. Such modelling has been implemented in semi-analytic
-models \citep{Garel2012,Orsi2012,Soler2012} and  full N-body
+models \citep{Garel2012,Orsi2012} and  full N-body
 hydrodynamical simulations \citep{Laursen2007, Dayal2009,
   ForeroRomero2011, Yajima2012}. 
 
-These calculations involve many uncertain steps, such as the treatment
-of astrophysical processes describing star formation. However, in the
-context of LAEs, the dominant uncertainty is the estimation of the
-escape fraction, that is the fraction of \ly photons that escape the
-galaxy to the observer. Given the resonant nature of the \ly line, the escape
-fraction is sensitive to  the dust contents, density, temperature, topology and
-kinematics of the neutral Hydrogen in the interstellar medium
-(ISM). Solving the radiative transfer of \ly photons in the ISM requires Monte
-Carlo simulations. The process of finding a consensus on the expected
-value for the \ly escape fraction in high redshift galaxies is still
-matter of ongoing research
-\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.  
+However, these calculations involve many uncertain steps such as 
+the estimation of the escape fraction, that is the fraction of \ly
+photons that escape the galaxy to the observer. Given the resonant
+nature of the \ly line, the escape fraction is sensitive to  the dust
+contents, density, temperature, topology and kinematics of the neutral
+Hydrogen in the interstellar medium (ISM). Solving the radiative
+transfer of \ly photons in the ISM requires Monte Carlo
+simulations. The process of finding a consensus on the expected value
+for the \ly escape fraction in high redshift galaxies is still matter
+of ongoing research
+\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.   
 
 A different approach to infer the typical mass of halos hosting
 LAEs is based on the spatial clustering information. This approach uses the fact
@@ -172,20 +167,22 @@ into the possible impact of cosmic variance.
 Recently \cite{Yamada2012} observed a wide area of $2.4$ deg$^{2}$
 under homogeneous instrumental and data reduction conditions. This data
 set is constructed from 12 different sub-fields that allows us to use
-clustering statistics and cosmic variance to constrain the mass and
-occupation fraction of halos hosting LAEs. 
+clustering statistics and the cosmic variance among fields to
+constrain the mass and occupation fraction of halos hosting LAEs. 
 
-The method we use here firstly populates DM halos in cosmological
-simulations with LAEs. We only consider whether a DM can host a
-detectable LAE or not without predicting a \ly  luminosity. This
-bypasses all the physical uncertainties involved in the estimation of
-observed \ly luminosities. Once we have the halos hosting a LAE, we
-build mock surveys following the geometry of the observed fields by
-\cite{Yamada2012}. This allows us to take explicitly into account the
-effect of cosmic variance. We used this mock surveys to compared them
-against observations in terms of the number density distribution and
-the angular correlation function. This allows us to constraint the
-preferred mass range and occupation fraction of DM halos hosting LAEs.    
+
+In this paper we investigate the impact of cosmic variance in
+constraining the mass and occupation fraction of halos hosting LAEs.
+We do this by constructing mock catalogs from cosmological simulations.
+Our method populates each halo in the simulation with a LAE without
+predicting a \ly  luminosity. This bypasses all the physical
+uncertainties associated to star formation and radiative transfer.
+We build mock surveys following the geometry of the observed fields by
+\cite{Yamada2012} to compared them  against observations in terms of
+the number density distribution and the angular correlation
+function. This allows us to find a range of parameters of our model
+that are consistent with observations while taking into account
+cosmic variance.
  
 
 This \documentname is structured as follows. In the next section we present
@@ -628,9 +625,9 @@ The models in the third family are barely consistent with the
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_mass.pdf}
+\includegraphics[width=0.45\linewidth,angle=0]{Fig6_mass.pdf}
 \hspace{5mm}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig6_f_occ.pdf}
+\includegraphics[width=0.45\linewidth,angle=0]{Fig6_f_occ.pdf}
 \end{center}
 \caption{$M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
     min}$-$f_{\rm occ}$ (right) planes showing the models fulfilling both
