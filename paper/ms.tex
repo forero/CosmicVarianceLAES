@@ -335,17 +335,15 @@ coordinates) and FOF mass. We focus our work on halos more massive
 than $1\times 10^{10}$\hMsun resolved with at least $70$ particles.
 %the reasons for this choice are explained in the next sub-section. 
 
-
 \subsection{A model to populate halos with LAEs}
 \label{subsec:mocks}
 
+We assume that a dark matter halo can only host one detectable LAE at
+most.  This is consistent with theoretical analysis of the correlation
+function \citep{Jose2013b} and obsevations that confirm a lack of
+class pairs in LAEs \cite{Bond2009}. 
 
-We assume that a dark matter halo can only host one
-detectable LAE at most.  This is consistent with theoretical analysis
-of the correlation function \citep{Jose2013b} and obsevations that
-confirm a lack of class pairs in LAEs \cite{Bond2009}.
-
-There are three parameters that decide whether a halo host a LAE: the
+There are three parameters that decide whether a halo host a LAE. The
 lower and upper bounds for the mass range ($M_{\rm min}< M_{\rm h} < M_{\rm max}$) 
 and the fraction ($f_{\rm occ}$) of such halos that host a detectable
 LAE. A physical interpretation of the occupation fraction $f_{\rm
@@ -353,62 +351,50 @@ LAE. A physical interpretation of the occupation fraction $f_{\rm
 galaxy in a halo and its detectability as a LAE.  
 
 
-Our model does not assign a luminosity or escape fraction for each
+Our model does not assign a luminosity or escape fraction to each
 LAE in order to maintain theoretical uncertainties to a minimum. With
 this flexibility we can explore a wide range of possible masses for
 the host halos without any strong theoretical prejudice regarding the
 details of star formation and \ly escape fraction in high-redshift
 galaxies.  
 
-
 In what follows we note by the letter ${\mathcal M}$ a model
-defined by a particular choice of the three scalar parameters $M_{\rm
+defined by a particular choice of the three parameters $M_{\rm
   min}$, $M_{\rm  max}$ and $f_{\rm occ}$. For each model ${\mathcal
   M}$ we create a set of mock fields from disjoint volumes in the
 simulation. Each volume has the same geometry probed by Suprime-CAM
 and the narrow band filter, namely rectangular cuboids of dimensions
 $46\times 35\times 41$ $h^{-3}$ Mpc$^{3}$ where the last dimension goes
 in the redshift direction. This corresponds to a total area of $880$
-arcmin$^{2}$ in each mock field. We construct a total $5\times 7
-\times 6=210$ of such volumes from a snapshot in the Bolshoi
+arcmin$^{2}$ in each mock field. 
+
+Strictly speaking the volume probed is a function of the \ly
+luminosity. Under the considerations presented in \citep{Gronwall07}
+we expect the survey depth and the true number density to change at
+most by a factor of $\sim2$, increasing the scatter on the
+number density by a similar same factor. This implies that the models we
+find in this paper can be considered as a minimal set of all models
+that could be found if one takes this minor effect into account.
+
+We construct a total $5\times 7 \times 6=210$ sub-volumes from a snapshot in the Bolshoi
 simulation. In each mock field a LAE is assigned to the position of a
 dark matter halo if the halo mass is in the range allowed by the model
-$M_{\rm min}<M_{\rm h}<M_{\rm max}$ and a random variable taken from
-an homogeneous distribution $0\leq \xi<1$ is smaller than the occupation
-fraction $\xi<f_{\rm occ}$.
+$M_{\rm min}<M_{\rm h}<M_{\rm max}$ and a random variable taken from n
+homogeneous distribution $0\leq \xi<1$ is smaller than the occupation
+fraction $\xi<f_{\rm occ}$. 
 
-Next we construct mock surveys by making groups of $12$ mock fields
-out of the $210$ available volumes. In total $15$ mock surveys are
-constructed for each model $\mathcal{M}$. The grouping of the $12$
-mock fields into a mock catalog is done in two different ways. The
-first is called {\texttt{match}} because it follows the clustering of the
+We construct mock surveys by making groups of $12$ mock fields
+out of the $210$ available volumes.  The grouping of the $12$
+mock fields into a mock catalog is done following the clustering of the
 observational fields. From the $12$ mock fields, $7$ are constructed
 from contiguous fields in the simulation to mimic the SSA22 region,
 $3$ are also contiguous between them but not to the first $7$ fields
 to mimic the SXDS fields and finally $2$ non-contiguous fields to
-imitate the SDF and GOODS-North field.   The second way to group the
-mock fields is called {\texttt{random}}, whereby all the $12$ fields
-are selected in such a way as to avoid that any two volumes are
-contiguous. In this \documentname we only report the results obtained
-by the {\texttt{match}} method since we do not find any significant
-difference with respect to the {\texttt{random}} method.
+imitate the SDF and GOODS-North field.   In total $15$ mock surveys are
+constructed for each model $\mathcal{M}$ after taking into account the
+spatial restrictions due to the grouping we have just described.
 
-
-Figure \ref{fig:distros} shows the spatial distribution for one mock
-survey constructed using the {\texttt{match}} method. Each field
-corresponds to one of the observational fields. The model parameters
-to build the mock are $M_{\rm min}=10^{10.4}$\hMsun, $M_{\rm
-  max}=10^{10.5}$\hMsun and $f_{\rm occ}=0.1$. The figure shows only
-one out of the $15$ different mock surveys that are constructed for
-each model. We note that we only use $15\times 12=180$ mock fields out of the
-total of $210$ available sub-volumes. The reason is that the {\texttt{match}}
-method imposes constraints on the way the $7$ fields mimicking the
-SSA22 can be distributed. This restriction makes unable some of the
-sub-volumes in the box. We decide to keep the number of mock surveys
-fixed to $15$ also for the {\texttt{random}} method in order to allow a
-fair comparison between the two methods.
-
-\subsection{Exploring and selecting good models}
+\subsection{Exploring and selecting consistente models}
 
 We make a thorough exploration of the parameter space for the models
 ${\mathcal M}$ where $\log_{10} M_{\rm min}$ takes $30$ values from $10.0$ up
@@ -423,35 +409,28 @@ The lower limit for the parameter $M_{\rm min}$ is set by the minimum
 occupation fraction we decide to consider. At $M_{\rm
   min}=10^{10}$\hMsun the halo number density around that mass range
 is $\sim 10$ times higher than the observational constraints
-for LAEs. This means that models in that mass range and an occupation fraction $f_{\rm  occ}=0.1$ have the possibility to be compatible with
-observations. Lower values for $M_{\rm min}$ require $f_{\rm
-  occ}<0.1$, which are not considered in this \documentname.  In
-  turn exploring occupation fractions on the order of $f_{\rm occ}=0.01$ 
-  only makes sense for halo populations in the mass range of
-  $10^{9}$\hMsun which are abundant enough to fit observations with a
-  very low occupation fraction. In our case, this is a mass range unresolved
-  by the Bolshoi simulation and therefore cannot be considered in the
-  present study.
+for LAEs. This means that models in that mass range and an occupation
+fraction $f_{\rm  occ}=0.1$ have the possibility to be compatible with
+observations.  Similarly, wxploring occupation fractions on the order
+of $f_{\rm occ}=0.01$ only makes sense for halo populations in the
+mass range of $10^{9}$\hMsun which are abundant enough to reproduce
+the observational constraint on the number density. In our case, this
+is a mass range unresolved by the Bolshoi simulation and therefore
+is not considered in the present study. 
 
-For each mock survey generated in a given model ${\mathcal M}$ we
+For each mock survey generated with a given model ${\mathcal M}$ we
 compute the surface density in its $12$ mock fields. We perform a
 Kolmogorov-Smirnov (KS) to compare these values against the $12$
-observational values. This tests gives us a value $0<P<1$ to
+observational values. The test gives a value $0<P<1$ to
 reject the null hypothesis, namely that two data sets come from the
 same distribution. In this paper we consider that for values $P>0.05$
 the two distributions can be thought as coming from the same
-distribution.
+distribution. We require that a model ${\mathcal M}$ must have all the 15 mock
+surveys with $P>0.05$ to be considered consistent with observations.
 
-We begin by considering that  a model ${\mathcal M}$ with at least one
-mock survey (out of 15) consistent with observations has viable
-parameters to host LAEs. From that we consider a stronger constraints
-to reduce the number of models by asking that all the 15 mocks  to be
-consistent with observations and analyze again the properties of the
-resulting models. Finally we add the ACF as an additional constraint
-and consider all the models having their $15$ mocks consistent with
-observations. 
 
-The ACF is computed using  the Landy \&  Szalay estimator
+We add the Angular Correlation Function (ACF) as an additional
+constraint. The ACF is computed using  the Landy \&  Szalay estimator
   \citep{Landy1993}  on fields of size $1$ deg$^2$ to be compared
   against the results reported by \cite{Ouchi2010}.
 
@@ -460,14 +439,16 @@ The observed and mock ACF are fit to a power-law function:
 \omega(\theta) = \left(\frac{\theta}{\theta_{0}}\right)^{-\beta}, 
 \label{eq:fitting}
 \end{equation}
+%
 where $\theta_0$ and $\beta$ are free parameters. The fit is done
 using a least square minimization procedure. For each mock field we
 obtain a covariance matrix that gives us the uncertainty in the
-parameters $\beta$ and $\theta_0$.  We consider that a mock field is
-consistent with observations if the two parameters $\beta$ and
-$\theta_0$ are equal within a $1$-$\sigma$ range. We perform this
-comparison only with the fields constructed using the {\texttt{match}}
-method.
+parameters $\beta$ and $\theta_0$.  For a model we derive a mean
+value and a dispersion computed from the fit of all mock fields. We
+consider that a mocdel is consistent with observations if the two
+parameters $\beta$ and $\theta_0$ are equal within a $1$-$\sigma$
+range. 
+
  
 \section{Results}
 \label{sec:results}
@@ -608,9 +589,6 @@ three families:
 \end{itemize}
 
 
-A complete parameter list for the three families is presented in Tables
-\ref{table:firstfamily}, \ref{table:secondfamily}  and 
-\ref{table:thirdfamily}.  
 
 The models in the third family are barely consistent with the
   constraints from the ACF. These models they have another particular
@@ -713,86 +691,6 @@ find that an ACF analysis is not enough to rule
 out models with a high occupation fraction $f_{\rm occ}>0.2$.
 
 
-
-
-\begin{table}
-\begin{center}
-\begin{tabular}{cccc}\hline\hline
-$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
- 10.4 &10.7 & 0.1& 0.3 \\
- 10.5 &10.9 & 0.1& 0.4 \\
- 10.5 &11.0 & 0.1& 0.5 \\
- 10.6 &10.8 & 0.2& 0.2 \\
- 10.6 &11.2 & 0.1& 0.6 \\
- 10.6 &11.3 & 0.1& 0.7 \\
- 10.6 &11.4 & 0.1& 0.8 \\
- 10.6 &11.5 & 0.1& 0.9 \\
- 10.6 &11.6 & 0.1& 1 \\
- 10.7 &11.0 & 0.2& 0.3 \\
- 10.8 &11.2 & 0.2& 0.4 \\
- 10.8 &11.3 & 0.2& 0.5 \\
- 10.8 &11.4 & 0.2& 0.6 \\
- 10.9 &11.9 & 0.2& 1.0 \\
- 10.9 &11.7 & 0.2& 0.8 \\
- 10.9 &11.8 & 0.2& 0.9 \\\hline
-\end{tabular}
-\end{center}
-\caption{\label{table:firstfamily}
-List of parameters for the first
-  family of models. Narrow mass range $\Delta M\leq 1.0$ dex and low
-  occupation fraction $f_{\rm occ}\leq 0.3$.} 
-\end{table}
-
-
-\begin{table}
-\begin{center}
-\begin{tabular}{cccc}\hline\hline
-$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
- 10.5 &10.6 & 0.3 & 0.1 \\
- 10.6 &10.7 & 0.4 & 0.1 \\
- 10.7 &10.8 & 0.5 & 0.1 \\
- 10.8 &10.9 & 0.6 & 0.1 \\
- 10.8 &11.0 & 0.4 & 0.2 \\
- 10.9 &11.0 & 0.8 & 0.1 \\
- 10.9 &11.0 & 0.9 & 0.1 \\
- 10.9 &11.1 & 0.5 & 0.2 \\
- 10.9 &11.3 & 0.3 & 0.4 \\
- 11.0 &11.1 & 1.0 & 0.1 \\
- 11.0 &11.2 & 0.6 & 0.2 \\
- 11.0 &11.4 & 0.4 & 0.4 \\
- 11.1 &11.3 & 0.7 & 0.2 \\
- 11.1 &11.3 & 0.8 & 0.2 \\
- 11.1 &11.4 & 0.6 & 0.3 \\
- 11.2 &11.4 & 0.9 & 0.2 \\
- 11.2 &11.4 & 1.0 & 0.2 \\\hline
-\end{tabular}
-\end{center}
-\caption{\label{table:secondfamily}List of parameters for the second
-  family of models. Narrow mass range $\Delta M\leq 1.0 $ dex and high occupation fraction $f_{\rm occ}>0.2$.}
-\end{table}
-
-
-\begin{table}
-\begin{center}
-\begin{tabular}{cccc}\hline\hline
-$\log_{10}M_{\rm min}$ & $\log_{10}M_{\rm max}$ & $f_{\rm occ}$ & $\Delta M$\\\hline
- 10.6 &11.7 & 0.1& 1.1 \\
- 10.9 &12.0 & 0.2& 1.1 \\
- 10.9 &12.1 & 0.2& 1.2 \\
- 10.9 &12.2 & 0.2& 1.3 \\
- 10.9 &12.3 & 0.2& 1.4 \\
- 10.9 &12.6 & 0.2& 1.7 \\
- 10.9 &12.8 & 0.2& 1.9 \\\hline
-\end{tabular}
-\end{center}
-\caption{\label{table:thirdfamily}List of parameters for the third
-  family of models. Wide mass range $\Delta M> 1.0$ dex and low
-  occupation fraction $f_{\rm occ}\leq 0.2$. These models are barely
-  consistent with the constraints from the Angular Correlation
-  Function and have been excluded from the main discussion.}
-\end{table}
-
-
 \subsection{In the context of abundance matching models}
 
 The abundance matching methods are based on observational results for
@@ -831,19 +729,6 @@ less than $\sim 0.2$ dex. However, this represents a systematic change
 in the mass values and the mass interval $\Delta M$ quoted here should
 remain unchanged.
 
-The second caveat is the exact value that was used to turn
-  filter values into cosmological volumes. Strictly speaking the
-  volume probed is a function of the \ly luminosity. Brighter LAEs
-  probe a larger volume than fainter ones \citep{Gronwall07}. A proper
-way to account for this effect would require to assign luminosities to
-each mock LAE and process them in a similar way as mock
-observations. However, we can estimate that under the considerations
-presented in \citep{Gronwall07}, one could expect the survey depth to
-change at most by a factor of $\sim2$. Considering the dependence
-of the number density on halo mass (right panel of Figure 1), such
-change in volume could be compensated by different values for the
-favored model parameters $M_{\rm  min}$ and $M_{\rm max}$ by about the
-same factor of $\sim2$ or $0.3$ dex. 
 
 A third caveat is the comparison of results for the number density
   statistics and the ACF from surveys with different EW cuts. In this
