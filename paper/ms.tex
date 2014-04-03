@@ -204,52 +204,48 @@ s$^{-1}$ Mpc$^{-1}$.
 \section{Methodology}
 
 Our method is based on the comparison of observations and mock
-catalogs. We use two different kinds of statistics to perform the
-comparison: (i) the distribution of the surface number density
-across fields and (ii) the angular correlation function.
+catalogs that take into account cosmic variance. Our benchmarks are the
+distribution of the surface number density across fields and the
+angular correlation function.
 
 In the next subsections we describe in detail the four key
-elements int our work-flow. First we present (in two sub-sections) the
+elements int our work-flow. First, we present the 
 observations we take as a benchmark. Second, we describe the main
 characteristics of the N-body simulation and the halo catalogs we
-use. Third, we recount the important parameters of the simplified
+use. Third, we list the important parameters of the simplified
 model that we use to populate the halo catalogs with LAEs. Finally, we
-describe some of the statistical tests we adopt to compare
-observations and mocks .
+describe the statistical tests we adopt to compare observations and mocks.
 
 \subsection{Observational constraints}
 
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
-\includegraphics[width=0.45\linewidth,angle=0]{Fig1b.pdf}
-\includegraphics[width=0.45\linewidth,angle=0]{Fig1.pdf}
-\caption{ \label{fig:halos} Left panel. Cumulative distribution of LAE number
+\includegraphics[width=0.95\linewidth,angle=0]{Fig1b.pdf}
+\caption{ \label{fig:number_density} Cumulative distribution of LAE number
   densities in all the fields observed by \citet{Yamada2012}. The
   point with the highest surface density corresponds to the densest
-  sub-field in the SSA22 field. Right panel. Surface density of dark 
-  matter halos as a function of a minimum halo mass. Each line
-  represents one of the $210$ volumes of dimensions $46\times 35\times
-  41$ $h^{-3}$ Mpc$^{3}$ in the Bolshoi simulation. The horizontal
-  gray band represents the range of surface densities observed for
-  LAEs at $z=3.1$ as reported by \citet{Yamada2012} and the dashed
-  line the observational results by \citet{Ouchi2008}.}
+  sub-field in the SSA22 field.}
 \end{center} 
-\end{figure*}
+\end{figure}
 
-The primary observational constraint we use in this paper is the LAE number
-density information at $z=3.1$ obtained by the panoramic narrow-band
-survey presented by \cite{Yamada2012} from a survey
-conducted with the Subaru 8.2m telescope and the Subaru Prime Focus Camera,
-which has a field of view covering $34\times 27$ arc-min, corresponding to a
-comoving scale of $46\times35$ Mpc $h^{-1}$ at $z=3.09$.  The narrow
-band filter used in the survey is centered at $4977$ \AA~with  $77$ \AA~width,
-corresponding to the redshift range $z=3.062$-$3.125$ and $41$ \hMpc comoving scale for the detection of the Lyman-$\alpha$ line
-centered at $z=3.09$. The authors reported a total  $2161$  LAEs with
-an observed equivalent width, in the observer frame, larger than $190$
-\AA~over a total survey area of $2.42$ deg$^{2}$ that includes 12
-sub-fields,  this corresponds to an average surface number density of
-$0.24\pm 0.01$ arcmin$^{-2}$. 
+The first observational constraint we use in this paper is the LAE number
+density information at $z=3.1$ obtained by \cite{Yamada2012} from a survey
+conducted with the Subaru 8.2m telescope and the Subaru Prime Focus Camera.
+The camera has a field of view covering $34\times 27$ arc-min,
+corresponding approximately to a comoving scale of $46\times35$ Mpc
+$h^{-1}$ at $z=3.09$.  
+
+The narrow band filter used in the survey is
+centered at $4977$ \AA~with  $77$ \AA~width, corresponding to the
+redshift range $z=3.062$-$3.125$ and $41$ \hMpc comoving scale for the
+detection of the Lyman-$\alpha$ line centered at $z=3.09$. The authors
+reported a total  $2161$  LAEs with an observed equivalent width, in
+the observer frame, larger than $190$ \AA~over a total survey area of
+$2.42$ deg$^{2}$ that includes 12 sub-fields,  this corresponds to an
+average surface number density of $0.24\pm 0.01$ arcmin$^{-2}$.  The
+distribution of the surface number densities is shown in Figure
+\ref{fig:number_density}. 
 
 The survey covered four independent fields:
 
@@ -259,71 +255,61 @@ field of $1.38$ deg$^2$ with $1394$ detected LAEs. This large field is
 composed by 7 sub-fields. 
 
 \item The Subaru/{\it
-  XMM-Newton} Deep Survey (SXDS)-North, -Center and -South fields , with a
+  XMM-Newton} Deep Survey (SXDS)-North, -Center and -South fields, with a
 total of $0.58$ deg$^2$ and $386$ LAEs (3 sub-fields).
 
 \item The Subaru Deep Field (SDF) with $0.22$ deg$^2$ and
-$196$ LAEs (1 sub-field), and 
+$196$ LAEs (1 sub-field).
 
 \item The Great Observatory Optical Deep Survey  (GOODS-N) field with
   $0.24$ deg$^2$ and $185$ LAEs (1 sub-field).   
 \end{enumerate}
-   
+
+The surface number density distribution for these fields is shown in
+Figure \ref{fig:number_density}.
 
 There is abundant observational work done on LAEs at redshift $z=3.1$
 \citep{Kudritzki2000,Matsuda2005,Gawiser2007,Nilsson2007,Ouchi2008}.
-However, we decide to focus on the data from \cite{Yamada2012} because
+However, we use the data from \cite{Yamada2012} because
 it has the largest covered area with homogeneous instrumentation
 conditions (telescope, narrow band filter), data reduction pipeline
 and conditions to construct the LAE catalog. This ensures that the
-number density variations among fields are \emph{not} due to different
+number density variations among fields are not due to different
 observational conditions or criteria to construct the catalogs.
 
-A secondary benchmark is the angular correlation function
-(ACF). \cite{Yamada2012} does not report an ACF measurement for
-  their fields. Instead we use the results by   \cite{Ouchi2008} who
-  reported the ACF is over a region of $1$ deg$^2$ over the SXDS
-  field.  
+The second benchmark is the angular correlation function
+(ACF). Unfortunately, \cite{Yamada2012} do  not report an ACF measurement for
+their fields. Instead, we use the results by   \cite{Ouchi2008} who
+reported the ACF is over a region of $1$ deg$^2$ over the SXDS
+field.  
 
 There are some differences between \cite{Ouchi2008} observations
-  and those by \cite{Yamada2012}. The details in the color selection,
-  corresponding limiting luminosities and EW thresholds are different
-  in these references. In the case of
-  \cite{Ouchi2008} the number density is $0.099\pm0.005$ arcmin$^{-2}$, which
-  is 50\% lower that the median value of $0.20$ arcmin$^{-2}$ for the
-  the general fields in \cite{Yamada2012}. In spite of these
-  differences \cite{Ouchi2008} provides the most similar conditions
-  to \cite{Yamada2012}.
+and those by \cite{Yamada2012}. The details in the color selection,
+corresponding limiting luminosities and EW thresholds are different
+in these references. In the case of
+\cite{Ouchi2008} the number density is $0.099\pm0.005$ arcmin$^{-2}$, which
+is 50\% lower that the median value of $0.20$ arcmin$^{-2}$ for the
+the general fields in \cite{Yamada2012}. In spite of these
+differences \cite{Ouchi2008} provides the most similar conditions
+to the observations presented by \cite{Yamada2012}.
 
 
+We note that the field SSA22-1 has been known to harbor a significant
+galaxy overdensity. \cite{Yamada2012} estimates that the densest
+sub-field is likely to be a rare density peak with $3-4\sigma$
+significance on the scale of $\sim 60$\hMpc.  All the other sub-fields
+in SSA22 are average with similar number density as other blank fields. 
 
-\subsubsection{The adequacy of including SSA22 as an observational benchmark}
-
-The field SSA22 has been known to harbor a significant
-  galaxy overdensity. \cite{Yamada2012} estimates that the densest
-  sub-field is likely to be a rare density peak with $3-4\sigma$
-  significance on the scale of $\sim 60$\hMpc. 
-
-All the other sub-fields in SSA22 are average. They have a similar
-  number density as other blank fields. The left panel in Figure
-  \ref{fig:halos} shows the integrated distribution of LAEs number
-  density in all the fields reported in  \cite{Yamada2012}. It is
-  evident that there is only one sub-field  that stands out as an
-  outlier in the distribution, corresponding to  the densest field in
-  SSA22. All the other fields form a continuous  distribution in
-  number density.
-
-Therefore, using the whole SSA22 region as a benchmark in the
-  number density distribution does not impose any bias. However, on
-  has to  keep in mind that is not plausible that the full number
-  density distribution from a simulation will include a very dense
-  field. For this reason we do not require the presence of a very
-  dense field such as SSA22-1 to judge a mock distribution as
-  successful. The statistical test we use o compare mock
-  distributions against observations does not require such a perfect
-  match. 
-  
-
+From Figure \ref{fig:number_density}  it is evident that there is only
+one sub-field  that stands out as an outlier in the distribution,
+corresponding to SSA22-1. All the other fields form a continous
+distribution in number density. Therefore, using the whole SSA22
+region as a benchmark in the number density distribution does not
+impose any bias. The statistical test we use o compare mock
+distributions against observations does not require a perfect match
+with observations, i.e. the presence of a mock fields as dense as
+SSA22-1 (which is very unlikely) is not required to consider that we
+have a good match with observations.
 
 \subsection{Simulation and halo catalogs}
 
@@ -484,6 +470,21 @@ method.
  
 \section{Results}
 \label{sec:results}
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\linewidth,angle=0]{Fig1.pdf}
+\caption{ \label{fig:halos} Surface density of dark 
+  matter halos as a function of a minimum halo mass. Each line
+  represents one of the $210$ volumes of dimensions $46\times 35\times
+  41$ $h^{-3}$ Mpc$^{3}$ in the Bolshoi simulation. The horizontal
+  gray band represents the range of surface densities observed for
+  LAEs at $z=3.1$ as reported by \citet{Yamada2012} and the dashed
+  line the observational results by \citet{Ouchi2008}.}
+\end{center} 
+\end{figure}
 
 
 \begin{figure*}
