@@ -491,77 +491,60 @@ green points.} \label{fig:correlation_parameters}
 \end{figure*}
 
 
-The main purpose of this section is to show how the different
-observational constraints narrow down the parameters space of allowed
-models. Each sub-section presents the effect of adding a new piece of 
-observational or statistical evidence. 
-
-
 \subsection{Dark Matter Halo Number Density}
 
-The right panel in Figure \ref{fig:halos} shows the  integrated dark matter halo surface
+Figure \ref{fig:halos} shows the  integrated dark matter halo surface
 density as a function of  minimum halo mass $M_{\rm min}$. Each line
 corresponds to one of the 210 sub-volumes in the Bolshoi
 simulation. The gray band indicates the surface density values for
 LAEs allowed by observations \citep{Yamada2012}. The dashed lines
-represent the average values in the fields observed by
+represent the values in the field observed by
 \citep{Ouchi2008}. 
+
+Figure \ref{fig:halos} illustrates the impact of cosmic variance. At a
+fixed minimum mass there is an scatter of $0.3-0.6$ dex in the number
+density abundance, which is of the same order of magnitude as the
+scatter in the observational data. As a consequence the variation in
+the number density in mocks for models with the same mass range and
+occupation fraction can be by factors of $\sim 2-5$. 
+
  
-This plot allows us to understand why only a specific range of
+Figure \ref{fig:halos} allows us to understand why only a specific range of
 models ${\mathcal M}$ can be expected to be consistent with
 observations. From Figure \ref{fig:halos} we can read that models with
-a minimum mass $M_{\rm min}>10^{12}$\hMsun always have a
-surface number density lower than the observational constrain, making
-them incompatible with observations; there are simply too few halos
+a minimum mass $M_{\rm min}>10^{12}$\hMsun always have a surface
+number density lower than the observational constrain, making them
+incompatible with observations; there are simply too few halos
 compared to observed LAEs. The opposite is true in models with $M_{\rm
   min}<10^{11.0}$\hMsun, which have a surface number density larger
 observations. In those cases the maximum mass $M_{\rm max}$ and the
 occupation fraction $f_{\rm occ}<1.0$  can be tuned in order to lower
-the halo number density to match observations.   
-
-Figure \ref{fig:halos} also illustrates the impact of cosmic
-variance. At fixed minimum mass there is an scatter of $0.3-0.6$ dex
-in the number density abundance, which is of the same order of
-magnitude as the scatter in the observational data.  As a consequence,
-the variation in the number density in mocks for models with the same
-mass range and occupation fraction can be by factors of $\sim 2-5$.
-This scatter induced by cosmic variance is naturally included in the
-mock construction process. 
-
-
+the halo number density to match observations.    
 
 \subsection{Maximally Consistent Models}
 
 
-
-We impose two major constraints in our models. First, we require a 
-models to have all its 15 mocks with a number density distribution
-consistent with observations. Second, we require that the average
-values among all mocks for the $\theta_{0}$-$\beta$ values in the
-correlation function fit to be consistent with observations
-\citep{Ouchi2008}. 
-
 The left panel in Figure \ref{fig:correlation_parameters} shows the
 results for the best estimates of $\theta_{0}$-$\beta$  used in the
-ACF parameterization on the best models previously selected.  Blue
-circles with error bars represent the results from the mocks and the
-horizontal line the observational results of \cite{Ouchi2008} over a
-field with average number density where the $\beta$ parameter was
-fixed in the fit. From this Figure we observe that there are models
-with too large values of $\theta_0$ and/or $\beta$ that can be ruled
-out as inconsistent.
+ACF parameterization on the models that are already consistent with
+the surface number density distribution.  Blue circles with error bars
+represent the results from the mocks and the horizontal line the
+observational results of \cite{Ouchi2008} over a field with average
+number density where the $\beta$ parameter was fixed in the fit. From
+this Figure we observe that there are models with too large values of
+$\theta_0$ and/or $\beta$ that can be ruled out as inconsistent.
 
 
-Figure \ref{fig:restriction_mock_and_f_occ_corr} presents the
-consistent models in the planes $M_{\rm min}$-$M_{\rm
-  max}$ and $M_{\rm   min}$-$f_{\rm occ}$. A model is consistent with
-observations if there is a $1$-$\sigma$ overlap between both the
-correlation length $\theta_0$ and the exponent $\beta$.  We find that
-we end up with $40$ models consistent with the ACF constraints.  This
-is a reduction of a factor of $\sim 2$ with respect to the number of
-models consistent with the number density distribution.
 
+Figure \ref{fig:restriction_mock_and_f_occ_corr} presents the final
+seletion consistent models in the planes $M_{\rm min}$-$M_{\rm
+  max}$ and $M_{\rm   min}$-$f_{\rm occ}$. We find that
+we end up with $40$ models consistent with both the surface number
+density constraints and the ACF.  This is a reduction of two orders of
+magnitude with respecto to the initial set of $9000$ models.
 
+In the next section we review in detail these models and their
+implications from the point of galaxy formation.
 
 \section{Discussion}
 \label{sec:discussion}
@@ -690,7 +673,6 @@ Furthermore, In contrast to \cite{Gawiser07} and \cite{Ouchi2010} we
 find that an ACF analysis is not enough to rule
 out models with a high occupation fraction $f_{\rm occ}>0.2$.
 
-
 \subsection{In the context of abundance matching models}
 
 The abundance matching methods are based on observational results for
@@ -710,38 +692,6 @@ detailed analysis of the spectral and photometric properties of LAEs
 coupled to the kind of analysis performed in this paper can be a guide
 in the study of the properties of low mass dark matter halos at
 $z=3.1$, extending the capabilities of abundance matching methods.
-
-\subsection{Caveats of our method}
-
-There are three minor caveats for the work presented here that are important
-to keep in mind. 
-
-The first caveat is the precise values for the mass intervals. These
-values are quoted from halos defined using a FOF halo
-finder. Different halo finders and definitions for the detection
-density threshold can yield different masses up to a factor $\sim 2$\citep{More2011}. For 
-instance a Friends-of-Friends algorithm with linking length $l=0.20$
-times the average inter-particle distance finds halos on average $1.4$
-times less massive than halos defined  with an spherical overdensity
-algorithm halos \citep{Bolshoi}. Therefore, the mass values for
-$M_{\rm min}$ and $M_{\rm max}$ should not be considered exact within
-less than $\sim 0.2$ dex. However, this represents a systematic change
-in the mass values and the mass interval $\Delta M$ quoted here should
-remain unchanged.
-
-
-A third caveat is the comparison of results for the number density
-  statistics and the ACF from surveys with different EW cuts. In this
-  sense we highlight again that the two filters and selection
-  criteria used by \citep{Ouchi2008} and \citep{Yamada2012} are only
-  slightly different. The median number density in the general fields by
-  \citep{Yamada2012} is $0.20$ arcmin$^{-2}$, while in
-  \citep{Ouchi2008} is $0.099\pm0.005$ arcmin$^{-2}$. This gives us
-  confidence that the two different samples can give a self-consistent
-  picture.
-
-
-
 
 \subsection{On the reproducibility of our results}
 
