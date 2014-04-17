@@ -83,8 +83,8 @@ $^{3}$ FACom-Instituto de F\'isica-FCEN, Universidad de Antioquia, Calle 70 No. 
   and number density information are insufficient to impose a tight
   constraint on the occupation fraction. On the other hand, the
   minimum mass and maximum mass can be constrained to the range
-  $M_{\rm  max}<10^{12}$\hMsun\ and $10^{10.2}\hMsun\leq M_{\rm
-    min}\leq 10^{11.5}\hMsun$. Additionally, we find that the
+$10^{10.2}\hMsun\leq M_{\rm min}\leq 10^{11.5}\hMsun$ and $M_{\rm  max}<10^{12}$\hMsun.
+Additionally, we find that the
   consistent models have a narrow mass range, $\Delta M \equiv \log_{10}M_{\rm max} -
   \log_{10} M_{\rm min}$, smaller than $1.0$ dex, with a majority in
   the range $\Delta M<0.5$ dex. These results fall into constraints
@@ -112,11 +112,11 @@ redshift \citep{Dayal2009,ForeroRomero2012} and tracers of active star
 formation \citep{Guaita2013}. 
 
 Capitalizing LAEs observations requires an understanding of
-their place in the context of a given structure formation model in a
-cosmological context. Under the current paradigm the dominant matter
-content of the Universe is to be found in dark matter (DM) and each
-galaxy is thought to be hosted by a larger dark matter structure known
-as a halo. \citep{Peebles1980,SpringelNature05}. 
+their place in structure formation model in an explicit cosmological
+context. Under the current paradigm the dominant matter content of the
+Universe is to be found in dark matter (DM) and each galaxy is thought
+to be hosted by a larger dark matter structure known as a
+halo. \citep{Peebles1980,SpringelNature05}.  
 
 Galaxy formation models find that halo mass predicts with high
 accuracy galactic properties such as stellar mass and star formation
@@ -127,7 +127,7 @@ matter halo mass hosting LAEs represents an advance to understand the
 nature of this galaxy population in the context of Lambda Cold Dark
 Matter ($\Lambda$CDM) paradigm.  
 
-Some theoretical attempts to solve this problem using an  ab-initio
+There are theoretical attempts to solve this problem using an  ab-initio
 approach. They start from the DM halo population to infer the
 intrinsic star formation rates and \ly  luminosities. From these
 values they estimate the amount of \ly photons that
@@ -140,8 +140,7 @@ hydrodynamical simulations \citep{Laursen2007, Dayal2009,
   ForeroRomero2011, Yajima2012}. 
 
 However, these calculations involve many uncertain steps such as 
-the estimation of the escape fraction, that is the fraction of \ly
-photons that escape the galaxy to the observer. Given the resonant
+the estimation of the escape fraction of \ly photons. Given the resonant
 nature of the \ly line, the escape fraction is sensitive to  the dust
 contents, density, temperature, topology and kinematics of the neutral
 Hydrogen in the interstellar medium (ISM). Solving the radiative
@@ -149,7 +148,7 @@ transfer of \ly photons in the ISM requires Monte Carlo
 simulations. The process of finding a consensus on the expected value
 for the \ly escape fraction in high redshift galaxies is still matter
 of ongoing research
-\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.   
+\citep{Neufeld1991,Verhamme2006,ForeroRomero2011,Dijkstra2012,Laursen2013,Orsi2012}.
 
 A different approach to infer the typical mass of halos hosting
 LAEs is based on the spatial clustering information. This approach uses the fact
@@ -162,14 +161,13 @@ fraction of the putative halos hosting these galaxies
 \citep{Hayashino2004,Gawiser07,Nilsson2007,Ouchi2010}. In these
 studies the observations are done on fields of $\sim 1$ deg$^{2}$ and
 the conclusions derived on the halo host mass do not delve too deeply
-into the possible impact of cosmic variance.  
+into the possible impact of cosmic variance in their estimates.  
 
 Recently \cite{Yamada2012} observed a wide area of $2.4$ deg$^{2}$
 under homogeneous instrumental and data reduction conditions. This data
 set is constructed from 12 different sub-fields that allows us to use
 clustering statistics and the cosmic variance among fields to
 constrain the mass and occupation fraction of halos hosting LAEs. 
-
 
 In this paper we investigate the impact of cosmic variance in
 constraining the mass and occupation fraction of halos hosting LAEs.
@@ -180,20 +178,19 @@ uncertainties associated to star formation and radiative transfer.
 We build mock surveys following the geometry of the observed fields by
 \cite{Yamada2012} to compare them  against observations in terms of
 the number density distribution and the angular correlation
-function. This allows us to find a range of parameters of our model
-that are consistent with observations while taking into account
-cosmic variance.
- 
+function. This allows us to find the range of parameters in our model
+that are consistent with observations while taking explicitly into
+account cosmic variance. 
+  
 
 This \documentname is structured as follows. In the next section we present
 the simulation and the model used to produce the mock catalogs. We
 also list the criteria used to compare the mocks against
 observations. In \S \ref{sec:results} we present the main results for
 the halo mass and occupation fraction. We continue in \S
-\ref{sec:discussion} with a discussion under the light of other
-constraints already presented in the literature and theoretical
-considerations of galaxy formation studies. Finally, we present our
-conclusions in \S \ref{sec:conclusions}.   
+\ref{sec:discussion} with a discussion of other constraints already
+presented in the literature and theoretical considerations. Finally,
+we present our conclusions in \S \ref{sec:conclusions}.
 
 Throughout this \documentname we assume a $\Lambda$CDM cosmology with the
 following values for the cosmological parameters, $\Omega_{m}=0.27$,
@@ -204,9 +201,9 @@ s$^{-1}$ Mpc$^{-1}$.
 \section{Methodology}
 
 Our method is based on the comparison of observations and mock
-catalogs that take into account cosmic variance. Our benchmarks are the
-distribution of the surface number density across fields and the
-angular correlation function.
+catalogs. This approach explicitly takes into account cosmic
+variance. Our benchmarks are the distribution of the surface number
+density across fields and the angular correlation function.
 
 In the next subsections we describe in detail the four key
 elements in our work-flow. First, we present the 
@@ -238,14 +235,14 @@ $h^{-1}$ at $z=3.09$.
 
 The narrow band filter used in the survey is
 centered at $4977$ \AA~with  $77$ \AA~width, corresponding to the
-redshift range $z=3.062$-$3.125$ and $41$ \hMpc comoving scale for the
-detection of the Lyman-$\alpha$ line centered at $z=3.09$. The authors
-reported a total of $2161$  LAEs with an observed equivalent width, in
-the observer frame, larger than $190$ \AA~over a total survey area of
-$2.42$ deg$^{2}$ that includes 12 sub-fields,  this corresponds to an
-average surface number density of $0.24\pm 0.01$ arcmin$^{-2}$.  The
-distribution of the surface number densities is shown in Figure
-\ref{fig:number_density}. 
+redshift range $z=3.062$-$3.125$ and approximately $41$ \hMpc comoving scale for the
+detection of the Lyman-$\alpha$ line centered at
+$z=3.09$. The authors reported a total of $2161$  LAEs with an
+observed equivalent width, in the observer frame, larger than $190$
+\AA~over a total survey area of $2.42$ deg$^{2}$ that includes 12
+sub-fields,  this corresponds to an average surface number density of
+$0.24\pm 0.01$ arcmin$^{-2}$.  The distribution of the surface number
+densities is shown in Figure \ref{fig:number_density}.  
 
 The survey covered four independent fields:
 
@@ -302,7 +299,7 @@ in SSA22 are average with similar number density as other blank fields.
 
 From Figure \ref{fig:number_density}  it is evident that there is only
 one sub-field  that stands out as an outlier in the distribution,
-corresponding to SSA22-1. All the other fields form a continous
+corresponding to SSA22-1. All the other fields form a continuous
 distribution in number density. Therefore, using the whole SSA22
 region as a benchmark in the number density distribution does not
 impose any bias. The statistical test we use o compare mock
@@ -340,7 +337,7 @@ than $1\times 10^{10}$\hMsun resolved with at least $70$ particles.
 
 We assume that a dark matter halo can only host one detectable LAE at
 most.  This is consistent with theoretical analysis of the correlation
-function \citep{Jose2013b} and obsevations that confirm a lack of
+function \citep{Jose2013b} and observations that confirm a lack of
 class pairs in LAEs \cite{Bond2009}. 
 
 There are three parameters that decide whether a halo host a LAE. The
@@ -366,7 +363,12 @@ simulation. Each volume has the same geometry probed by Suprime-CAM
 and the narrow band filter, namely rectangular cuboids of dimensions
 $46\times 35\times 41$ $h^{-3}$ Mpc$^{3}$ where the last dimension goes
 in the redshift direction. This corresponds to a total area of $880$
-arcmin$^{2}$ in each mock field. 
+arcmin$^{2}$ in each mock field. The exact value for the comoving size
+in the redshift direction is only accurate within a factor of $\sim 2$
+at most, given the luminosity dependence of this quantity
+\citep{Gronwall07}. In this \documentname we do not model the impact
+of the uncertainty from this quantity on our results.
+
 
 Strictly speaking the volume probed is a function of the \ly
 luminosity. Under the considerations presented in \citep{Gronwall07}
@@ -394,7 +396,7 @@ imitate the SDF and GOODS-North field.   In total $15$ mock surveys are
 constructed for each model $\mathcal{M}$ after taking into account the
 spatial restrictions due to the grouping we have just described.
 
-\subsection{Exploring and selecting consistente models}
+\subsection{Exploring and selecting consistent models}
 
 We make a thorough exploration of the parameter space for the models
 ${\mathcal M}$ where $\log_{10} M_{\rm min}$ takes $30$ values from $10.0$ up
@@ -471,8 +473,8 @@ range.
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.46\linewidth,angle=0]{Fig7_corr_params.pdf}  
-\includegraphics[width=0.46\linewidth,angle=0]{Fig7_mmin_vs_theta.pdf} 
+\includegraphics[width=0.49\linewidth,angle=0]{Fig7_corr_params.pdf}  
+\includegraphics[width=0.49\linewidth,angle=0]{Fig7_mmin_vs_theta.pdf} 
 \end{center}
 \caption{Left panel. Values for the free parameters $\theta_{0}$ and $\beta$
 in the fitting formula (Eq. \ref{eq:fitting}) for the angular
@@ -509,7 +511,7 @@ the number density in mocks for models with the same mass range and
 occupation fraction can be by factors of $\sim 2-5$. 
 
  
-Figure \ref{fig:halos} allows us to understand why only a specific range of
+Figure \ref{fig:halos} help us to understand why only a specific range of
 models ${\mathcal M}$ can be expected to be consistent with
 observations. From Figure \ref{fig:halos} we can read that models with
 a minimum mass $M_{\rm min}>10^{12}$\hMsun always have a surface
@@ -526,7 +528,7 @@ the halo number density to match observations.
 
 The left panel in Figure \ref{fig:correlation_parameters} shows the
 results for the best estimates of $\theta_{0}$-$\beta$  used in the
-ACF parameterization on the models that are already consistent with
+ACF parametrization on the models that are already consistent with
 the surface number density distribution.  Blue circles with error bars
 represent the results from the mocks and the horizontal line the
 observational results of \cite{Ouchi2008} over a field with average
@@ -534,14 +536,12 @@ number density where the $\beta$ parameter was fixed in the fit. From
 this Figure we observe that there are models with too large values of
 $\theta_0$ and/or $\beta$ that can be ruled out as inconsistent.
 
-
-
 Figure \ref{fig:restriction_mock_and_f_occ_corr} presents the final
-seletion consistent models in the planes $M_{\rm min}$-$M_{\rm
+selection consistent models in the planes $M_{\rm min}$-$M_{\rm
   max}$ and $M_{\rm   min}$-$f_{\rm occ}$. We find that
 we end up with $40$ models consistent with both the surface number
 density constraints and the ACF.  This is a reduction of two orders of
-magnitude with respecto to the initial set of $9000$ models.
+magnitude with respect to the initial set of $9000$ models.
 
 In the next section we review in detail these models and their
 implications from the point of galaxy formation and other
@@ -583,9 +583,8 @@ discussion.
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.35\linewidth,angle=0]{Fig6_mass.pdf}
-\hspace{5mm}
-\includegraphics[width=0.35\linewidth,angle=0]{Fig6_f_occ.pdf}
+\includegraphics[width=0.49\linewidth,angle=0]{Fig6_mass.pdf}
+\includegraphics[width=0.49\linewidth,angle=0]{Fig6_f_occ.pdf}
 \end{center} 
 \caption{$M_{\rm min}$-$M_{\rm max}$ (left) and $M_{\rm
     min}$-$f_{\rm occ}$ (right) planes showing the models fulfilling both
@@ -638,7 +637,6 @@ to resonance effects of the \ly line, induces a low surface brightness
 and a broader line, making these systems less observable in narrow
 band filter surveys \citep{Laursen2009,Zheng2010}.    
 
-
 \subsection{Comparison to previous clustering estimates}
 
 Observational evidence based on the ACF inferred from photometric
@@ -655,8 +653,7 @@ Our results are in a general good agreement with those estimates for
 the host mass and the upper limit of the occupation fraction. This is
 not completely unexpected given that we have also required consistency
 with ACF measurements. These expectations are mostly matched by
-the first family of models, also summarized in Table
-\ref{table:firstfamily}. These models, which favor only the  low
+the first family of models which favor only the  low
 ($\sim 10\%$) occupations fractions, are also consistent in that
 regard with the observational expectations by \cite{Gawiser07}. 
 
@@ -665,55 +662,47 @@ host halo mass range together with the occupation fraction. This allows us
 to show that the halo mass range can, in some cases, be narrow $\Delta M <
 0.3$ dex, something that cannot be inferred from ACF analysis alone.
 Furthermore, In contrast to \cite{Gawiser07} and \cite{Ouchi2010} we
-find that an ACF analysis is not enough to rule
-out models with a high occupation fraction $f_{\rm occ}>0.2$.
-
-\subsection{On the reproducibility of our results}
-
-All the software, raw and processed data to produce the results
-and plots in this paper are publicly available in a github
-repository \footnote{https://github.com/forero/CosmicVarianceLAES}. Most
-of the code to produce the plots can be found as an Ipython notebook
-\citep{IPython} in the same repository.
+find that an ACF analysis is not enough to rule out models with a high
+occupation fraction $f_{\rm occ}>0.1$. 
 
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this \documentname we quantified the impact of cosmic variance in
-constraining the  mass and occupation fraction of dark matter halos
-hosting Lyman $\alpha$ Emitters at redshift $z=3.1$ in a $\Lambda$CDM
-cosmology.  To this end we built a large number of mock catalogs
+In this \documentname constrained the  mass and occupation fraction of dark matter halos
+hosting Lyman $\alpha$ Emitters at redshift $z=3.1$ taking into
+account cosmic variance in a $\Lambda$CDM cosmology.  To this end we built a large number of mock catalogs
 matching observational geometries. The mocks were constructed from a
 N-body simulation by assigning a single LAE to a DM halo.
  
-We proceeded with a thorough exploration of the space of 
-parameters ($M_{\rm min}$, $M_{\rm max}$, $f_{\rm occ}$) describing the
-model. We look for consistency with two observational constraints: the
+We proceeded with a thorough exploration of the parameter space
+($M_{\rm min}$, $M_{\rm max}$, $f_{\rm occ}$) describing our
+model. We looked for consistency with two observational constraints: the
 surface number density distribution and the angular correlation
 function. Out of the initial $9000$  combinations of parameters in the
-model we find $40$ combination of parameters consistent with
-observations.  The minimum mass and maximum mass of these consistent
- models are found to be in the ranges:   $M_{\rm  max}<10^{12}$\hMsun\ 
- and $10^{10.2}\hMsun\leq M_{\rm min}\leq 10^{11.5}\hMsun$. 
+model we found $40$ consistent with observations.  The minimum mass and
+maximum mass of these consistent models were found to be in the
+ranges:   $M_{\rm  max}<10^{12}$\hMsun\ and $10^{10.2}\hMsun\leq
+M_{\rm min}\leq 10^{11.5}\hMsun$.  This supports the notion that the
+most massive halos at $z=3.1$ do not host detectable LAEs.  
 
-We find two interesting features in these models. First, the
+We found two interesting features in these models. First, the
 occupation fraction remains unconstrained; second, many models have a
-narrow mass range models with $\Delta M \leq 0.5$.  
-
+narrow mass range models with $\Delta M \leq 0.5$.   
+ 
 The wide range of occupation fraction values is unexpected from
 previous studies \citep[i.e.][]{Gawiser2007,Ouchi2010}  that
 unanimously favor low values on the range of $10^{-2}$ and only
 consider values of $0.1$ as an upper limit. Nevertheless, all the halo
 mass ranges deduced in previous analysis are a subset of the models we
-find in this paper. All our  best models support the notion that the
-most massive halos at $z=3.1$ do not host detectable LAEs.  
+found with our method. 
 
-Additional modeling for \ly radiation transfer is needed to
-put tighter constraints on  occupation fraction in high redshift
-halos, also paying attention to other physical phenomena, such as the
-stochasticity \citep{ForeroRomero2013} in the star formation process,
-which might play a role in introducing detection biases in high redshift
-LAEs.
+We consider that putting tight constraints on the occupation cannot be
+done from spatial information only. This requires additional modeling and
+larger observed fields to narrow down the link between halo mass, star
+formation and escaping \ly radiation. Additionally, the narrow halo
+mass range for halos hosting LAEs can be seen as an additional
+constraint for galaxy formation models that hope to address these
+questions. 
 
 From the point of view of Dark Energy surveys such as the Hobby-Eberly
 Telescope Dark Enery Experiment (HETDEX) the narrow mass range for
